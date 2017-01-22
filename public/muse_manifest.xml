@@ -1,0 +1,34 @@
+<manifest alg="2" build="2015.1.0.342" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="pamdogs.com/registro" resolutions="1x" timestamp="1484419862960">
+  <folder name="css">
+    <file name="site_global.css" crc="131700929"/>
+    <file name="index.css" crc="3810362376" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="409338010" ref="index"/>
+    <file name="museutils.js" crc="4190794036" ref="index"/>
+    <file name="whatinput.js" crc="84559013" ref="index"/>
+    <file name="webpro.js" crc="488283310" ref="index"/>
+    <file name="musewpslideshow.js" crc="248860441" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="3898476799" ref="index"/>
+    <file name="touchswipe.js" crc="4191887251" ref="index"/>
+    <file name="pie.js" crc="3827607177" ref="index"/>
+    <file name="form_check.php" crc="430210585" ref="index"/>
+    <file name="form_throttle.php" crc="282343929" ref="index"/>
+    <file name="form_process.php" crc="339897355" ref="index"/>
+    <file name="form-u550.php" crc="3854212598" ref="index"/>
+    <file name="jquery.watch.js" crc="349565855" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="gxyfjqg7lno-mike-burke.jpg" crc="4138611832" seo="true" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="jcxanper2xi-adam-grabek.jpg" crc="3760095545" seo="true" ref="index"/>
+    <file name="qsmge0p2-b8-andrew-pons.jpg" crc="235515685" seo="true" ref="index"/>
+    <file name="sirepwjfsmo-zoe-ra.jpg" crc="4217623064" seo="true" ref="index"/>
+    <file name="loading.gif" crc="3815509949" ref="index"/>
+    <file name="pamdogs_ta1-cb-sf.png" crc="4102021222" seo="true" ref="index"/>
+    <file name="u554-17.png" crc="4168140602" ref="index"/>
+    <file name="u554-17-r.png" crc="142324427" ref="index"/>
+    <file name="u554-17-m.png" crc="382614103" ref="index"/>
+  </folder>
+  <file name="index.html" crc="4017839640" seo="true" mt="1484419512174" redirect="true"/>
+</manifest>
