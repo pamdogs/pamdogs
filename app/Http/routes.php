@@ -23,7 +23,7 @@ Route::get('previa/lista', ['middleware' => 'auth.basic','uses' => 'PrevUsersCon
 
 Route::resource('previa','PrevUsersController', ['only' => ['index','store','show']]);
 
-Route::get('dev','FacebookAuthController@index');
+Route::get('dev/facebook','FacebookAuthController@index');
 
-Route::get('dev/sesion','FacebookAuthController@show');
+Route::get('dev/facebook/sesion','FacebookAuthController@show');
 
