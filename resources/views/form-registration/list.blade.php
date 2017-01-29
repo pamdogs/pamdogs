@@ -12,7 +12,10 @@
 						<thead>
 							<th>Nombre</th>
 							<th>Email</th>
+							<th>Ciudad</th>
 							<th>Localidad</th>
+							<th>Tel&eacute;fono</th>
+							<th>Como nos conocio</th>
 							<th>Fecha</th>
 						</thead>
 						<tbody>
@@ -20,8 +23,11 @@
 							<tr>
 								<td>{{ $interesado->name }}</td>
 								<td>{{ $interesado->email }}</td>
+								<td>{{ $interesado->city }}</td>
 								<td>{{ $interesado->place }}</td>
-								<td>{{ $interesado->created_at }}</td>
+								<td>{{ $interesado->phone }}</td>
+								<td>{{ $interesado->description }}</td>
+								<td>{{ $interesado->created_at->format('l jS \\of F Y h:i:s A') }}</td>
 							</tr>
 						@endforeach
 						</tbody>
