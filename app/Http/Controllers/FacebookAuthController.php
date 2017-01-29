@@ -71,7 +71,7 @@ class FacebookAuthController extends Controller
 
         //$authUser = $this->findOrCreateUser($user);
 
-        Auth::login($user, true);
+        //Auth::login($user, true);
 
         dd($user);
         //return redirect()->route('home');
