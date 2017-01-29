@@ -27,7 +27,7 @@
 								<td>{{ $interesado->place }}</td>
 								<td>{{ $interesado->phone }}</td>
 								<td>{{ $interesado->description }}</td>
-								<td>{{ $interesado->created_at->format('l jS \\of F Y h:i:s A') }}</td>
+								<td>{{ $interesado->created_at->format('m-d-Y h:i:s A') }}</td>
 							</tr>
 						@endforeach
 						</tbody>
