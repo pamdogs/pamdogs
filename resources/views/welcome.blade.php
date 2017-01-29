@@ -39,6 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">PamDogs</div>
+                {{ Auth::user()->name }}
             </div>
         </div>
     </body>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use Illuminate\Http\Request;
 use Auth;
 use Socialite;
 
@@ -96,7 +97,7 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        dd(Auth::user()->name);
+        return view('welcome');
     }
 
     /**
@@ -107,7 +108,7 @@ class AuthController extends Controller
      */
     private function findOrCreateUser($facebookUser)
     {
-        $authUser = User::where('email', $facebookUser->email)->first();
+        $authUser = User::where('facebook_id', $facebookUser->id)->first();
 
         if ($authUser){
             return $authUser;
@@ -115,7 +116,9 @@ class AuthController extends Controller
 
         return User::create([
             'name' => $facebookUser->name,
-            'email' => $facebookUser->email
+            'email' => $facebookUser->email,
+            'facebook_id' => $facebookUser->id,
+            'avatar' => $facebookUser->avatar
         ]);
     }
 
