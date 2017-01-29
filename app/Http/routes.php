@@ -11,16 +11,14 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 /*Route::get('previa',function() {
 	return view('newsletter');
 });*/
-Route::get('test', array('as' => 'testing', 'uses' => function(){
-  return view('welcome');
-}));
+
 Route::get('previa/lista', ['middleware' => 'auth.basic','uses' => 'PrevUsersController@listar']);
 
 Route::resource('previa','PrevUsersController', ['only' => ['index','store','show']]);
@@ -29,3 +27,6 @@ Route::get('dev/facebook','Auth\AuthController@redirectToProvider');
 
 Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
 
+Route::get('/', array('as' => 'home', 'uses' => function(){
+  return view('welcome');
+}));

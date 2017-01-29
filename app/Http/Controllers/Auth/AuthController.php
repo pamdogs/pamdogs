@@ -27,6 +27,10 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $redirectPath = '/';
+
+    protected $loginPath = '/dev/facebook';
+
     /**
      * Create a new authentication controller instance.
      *
@@ -68,7 +72,7 @@ class AuthController extends Controller
     }
 
 
-    protected $redirectPath = '/test';
+    
 
     /**
      * Redirect the user to the Facebook authentication page.
