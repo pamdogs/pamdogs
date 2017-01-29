@@ -96,7 +96,7 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        dd('Facebook');
+        dd(Auth::user()->name);
     }
 
     /**
