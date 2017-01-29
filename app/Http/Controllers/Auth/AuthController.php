@@ -97,7 +97,7 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        dd(Auth::user()->name);
+        return view('welcome');
     }
 
     /**
