@@ -17,7 +17,8 @@ class FacebookAuthController extends Controller
      */
     public function index()
     {
-        return \Socialite::with('facebook')->redirect();
+        //return \Socialite::with('facebook')->redirect();
+        return Socialite::driver('facebook')->redirect();
     }
 
     /**
@@ -49,10 +50,29 @@ class FacebookAuthController extends Controller
      */
     public function show()
     {
-        $user = \Socialite::with('facebook')->user();
+        /*$user = \Socialite::with('facebook')->user();
 
         //now we have user details in the $user array
+        echo '<div
+          class="fb-like"
+          data-share="true"
+          data-width="450"
+          data-show-faces="true">
+        </div>';
+        dd($user);*/
+
+        try {
+            $user = Socialite::driver('facebook')->user();
+        } catch (Exception $e) {
+            return redirect('dev/facebook');
+        }
+
+        //$authUser = $this->findOrCreateUser($user);
+
+        Auth::login($authUser, true);
+
         dd($user);
+        //return redirect()->route('home');
     }
 
     /**
