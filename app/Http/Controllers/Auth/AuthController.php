@@ -68,7 +68,7 @@ class AuthController extends Controller
     }
 
 
-    protected $redirectPath = '/';
+    protected $redirectPath = '/test';
 
     /**
      * Redirect the user to the Facebook authentication page.
