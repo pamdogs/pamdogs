@@ -56,7 +56,11 @@ class PrevUsersController extends Controller
         $user->phone = $request->phone;
         $user->description = $request->desc;
         $user->save();
-        return back()->with('status', '¡Gracias por registrarte!');
+        //return back()->with('status', '¡Gracias por registrarte!');
+
+
+        return response()->json(['status' => 'success',
+            'msg' => 'Gracias por registrarse.']);
 
     }
 
@@ -107,7 +111,7 @@ class PrevUsersController extends Controller
 
     public function listar()
     {
-        $interesados = PrevUser::paginate(15);
+        $interesados = PrevUser::paginate(20);
        
 
         return view('form-registration.list', ['interesados' => $interesados]);

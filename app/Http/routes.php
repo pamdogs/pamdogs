@@ -11,9 +11,9 @@
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 /*Route::get('previa',function() {
 	return view('newsletter');
@@ -27,6 +27,38 @@ Route::get('dev/facebook','Auth\AuthController@redirectToProvider');
 
 Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
 
-Route::get('/', array('as' => '/', 'uses' => function(){
+/*Route::get('/', array('as' => '/', 'uses' => function(){
   return view('welcome');
-}));
+}));*/
+
+Route::get('preview',function(){
+  return view('main.index');
+});
+
+Route::get('preview/registro',function(){
+  return view('main.registrate');
+});
+
+Route::get('preview/registro/form',function(){
+  return view('main.formulario-de-registro');
+});
+
+Route::get('preview/registro/cliente',function(){
+  return view('main.cliente');
+});
+
+Route::get('preview/registro/cuidador',function(){
+  return view('main.cuidador');
+});
+
+Route::get('preview/login',function(){
+  return view('main.iniciar-sesion');
+});
+
+Route::get('preview/prefil',function(){
+  return view('main.prefil-del-cuidador');
+});
+
+Route::get('preview/contacto',function(){
+  return view('main.contacto');
+});
