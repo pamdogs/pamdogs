@@ -52,8 +52,8 @@ var __adobewebfontsappname__ = "muse";
    <div class="verticalspacer"></div>
   </div>
   <div class="preload_images">
-   <img class="preload" src="{{ url('images/u554-17-r.png')" alt=""/>
-   <img class="preload" src="{{ url('images/u554-17-m.png')" alt=""/>
+   <img class="preload" src="{{ url('images/u554-17-r.png') }}" alt=""/>
+   <img class="preload" src="{{ url('images/u554-17-m.png') }}" alt=""/>
   </div>
   <!-- JS includes -->
   <script type="text/javascript">
