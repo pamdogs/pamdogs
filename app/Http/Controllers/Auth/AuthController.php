@@ -107,11 +107,11 @@ class AuthController extends Controller
      */
     private function findOrCreateUser($facebookUser)
     {
-        /*$authUser = User::where('facebook_id', $facebookUser->id)->first();
+        $authUser = User::where('email', $facebookUser->email)->first();
 
         if ($authUser){
             return $authUser;
-        }*/
+        }
 
         return User::create([
             'name' => $facebookUser->name,
