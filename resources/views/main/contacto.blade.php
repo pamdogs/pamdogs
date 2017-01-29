@@ -323,7 +323,7 @@ body{
     <div class="clearfix grpelem temp_no_id" data-orig-id="u13049"><!-- column -->
      <span class="clearfix colelem placeholder" data-placeholder-for="u12709-4_content"><!-- placeholder node --></span>
      <div class="clip_frame colelem temp_no_id" data-orig-id="u12719"><!-- svg -->
-      <img class="svg svg_mar temp_no_id temp_no_img_src" data-orig-src="images/tools.svg?crc=4079691240" onload="this.style.height=(this.offsetWidth*190.58671689322838/205.89812332439675)+'px'" alt="" data-mu-svgfallback="images/tools_poster_.png?crc=3998178201" data-image-width="206" data-image-height="191" data-orig-id="u12715" src="images/blank.gif?crc=4208392903"/>
+      <img class="svg svg_mar temp_no_id temp_no_img_src" data-orig-src="{{ url('images/tools.svg?crc=4079691240') }}" onload="this.style.height=(this.offsetWidth*190.58671689322838/205.89812332439675)+'px'" alt="" data-mu-svgfallback="{{ url('images/tools_poster_.png?crc=3998178201') }}" data-image-width="206" data-image-height="191" data-orig-id="u12715" src="{{ url('images/blank.gif?crc=4208392903') }}"/>
      </div>
     </div>
     <span class="size_fixed grpelem placeholder" data-placeholder-for="u2503_content"><!-- placeholder node --></span>
@@ -341,7 +341,7 @@ body{
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
 </script>
   <script type="text/javascript">
-   window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js?crc=209076791" type="text/javascript">\x3C/script>');
+   window.jQuery || document.write('\x3Cscript src="{{ url('scripts/jquery-1.8.3.min.js?crc=209076791') }}" type="text/javascript">\x3C/script>');
 </script>
   <!-- Other scripts -->
   <script type="text/javascript">
