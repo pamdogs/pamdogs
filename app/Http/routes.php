@@ -27,6 +27,6 @@ Route::get('dev/facebook','Auth\AuthController@redirectToProvider');
 
 Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
 
-Route::get('/', array('as' => 'home', 'uses' => function(){
+Route::get('/', array('as' => '/', 'uses' => function(){
   return view('welcome');
 }));
