@@ -60,7 +60,7 @@ var __adobewebfontsappname__ = "muse";
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
 </script>
   <script type="text/javascript">
-   window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+   window.jQuery || document.write('\x3Cscript src="{{ url('scripts/jquery-1.8.3.min.js') }}" type="text/javascript">\x3C/script>');
 </script>
   <script src="{{ url('scripts/museutils.js?4190794036') }}" type="text/javascript"></script>
   <script src="{{ url('scripts/whatinput.js?84559013') }}" type="text/javascript"></script>
