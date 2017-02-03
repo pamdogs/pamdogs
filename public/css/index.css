@@ -1129,6 +1129,49 @@ body
 	}
 }/* @media */
 
+/* Formulario de Usuarios Previos */
+
+.responseMsg
+{
+	z-index: 42;
+	width: 50%;
+	min-height: 38px;
+	background-color: transparent;
+	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	padding-top: 4px;
+	font-family: paytone-one, sans-serif;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 231px;
+	left: 25%;
+}
+
+.responseMsg.sending
+{
+	color: #FFFFFF;
+	line-height: 14px;
+	font-size: 12px;
+	opacity: 1;
+}
+
+.responseMsg.success
+{
+	color: #72b972;
+	line-height: 24px;
+	font-size: 24px;
+	opacity: 1;
+}
+
+.responseMsg.error
+{
+	color: #FF0000;
+	line-height: 14px;
+	font-size: 12px;
+	opacity: 1;
+}
+
 /* Lista de Usuarios Previos*/
 
 #pu488.panel-lista

@@ -1793,7 +1793,10 @@
                         $.post("previa",b.$element.serialize(),function(){
                             
 
-                        }).done(function(){
+                        }).done(function(data){
+                            console.log(data)
+                            var resp = $.parseJSON(data)
+                            console.log(data)
                             b.$element.addClass(f);
                         }).fail(function(){
 

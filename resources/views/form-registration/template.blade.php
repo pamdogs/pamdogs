@@ -149,7 +149,7 @@ var __adobewebfontsappname__ = "muse";
                    focusClass: 'focus-st',
                    invalidClass: 'fld-err-st',
                    requiredClass: 'fld-err-st',
-                   ajaxSubmit: true
+                   ajaxSubmit: false
                });
            }); /* #widgetu550 */
            Muse.Utils.showWidgetsWhenReady(); /* body */
@@ -158,6 +158,30 @@ var __adobewebfontsappname__ = "muse";
            if (e && 'function' == typeof e.notify) e.notify();
            else Muse.Assert.fail('Error calling selector function:' + e);
        }
+
+      $('#u554-17').on('click',function(e){
+        e.preventDefault()
+        $.post($(this).attr('action'),$('#widgetu550').serialize(),function(data){
+
+        }).done(function(data){
+          
+          /*$.each(data,function(index,value){
+            alert(index+" : "+value)
+
+          })*/
+          
+          $('#responses').addClass(data.status)
+          $('#responses').html('<p>'+data.msg+'</p>')
+                    
+        }).fail(function(jqXHR, textStatus, errorThrown){
+          /*alert(errors.first())*/
+          alert(JSON.stringify(jqXHR))
+          /*$.each(jqXHR,function(index,value){
+            alert(index+" : "+value)
+          })*/
+          alert(jqXHR+','+textStatus+','+errorThrown)
+        })
+      })
 
       var botonAncho = $("#u554-17").width()
       $("#u554-17").css('left','calc(100% - '+botonAncho+'px)')

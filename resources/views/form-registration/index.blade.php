@@ -8,7 +8,7 @@
     </div>
     <div class="clearfix colelem" id="pu632"><!-- group -->
      <div class="shadow rgba-background rounded-corners grpelem" id="u632"><!-- simple frame -->
-         <form class="form-grp clearfix grpelem" id="widgetu550" method="post" enctype="multipart/form-data" action="{{ url('scripts/form-u550.php') }}"><!-- none box -->
+         <form class="form-grp clearfix grpelem" id="widgetu550" method="post" enctype="multipart/form-data" action="{{ url('previa') }}"><!-- none box --> <!--scripts/form-u550.php-->
           {{ csrf_field() }}
           <div class="fld-grp clearfix grpelem" id="widgetu563" data-required="true"><!-- none box -->
            <label class="fld-label actAsDiv clearfix grpelem" id="u566-4" for="widgetu563_input"><!-- content -->
@@ -84,6 +84,9 @@
           </div>
           <div class="clearfix grpelem" id="u552-4"><!-- content -->
            <p>Formulario recibido.</p>
+          </div>
+          <div class="clearfix grpelem responseMsg" id="responses"><!-- content -->
+           
           </div>
 
           <input class="submit-btn NoWrap transition grpelem" id="u554-17" type="submit" value="" tabindex="7"/><!-- state-based BG images -->
