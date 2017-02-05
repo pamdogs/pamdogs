@@ -139,7 +139,7 @@ var __adobewebfontsappname__ = "muse";
            }); /* #slideshowu281 */
            Muse.Utils.initWidget('#widgetu550', ['#bp_infinity'], function(elem) {
                return new WebPro.Widget.Form(elem, {
-                   validationEvent: 'submit',
+                   validationEvent: 'blur',
                    errorStateSensitivity: 'high',
                    fieldWrapperClass: 'fld-grp',
                    formSubmittedClass: 'frm-sub-st',
@@ -161,25 +161,38 @@ var __adobewebfontsappname__ = "muse";
 
       $('#u554-17').on('click',function(e){
         e.preventDefault()
+        var responseBox = $('#responses')
+        responseBox.html('').removeClass('success error')
         $.post($(this).attr('action'),$('#widgetu550').serialize(),function(data){
 
         }).done(function(data){
           
           /*$.each(data,function(index,value){
             alert(index+" : "+value)
-
           })*/
           
-          $('#responses').addClass(data.status)
-          $('#responses').html('<p>'+data.msg+'</p>')
+          responseBox.addClass(data.status).html('<p>'+data.msg+'</p>')
                     
         }).fail(function(jqXHR, textStatus, errorThrown){
-          /*alert(errors.first())*/
-          alert(JSON.stringify(jqXHR))
+          
+          //alert(jqXHR['status'])
+          //alert(JSON.stringify(jqXHR))
           /*$.each(jqXHR,function(index,value){
             alert(index+" : "+value)
           })*/
-          alert(jqXHR+','+textStatus+','+errorThrown)
+          //alert(jqXHR+','+textStatus+','+errorThrown)
+
+          responseBox.addClass('error')
+
+          switch(jqXHR['status']){     
+            case 422:
+              var errors = $.parseJSON(jqXHR['responseText'])
+              $.each(errors,function(index,value){
+                responseBox.append('<p>'+value+'</p>')
+              })
+              break;
+          }
+
         })
       })
 

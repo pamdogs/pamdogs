@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace PamDogs\Events;
 
 abstract class Event
 {

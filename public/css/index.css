@@ -1166,7 +1166,7 @@ body
 
 .responseMsg.error
 {
-	color: #FF0000;
+	color: #C01313;
 	line-height: 14px;
 	font-size: 12px;
 	opacity: 1;
@@ -1215,3 +1215,24 @@ body
 {
 	padding:10px;
 }
+
+#reportUsers ul.pagination
+{
+	text-align: center;
+}
+
+#reportUsers ul.pagination a:link,#reportUsers ul.pagination a:hover,#reportUsers ul.pagination a:visited
+{
+	color:white;
+	text-decoration: none;
+}
+
+#reportUsers li
+{
+	width: 35px;
+	background: #b22f2f;
+	height: 35px;
+	line-height: 35px;
+	display: inline-table;
+}
+

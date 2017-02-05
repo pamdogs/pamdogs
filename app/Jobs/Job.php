@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace PamDogs\Jobs;
 
 use Illuminate\Bus\Queueable;
 

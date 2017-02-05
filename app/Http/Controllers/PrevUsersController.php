@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace PamDogs\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\PrevUser;
+use PamDogs\Http\Requests;
+use PamDogs\Http\Controllers\Controller;
+use PamDogs\PrevUser;
 
 class PrevUsersController extends Controller
 {
@@ -60,7 +60,7 @@ class PrevUsersController extends Controller
 
 
         return response()->json(['status' => 'success',
-            'msg' => 'Gracias por registrarse.']);
+            'msg' => 'Gracias por registrarse.'.date('d-m-Y H:i:s')]);
 
     }
 
