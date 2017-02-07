@@ -45,7 +45,7 @@ class PrevUsersController extends Controller
             'city' => 'required|max:255',
             'place' => 'required|max:255',
             'phone' => 'numeric',
-            'desc' => 'required|max:255',
+            'desc' => 'required|max:400',
         ]);
         
         $user = new PrevUser();
@@ -60,7 +60,7 @@ class PrevUsersController extends Controller
 
 
         return response()->json(['status' => 'success',
-            'msg' => 'Gracias por registrarse.'.date('d-m-Y H:i:s')]);
+            'msg' => 'Gracias por registrarse.']);
 
     }
 

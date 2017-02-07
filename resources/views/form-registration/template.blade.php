@@ -187,7 +187,8 @@ var __adobewebfontsappname__ = "muse";
           switch(jqXHR['status']){     
             case 422:
               var errors = $.parseJSON(jqXHR['responseText'])
-              $.each(errors,function(index,value){
+
+              $.each(errors,function(index,value,c){
                 responseBox.append('<p>'+value+'</p>')
               })
               break;
