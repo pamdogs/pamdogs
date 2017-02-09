@@ -11,8 +11,8 @@
   <title>Inicio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ url('css/site_global.css?131700929') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ url('css/index.css?3810362376') }}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('prev/css/site_global.css?131700929') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('prev/css/index.css?3810362376') }}" id="pagesheet"/>
   <!-- Other scripts -->
   <script type="text/javascript">
    document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -22,7 +22,7 @@ var __adobewebfontsappname__ = "muse";
   <script type="text/javascript">
    document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/source-sans-pro:n7,i7:default;paytone-one:n4:default.js" type="text/javascript">\x3C/script>');
 </script>
-  <link rel="shortcut icon" type="image/png" href="{{ url('images/favicon.png')}}"/>
+  <link rel="shortcut icon" type="image/png" href="{{ url('prev/images/favicon.png')}}"/>
    </head>
  <body>
 
@@ -32,16 +32,16 @@ var __adobewebfontsappname__ = "muse";
     <div class="popup_anchor" id="u299popup">
      <div class="SlideShowContentPanel clearfix fullscreen" id="u299"><!-- stack box -->
       <div class="SSSlide clip_frame fullscreen" id="u304"><!-- image -->
-       <img class="ImageInclude" id="u304_img" data-src="{{ url('images/gxyfjqg7lno-mike-burke.jpg') }}" src="images/blank.gif" alt="" data-width="1115" data-height="743"/>
+       <img class="ImageInclude" id="u304_img" data-src="{{ url('prev/images/gxyfjqg7lno-mike-burke.jpg') }}" src="{{ url('prev/images/blank.gif') }}" alt="" data-width="1115" data-height="743"/>
       </div>
       <div class="SSSlide invi clip_frame fullscreen" id="u408"><!-- image -->
-       <img class="ImageInclude" id="u408_img" data-src="{{ url('images/jcxanper2xi-adam-grabek.jpg') }}" src="images/blank.gif" alt="" data-width="1181" data-height="743"/>
+       <img class="ImageInclude" id="u408_img" data-src="{{ url('prev/images/jcxanper2xi-adam-grabek.jpg') }}" src="{{ url('prev/images/blank.gif') }}" alt="" data-width="1181" data-height="743"/>
       </div>
       <div class="SSSlide invi clip_frame fullscreen" id="u428"><!-- image -->
-       <img class="ImageInclude" id="u428_img" data-src="{{ url('images/qsmge0p2-b8-andrew-pons.jpg') }}" src="images/blank.gif" alt="" data-width="1115" data-height="743"/>
+       <img class="ImageInclude" id="u428_img" data-src="{{ url('prev/images/qsmge0p2-b8-andrew-pons.jpg') }}" src="{{ url('prev/images/blank.gif') }}" alt="" data-width="1115" data-height="743"/>
       </div>
       <div class="SSSlide invi clip_frame fullscreen" id="u448"><!-- image -->
-       <img class="ImageInclude" id="u448_img" data-src="{{ url('images/sirepwjfsmo-zoe-ra.jpg') }}" src="images/blank.gif" alt="" data-width="1115" data-height="743"/>
+       <img class="ImageInclude" id="u448_img" data-src="{{ url('prev/images/sirepwjfsmo-zoe-ra.jpg') }}" src="{{ url('prev/images/blank.gif') }}" alt="" data-width="1115" data-height="743"/>
       </div>
      </div>
     </div>
@@ -52,23 +52,23 @@ var __adobewebfontsappname__ = "muse";
    <div class="verticalspacer"></div>
   </div>
   <div class="preload_images">
-   <img class="preload" src="{{ url('images/u554-17-r.png') }}" alt=""/>
-   <img class="preload" src="{{ url('images/u554-17-m.png') }}" alt=""/>
+   <img class="preload" src="{{ url('prev/images/u554-17-r.png') }}" alt=""/>
+   <img class="preload" src="{{ url('prev/images/u554-17-m.png') }}" alt=""/>
   </div>
   <!-- JS includes -->
   <script type="text/javascript">
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
 </script>
   <script type="text/javascript">
-   window.jQuery || document.write('\x3Cscript src="{{ url('scripts/jquery-1.8.3.min.js') }}" type="text/javascript">\x3C/script>');
+   window.jQuery || document.write('\x3Cscript src="{{ url('prev/scripts/jquery-1.8.3.min.js') }}" type="text/javascript">\x3C/script>');
 </script>
-  <script src="{{ url('scripts/museutils.js?4190794036') }}" type="text/javascript"></script>
-  <script src="{{ url('scripts/whatinput.js?84559013') }}" type="text/javascript"></script>
-  <script src="{{ url('scripts/webpro.js?488283310') }}" type="text/javascript"></script>
-  <script src="{{ url('scripts/musewpslideshow.js?248860441') }}" type="text/javascript"></script>
-  <script src="{{ url('scripts/jquery.museoverlay.js?3898476799') }}" type="text/javascript"></script>
-  <script src="{{ url('scripts/touchswipe.js?4191887251') }}" type="text/javascript"></script>
-  <script src="{{ url('scripts/jquery.watch.js?349565855') }}" type="text/javascript"></script>
+  <script src="{{ url('prev/scripts/museutils.js?4190794036') }}" type="text/javascript"></script>
+  <script src="{{ url('prev/scripts/whatinput.js?84559013') }}" type="text/javascript"></script>
+  <script src="{{ url('prev/scripts/webpro.js?488283310') }}" type="text/javascript"></script>
+  <script src="{{ url('prev/scripts/musewpslideshow.js?248860441') }}" type="text/javascript"></script>
+  <script src="{{ url('prev/scripts/jquery.museoverlay.js?3898476799') }}" type="text/javascript"></script>
+  <script src="{{ url('prev/scripts/touchswipe.js?4191887251') }}" type="text/javascript"></script>
+  <script src="{{ url('prev/scripts/jquery.watch.js?349565855') }}" type="text/javascript"></script>
   <!-- Other scripts -->
   <script type="text/javascript">
    $(document).ready(function() {

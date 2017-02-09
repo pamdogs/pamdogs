@@ -11,9 +11,23 @@
 |
 */
 
-Route::get('/',['middleware' => 'auth.basic', function () {
+/*Route::get('/',['middleware' => 'auth.basic', function () {
     return redirect('preview');
-}]);
+}]);*/
+Route::get('/', function () {
+    return redirect('previa');
+});
+
+
+Route::resource('previa','PrevUsersController', ['only' => ['index','store']]);
+
+Route::get('previa/lista', ['middleware' => 'auth.basic','uses' => 'PrevUsersController@listar']);
+
+
+Route::get('dev/facebook','Auth\AuthController@redirectToProvider');
+
+Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
+
 
 Route::group(['prefix' => 'preview','middleware' => 'auth.basic'],function(){
 	Route::get('/',function(){
@@ -50,15 +64,6 @@ Route::group(['prefix' => 'preview','middleware' => 'auth.basic'],function(){
 });
 
 
-
-
-Route::get('previa/lista', ['middleware' => 'auth.basic','uses' => 'PrevUsersController@listar']);
-
-Route::resource('previa','PrevUsersController', ['only' => ['index','store']]);
-
-Route::get('dev/facebook','Auth\AuthController@redirectToProvider');
-
-Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
 
 /*Route::get('/', array('as' => '/', 'uses' => function(){
   return view('welcome');

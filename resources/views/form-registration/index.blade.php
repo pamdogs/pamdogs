@@ -4,11 +4,11 @@
 
 <div class="clearfix grpelem" id="pu488"><!-- column -->
     <div class="clip_frame colelem" id="u488"><!-- image -->
-     <img class="block" id="u488_img" src="{{ url('images/pamdogs_ta1-cb-sf.png') }}" alt="" width="259" height="259"/>
+     <img class="block" id="u488_img" src="{{ url('prev/images/pamdogs_ta1-cb-sf.png') }}" alt="" width="259" height="259"/>
     </div>
     <div class="clearfix colelem" id="pu632"><!-- group -->
      <div class="shadow rgba-background rounded-corners grpelem" id="u632"><!-- simple frame -->
-         <form class="form-grp clearfix grpelem" id="widgetu550" method="post" enctype="multipart/form-data" action="{{ url('previa') }}"><!-- none box --> <!--scripts/form-u550.php-->
+         <form class="form-grp clearfix grpelem" id="widgetu550" method="post" enctype="multipart/form-data" action="{{ url('/previa') }}"><!-- none box --> <!--scripts/form-u550.php-->
           {{ csrf_field() }}
           <div class="fld-grp clearfix grpelem" id="widgetu563" data-required="true"><!-- none box -->
            <label class="fld-label actAsDiv clearfix grpelem" id="u566-4" for="widgetu563_input"><!-- content -->

@@ -3,7 +3,7 @@
 @section('content')
 	<div class="clearfix grpelem panel-lista" id="pu488">
 		<div class="clip_frame colelem" id="u488"><!-- image -->
-		 	<a href="{{ url('previa') }}"><img class="block" id="u488_img" src="{{ url('images/pamdogs_ta1-cb-sf.png') }}" alt="" width="259" height="259"/></a>
+		 	<a href="{{ url('previa') }}"><img class="block" id="u488_img" src="{{ url('prev/images/pamdogs_ta1-cb-sf.png') }}" alt="" width="259" height="259"/></a>
 		</div>
 		<div class="clearfix colelem" id="pu632">
 			<div class="shadow rgba-background grpelem" id="u632" style="height: auto">
