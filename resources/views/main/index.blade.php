@@ -380,7 +380,9 @@ body{
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec.</p>
      </div>
      <div class="clearfix grpelem" id="u1901-4"><!-- content -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec.
+      {{ Auth::user() }}
+      </p>
      </div>
     </div>
     <div class="verticalspacer" data-offset-top="1157" data-content-above-spacer="1157" data-content-below-spacer="519"></div>
