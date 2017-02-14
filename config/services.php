@@ -40,7 +40,7 @@ return [
     'facebook' => [
         'client_id' => '392694797745302',
         'client_secret' => '46158b69118d124371168cc955d002ff',
-        'redirect' => 'localhost/prev-pamdogs/public/dev/facebook/sesion',
+        'redirect' => 'https://www.pamdogs.com/dev/facebook/sesion',
     ],
 
     /*'facebook' => [
