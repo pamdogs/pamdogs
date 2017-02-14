@@ -100,13 +100,17 @@ class AuthController extends Controller
             return redirect('dev/facebook');
         }
 
-        var_dump($user);
+        
 
         $authUser = $this->findOrCreateUser($user);
 
-        dd($authUser);
+        try {
+          Auth::login($authUser, true);
+        } catch (Exception $e) {
+            dd($e);
+        }
 
-        Auth::login($authUser, true);
+        dd(Auth::user())
 
         //return redirect('/');
     }
