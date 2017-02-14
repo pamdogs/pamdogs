@@ -27,10 +27,6 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    protected $redirectPath = '/';
-
-    protected $loginPath = '/dev/facebook';
-
     /**
      * Create a new authentication controller instance.
      *
@@ -41,6 +37,9 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
+    protected $redirectPath = '/';
+
+    protected $loginPath = '/login';
     /**
      * Get a validator for an incoming registration request.
      *
@@ -71,6 +70,10 @@ class AuthController extends Controller
         ]);
     }
 
+    protected function getLogin()
+    {
+        return view('main.iniciar-sesion');
+    }    
 
     
 
@@ -125,6 +128,5 @@ class AuthController extends Controller
             'avatar' => $facebookUser->avatar
         ]);
     }
-
 
 }
