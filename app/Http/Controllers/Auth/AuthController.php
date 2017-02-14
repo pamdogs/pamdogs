@@ -110,7 +110,7 @@ class AuthController extends Controller
             dd($e);
         }
 
-        dd(Auth::user())
+        dd(Auth::user());
 
         //return redirect('/');
     }
