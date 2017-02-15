@@ -109,7 +109,7 @@ class AuthController extends Controller
         } catch (Exception $e) {
             dd($e);
         }*/
-        User::where('facebook_id', $authUser->facebook_id)->first()
+        User::where('facebook_id', $authUser->facebook_id)->first();
         dd(Auth::user());
 
         //return redirect('/');
