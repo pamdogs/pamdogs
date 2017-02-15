@@ -94,23 +94,23 @@ class AuthController extends Controller
      */
     public function handleProviderCallback()
     {
-        /*try {
+        try {
             $user = Socialite::driver('facebook')->user();
         } catch (Exception $e) {
             return redirect('dev/facebook');
-        }*/
+        }
 
-        $user = Socialite::driver('facebook')->user();
+        
 
-        //$authUser = $this->findOrCreateUser($user);
+        $authUser = $this->findOrCreateUser($user);
 
-        /*try {
-          Auth::login($authUser, true);
+        try {
+            Auth::login($authUser);
         } catch (Exception $e) {
             dd($e);
-        }*/
+        }
 
-        dd($user);
+        dd(Auth::user());
 
         //return redirect('/');
     }
