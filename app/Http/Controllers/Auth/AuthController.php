@@ -109,7 +109,7 @@ class AuthController extends Controller
         } catch (Exception $e) {
             dd($e);
         }*/
-
+        Auth::login($authUser, true);
         dd(Auth::user());
 
         //return redirect('/');
