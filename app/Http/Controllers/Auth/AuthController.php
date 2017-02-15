@@ -105,12 +105,12 @@ class AuthController extends Controller
         $authUser = $this->findOrCreateUser($user);
 
         try {
-            Auth::login($authUser);
+            dd(Auth::login($authUser, true));
         } catch (Exception $e) {
             dd($e);
         }
 
-        dd(Auth::user());
+        //dd(Auth::user());
 
         //return redirect('/');
     }
