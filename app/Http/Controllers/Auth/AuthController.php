@@ -110,7 +110,7 @@ class AuthController extends Controller
         print "<pre>";
         var_dump($authUser->name);
         print "</pre>";
-        dd(Auth::attempt(array('name' => $authUser->name)));
+        dd(Auth::login(array('name' => $authUser->name)));
         dd(Auth::user());
 
         //return redirect('/');
