@@ -107,22 +107,14 @@ class AuthController extends Controller
         } catch (Exception $e) {
             dd($e);
         }*/
-        print "<pre>";
-        var_dump($authUser->name);
-        print "</pre>";
-        print "<br><br>";
-        print "<pre>";
+
         try {
             var_dump(Auth::attempt(array('email' => $authUser->email, 'password' => '123')));
         } catch (Exception $e) {
             dd($e);
         }
-        print "</pre>";
-        print "<br><br>";
-        print "<pre>";
-        var_dump(Auth::user());
-        print "</pre>";
-        //return redirect('/');
+        
+        return redirect('/');
     }
 
     /**
