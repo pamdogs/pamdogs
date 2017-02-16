@@ -110,12 +110,12 @@ class AuthController extends Controller
 
         try {
             print $authUser->id;
-            var_dump(Auth::loginUsingId($authUser->id));
+            dd(Auth::loginUsingId($authUser->id));
         } catch (Exception $e) {
             dd($e);
         }
         
-        return redirect('/');
+        //return redirect('/');
     }
 
     /**
