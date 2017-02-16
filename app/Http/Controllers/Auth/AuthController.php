@@ -108,9 +108,9 @@ class AuthController extends Controller
             dd($e);
         }*/
         print "<pre>";
-        var_dump($authUser->attributes);
+        var_dump($authUser->name);
         print "</pre>";
-        dd(Auth::attempt($authUser->attributes));
+        dd(Auth::attempt($authUser->name));
         dd(Auth::user());
 
         //return redirect('/');
