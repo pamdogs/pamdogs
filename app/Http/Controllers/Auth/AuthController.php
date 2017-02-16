@@ -109,7 +109,8 @@ class AuthController extends Controller
         }*/
 
         try {
-            var_dump(Auth::attempt(['email' => $authUser->email]));
+            print $authUser->id;
+            var_dump(Auth::loginUsingId($authUser->id));
         } catch (Exception $e) {
             dd($e);
         }
