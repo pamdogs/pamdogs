@@ -100,8 +100,6 @@ class AuthController extends Controller
             return redirect('dev/facebook');
         }
 
-        
-
         $authUser = $this->findOrCreateUser($user);
 
         /*try {
@@ -109,6 +107,9 @@ class AuthController extends Controller
         } catch (Exception $e) {
             dd($e);
         }*/
+        print "<pre>";
+        var_dump($authUser);
+        print "</pre>";
         dd(Auth::attempt($authUser));
         dd(Auth::user());
 
