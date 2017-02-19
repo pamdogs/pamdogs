@@ -108,14 +108,14 @@ class AuthController extends Controller
             dd($e);
         }*/
 
-        try {
+        /*try {
             print $authUser->id;
             dd(Auth::loginUsingId($authUser->id));
         } catch (Exception $e) {
             dd($e);
-        }
-        
-        //return redirect('/');
+        }*/
+        Auth::login($authUser)
+        return redirect('/');
     }
 
     /**
