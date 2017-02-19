@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="nojs html css_verticalspacer" lang="es-ES">
  <head>
@@ -321,9 +322,9 @@ body{
       	   </a>
       	  </div>
       	  <div class="MenuItemContainer borderbox clearfix colelem" id="u6068"><!-- horizontal box -->
-      	   <a class="nonblock nontext MenuItem MenuItemWithSubMenu borderbox clearfix grpelem" id="u6071" href="{{ Auth::user() ? url('logout') : url('login') }}"><!-- horizontal box -->
+      	   <a class="nonblock nontext MenuItem MenuItemWithSubMenu borderbox clearfix grpelem" id="u6071" href="{{ Auth::check() ? url('logout') : url('login') }}"><!-- horizontal box -->
       	    <div class="MenuItemLabel borderbox clearfix grpelem" id="u6074-4"><!-- content -->
-      	     @if(Auth::user())
+      	     @if(Auth::check())
       	     	<p>Cerrar sesión</p>
       	     @else
       	     	<p>Iniciar sesión</p>
@@ -374,14 +375,14 @@ body{
     <div class="colelem" id="u1913"><!-- simple frame --></div>
     <div class="clearfix colelem" id="pu1894-4"><!-- group -->
      <div class="clearfix grpelem" id="u1894-4"><!-- content -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec. <pre> {{ print_r(session()->all()) }}</pre></p>
      </div>
      <div class="clearfix grpelem" id="u1898-4"><!-- content -->
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec.</p>
      </div>
      <div class="clearfix grpelem" id="u1901-4"><!-- content -->
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec.
-      {{ Auth::user() }}
+      
       </p>
      </div>
     </div>

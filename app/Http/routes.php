@@ -30,6 +30,8 @@
 	  return view('main.formulario-de-registro');
 	});
 
+	Route::post('registro/form','ClientesController@store');
+
 	Route::get('registro/cliente',function(){
 	  return view('main.cliente');
 	});
@@ -70,10 +72,6 @@ Route::get('previa/lista', ['middleware' => 'auth.basic','uses' => 'PrevUsersCon
 Route::get('dev/facebook','Auth\AuthController@redirectToProvider');
 
 Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
-
-
-
-
 
 /*Route::get('/', array('as' => '/', 'uses' => function(){
   return view('welcome');
