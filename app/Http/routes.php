@@ -26,17 +26,17 @@
 	  return view('main.registrate');
 	});
 
-	/*Route::get('registro/form',function(){
+	Route::get('registro/form',function(){
 	  return view('main.formulario-de-registro');
-	});*/
+	});
 
 	Route::post('registro/form','ClientesController@store');
 
 	Route::post('registro/cliente','ClientesController@storeCliente');
 
-	Route::get('registro/cliente',function(){
+	/*Route::get('registro/cliente',function(){
 		return view('main.formulario-mascota');
-	});
+	});*/
 
 	Route::post('registro/mascota','MascotasController@store');
 
