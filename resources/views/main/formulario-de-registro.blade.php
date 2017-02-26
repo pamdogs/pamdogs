@@ -242,7 +242,7 @@ body{
     <div class="grpelem" id="u1563"><!-- simple frame --></div>
     <div class="rounded-corners clearfix grpelem" id="u1554"><!-- column -->
      <div class="clip_frame colelem" id="u1658"><!-- image -->
-      <img class="block" id="u1658_img" src="{{ url('main/images/user.png?crc=4023152180') }}" alt="" data-image-width="253" data-image-height="253"/>
+      <img class="block" id="u1658_img" src="{{ isset(Auth::user()->avatar) ? url(Auth::user()->avatar) : url('main/images/user.png?crc=4023152180') }}" alt="" data-image-width="253" data-image-height="253"/>
      </div>
      <div class="Button shadow rounded-corners clearfix colelem" id="buttonu1651"><!-- container box -->
       <div class="clearfix grpelem" id="u1652-4"><!-- content -->

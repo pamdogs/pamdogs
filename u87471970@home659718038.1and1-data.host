@@ -1,0 +1,190 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 26-02-2017 a las 21:19:57
+-- Versión del servidor: 10.1.19-MariaDB
+-- Versión de PHP: 7.0.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `pamdogs`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mascotas`
+--
+
+CREATE TABLE `mascotas` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `nacimiento` date NOT NULL,
+  `genero` enum('Femenino','Masculino') COLLATE utf8_unicode_ci NOT NULL,
+  `raza` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `personalidad` text COLLATE utf8_unicode_ci NOT NULL,
+  `rutina` text COLLATE utf8_unicode_ci NOT NULL,
+  `duerme` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `comida_tipo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `comida_hora` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `hora_paseo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `con_perros` tinyint(1) NOT NULL,
+  `con_chicos` tinyint(1) NOT NULL,
+  `salta` tinyint(1) NOT NULL,
+  `celo` tinyint(1) NOT NULL,
+  `vacuna` tinyint(1) DEFAULT NULL,
+  `esterilizado` tinyint(1) DEFAULT NULL,
+  `vet_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `vet_telefono` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `vet_direccion` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `seguro` tinyint(1) NOT NULL,
+  `compania_seguro` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prev_users`
+--
+
+CREATE TABLE `prev_users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ciudad` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `localidad` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nivel` enum('Cliente','Miembro','Administrador') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Cliente',
+  `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `apellido` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `nacimiento` date NOT NULL,
+  `telefono` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `dni_tipo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `dni_numero` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `genero` enum('Femenino','Masculino') COLLATE utf8_unicode_ci DEFAULT NULL,
+  `facebook_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `mascotas`
+--
+ALTER TABLE `mascotas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `mascotas_user_id_foreign` (`user_id`);
+
+--
+-- Indices de la tabla `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`),
+  ADD KEY `password_resets_token_index` (`token`);
+
+--
+-- Indices de la tabla `prev_users`
+--
+ALTER TABLE `prev_users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `prev_users_email_unique` (`email`);
+
+--
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `users_facebook_id_unique` (`facebook_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `mascotas`
+--
+ALTER TABLE `mascotas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `prev_users`
+--
+ALTER TABLE `prev_users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `mascotas`
+--
+ALTER TABLE `mascotas`
+  ADD CONSTRAINT `mascotas_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
