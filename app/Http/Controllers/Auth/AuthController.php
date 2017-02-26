@@ -115,7 +115,7 @@ class AuthController extends Controller
             dd($e);
         }*/
         Auth::login($authUser);
-        return view('main.formulario-de-registro');
+        return redirect('registro/form');
     }
 
     /**

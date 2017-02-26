@@ -34,9 +34,9 @@
 
 	Route::post('registro/cliente','ClientesController@storeCliente');
 
-	/*Route::get('registro/cliente',function(){
+	Route::get('registro/cliente',function(){
 		return view('main.formulario-mascota');
-	});*/
+	});
 
 	Route::post('registro/mascota','MascotasController@store');
 
