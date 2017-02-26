@@ -23,6 +23,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <!--[if lt IE 9]>
   <link rel="stylesheet" type="text/css" href="css/iefonts_formulario-de-registro.css?crc=4121544118"/>
   <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="{{ url('main/assets/jquery-ui/jquery-ui.css') }}"/>
+
   <!-- Other scripts -->
   <script type="text/javascript">
    var __adobewebfontsappname__ = "muse";
@@ -223,7 +226,7 @@ body{
   
 
 <div class="MultiLoader_Container">
-	<img id="my_image" class="MultiLoader_image_rotate pulseit" src="{{ url('main/assets/sin-t%c3%adtulo-1.jpg') }}" alt="Loader">
+	<img id="my_image" class="MultiLoader_image_rotate pulseit" src="{{ url('main/assets/sin-titulo-1.jpg') }}" alt="Loader">
 </div>
 
   
@@ -249,7 +252,7 @@ body{
     </div>
    </div>
    <div class="rounded-corners grpelem" id="u1560"><!-- simple frame --></div>
-   <a class="nonblock nontext Button shadow rounded-corners clearfix grpelem" id="buttonu6752" href="{{ url('preview/registro/cliente') }}"><!-- container box --><div class="clearfix grpelem" id="u6753-4"><!-- content --><p>Quiero encontrar&nbsp; cuidadores</p></div></a>
+   <a class="nonblock nontext Button shadow rounded-corners clearfix grpelem" id="buttonu6752" style="cursor:pointer;"><!-- container box --><div class="clearfix grpelem" id="u6753-4"><!-- content --><p>Quiero encontrar&nbsp; cuidadores</p></div></a>
    <div class="clearfix grpelem" id="ppu1603"><!-- column -->
     <div class="clearfix colelem" id="pu1603"><!-- group -->
      <div class="rgba-background grpelem" id="u1603"><!-- simple frame --></div>
@@ -266,9 +269,10 @@ body{
     <div class="clearfix colelem" id="u2437-4"><!-- content -->
      <p>Nombre:</p>
     </div>
-    <form class="form-grp clearfix colelem" id="widgetu2350" method="post" enctype="multipart/form-data" action="{{ url('main/scripts/form-u2350.php') }}"><!-- none box -->
-     <div class="fld-grp clearfix grpelem" id="widgetu2353" data-required="true" data-type="email"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2355-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu2353_input" name="Email" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu2353_prompt" for="widgetu2353_input"><span class="actAsPara">Nombre completo.</span></label></span>
+    <form class="form-grp clearfix colelem" id="widgetu2350" method="post" enctype="multipart/form-data" action=""><!-- none box -->
+    {{ csrf_field() }}
+     <div class="fld-grp clearfix grpelem" id="widgetu2353" data-required="true" data-type="text"><!-- none box -->
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2355-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu2353_input" name="nombre" tabindex="1" value="{{ Auth::user()->nombre }}"/><label class="wrapped-input fld-prompt" id="widgetu2353_prompt" for="widgetu2353_input"><span class="actAsPara">Nombre completo.</span></label></span>
      </div>
      <div class="clearfix grpelem" id="u2358-3"><!-- content -->
       <p>&nbsp;</p>
@@ -285,19 +289,19 @@ body{
       </div>
      </button>
      <div class="fld-grp clearfix grpelem" id="widgetu2377" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2379-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu2377_input" name="custom_U2377" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu2377_prompt" for="widgetu2377_input"><span class="actAsPara">Ambos apellidos.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2379-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu2377_input" name="apellido" tabindex="2" value="{{ Auth::user()->apellido }}"/><label class="wrapped-input fld-prompt" id="widgetu2377_prompt" for="widgetu2377_input"><span class="actAsPara">Ambos apellidos.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2413" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2416-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu2413_input" name="custom_U2413" tabindex="4"/><label class="wrapped-input fld-prompt" id="widgetu2413_prompt" for="widgetu2413_input"><span class="actAsPara">Número telefónico.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2416-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu2413_input" name="telefono" tabindex="4" value="{{ Auth::user()->telefono }}"/><label class="wrapped-input fld-prompt" id="widgetu2413_prompt" for="widgetu2413_input"><span class="actAsPara">Número telefónico.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2425" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2426-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2425_input" name="custom_U2425" tabindex="3"/><label class="wrapped-input fld-prompt" id="widgetu2425_prompt" for="widgetu2425_input"><span class="actAsPara">DD/MM/AA</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2426-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2425_input" name="nacimiento" tabindex="3" value="{{ Auth::user()->nacimiento }}"/><label class="wrapped-input fld-prompt" id="widgetu2425_prompt" for="widgetu2425_input"><span class="actAsPara">DD/MM/AA</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2470" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2471-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2470_input" name="custom_U2470" tabindex="5"/><label class="wrapped-input fld-prompt" id="widgetu2470_prompt" for="widgetu2470_input"><span class="actAsPara">Nacional / Extranjero.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2471-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2470_input" name="dni_tipo" tabindex="5" value="{{ Auth::user()->dni_tipo }}"/><label class="wrapped-input fld-prompt" id="widgetu2470_prompt" for="widgetu2470_input"><span class="actAsPara">Nacional / Extranjero.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2485" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2486-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2485_input" name="custom_U2485" tabindex="6"/><label class="wrapped-input fld-prompt" id="widgetu2485_prompt" for="widgetu2485_input"><span class="actAsPara">Número de documento.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2486-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2485_input" name="dni_nro" tabindex="6" value="{{ Auth::user()->dni_numero }}"/><label class="wrapped-input fld-prompt" id="widgetu2485_prompt" for="widgetu2485_input"><span class="actAsPara">Número de documento.</span></label></span>
      </div>
     </form>
     <div class="clearfix colelem" id="u2440-4"><!-- content -->
@@ -331,7 +335,7 @@ body{
    </div>
    <div class="size_fixed grpelem" id="u7006"><!-- custom html -->
    </div>
-   <div class="Button shadow rounded-corners clearfix grpelem" id="buttonu2320"><!-- container box -->
+   <div class="Button shadow rounded-corners clearfix grpelem" style="cursor:pointer;" id="buttonu2320"><!-- container box -->
     <div class="clearfix grpelem" id="u2321-4"><!-- content -->
      <p>Quiero ser cuidador</p>
     </div>
@@ -363,12 +367,12 @@ body{
 16);return 0},g=function(g){for(var f=document.getElementsByTagName("link"),h=0;h<f.length;h++)if("text/css"==f[h].type){var i=(f[h].href||"").match(/\/?css\/([\w\-]+\.css)\?crc=(\d+)/);if(!i||!i[1]||!i[2])break;b[i[1]]=i[2]}f=document.createElement("div");f.className="version";f.style.cssText="display:none; width:1px; height:1px;";document.getElementsByTagName("body")[0].appendChild(f);for(h=0;h<Muse.assets.required.length;){var i=Muse.assets.required[h],l=i.match(/([\w\-\.]+)\.(\w+)$/),k=l&&l[1]?
 l[1]:null,l=l&&l[2]?l[2]:null;switch(l.toLowerCase()){case "css":k=k.replace(/\W/gi,"_").replace(/^([^a-z])/gi,"_$1");f.className+=" "+k;k=a(c(f,"color"));l=a(c(f,"backgroundColor"));k!=0||l!=0?(Muse.assets.required.splice(h,1),"undefined"!=typeof b[i]&&(k!=b[i]>>>24||l!=(b[i]&16777215))&&Muse.assets.outOfDate.push(i)):h++;f.className="version";break;case "js":h++;break;default:throw Error("Unsupported file type: "+l);}}d?d().jquery!="1.8.3"&&Muse.assets.outOfDate.push("jquery-1.8.3.min.js"):Muse.assets.required.push("jquery-1.8.3.min.js");
 f.parentNode.removeChild(f);if(Muse.assets.outOfDate.length||Muse.assets.required.length)f="Puede que determinados archivos falten en el servidor o sean incorrectos. Limpie la cache del navegador e inténtelo de nuevo. Si el problema persiste, póngase en contacto con el administrador del sitio web.",g&&Muse.assets.outOfDate.length&&(f+="\nOut of date: "+Muse.assets.outOfDate.join(",")),g&&Muse.assets.required.length&&(f+="\nMissing: "+Muse.assets.required.join(",")),alert(f)};location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi)?setTimeout(function(){g(!0)},5E3):g()}};
-var muse_init=function(){require.config({baseUrl:"../../main/"});require(["jquery","museutils","whatinput","webpro","jquery.musemenu","musewpdisclosure","jquery.watch"],function(d){var $ = d;$(document).ready(function(){try{
+var muse_init=function(){require.config({baseUrl:"../main/"});require(["jquery","museutils","whatinput","webpro","jquery.musemenu","musewpdisclosure","jquery.watch"],function(d){var $ = d;$(document).ready(function(){try{
 window.Muse.assets.check($);/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.fullPage('#page');/* 100% height page */
-Muse.Utils.initWidget('#widgetu2350', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:true}); });/* #widgetu2350 */
+Muse.Utils.initWidget('#widgetu2350', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'blur',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:false}); });/* #widgetu2350 */
 Muse.Utils.initWidget('.MenuBar', ['#bp_infinity'], function(elem) { return $(elem).museMenu(); });/* unifiedNavBar */
 Muse.Utils.initWidget('#accordionu3503', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Accordion(elem, {canCloseAll:false,defaultIndex:0}); });/* #accordionu3503 */
 Muse.Utils.showWidgetsWhenReady();/* body */
@@ -442,6 +446,23 @@ $(window).load(function(){
                     <script>
                         var _0xa935=[".breakpoint","length","id","attr","<div class=\"mg-absolute-muse-menu-hamburger-","\"></div>","body","active","hasClass","parent","#"," .hamburger","prepend","each","breakpoint","getElementsByClassName","target","contains","classList","show",".mg-absolute-muse-menu-hamburger-","hide","forEach","observe","<div class=\"mg-absolute-muse-menu-hamburger\"></div>",".hamburger","ready"];$(document)[_0xa935[26]](function(){var _0x13bfx1=$(_0xa935[0]);if(_0x13bfx1[_0xa935[1]]){_0x13bfx1[_0xa935[13]](function(){var _0x13bfx2=$(this);var _0x13bfx3=_0x13bfx2[_0xa935[3]](_0xa935[2]);var _0x13bfx4=$(_0xa935[4]+ _0x13bfx3+ _0xa935[5]);var _0x13bfx5=$(_0xa935[6]);if(_0x13bfx2[_0xa935[8]](_0xa935[7])){var _0x13bfx6=$(_0xa935[10]+ _0x13bfx3+ _0xa935[11])[_0xa935[9]]();mg_absolute_muse_menu__set_hamburger(_0x13bfx4,_0x13bfx6,true)}else {_0x13bfx5[_0xa935[12]](_0x13bfx4)}});var _0x13bfx7=document[_0xa935[15]](_0xa935[14]);var _0x13bfx8= new MutationObserver(function(_0x13bfx9){_0x13bfx9[_0xa935[22]](function(_0x13bfxa){var _0x13bfx3=_0x13bfxa[_0xa935[16]][_0xa935[2]];if(_0x13bfxa[_0xa935[16]][_0xa935[18]][_0xa935[17]](_0xa935[7])){var _0x13bfx4=$(_0xa935[20]+ _0x13bfx3)[_0xa935[19]]();var _0x13bfxb=$(_0xa935[10]+ _0x13bfx3+ _0xa935[11])[_0xa935[9]]();mg_absolute_muse_menu__set_hamburger(_0x13bfx4,_0x13bfxb,true)}else {$(_0xa935[20]+ _0x13bfx3)[_0xa935[21]]()}})});var _0x13bfxc={attributes:true};for(var _0x13bfxd=0;_0x13bfxd< _0x13bfx7[_0xa935[1]];_0x13bfxd++){_0x13bfx8[_0xa935[23]](_0x13bfx7[_0x13bfxd],_0x13bfxc)}}else {var _0x13bfx4=$(_0xa935[24]);var _0x13bfxe=$(_0xa935[25])[_0xa935[9]]();mg_absolute_muse_menu__set_hamburger(_0x13bfx4,_0x13bfxe,false)}})
                     </script>
-                    
+            <script type="text/javascript" src="{{ url('main/assets/jquery-ui/jquery-ui.js') }}"></script>
+            <script type="text/javascript">
+            $(function(){
+              $('input[name="nacimiento"]').datepicker()
+
+              $('#buttonu6752').on('click',function(){
+                $('#widgetu2350').attr('action','{{ url("registro/cliente") }}')
+                $('#widgetu2350').submit()
+              })
+
+              $('#buttonu2320').on('click',function(){
+                $('#widgetu2350').attr('action','{{ url("registro/miembro") }}')
+                $('#widgetu2350').submit()
+              })
+
+            })
+
+            </script>
    </body>
 </html>

@@ -14,12 +14,12 @@ class CreatePrevUsersTable extends Migration
     {
         Schema::create('prev_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('nombre');
             $table->string('email')->unique();
-            $table->string('city');
-            $table->string('place');
-            $table->string('phone');
-            $table->string('description');
+            $table->string('ciudad');
+            $table->string('localidad');
+            $table->string('telefono');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

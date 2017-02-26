@@ -26,15 +26,23 @@
 	  return view('main.registrate');
 	});
 
-	Route::get('registro/form',function(){
+	/*Route::get('registro/form',function(){
 	  return view('main.formulario-de-registro');
-	});
+	});*/
 
 	Route::post('registro/form','ClientesController@store');
 
-	Route::get('registro/cliente',function(){
+	Route::post('registro/cliente','ClientesController@storeCliente');
+
+	/*Route::get('registro/cliente',function(){
+		return view('main.formulario-mascota');
+	});*/
+
+	Route::post('registro/mascota','MascotasController@store');
+
+	/*Route::get('registro/cliente',function(){
 	  return view('main.cliente');
-	});
+	});*/
 
 	Route::get('registro/cuidador',function(){
 	  return view('main.cuidador');

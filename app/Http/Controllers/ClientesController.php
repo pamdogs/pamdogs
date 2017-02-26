@@ -44,31 +44,38 @@ class ClientesController extends Controller
             'email' => 'required|max:150',
         ]);
 
-        //$user = new User();
         $user = User::firstOrCreate(['email' => $request->email]);
 
-        //dd($user);
-       /* if(Auth::check())
-        {
-            print "Si";
-        }
-        else
-        {
-            print Auth::check();
-        }*/
-
         Auth::loginUsingId($user->id);
-        return redirect('/');
-        //dd(Auth::User());
+        return view('main.formulario-de-registro');
 
-       /* if(Auth::check())
-        {
-            print "Si";
-        }
-        else
-        {
-            print "No";
-        }*/
+    }
+
+    public function storeCliente(Request $request)
+    {
+        //  (2do paso de registro)
+        $this->validate($request, [
+            'nombre' => 'required|max:255',
+            'apellido' => 'required|max:255',
+            'nacimiento' => 'required|max:255',
+            'telefono' => 'required|max:255',
+            'dni_tipo' => 'required|max:255',
+            'dni_nro' => 'required|max:255',
+        ]);
+
+        $user = User::where(['email' => Auth::user()->email])
+                ->update([
+                    'nombre' => $request->nombre,
+                    'apellido' => $request->apellido,
+                    'nacimiento' => $request->nacimiento,
+                    'telefono' => $request->telefono,
+                    'dni_tipo' => $request->dni_tipo,
+                    'dni_numero' => $request->dni_nro
+                    ]);
+
+        //Auth::loginUsingId($user->id);
+        return view('main.formulario-mascota');
+
     }
 
     /**

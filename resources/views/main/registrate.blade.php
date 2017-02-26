@@ -232,7 +232,7 @@ body{
   
 
 <div class="MultiLoader_Container">
-	<img id="my_image" class="MultiLoader_image_rotate pulseit" src="{{ url('main/assets/sin-t%c3%adtulo-1.jpg') }}" alt="Loader">
+	<img id="my_image" class="MultiLoader_image_rotate pulseit" src="{{ url('main/assets/sin-titulo-1.jpg') }}" alt="Loader">
 </div>
 
   
@@ -276,11 +276,11 @@ body{
       </div>
      </button>
     </form>
-    <div class="Button shadow museBGSize rounded-corners clearfix grpelem" id="buttonu1312"><!-- container box -->
+    <a class="Button shadow museBGSize rounded-corners clearfix grpelem" id="buttonu1312" href="dev/facebook"><!-- container box -->
      <div class="clearfix grpelem" id="u1313-4"><!-- content -->
       <p>Registrarte con Facebook</p>
      </div>
-    </div>
+    </a>
     <div class="rounded-corners grpelem" id="u1340"><!-- simple frame --></div>
     <div class="rounded-corners grpelem" id="u1343"><!-- simple frame --></div>
     <div class="clearfix grpelem" id="u1347-6"><!-- content -->

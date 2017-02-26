@@ -223,7 +223,7 @@ body{
   
 
 <div class="MultiLoader_Container">
-	<img id="my_image" class="MultiLoader_image_rotate pulseit" src="{{ url('main/assets/sin-t%c3%adtulo-1.jpg') }}" alt="Loader">
+	<img id="my_image" class="MultiLoader_image_rotate pulseit" src="{{ url('main/assets/sin-titulo-1.jpg') }}" alt="Loader">
 </div>
 
   
@@ -260,9 +260,10 @@ body{
     <div class="clearfix grpelem" id="u2260-4"><!-- content -->
      <p>Datos personales</p>
     </div>
-    <form class="form-grp clearfix grpelem" id="widgetu2512" method="post" enctype="multipart/form-data" action="{{ url('main/scripts/form-u2512.php') }}"><!-- none box -->
-     <div class="fld-grp clearfix grpelem" id="widgetu2529" data-required="true" data-type="email"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2531-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu2529_input" name="Email" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu2529_prompt" for="widgetu2529_input"><span class="actAsPara">Nombre de la mascota.</span></label></span>
+    <form class="form-grp clearfix grpelem" id="widgetu2512" method="post" enctype="multipart/form-data" action="{{ url('registro/mascota') }}"><!-- none box -->
+    {{ csrf_field() }}
+     <div class="fld-grp clearfix grpelem" id="widgetu2529" data-required="true" data-type="text"><!-- none box -->
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2531-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu2529_input" name="nombre" tabindex="1" "/><label class="wrapped-input fld-prompt" id="widgetu2529_prompt" for="widgetu2529_input"><span class="actAsPara">Nombre de la mascota.</span></label></span>
      </div>
      <div class="clearfix grpelem" id="u2514-4"><!-- content -->
       <p>Enviando formulario...</p>
@@ -273,57 +274,57 @@ body{
      <div class="clearfix grpelem" id="u2513-4"><!-- content -->
       <p>Formulario recibido.</p>
      </div>
-     <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u2520-4" type="submit" value="&nbsp;Encontrar cuidadores" tabindex="22"><!-- content -->
+     <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u2520-4" value="Encontrar cuidadores" tabindex="22"><!-- content -->
       <div style="margin-top:-13px;height:13px;">
        <p>&nbsp;Encontrar cuidadores</p>
       </div>
      </button>
      <div class="fld-grp clearfix grpelem" id="widgetu2516" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2517-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu2516_input" name="custom_U2516" tabindex="4"/><label class="wrapped-input fld-prompt" id="widgetu2516_prompt" for="widgetu2516_input"><span class="actAsPara">Raza de la mascota.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2517-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu2516_input" name="raza" tabindex="4" "/><label class="wrapped-input fld-prompt" id="widgetu2516_prompt" for="widgetu2516_input"><span class="actAsPara">Raza de la mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2525" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2527-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu2525_input" name="custom_U2525" tabindex="6"/><label class="wrapped-input fld-prompt" id="widgetu2525_prompt" for="widgetu2525_input"><span class="actAsPara">Tipo de comida.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2527-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu2525_input" name="comida_tipo" tabindex="6" "/><label class="wrapped-input fld-prompt" id="widgetu2525_prompt" for="widgetu2525_input"><span class="actAsPara">Tipo de comida.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2533" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2536-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2533_input" name="custom_U2533" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu2533_prompt" for="widgetu2533_input"><span class="actAsPara">DD/MM/AA</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2536-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2533_input" name="nacimiento" tabindex="2" "/><label class="wrapped-input fld-prompt" id="widgetu2533_prompt" for="widgetu2533_input"><span class="actAsPara">DD/MM/AA</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2521" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2524-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2521_input" name="custom_U2521" tabindex="8"/><label class="wrapped-input fld-prompt" id="widgetu2521_prompt" for="widgetu2521_input"><span class="actAsPara">Horario de paseo.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2524-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2521_input" name="hora_paseo" tabindex="8" "/><label class="wrapped-input fld-prompt" id="widgetu2521_prompt" for="widgetu2521_input"><span class="actAsPara">Horario de paseo.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2537" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2540-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2537_input" name="custom_U2537" tabindex="10"/><label class="wrapped-input fld-prompt" id="widgetu2537_prompt" for="widgetu2537_input"><span class="actAsPara">Describa donde suele dormir su mascota.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2540-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2537_input" name="duerme" tabindex="10" "/><label class="wrapped-input fld-prompt" id="widgetu2537_prompt" for="widgetu2537_input"><span class="actAsPara">Describa donde suele dormir su mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2708" data-required="true" data-type="radiogroup"><!-- none box -->
       <div class="fld-grp clearfix grpelem" id="widgetu2719" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2721-4" for="widgetu2719_input"><!-- content --><span class="actAsPara">Masculino</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2725"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="Masculino" spellcheck="false" id="widgetu2719_input" name="custom_U2708" tabindex="3"/>
+        <input class="wrapped-input" type="radio" value="Macho" spellcheck="false" id="widgetu2719_input" name="genero" tabindex="3"/>
         <label for="widgetu2719_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu2772" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2774-4" for="widgetu2772_input"><!-- content --><span class="actAsPara">Femenino</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2773"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="Femenino" spellcheck="false" id="widgetu2772_input" name="custom_U2708" tabindex="3"/>
+        <input class="wrapped-input" type="radio" value="Hembra" spellcheck="false" id="widgetu2772_input" name="genero" tabindex="3"/>
         <label for="widgetu2772_input"></label>
        </div>
       </div>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2801" data-required="true"><!-- none box -->
-      <span class="fld-textarea actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2802-4"><!-- content --><textarea class="wrapped-input" id="widgetu2801_input" name="custom_U2801" tabindex="5"></textarea><label class="wrapped-input fld-prompt" id="widgetu2801_prompt" for="widgetu2801_input"><span class="actAsPara">Describa la personalidad de su mascota.</span></label></span>
+      <span class="fld-textarea actAsDiv rounded-corners transition shadow clearfix grpelem" id="u2802-4"><!-- content --><textarea class="wrapped-input" id="widgetu2801_input" name="personalidad" tabindex="5">{{ Auth::user()->personalidad }}</textarea><label class="wrapped-input fld-prompt" id="widgetu2801_prompt" for="widgetu2801_input"><span class="actAsPara">Describa la personalidad de su mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2828" data-required="true" data-type="radiogroup"><!-- none box -->
       <div class="fld-grp clearfix grpelem" id="widgetu2849" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2851-4" for="widgetu2849_input"><!-- content --><span class="actAsPara">si</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2850"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu2849_input" name="custom_U2828" tabindex="13"/>
+        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu2849_input" name="salta" tabindex="13"/>
         <label for="widgetu2849_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu2858" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2860-4" for="widgetu2858_input"><!-- content --><span class="actAsPara">no</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2859"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu2858_input" name="custom_U2828" tabindex="13"/>
+        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu2858_input" name="salta" tabindex="13"/>
         <label for="widgetu2858_input"></label>
        </div>
       </div>
@@ -332,14 +333,14 @@ body{
       <div class="fld-grp clearfix grpelem" id="widgetu2909" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2911-4" for="widgetu2909_input"><!-- content --><span class="actAsPara">si</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2910"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu2909_input" name="custom_U2888" tabindex="14"/>
+        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu2909_input" name="celo" tabindex="14"/>
         <label for="widgetu2909_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu2918" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2919-4" for="widgetu2918_input"><!-- content --><span class="actAsPara">no</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2920"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu2918_input" name="custom_U2888" tabindex="14"/>
+        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu2918_input" name="celo" tabindex="14"/>
         <label for="widgetu2918_input"></label>
        </div>
       </div>
@@ -348,14 +349,14 @@ body{
       <div class="fld-grp clearfix grpelem" id="widgetu2948" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2949-4" for="widgetu2948_input"><!-- content --><span class="actAsPara">si</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2950"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu2948_input" name="custom_U2927" tabindex="11"/>
+        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu2948_input" name="con_perros" tabindex="11"/>
         <label for="widgetu2948_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu2957" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2959-4" for="widgetu2957_input"><!-- content --><span class="actAsPara">no</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2958"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu2957_input" name="custom_U2927" tabindex="11"/>
+        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu2957_input" name="con_perros" tabindex="11"/>
         <label for="widgetu2957_input"></label>
        </div>
       </div>
@@ -364,65 +365,65 @@ body{
       <div class="fld-grp clearfix grpelem" id="widgetu2987" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2988-4" for="widgetu2987_input"><!-- content --><span class="actAsPara">si</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2989"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu2987_input" name="custom_U2966" tabindex="12"/>
+        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu2987_input" name="con_chicos" tabindex="12"/>
         <label for="widgetu2987_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu2996" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u2998-4" for="widgetu2996_input"><!-- content --><span class="actAsPara">no</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u2997"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu2996_input" name="custom_U2966" tabindex="12"/>
+        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu2996_input" name="con_chicos" tabindex="12"/>
         <label for="widgetu2996_input"></label>
        </div>
       </div>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu6260" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6261-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6260_input" name="custom_U6260" tabindex="7"/><label class="wrapped-input fld-prompt" id="widgetu6260_prompt" for="widgetu6260_input"><span class="actAsPara">Horario de comida.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6261-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6260_input" name="comida_hora" tabindex="7"/><label class="wrapped-input fld-prompt" id="widgetu6260_prompt" for="widgetu6260_input"><span class="actAsPara">Horario de comida.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu6281" data-required="true"><!-- none box -->
-      <span class="fld-textarea actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6282-4"><!-- content --><textarea class="wrapped-input" id="widgetu6281_input" name="custom_U6281" tabindex="9"></textarea><label class="wrapped-input fld-prompt" id="widgetu6281_prompt" for="widgetu6281_input"><span class="actAsPara">Describa la rutina para las necesidades de su mascota.</span></label></span>
+      <span class="fld-textarea actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6282-4"><!-- content --><textarea class="wrapped-input" id="widgetu6281_input" name="rutina" tabindex="9"></textarea><label class="wrapped-input fld-prompt" id="widgetu6281_prompt" for="widgetu6281_input"><span class="actAsPara">Describa la rutina para las necesidades de su mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu6359" data-required="false" data-type="checkbox"><!-- none box -->
       <label class="fld-label actAsDiv clearfix grpelem" id="u6362-4" for="widgetu6359_input"><!-- content --><span class="actAsPara">Vacunas actualizadas.</span></label>
       <div class="fld-checkbox rounded-corners grpelem" id="u6372"><!-- simple frame -->
-       <input class="wrapped-input" type="checkbox" value="1" id="widgetu6359_input" name="custom_U6359" tabindex="15"/>
+       <input class="wrapped-input" type="checkbox" value="1" id="widgetu6359_input" name="vacuna" tabindex="15"/>
        <label for="widgetu6359_input"></label>
       </div>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu6448" data-required="false" data-type="checkbox"><!-- none box -->
       <label class="fld-label actAsDiv clearfix grpelem" id="u6450-4" for="widgetu6448_input"><!-- content --><span class="actAsPara">Esterilizado.</span></label>
       <div class="fld-checkbox rounded-corners grpelem" id="u6451"><!-- simple frame -->
-       <input class="wrapped-input" type="checkbox" value="1" id="widgetu6448_input" name="custom_U6448" tabindex="16"/>
+       <input class="wrapped-input" type="checkbox" value="1" id="widgetu6448_input" name="esterilizado" tabindex="16"/>
        <label for="widgetu6448_input"></label>
       </div>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu6464" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6465-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6464_input" name="custom_U6464" tabindex="17"/><label class="wrapped-input fld-prompt" id="widgetu6464_prompt" for="widgetu6464_input"><span class="actAsPara">Nombre del veterinario de su mascota.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6465-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6464_input" name="vet_nombre" tabindex="17"/><label class="wrapped-input fld-prompt" id="widgetu6464_prompt" for="widgetu6464_input"><span class="actAsPara">Nombre del veterinario de su mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu6480" data-required="false" data-type="radiogroup"><!-- none box -->
       <div class="fld-grp clearfix grpelem" id="widgetu6510" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u6512-4" for="widgetu6510_input"><!-- content --><span class="actAsPara">si</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u6511"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu6510_input" name="custom_U6480" tabindex="20"/>
+        <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu6510_input" name="seguro" tabindex="20"/>
         <label for="widgetu6510_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu6522" data-required="false" data-type="radio"><!-- none box -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u6524-4" for="widgetu6522_input"><!-- content --><span class="actAsPara">no</span></label>
        <div class="fld-radiobutton rounded-corners grpelem" id="u6523"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu6522_input" name="custom_U6480" tabindex="20"/>
+        <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu6522_input" name="seguro" tabindex="20"/>
         <label for="widgetu6522_input"></label>
        </div>
       </div>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu6534" data-required="false"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6536-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6534_input" name="custom_U6534" tabindex="18"/><label class="wrapped-input fld-prompt" id="widgetu6534_prompt" for="widgetu6534_input"><span class="actAsPara">Numero telefónico del veterinario de su mascota.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6536-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6534_input" name="vet_telefono" tabindex="18"/><label class="wrapped-input fld-prompt" id="widgetu6534_prompt" for="widgetu6534_input"><span class="actAsPara">Numero telefónico del veterinario de su mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu6550" data-required="false"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6551-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6550_input" name="custom_U6550" tabindex="19"/><label class="wrapped-input fld-prompt" id="widgetu6550_prompt" for="widgetu6550_input"><span class="actAsPara">Dirección telefónico del veterinario de su mascota.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6551-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6550_input" name="vet_direccion" tabindex="19"/><label class="wrapped-input fld-prompt" id="widgetu6550_prompt" for="widgetu6550_input"><span class="actAsPara">Dirección telefónico del veterinario de su mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu6566" data-required="false"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6568-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6566_input" name="custom_U6566" tabindex="21"/><label class="wrapped-input fld-prompt" id="widgetu6566_prompt" for="widgetu6566_input"><span class="actAsPara">Nombre de la empresa aseguradora de su mascota.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u6568-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu6566_input" name="compania_seguro" tabindex="21"/><label class="wrapped-input fld-prompt" id="widgetu6566_prompt" for="widgetu6566_input"><span class="actAsPara">Nombre de la empresa aseguradora de su mascota.</span></label></span>
      </div>
     </form>
     <div class="clearfix grpelem" id="u2682-4"><!-- content -->
@@ -522,18 +523,59 @@ body{
 16);return 0},g=function(g){for(var f=document.getElementsByTagName("link"),h=0;h<f.length;h++)if("text/css"==f[h].type){var i=(f[h].href||"").match(/\/?css\/([\w\-]+\.css)\?crc=(\d+)/);if(!i||!i[1]||!i[2])break;b[i[1]]=i[2]}f=document.createElement("div");f.className="version";f.style.cssText="display:none; width:1px; height:1px;";document.getElementsByTagName("body")[0].appendChild(f);for(h=0;h<Muse.assets.required.length;){var i=Muse.assets.required[h],l=i.match(/([\w\-\.]+)\.(\w+)$/),k=l&&l[1]?
 l[1]:null,l=l&&l[2]?l[2]:null;switch(l.toLowerCase()){case "css":k=k.replace(/\W/gi,"_").replace(/^([^a-z])/gi,"_$1");f.className+=" "+k;k=a(c(f,"color"));l=a(c(f,"backgroundColor"));k!=0||l!=0?(Muse.assets.required.splice(h,1),"undefined"!=typeof b[i]&&(k!=b[i]>>>24||l!=(b[i]&16777215))&&Muse.assets.outOfDate.push(i)):h++;f.className="version";break;case "js":h++;break;default:throw Error("Unsupported file type: "+l);}}d?d().jquery!="1.8.3"&&Muse.assets.outOfDate.push("jquery-1.8.3.min.js"):Muse.assets.required.push("jquery-1.8.3.min.js");
 f.parentNode.removeChild(f);if(Muse.assets.outOfDate.length||Muse.assets.required.length)f="Puede que determinados archivos falten en el servidor o sean incorrectos. Limpie la cache del navegador e inténtelo de nuevo. Si el problema persiste, póngase en contacto con el administrador del sitio web.",g&&Muse.assets.outOfDate.length&&(f+="\nOut of date: "+Muse.assets.outOfDate.join(",")),g&&Muse.assets.required.length&&(f+="\nMissing: "+Muse.assets.required.join(",")),alert(f)};location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi)?setTimeout(function(){g(!0)},5E3):g()}};
-var muse_init=function(){require.config({baseUrl:"main/"});require(["jquery","museutils","whatinput","webpro","jquery.musemenu","musewpdisclosure","jquery.watch"],function(d){var $ = d;$(document).ready(function(){try{
+var muse_init=function(){require.config({baseUrl:"../main/"});require(["jquery","museutils","whatinput","webpro","jquery.musemenu","musewpdisclosure","jquery.watch"],function(d){var $ = d;$(document).ready(function(){try{
 window.Muse.assets.check($);/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.fullPage('#page');/* 100% height page */
-Muse.Utils.initWidget('#widgetu2512', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:true}); });/* #widgetu2512 */
+Muse.Utils.initWidget('#widgetu2512', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'blur',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:false}); });/* #widgetu2512 */
 Muse.Utils.initWidget('.MenuBar', ['#bp_infinity'], function(elem) { return $(elem).museMenu(); });/* unifiedNavBar */
 Muse.Utils.initWidget('#accordionu3503', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Accordion(elem, {canCloseAll:false,defaultIndex:0}); });/* #accordionu3503 */
 Muse.Utils.showWidgetsWhenReady();/* body */
 Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
-}catch(b){if(b&&"function"==typeof b.notify?b.notify():Muse.Assert.fail("Error calling selector function: "+b),false)throw b;}})})};
+}catch(b){/*if(b&&"function"==typeof b.notify?b.notify():Muse.Assert.fail("Error calling selector function: "+b),false)throw b;*/}})})};
 
+
+/*$(function(){
+  $('#u2520-4').on('click',function(e){
+    e.preventDefault()
+    /*var responseBox = $('#responses')
+    responseBox.html('').removeClass('success error')
+    $.post($('#widgetu2512').attr('action'),$('#widgetu2512').serialize(),function(data){
+
+    }).done(function(data){
+      
+      /*$.each(data,function(index,value){
+        alert(index+" : "+value)
+      })
+      
+      //responseBox.addClass(data.status).html('<p>'+data.msg+'</p>')
+                
+    }).fail(function(jqXHR, textStatus, errorThrown){
+      
+      //alert(jqXHR['status'])
+      //alert(JSON.stringify(jqXHR))
+      /*$.each(jqXHR,function(index,value){
+        alert(index+" : "+value)
+      })
+      //alert(jqXHR+','+textStatus+','+errorThrown)
+
+      //responseBox.addClass('error')
+
+      switch(jqXHR['status']){     
+        case 422:
+          var errors = $.parseJSON(jqXHR['responseText'])
+
+          $.each(errors,function(index,value,c){
+            alert('<p>'+value+'</p>')
+            
+          })
+          break;
+      }
+
+    })
+  })
+})*/
 </script>
   <!-- RequireJS script -->
   <script src="{{ url('main/scripts/require.js?crc=244322403') }}" type="text/javascript" async data-main="{{ url('main/scripts/museconfig.js?crc=36584860') }}" onload="if (requirejs) requirejs.onError = function(requireType, requireModule) { if (requireType && requireType.toString && requireType.toString().indexOf && 0 <= requireType.toString().indexOf('#scripterror')) window.Muse.assets.check(); }" onerror="window.Muse.assets.check();"></script>

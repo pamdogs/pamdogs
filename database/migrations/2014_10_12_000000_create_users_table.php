@@ -14,12 +14,20 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->enum('nivel',['Cliente','Miembro','Administrador'])->default('Cliente');
+            $table->string('nombre');
+            $table->string('apellido');
             $table->string('email')->unique();
+            $table->string('password', 200);
+            $table->date('nacimiento');
+            $table->string('telefono');
+            $table->string('dni_tipo');
+            $table->string('dni_numero');
+            $table->enum('genero',['Femenino','Masculino'])->nullable();
             $table->string('facebook_id')->unique()->nullable();
             $table->string('avatar');
-            $table->string('password', 200);
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
