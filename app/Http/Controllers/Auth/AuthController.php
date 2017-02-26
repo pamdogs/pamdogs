@@ -134,7 +134,7 @@ class AuthController extends Controller
 
         return User::create([
             'nombre' => $facebookUser->name,
-            'email' => $facebookUser->email,
+            'email' => $facebookUser->getEmail(),
             'facebook_id' => $facebookUser->id,
             'avatar' => $facebookUser->avatar
         ]);
