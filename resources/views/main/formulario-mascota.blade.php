@@ -234,7 +234,7 @@ body{
    <div class="browser_width" id="u6785-bw">
     <div id="u6785"><!-- simple frame --></div>
    </div>
-   <a class="nonblock nontext" id="u187" href="{{ url('preview') }}"><!-- simple frame --></a>
+   <a class="nonblock nontext" id="u187" href="{{ url('/') }}"><!-- simple frame --></a>
    <div class="clearfix grpelem" id="pu2252"><!-- group -->
     <div class="grpelem" id="u2252"><!-- simple frame --></div>
     <div class="rgba-background grpelem" id="u2253"><!-- simple frame --></div>
@@ -506,8 +506,48 @@ body{
         
    </div>
    <ul class="AccordionWidget mg-absolute-muse-menu-content clearfix grpelem" id="accordionu3503"><!-- vertical box -->
-    <li class="AccordionPanel clearfix colelem" id="u3504"><!-- vertical box --><div class="AccordionPanelTab clearfix colelem" id="u3505-3"><!-- content --><p>&nbsp;</p></div><div class="AccordionPanelContent clearfix colelem" id="u3506"><!-- group --><nav class="MenuBar clearfix grpelem" id="menuu5963"><!-- vertical box --><div class="MenuItemContainer borderbox clearfix colelem" id="u5971"><!-- horizontal box --><a class="nonblock nontext MenuItem MenuItemWithSubMenu borderbox clearfix grpelem" id="u5974" href="{{ url('preview') }}"><!-- horizontal box --><div class="MenuItemLabel borderbox clearfix grpelem" id="u5977-4"><!-- content --><p>Inicio</p></div></a></div><div class="MenuItemContainer borderbox clearfix colelem" id="u5964"><!-- horizontal box --><a class="nonblock nontext MenuItem MenuItemWithSubMenu borderbox clearfix grpelem" id="u5967" href="{{ url('preview/registro') }}"><!-- horizontal box --><div class="MenuItemLabel borderbox clearfix grpelem" id="u5969-4"><!-- content --><p>Regístrate</p></div></a></div><div class="MenuItemContainer borderbox clearfix colelem" id="u6068"><!-- horizontal box --><a class="nonblock nontext MenuItem MenuItemWithSubMenu borderbox clearfix grpelem" id="u6071" href="{{ url('preview/login') }}"><!-- horizontal box --><div class="MenuItemLabel borderbox clearfix grpelem" id="u6074-4"><!-- content --><p>Iniciar sesión</p></div></a></div><div class="MenuItemContainer borderbox clearfix colelem" id="u6125"><!-- horizontal box --><a class="nonblock nontext MenuItem MenuItemWithSubMenu borderbox clearfix grpelem" id="u6126" href="{{ url('preview/contacto') }}"><!-- horizontal box --><div class="MenuItemLabel borderbox clearfix grpelem" id="u6127-4"><!-- content --><p>Contácto</p></div></a></div></nav></div></li>
-   </ul>
+      <li class="AccordionPanel clearfix colelem" id="u3504"><!-- vertical box -->
+        <div class="AccordionPanelTab clearfix colelem" id="u3505-3"><!-- content -->
+          <p>&nbsp;</p>
+        </div>
+        <div class="AccordionPanelContent clearfix colelem" id="u3506"><!-- group -->
+         <nav class="MenuBar clearfix grpelem" id="menuu5963"><!-- vertical box -->
+          <div class="MenuItemContainer borderbox clearfix colelem" id="u5971"><!-- horizontal box -->
+           <a class="nonblock nontext MenuItem MenuItemWithSubMenu borderbox clearfix grpelem" id="u5974" href="{{ url('/') }}"><!-- horizontal box -->
+            <div class="MenuItemLabel borderbox clearfix grpelem" id="u5977-4"><!-- content -->
+             <p>Inicio</p>
+            </div>
+           </a>
+          </div>
+          <div class="MenuItemContainer borderbox clearfix colelem" id="u5964"><!-- horizontal box -->
+           <a class="nonblock nontext MenuItem MenuItemWithSubMenu MuseMenuActive borderbox clearfix grpelem" id="u5967" href="{{ url('registro') }}"><!-- horizontal box -->
+            <div class="MenuItemLabel borderbox clearfix grpelem" id="u5969-4"><!-- content -->
+             <p>Regístrate</p>
+            </div>
+           </a>
+          </div>
+          <div class="MenuItemContainer borderbox clearfix colelem" id="u6068"><!-- horizontal box -->
+           <a class="nonblock nontext MenuItem MenuItemWithSubMenu borderbox clearfix grpelem" id="u6071" href="{{ Auth::check() ? url('logout') : url('login') }}"><!-- horizontal box -->
+            <div class="MenuItemLabel borderbox clearfix grpelem" id="u6074-4"><!-- content -->
+             @if(Auth::check())
+              <p>Cerrar sesión</p>
+             @else
+              <p>Iniciar sesión</p>
+             @endif
+            </div>
+           </a>
+          </div>
+          <div class="MenuItemContainer borderbox clearfix colelem" id="u6125"><!-- horizontal box -->
+           <a class="nonblock nontext MenuItem MenuItemWithSubMenu borderbox clearfix grpelem" id="u6126" href="{{ url('contacto') }}"><!-- horizontal box -->
+            <div class="MenuItemLabel borderbox clearfix grpelem" id="u6127-4"><!-- content -->
+             <p>Contácto</p>
+            </div>
+           </a>
+          </div>
+         </nav>
+        </div>
+       </li>
+     </ul>
    <div class="verticalspacer" data-offset-top="3238" data-content-above-spacer="3238" data-content-below-spacer="324"></div>
   </div>
   <!-- JS includes -->

@@ -14,8 +14,9 @@ document.documentElement.className = document.documentElement.className.replace(
 // Check that all required assets are uploaded and up-to-date
 if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "jquery.musepolyfill.bgsize.js", "webpro.js", "musewpslideshow.js", "jquery.museoverlay.js", "touchswipe.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "index.css"], "outOfDate":[]};
 </script>
-  
+  <link rel="shortcut icon" href="{{ url('main/images/favicon.ico?crc=69713473') }}"/>
   <title>Inicio</title>
+
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{ url('main/css/site_global.css?crc=323482740') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ url('main/css/master_a-p_g_-maestra.css?crc=3917558176') }}"/>
