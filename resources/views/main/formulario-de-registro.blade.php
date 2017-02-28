@@ -497,7 +497,7 @@ $(window).load(function(){
               })
 
               $('#buttonu2320').on('click',function(){
-                $('#widgetu2350').attr('action','{{ url("registro/miembro") }}')
+                $('#widgetu2350').attr('action','{{ url("registro/cuidador2") }}')
                 $('#widgetu2350').submit()
               })
 
