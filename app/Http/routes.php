@@ -52,6 +52,10 @@
 	  return view('main.cuidador2');
 	});
 
+	Route::post('registro/cuidador2',function(){
+	  return view('main.cuidador2');
+	});
+
 	/*Route::get('login',function(){
 	  return view('main.iniciar-sesion');
 	});*/
