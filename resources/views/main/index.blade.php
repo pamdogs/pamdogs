@@ -618,7 +618,7 @@ $(window).load(function(){
 });
 </script>
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDWBFZiDcF4U80G-iQRraEvhetVcTBlxYE&libraries=places"></script>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDWBFZiDcF4U80G-iQRraEvhetVcTBlxYE&libraries=places"></script>
 <script type="text/javascript">
     google.maps.event.addDomListener(window, 'load', function () {
         var places = new google.maps.places.Autocomplete(document.getElementById('widgetu969_input'));
