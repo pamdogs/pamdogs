@@ -11,40 +11,78 @@
 |
 */
 
-/*Route::get('/',['middleware' => 'auth.basic', function () {
-    return redirect('preview');
-}]);*/
-/*Route::get('/', function () {
-    return redirect('preview');
-});*/
+/* TEST ROUTES */
 
-	Route::get('/',function(){
-	  return view('main.index');
+Route::get('carbon', 'CarbonController@index');
+
+Route::get('gmaps', function(){
+	return view('gmapsTest');
+});
+
+/* PRODUCTION ROUTES */
+
+// Web Previa
+Route::resource('previa','PrevUsersController', ['only' => ['index','store']]);
+Route::get('previa/lista', ['middleware' => 'auth.basic','uses' => 'PrevUsersController@listar']);
+
+// Authentication routes...
+Route::get('login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
+Route::post('login', 'Auth\AuthController@postLogin');
+Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
+
+// Registration routes...
+Route::get('register', 'Auth\AuthController@getRegister');
+Route::post('register', 'Auth\AuthController@postRegister');
+
+// Facebook Authentication
+Route::get('dev/facebook', ['as' => 'facebook', 'uses' => 'Auth\AuthController@redirectToProvider']);
+Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
+
+Route::get('/', ['as' => 'home', function(){
+  return view('main.index');
+}]);
+
+Route::group(['prefix' => 'registro', 'as' => 'registro.'], function()
+{
+	Route::get('/', ['as' => 'index', function()
+	{
+		return view('main.registrate');
+	}]);
+
+	Route::post('cliente', ['as' => 'cliente', 'uses' => 'ClientesController@store']);
+
+	Route::group(['middleware' => 'auth'], function()
+	{
+		Route::get('cliente', ['as' => 'cliente', function()
+		{
+		  	return view('main.formulario-de-registro');
+		}]);
+
+		Route::post('cliente/datos',  ['as' => 'cliente.datos', 'uses' => 'ClientesController@storeCliente']);
+
+		Route::post('mascota', ['as' => 'mascota', 'uses' => 'MascotasController@store']);
+
 	});
 
-	Route::get('registro',function(){
-	  return view('main.registrate');
-	});
+	Route::get('cuidador', ['as' => 'cuidador', function(){
+	  return view('main.formulario-del-cuidador');
+	}]);
+});
 
-	Route::get('registro/form',function(){
-	  return view('main.formulario-de-registro');
-	});
+Route::get('contacto', ['as' => 'contacto', function(){
+  return view('main.contacto');
+}]);
 
-	Route::post('registro/form','ClientesController@store');
+Route::get('perfil', ['as' => 'perfil', function(){
+	return view('main.perfil');
+}]);
 
-	Route::post('registro/cliente','ClientesController@storeCliente');
 
-	/*Route::get('registro/cliente',function(){
-		return view('main.formulario-mascota');
-	});*/
 
-	Route::post('registro/mascota','MascotasController@store');
+/* OTHERS */
 
-	/*Route::get('registro/cliente',function(){
-	  return view('main.cliente');
-	});*/
 
-	Route::get('registro/cuidador',function(){
+	/*Route::get('registro/cuidador',function(){
 	  return view('main.cuidador');
 	});
 
@@ -56,39 +94,6 @@
 	  return view('main.cuidador2');
 	});
 
-	/*Route::get('login',function(){
-	  return view('main.iniciar-sesion');
-	});*/
-
 	Route::get('perfil',function(){
 	  return view('main.perfil-del-cuidador');
-	});
-
-	Route::get('contacto',function(){
-	  return view('main.contacto');
-	});
-
-Route::group(['middleware' => 'auth'], function(){
-
-});
-
-	// Authentication routes...
-	Route::get('login', 'Auth\AuthController@getLogin');
-	Route::post('login', 'Auth\AuthController@postLogin');
-	Route::get('logout', 'Auth\AuthController@getLogout');
-
-	// Registration routes...
-	Route::get('register', 'Auth\AuthController@getRegister');
-	Route::post('register', 'Auth\AuthController@postRegister');
-
-Route::resource('previa','PrevUsersController', ['only' => ['index','store']]);
-
-Route::get('previa/lista', ['middleware' => 'auth.basic','uses' => 'PrevUsersController@listar']);
-
-Route::get('dev/facebook','Auth\AuthController@redirectToProvider');
-
-Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
-
-/*Route::get('/', array('as' => '/', 'uses' => function(){
-  return view('welcome');
-}));*/
+	});*/

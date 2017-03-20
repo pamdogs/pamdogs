@@ -1,0 +1,80 @@
+<manifest alg="2" build="2017.0.0.363" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster" exportTarget="other" domain="pamdogs.com" resolutions="1x" timestamp="1485722449803">
+  <folder name="css">
+    <file name="site_global.css" crc="323482740"/>
+    <file name="master_a-p_g_-maestra.css" crc="3917558176" ref="perfil-del-cuidador:regístrate:contácto:formulario-de-registro:cuidador:index:iniciar-sesión:cliente"/>
+    <file name="nomq_preview_master_a-p_g_-maestra.css" crc="3824530138" ref="perfil-del-cuidador:regístrate:contácto:formulario-de-registro:cuidador:index:iniciar-sesión:cliente"/>
+    <file name="perfil-del-cuidador.css" crc="402161303" ref="perfil-del-cuidador"/>
+    <file name="nomq_perfil-del-cuidador.css" crc="430248708" ref="perfil-del-cuidador"/>
+    <file name="iefonts_perfil-del-cuidador.css" crc="132166729" ref="perfil-del-cuidador"/>
+    <file name="reg_strate.css" crc="3807366145" ref="regístrate"/>
+    <file name="iefonts_reg_strate.css" crc="196864711" ref="regístrate"/>
+    <file name="cont_cto.css" crc="4147265688" ref="contácto"/>
+    <file name="nomq_cont_cto.css" crc="4219631662" ref="contácto"/>
+    <file name="iefonts_cont_cto.css" crc="132166729" ref="contácto"/>
+    <file name="formulario-de-registro.css" crc="3941408780" ref="formulario-de-registro"/>
+    <file name="iefonts_formulario-de-registro.css" crc="4121544118" ref="formulario-de-registro"/>
+    <file name="cuidador.css" crc="241794309" ref="cuidador"/>
+    <file name="iefonts_cuidador.css" crc="132166729" ref="cuidador"/>
+    <file name="index.css" crc="205568514" ref="index"/>
+    <file name="iefonts_index.css" crc="439579204" ref="index"/>
+    <file name="iniciar-sesi_n.css" crc="232701687" ref="iniciar-sesión"/>
+    <file name="iefonts_iniciar-sesi_n.css" crc="4129149609" ref="iniciar-sesión"/>
+    <file name="cliente.css" crc="3928524702" ref="cliente"/>
+    <file name="iefonts_cliente.css" crc="249263184" ref="cliente"/>
+  </folder>
+  <folder name="assets">
+    <file name="sin-título-1.jpg" crc="534543095" seo="true" mt="1485678423000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="museutils.js" crc="163421577" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="whatinput.js" crc="86476730" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="museconfig.js" crc="36584860" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="379354253" ref="index:regístrate:iniciar-sesión:contácto"/>
+    <file name="webpro.js" crc="3848665353" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="musewpslideshow.js" crc="4041717617" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="36492500" ref="index"/>
+    <file name="touchswipe.js" crc="404375771" ref="index"/>
+    <file name="form_check.php" crc="158155501" ref="index"/>
+    <file name="form_throttle.php" crc="3992970984" ref="index"/>
+    <file name="form_process.php" crc="4078697226" ref="index"/>
+    <file name="form-u893.php" crc="507440945" ref="index"/>
+    <file name="jquery.musemenu.js" crc="146495465" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="musewpdisclosure.js" crc="4275188064" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="jquery.watch.js" crc="104486786" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="require.js" crc="244322403" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:cuidador:contácto:perfil-del-cuidador"/>
+    <file name="form-u1260.php" crc="14295823" ref="regístrate"/>
+    <file name="form-u1457.php" crc="4269228201" ref="iniciar-sesión"/>
+    <file name="form-u2350.php" crc="423518655" ref="formulario-de-registro"/>
+    <file name="form-u2512.php" crc="4059448057" ref="cliente"/>
+    <file name="jquery.museresponsive.js" crc="4146931122" ref="contácto:perfil-del-cuidador"/>
+  </folder>
+  <folder name="images">
+    <file name="pamdogs_ta3-co-sf.png" crc="418984742" ref="index:contácto"/>
+    <file name="s4qpfun9g5c-andrew-branch.jpg" crc="36939339" seo="true" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index:regístrate:iniciar-sesión:formulario-de-registro:cliente:contácto:perfil-del-cuidador"/>
+    <file name="loading.gif" crc="3815509949" ref="index"/>
+    <file name="click.png" crc="4251137951" seo="true" ref="index"/>
+    <file name="casilla-locacion.jpg" crc="3836058319" ref="index"/>
+    <file name="casilla-calendario.jpg" crc="485960892" ref="index"/>
+    <file name="lupa.png" crc="4173849094" seo="true" ref="index"/>
+    <file name="reservaypaga.png" crc="4027234865" seo="true" ref="index"/>
+    <file name="mascotafeliz.png" crc="3958249015" seo="true" ref="index"/>
+    <file name="f.png" crc="139556812" ref="regístrate:iniciar-sesión"/>
+    <file name="user.png" crc="4023152180" seo="true" ref="formulario-de-registro"/>
+    <file name="user-2.png" crc="3971025629" seo="true" ref="cliente"/>
+    <file name="tools.svg" crc="4079691240" seo="true" ref="contácto"/>
+    <file name="tools_poster_.png" crc="3998178201" ref="contácto"/>
+    <file name="envelope.png" crc="4011890449" ref="contácto"/>
+    <file name="envelope-u13055-fr.png" crc="180788800" ref="contácto"/>
+  </folder>
+  <file name="index.html" crc="24905572" seo="true" mt="1485721704244" redirect="true"/>
+  <file name="regístrate.html" crc="488012127" seo="true" mt="1485706502918" redirect="true"/>
+  <file name="iniciar-sesión.html" crc="258130458" seo="true" mt="1485706502918" redirect="true"/>
+  <file name="formulario-de-registro.html" crc="4294315036" seo="true" mt="1485721237728" redirect="true"/>
+  <file name="cliente.html" crc="3934240157" seo="true" mt="1485706502918" redirect="true"/>
+  <file name="cuidador.html" crc="53668604" seo="true" mt="1485706502918" redirect="true"/>
+  <file name="contácto.html" crc="86127697" seo="true" mt="1485722319541" redirect="true"/>
+  <file name="perfil-del-cuidador.html" crc="4138556170" seo="true" mt="1485706502918" redirect="true"/>
+</manifest>

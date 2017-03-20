@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->enum('nivel',['Cliente','Miembro','Administrador'])->default('Cliente');
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('password', 200);
             $table->date('nacimiento');
             $table->string('telefono');
@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('dni_numero');
             $table->enum('genero',['Femenino','Masculino'])->nullable();
             $table->string('facebook_id')->unique()->nullable();
-            $table->string('avatar');
+            $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

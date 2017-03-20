@@ -112,6 +112,8 @@ return [
         'city'  => 'Ciudad',
         'place'  => 'Localidad',
         'desc'  => 'Descripción',
+        'pass'  => 'Contraseña',
+        'pass_confirm' => 'Confirmar Contraseña',
     ],
 
 ];

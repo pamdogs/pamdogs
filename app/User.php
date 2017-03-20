@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Carbon\Carbon;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -35,7 +36,29 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];   
+    protected $hidden = ['password', 'remember_token'];
+
+    /**
+        Accessors
+    */
+        
+    public function getNacimientoAttribute($value)
+    {
+        return Carbon::parse($value);
+    }
+
+    /**
+        Mutators
+    */
+
+    public function setNacimientoAttribute($value)
+    {
+        $this->attributes['nacimiento'] = Carbon::createFromFormat('d/m/Y',$value)->toDateString();
+    }
+
+    /**
+        Relationships
+    */
 
     public function mascotas()
     {

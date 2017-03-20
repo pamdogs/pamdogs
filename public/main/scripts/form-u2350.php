@@ -32,7 +32,7 @@ $form = array(
 	),
 	'fields' => array(
 		'Email' => array(
-			'order' => 1,
+			'order' => 3,
 			'type' => 'email',
 			'label' => 'Correo electrónico',
 			'required' => true,
@@ -51,7 +51,7 @@ $form = array(
 			)
 		),
 		'custom_U2413' => array(
-			'order' => 4,
+			'order' => 5,
 			'type' => 'string',
 			'label' => 'Teléfono móvil',
 			'required' => true,
@@ -60,7 +60,7 @@ $form = array(
 			)
 		),
 		'custom_U2425' => array(
-			'order' => 3,
+			'order' => 4,
 			'type' => 'string',
 			'label' => 'A medida',
 			'required' => true,
@@ -69,7 +69,7 @@ $form = array(
 			)
 		),
 		'custom_U2470' => array(
-			'order' => 5,
+			'order' => 6,
 			'type' => 'string',
 			'label' => 'A medida',
 			'required' => true,
@@ -78,7 +78,16 @@ $form = array(
 			)
 		),
 		'custom_U2485' => array(
-			'order' => 6,
+			'order' => 7,
+			'type' => 'string',
+			'label' => 'A medida',
+			'required' => true,
+			'errors' => array(
+				'required' => 'El campo \'A medida\' es obligatorio.'
+			)
+		),
+		'custom_U29248' => array(
+			'order' => 1,
 			'type' => 'string',
 			'label' => 'A medida',
 			'required' => true,

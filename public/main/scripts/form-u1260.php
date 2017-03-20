@@ -40,6 +40,24 @@ $form = array(
 				'required' => 'El campo \'Correo electrónico\' es obligatorio.',
 				'format' => 'El campo \'Correo electrónico\' contiene un correo electrónico no válido.'
 			)
+		),
+		'custom_U27757' => array(
+			'order' => 2,
+			'type' => 'string',
+			'label' => 'Nombre',
+			'required' => true,
+			'errors' => array(
+				'required' => 'El campo \'Nombre\' es obligatorio.'
+			)
+		),
+		'custom_U27769' => array(
+			'order' => 3,
+			'type' => 'string',
+			'label' => 'Teléfono móvil',
+			'required' => true,
+			'errors' => array(
+				'required' => 'El campo \'Teléfono móvil\' es obligatorio.'
+			)
 		)
 	)
 );

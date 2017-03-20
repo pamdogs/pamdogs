@@ -8,6 +8,8 @@ use PamDogs\Http\Requests;
 use PamDogs\Http\Controllers\Controller;
 use PamDogs\User;
 use Auth;
+use Carbon\Carbon;
+use Hash;
 
 class ClientesController extends Controller
 {
@@ -41,14 +43,31 @@ class ClientesController extends Controller
     {
         // Guarda E-Mail (1er paso de registro)
         $this->validate($request, [
-            'email' => 'required|max:150',
+            'email' => 'required|email|max:150',
+            'pass'  => 'required|max:200',
+            'pass_confirm' => 'required|same:pass|max:200'
         ]);
 
-        $user = User::firstOrCreate(['email' => $request->email]);
+        $user = User::firstOrNew(['email' => $request->email]);
+        if(!empty($user->facebook_id))
+        {
+            return response()->json(['error' => 'Debe iniciar sesión con Facebook.'], 422);
+        }
+        if(empty($user->password))
+        {
+            $user->password = bcrypt($request->pass);
+            $user->save();
+        }
+        else
+        {
+            if(!Hash::check($request->pass, $user->password))
+            {
+                return response()->json(['error' => 'Usuario registrado previamente, pero las contraseñas no coinciden.'], 422);
+            }
+        }
 
         Auth::loginUsingId($user->id);
-        return view('main.formulario-de-registro');
-
+        //return redirect()->route('registro.cliente');
     }
 
     public function storeCliente(Request $request)
@@ -63,6 +82,8 @@ class ClientesController extends Controller
             'dni_nro' => 'required|max:255',
         ]);
 
+        $request->nacimiento = Carbon::createFromFormat('d/m/Y',$request->nacimiento)->toDateString();
+
         $user = User::where(['email' => Auth::user()->email])
                 ->update([
                     'nombre' => $request->nombre,
@@ -74,7 +95,7 @@ class ClientesController extends Controller
                     ]);
 
         //Auth::loginUsingId($user->id);
-        return view('main.formulario-mascota');
+        //return view('main.formulario-mascota');
 
     }
 
