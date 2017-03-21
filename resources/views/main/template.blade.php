@@ -174,7 +174,7 @@
     </style>  
 
     <link rel="stylesheet" type="text/css" href="{{ url('main/css/sweetalert.css') }}">
-           
+
 @show
 
 @section('script_pace')
@@ -311,7 +311,7 @@
 
     <script type="text/javascript">
     	//Errores de formularios
-    	function takeErrors(jqXHR){
+    	/*function takeErrors(jqXHR){
     		switch(jqXHR['status']){     
     		  case 422:
     		    errors = $.parseJSON(jqXHR['responseText'])
@@ -326,6 +326,6 @@
     		    responseBox = ['Error en el programa (500)']
     		}
     		return responseBox;
-    	}
+    	}*/
     </script>
 @show
