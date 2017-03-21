@@ -224,7 +224,7 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 }catch(b){/*if(b&&"function"==typeof b.notify?b.notify():Muse.Assert.fail("Error calling selector function: "+b),false)throw b;*/}})})};
 
 </script>
-  
+  @yield('scripts_bottom')
   <script type="text/javascript" src="{{ url('main/scripts/jquery-ui/jquery-ui.js') }}"></script>
 
     <script type="text/javascript">
@@ -311,7 +311,7 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
         
       
     </script>
-  	@yield('scripts_bottom')
+  	
 
    </body>
 </html>
