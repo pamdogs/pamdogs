@@ -287,27 +287,28 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             type: "error",
             showConfirmButton: true
           });
+          //Errores de formularios
+          function takeErrors(){
+            switch(jqXHR['status']){     
+              case 422:
+                errors = $.parseJSON(jqXHR['responseText'])
+                responseBox = []
+
+                $.each(errors,function(index,value,c){
+                  responseBox += value+"\n"
+                })
+                break;
+
+              case 500:
+                responseBox = ['Error en el programa (500)']
+            }
+            return responseBox;
+          }
         })
       }
 
       
-        //Errores de formularios
-        function takeErrors(jqXHR){
-          switch(jqXHR['status']){     
-            case 422:
-              errors = $.parseJSON(jqXHR['responseText'])
-              responseBox = []
-
-              $.each(errors,function(index,value,c){
-                responseBox += value+"\n"
-              })
-              break;
-
-            case 500:
-              responseBox = ['Error en el programa (500)']
-          }
-          return responseBox;
-        }
+        
       
     </script>
   	@yield('scripts_bottom')

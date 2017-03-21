@@ -209,20 +209,23 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 	  			  type: "error",
 	  			  showConfirmButton: true
 	  			});
+	        	//Errores de formularios
+    	       	function takeErrors(){
+    	         	switch(jqXHR['status']){     
+    	           		case 422:
+    	             		errors = $.parseJSON(jqXHR['responseText'])
+    	             		responseBox = []
 
-	  			/*function takeErrors(){
-	  				switch(jqXHR['status']){     
-	  				  case 422:
-	  				    errors = $.parseJSON(jqXHR['responseText'])
-	  				    responseBox = []
+    	             		$.each(errors,function(index,value,c){
+    	               			responseBox += value+"\n"
+    	             		})
+    	             	break;
 
-	  				    $.each(errors,function(index,value,c){
-	  				      responseBox += value+"\n"
-	  				    })
-	  				    break;
-	  				}
-	  				return responseBox;
-	  			}*/
+    	           	case 500:
+    	             	responseBox = ['Error en el programa (500)']
+    	         	}
+    	         	return responseBox;
+    	       	}
 	          /*responseBox.addClass('error')
 				
 
@@ -241,23 +244,7 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 	        })
       	})
 
-      	 //Errores de formularios
-        function takeErrors(jqXHR){
-          switch(jqXHR['status']){     
-            case 422:
-              errors = $.parseJSON(jqXHR['responseText'])
-              responseBox = []
 
-              $.each(errors,function(index,value,c){
-                responseBox += value+"\n"
-              })
-              break;
-
-            case 500:
-              responseBox = ['Error en el programa (500)']
-          }
-          return responseBox;
-        }
       
   	})
   </script>
