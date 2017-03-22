@@ -60,13 +60,16 @@ Route::group(['prefix' => 'registro', 'as' => 'registro.'], function()
 
 		Route::post('cliente/datos',  ['as' => 'cliente.datos', 'uses' => 'ClientesController@storeCliente']);
 
+		Route::get('mascota', ['as' => 'mascota', function(){
+		  return view('main.formulario-de-mascota');
+		}]);
+
 		Route::post('mascota', ['as' => 'mascota', 'uses' => 'MascotasController@store']);
 
+		Route::get('cuidador', ['as' => 'cuidador', function(){
+		  return view('main.formulario-del-cuidador');
+		}]);
 	});
-
-	Route::get('cuidador', ['as' => 'cuidador', function(){
-	  return view('main.formulario-del-cuidador');
-	}]);
 });
 
 Route::get('contacto', ['as' => 'contacto', function(){
@@ -76,8 +79,6 @@ Route::get('contacto', ['as' => 'contacto', function(){
 Route::get('perfil', ['as' => 'perfil', function(){
 	return view('main.perfil');
 }]);
-
-
 
 /* OTHERS */
 

@@ -71,7 +71,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <form class="form-grp clearfix grpelem" id="widgetu1260" method="post" enctype="multipart/form-data" action="#"><!-- none box -->
     {{ csrf_field() }}
      <div class="fld-grp clearfix grpelem" id="widgetu1262" data-required="true" data-type="email"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u1264-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu1262_input" name="email" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu1262_prompt" for="widgetu1262_input"><span class="actAsPara">Dirección de email.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u1264-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu1262_input" name="email" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu1262_prompt" for="widgetu1262_input"><span class="actAsPara">Dirección de email.</span></label></span>
      </div>
      <!-- m_editable region-id="editable-static-tag-U1261-BP_infinity" template="registrate.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u1261-4" data-muse-uid="U1261" data-muse-type="txt_frame"><!-- content -->
@@ -96,10 +96,10 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      </button>
      <!-- /m_editable -->
      <div class="fld-grp clearfix grpelem" id="widgetu27757" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u27760-4"><!-- content --><input class="wrapped-input" type="password" spellcheck="false" id="widgetu27757_input" name="pass" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu27757_prompt" for="widgetu27757_input"><span class="actAsPara">Contraseña.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u27760-4"><!-- content --><input class="wrapped-input" type="password" spellcheck="false" id="widgetu27757_input" name="pass" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu27757_prompt" for="widgetu27757_input"><span class="actAsPara">Contraseña.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu27769" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u27772-4"><!-- content --><input class="wrapped-input" type="password" spellcheck="false" id="widgetu27769_input" name="pass_confirm" tabindex="3"/><label class="wrapped-input fld-prompt" id="widgetu27769_prompt" for="widgetu27769_input"><span class="actAsPara">Confirmar contraseña.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u27772-4"><!-- content --><input class="wrapped-input" type="password" spellcheck="false" id="widgetu27769_input" name="pass_confirm" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu27769_prompt" for="widgetu27769_input"><span class="actAsPara">Confirmar contraseña.</span></label></span>
      </div>
     </form>
     <div class="Button shadow museBGSize rounded-corners clearfix grpelem" id="buttonu1312"><!-- container box -->
@@ -113,7 +113,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div class="shadow rounded-corners grpelem" id="u1343"><!-- simple frame --></div>
     <!-- m_editable region-id="editable-static-tag-U1347-BP_infinity" template="registrate.html" data-type="html" data-ice-options="disableImageResize,link" -->
     <div class="clearfix grpelem" id="u1347-6" data-muse-uid="U1347" data-muse-type="txt_frame"><!-- content -->
-     <p>¿Ya eres miembro? <a class="nonblock" href="{{ route('login') }}" data-href="page:U1454">Accede aquí</a></p>
+     <p>¿Ya eres miembro? <a class="nonblock no-visited" href="{{ route('login') }}" data-href="page:U1454">Accede aquí</a></p>
     </div>
     <!-- /m_editable -->
     <!-- m_editable region-id="editable-static-tag-U1357-BP_infinity" template="registrate.html" data-type="html" data-ice-options="disableImageResize,link" -->
@@ -165,7 +165,7 @@ window.Muse.assets.check($);/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.fullPage('#page');/* 100% height page */
-Muse.Utils.initWidget('#widgetu1260', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'blur',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:true}); });/* #widgetu1260 */
+Muse.Utils.initWidget('#widgetu1260', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:true}); });/* #widgetu1260 */
 Muse.Utils.initWidget('.MenuBar', ['#bp_infinity'], function(elem) { return $(elem).museMenu(); });/* unifiedNavBar */
 Muse.Utils.initWidget('#accordionu3503', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Accordion(elem, {canCloseAll:false,defaultIndex:0}); });/* #accordionu3503 */
 Muse.Utils.showWidgetsWhenReady();/* body */
@@ -177,12 +177,17 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 
   <script type="text/javascript">
   	$(document).ready(function(){
+
+  		$('form').on('keypress',function(e){
+  			if(e.which == 13){//Enter key pressed
+  				e.preventDefault()
+	            $('#buttonu6759').click();//Trigger search button click event
+	        }
+  		})
   		
   		$('#buttonu6759').on('click',function(e){
 	        e.preventDefault()
 
-	        /*var responseBox = $('#responses')
-	        responseBox.html('').removeClass('success error')*/
 	        swal({
 	        	  title: "Un momento",
 	        	  text: "Enviando datos...",
@@ -195,52 +200,18 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 	  			  title: "Recibido",
 	  			  text: "Exitoso",
 	  			  type: "success",
-	  			  timer: 2000,
 	  			  showConfirmButton: false
 	  			});
 
 	  			location.assign("{{ route('registro.cliente') }}")
-	          //responseBox.addClass(data.status).html('<p>'+data.msg+'</p>')
 	                    
 	        }).fail(function(jqXHR, textStatus, errorThrown){
 	        	swal({
 	  			  title: "Error",
-	  			  text: takeErrors().split(","),
+	  			  text: takeErrors(jqXHR),
 	  			  type: "error",
 	  			  showConfirmButton: true
 	  			});
-	        	//Errores de formularios
-    	       	function takeErrors(){
-    	         	switch(jqXHR['status']){     
-    	           		case 422:
-    	             		errors = $.parseJSON(jqXHR['responseText'])
-    	             		responseBox = []
-
-    	             		$.each(errors,function(index,value,c){
-    	               			responseBox += value+"\n"
-    	             		})
-    	             	break;
-
-    	           	case 500:
-    	             	responseBox = ['Error en el programa (500)']
-    	         	}
-    	         	return responseBox;
-    	       	}
-	          /*responseBox.addClass('error')
-				
-
-
-	
-	          switch(jqXHR['status']){     
-	            case 422:
-	              svar errors = $.parseJSON(jqXHR['responseText'])
-
-	              $.each(errors,function(index,value,c){
-	                responseBox.append('<p>'+value+'</p>')
-	              })
-	              break;
-	          }*/
-
 	        })
       	})
 

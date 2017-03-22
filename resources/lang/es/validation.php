@@ -107,6 +107,7 @@ return [
 
     'attributes' => [
         'phone' => 'Teléfono',
+        'telefono' => 'Teléfono',
         'email' => 'E-Mail',
         'name'  => 'Nombre',
         'city'  => 'Ciudad',
@@ -114,6 +115,8 @@ return [
         'desc'  => 'Descripción',
         'pass'  => 'Contraseña',
         'pass_confirm' => 'Confirmar Contraseña',
+        'dni_tipo' => 'Tipo de Identificación',
+        'dni_nro'  => 'Número de Identificación'
     ],
 
 ];

@@ -105,9 +105,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
     <!-- /m_editable -->
     <div class="shadow rounded-corners grpelem" id="u18678"><!-- simple frame --></div>
-    <form class="form-grp clearfix grpelem" id="widgetu18687" method="post" enctype="multipart/form-data" action="{{ url('main/scripts/form-u18687.php') }}"><!-- none box -->
-     <div class="fld-grp clearfix grpelem" id="widgetu18802" data-required="true" data-type="email"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18805-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu18802_input" name="Email" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu18802_prompt" for="widgetu18802_input"><span class="actAsPara">Nombre de la mascota.</span></label></span>
+    <form class="form-grp clearfix grpelem" id="widgetu18687" method="post" enctype="multipart/form-data" action="#"><!-- none box -->
+     <div class="fld-grp clearfix grpelem" id="widgetu18802" data-required="true"><!-- none box -->
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18805-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu18802_input" name="name" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu18802_prompt" for="widgetu18802_input"><span class="actAsPara">Nombre de la mascota.</span></label></span>
      </div>
      <!-- m_editable region-id="editable-static-tag-U18767-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u18767-4" data-muse-uid="U18767" data-muse-type="txt_frame"><!-- content -->
@@ -125,26 +125,26 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      </div>
      <!-- /m_editable -->
      <!-- m_editable region-id="editable-static-tag-U18757-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
-     <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u18757-4" data-muse-uid="U18757" data-muse-type="txt_frame" type="submit" value="&nbsp;Encontrar cuidadores" tabindex="22"><!-- content -->
+     <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u18757-4" data-muse-uid="U18757" data-muse-type="txt_frame" type="submit" value="Encontrar cuidadores" tabindex="22"><!-- content -->
       <div style="margin-top:-13px;height:13px;">
        <p>&nbsp;Encontrar cuidadores</p>
       </div>
      </button>
      <!-- /m_editable -->
      <div class="fld-grp clearfix grpelem" id="widgetu18758" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18761-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu18758_input" name="custom_U18758" tabindex="4"/><label class="wrapped-input fld-prompt" id="widgetu18758_prompt" for="widgetu18758_input"><span class="actAsPara">Raza de la mascota.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18761-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu18758_input" name="raza" tabindex="4"/><label class="wrapped-input fld-prompt" id="widgetu18758_prompt" for="widgetu18758_input"><span class="actAsPara">Raza de la mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu18762" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18765-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu18762_input" name="custom_U18762" tabindex="6"/><label class="wrapped-input fld-prompt" id="widgetu18762_prompt" for="widgetu18762_input"><span class="actAsPara">Tipo de comida.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18765-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu18762_input" name="comida_tipo" tabindex="6"/><label class="wrapped-input fld-prompt" id="widgetu18762_prompt" for="widgetu18762_input"><span class="actAsPara">Tipo de comida.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu18692" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18694-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu18692_input" name="custom_U18692" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu18692_prompt" for="widgetu18692_input"><span class="actAsPara">DD/MM/AA</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18694-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu18692_input" name="custom_U18692" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu18692_prompt" for="widgetu18692_input"><span class="actAsPara">DD/MM/AA</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu18777" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18779-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu18777_input" name="custom_U18777" tabindex="8"/><label class="wrapped-input fld-prompt" id="widgetu18777_prompt" for="widgetu18777_input"><span class="actAsPara">Horario de paseo.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18779-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu18777_input" name="hora_paseo" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu18777_prompt" for="widgetu18777_input"><span class="actAsPara">Horario de paseo.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu18797" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18800-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu18797_input" name="custom_U18797" tabindex="10"/><label class="wrapped-input fld-prompt" id="widgetu18797_prompt" for="widgetu18797_input"><span class="actAsPara">Describa donde suele dormir su mascota.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18800-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu18797_input" name="duerme" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu18797_prompt" for="widgetu18797_input"><span class="actAsPara">Describa donde suele dormir su mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu18731" data-required="true" data-type="radiogroup"><!-- none box -->
       <div class="fld-grp clearfix grpelem" id="widgetu18732" data-required="false" data-type="radio"><!-- none box -->
@@ -152,7 +152,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <label class="fld-label actAsDiv clearfix grpelem" id="u18734-4" data-muse-uid="U18734" data-muse-type="txt_frame" for="widgetu18732_input"><!-- content --><span class="actAsPara">Masculino</span></label>
        <!-- /m_editable -->
        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18733"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="Masculino" spellcheck="false" id="widgetu18732_input" name="custom_U18731" tabindex="3"/>
+        <input class="wrapped-input" type="radio" value="Masculino" spellcheck="false" id="widgetu18732_input" name="genero" tabindex="3"/>
         <label for="widgetu18732_input"></label>
        </div>
       </div>
@@ -161,13 +161,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <label class="fld-label actAsDiv clearfix grpelem" id="u18737-4" data-muse-uid="U18737" data-muse-type="txt_frame" for="widgetu18736_input"><!-- content --><span class="actAsPara">Femenino</span></label>
        <!-- /m_editable -->
        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18738"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="Femenino" spellcheck="false" id="widgetu18736_input" name="custom_U18731" tabindex="3"/>
+        <input class="wrapped-input" type="radio" value="Femenino" spellcheck="false" id="widgetu18736_input" name="genero" tabindex="3"/>
         <label for="widgetu18736_input"></label>
        </div>
       </div>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu18785" data-required="true"><!-- none box -->
-      <span class="fld-textarea actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18786-4"><!-- content --><textarea class="wrapped-input" id="widgetu18785_input" name="custom_U18785" tabindex="5"></textarea><label class="wrapped-input fld-prompt" id="widgetu18785_prompt" for="widgetu18785_input"><span class="actAsPara">Describa la personalidad de su mascota.</span></label></span>
+      <span class="fld-textarea actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18786-4"><!-- content --><textarea class="wrapped-input" id="widgetu18785_input" name="personalidad" tabindex="0"></textarea><label class="wrapped-input fld-prompt" id="widgetu18785_prompt" for="widgetu18785_input"><span class="actAsPara">Describa la personalidad de su mascota.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu18718" data-required="true" data-type="radiogroup"><!-- none box -->
       <div class="fld-grp clearfix grpelem" id="widgetu18719" data-required="false" data-type="radio"><!-- none box -->
@@ -250,7 +250,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu18789" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18791-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu18789_input" name="custom_U18789" tabindex="7"/><label class="wrapped-input fld-prompt" id="widgetu18789_prompt" for="widgetu18789_input"><span class="actAsPara">Horario de comida.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18791-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu18789_input" name="comida_hora" tabindex="7"/><label class="wrapped-input fld-prompt" id="widgetu18789_prompt" for="widgetu18789_input"><span class="actAsPara">Horario de comida.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu18753" data-required="true"><!-- none box -->
       <span class="fld-textarea actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18756-4"><!-- content --><textarea class="wrapped-input" id="widgetu18753_input" name="custom_U18753" tabindex="9"></textarea><label class="wrapped-input fld-prompt" id="widgetu18753_prompt" for="widgetu18753_input"><span class="actAsPara">Describa la rutina para las necesidades de su mascota.</span></label></span>

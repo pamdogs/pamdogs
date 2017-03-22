@@ -311,7 +311,7 @@
 
     <script type="text/javascript">
     	//Errores de formularios
-    	/*function takeErrors(jqXHR){
+    	function takeErrors(jqXHR){
     		switch(jqXHR['status']){     
     		  case 422:
     		    errors = $.parseJSON(jqXHR['responseText'])
@@ -320,12 +320,32 @@
     		    $.each(errors,function(index,value,c){
     		      responseBox += value+"\n"
     		    })
+    		    responseBox = responseBox.split(",")
     		    break;
 
     		  case 500:
     		    responseBox = ['Error en el programa (500)']
+    		    break;
     		}
     		return responseBox;
-    	}*/
+    	}
+
+    	//Validaciones de campos
+
+    	//Bloquear cualquier tecla, excepto Tabulador
+    	$('.justTab').on('keydown',function(e){
+    		if(e.which != 9)
+    		{
+    			e.preventDefault()
+    		}
+    	})
+
+    	//Bloquear cualquier tecla, excepto Números
+    	$('.justNumbers').on('keydown',function(e){
+    		if(e.which != 9)
+    		{
+    			e.preventDefault()
+    		}
+    	})
     </script>
 @show

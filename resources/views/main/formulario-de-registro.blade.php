@@ -15,7 +15,7 @@
     if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "webpro.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "formulario-de-registro.css"], "outOfDate":[]};
   </script>
   
-  <link rel="shortcut icon" href="images/favicon.ico?crc=69713473"/>
+  <link rel="shortcut icon" href="{{ url('main/images/favicon.ico?crc=69713473') }}"/>
   <title>Formulario de registro</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{ url('main/css/site_global.css?crc=323482740') }}"/>
@@ -111,9 +111,7 @@
     <!-- /m_editable -->
     <form class="form-grp clearfix colelem" id="widgetu2350" method="post" enctype="multipart/form-data" action="{{ route('registro.cliente.datos') }}"><!-- none box -->
       {{ csrf_field() }}
-     <div class="fld-grp clearfix grpelem" id="widgetu2353" data-required="true" data-type="email"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2355-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu2353_input" name="Email" tabindex="3"/><label class="wrapped-input fld-prompt" id="widgetu2353_prompt" for="widgetu2353_input"><span class="actAsPara">Introducir email.</span></label></span>
-     </div>
+     
      <!-- m_editable region-id="editable-static-tag-U2358-BP_infinity" template="formulario-de-registro.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u2358-3" data-muse-uid="U2358" data-muse-type="txt_frame"><!-- content -->
       <p>&nbsp;</p>
@@ -136,24 +134,34 @@
       </div>
      </button>
      <!-- /m_editable -->
-     <div class="fld-grp clearfix grpelem" id="widgetu2377" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2379-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu2377_input" name="apellido" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu2377_prompt" for="widgetu2377_input"><span class="actAsPara">Ambos apellidos.</span></label></span>
+     <div class="fld-grp clearfix grpelem" id="widgetu29248" data-required="true"><!-- none box -->
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u29249-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu29248_input" name="nombre" tabindex="0" value="{{ Auth::user()->nombre }}"/><label class="wrapped-input fld-prompt" id="widgetu29248_prompt" for="widgetu29248_input"><span class="actAsPara">Introducir nombre.</span></label></span>
      </div>
-     <div class="fld-grp clearfix grpelem" id="widgetu2413" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2416-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu2413_input" name="telefono" tabindex="5"/><label class="wrapped-input fld-prompt" id="widgetu2413_prompt" for="widgetu2413_input"><span class="actAsPara">Número telefónico.</span></label></span>
+     <div class="fld-grp clearfix grpelem" id="widgetu2377" data-required="true"><!-- none box -->
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2379-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu2377_input" name="apellido" tabindex="0" value="{{ Auth::user()->apellido }}"/><label class="wrapped-input fld-prompt" id="widgetu2377_prompt" for="widgetu2377_input"><span class="actAsPara">Ambos apellidos.</span></label></span>
+     </div>
+     <div class="fld-grp clearfix grpelem" id="widgetu2353" data-required="true" data-type="email"><!-- none box -->
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2355-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu2353_input" name="email" tabindex="0" value="{{ Auth::user()->email }}" /><label class="wrapped-input fld-prompt" id="widgetu2353_prompt" for="widgetu2353_input"><span class="actAsPara">Introducir email.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2425" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2426-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2425_input" name="nacimiento" tabindex="4" value=""/><label class="wrapped-input fld-prompt" id="widgetu2425_prompt" for="widgetu2425_input"><span class="actAsPara">DD/MM/AA</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2426-4"><!-- content --><input class="wrapped-input justTab" type="text" id="widgetu2425_input" name="nacimiento" tabindex="0" value="{{ Auth::user()->nacimiento->format('d/m/Y') }}"/><label class="wrapped-input fld-prompt" id="widgetu2425_prompt" for="widgetu2425_input"><span class="actAsPara">DD/MM/AA</span></label></span>
      </div>
+     <div class="fld-grp clearfix grpelem" id="widgetu2413" data-required="true"><!-- none box -->
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2416-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu2413_input" name="telefono" tabindex="0" value="{{ Auth::user()->telefono }}"/><label class="wrapped-input fld-prompt" id="widgetu2413_prompt" for="widgetu2413_input"><span class="actAsPara">Número telefónico.</span></label></span>
+     </div>
+     
      <div class="fld-grp clearfix grpelem" id="widgetu2470" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2471-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2470_input" name="dni_tipo" tabindex="6"/><label class="wrapped-input fld-prompt" id="widgetu2470_prompt" for="widgetu2470_input"><span class="actAsPara">Nacional / Extranjero.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2471-4"><!-- content --><!--<input class="wrapped-input" type="text" id="widgetu2470_input" name="dni_tipo" tabindex="6"/>-->
+      <select class="wrapped-input" id="widgetu2470_input" name="dni_tipo" tabindex="0">
+        <option value="Nacional">Cedula Nacional</option>
+        <option value="Extranjero">Cedula Extranjera</option>
+      </select>
+      <label class="wrapped-input fld-prompt" id="widgetu2470_prompt" for="widgetu2470_input"><span class="actAsPara">Nacional / Extranjero.</span></label></span>
      </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2485" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2486-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2485_input" name="dni_nro" tabindex="7"/><label class="wrapped-input fld-prompt" id="widgetu2485_prompt" for="widgetu2485_input"><span class="actAsPara">Número de documento.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2486-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2485_input" name="dni_nro" tabindex="0" value="{{ Auth::user()->telefono }}"/><label class="wrapped-input fld-prompt" id="widgetu2485_prompt" for="widgetu2485_input"><span class="actAsPara">Número de documento.</span></label></span>
      </div>
-     <div class="fld-grp clearfix grpelem" id="widgetu29248" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u29249-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu29248_input" name="nombre" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu29248_prompt" for="widgetu29248_input"><span class="actAsPara">Introducir nombre.</span></label></span>
-     </div>
+     
     </form>
     <!-- m_editable region-id="editable-static-tag-U2440-BP_infinity" template="formulario-de-registro.html" data-type="html" data-ice-options="disableImageResize,link" -->
     <div class="clearfix colelem" id="u2440-4" data-muse-uid="U2440" data-muse-type="txt_frame"><!-- content -->
@@ -231,17 +239,21 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
       $(function(){
         $('input[name="nacimiento"]').datepicker({
           dateFormat: "dd/mm/yy",
-          /*beforeShow: function(input, inst) {
+          changeMonth: true,
+          changeYear: true,
+          beforeShow: function(input, inst) {
             setTimeout(function () {
-              var offsets = $('input[name="nacimiento"]').offset();
-              var top = offsets.top + 25;
-              alert(offsets)
+              //var offsets = $('input[name="nacimiento"]').offset();
+              //var top = offsets.top + 25;
+              var offsets = $('#widgetu2425').offset().top
+              //alert(widgetu2425.offsetTop + widgetu2350.offsetTop)
               inst.dpDiv.css({
-                  top: top,
-                  left: offsets.left,
+                  top: widgetu2425.offsetTop + widgetu2425.offsetHeight + widgetu2350.offsetTop,
+                  //left: offsets.left,
+                  'z-index': 1000
               });
             });
-          },*/
+          },
           onSelect: function(date) {
             $("#widgetu2425").removeClass()
             $("#widgetu2425").addClass('fld-grp clearfix grpelem non-empty-st valid')
@@ -277,33 +289,16 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             text: "Exitoso",
             type: "success",
             timer: 4000,
-            showConfirmButton: false
+            showConfirmButton: true
           });
           location.assign(url)
         }).fail(function(jqXHR, textStatus, errorThrown){
           swal({
             title: "Error",
-            text: takeErrors(jqXHR).split(","),
+            text: takeErrors(jqXHR),
             type: "error",
             showConfirmButton: true
           });
-          //Errores de formularios
-          function takeErrors(){
-            switch(jqXHR['status']){     
-              case 422:
-                errors = $.parseJSON(jqXHR['responseText'])
-                responseBox = []
-
-                $.each(errors,function(index,value,c){
-                  responseBox += value+"\n"
-                })
-                break;
-
-              case 500:
-                responseBox = ['Error en el programa (500)']
-            }
-            return responseBox;
-          }
         })
       }
 

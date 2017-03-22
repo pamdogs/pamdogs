@@ -62,7 +62,7 @@ class ClientesController extends Controller
         {
             if(!Hash::check($request->pass, $user->password))
             {
-                return response()->json(['error' => 'Usuario registrado previamente, pero las contraseñas no coinciden.'], 422);
+                return response()->json(['error' => 'Usuario registrado previamente, pero la contraseña es incorrecta.'], 422);
             }
         }
 
@@ -73,27 +73,40 @@ class ClientesController extends Controller
     public function storeCliente(Request $request)
     {
         //  (2do paso de registro)
+
+        $user = Auth::user();
+
         $this->validate($request, [
             'nombre' => 'required|max:255',
             'apellido' => 'required|max:255',
+            'email' => 'required|email|max:150|unique:users,email,'.$user->id,
             'nacimiento' => 'required|max:255',
-            'telefono' => 'required|max:255',
+            'telefono' => 'required|digits_between:8,15|unique:users,telefono,'.$user->id,
             'dni_tipo' => 'required|max:255',
-            'dni_nro' => 'required|max:255',
+            'dni_nro' => 'required|digits_between:6,20|unique:users,dni_numero,'.$user->id,
         ]);
 
-        $request->nacimiento = Carbon::createFromFormat('d/m/Y',$request->nacimiento)->toDateString();
+        //$request->nacimiento = Carbon::createFromFormat('d/m/Y',$request->nacimiento)->toDateString();
+        try
+        {
+            $new = User::find($user->id)
+                    ->update([
+                        'nombre' => $request->nombre,
+                        'apellido' => $request->apellido,
+                        'email' => $request->email,
+                        'nacimiento' => $request->nacimiento,
+                        'telefono' => $request->telefono,
+                        'dni_tipo' => $request->dni_tipo,
+                        'dni_numero' => $request->dni_nro,
+                        ]);
+        }
+        catch(\Illuminate\Database\QueryException $e)
+        {
+            return response()->json(['Mensaje' => $e->getMessage()],422);
+        }
 
-        $user = User::where(['email' => Auth::user()->email])
-                ->update([
-                    'nombre' => $request->nombre,
-                    'apellido' => $request->apellido,
-                    'nacimiento' => $request->nacimiento,
-                    'telefono' => $request->telefono,
-                    'dni_tipo' => $request->dni_tipo,
-                    'dni_numero' => $request->dni_nro
-                    ]);
 
+        
         //Auth::loginUsingId($user->id);
         //return view('main.formulario-mascota');
 

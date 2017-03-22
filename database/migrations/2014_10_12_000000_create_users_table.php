@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('password', 200);
             $table->date('nacimiento');
-            $table->string('telefono');
+            $table->string('telefono')->unique()->nullable();
             $table->string('dni_tipo');
-            $table->string('dni_numero');
+            $table->string('dni_numero')->unique()->nullable();
             $table->enum('genero',['Femenino','Masculino'])->nullable();
             $table->string('facebook_id')->unique()->nullable();
             $table->string('avatar')->nullable();
