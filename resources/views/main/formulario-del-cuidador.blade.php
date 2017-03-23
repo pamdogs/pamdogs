@@ -6,7 +6,7 @@
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2017.0.0.363"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
   <script type="text/javascript">
    // Update the 'nojs'/'js' class on the html node
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -14,7 +14,7 @@ document.documentElement.className = document.documentElement.className.replace(
 // Check that all required assets are uploaded and up-to-date
 if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "webpro.js", "jquery.musepolyfill.bgsize.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "formulario-del-cuidador.css"], "outOfDate":[]};
 </script>
-  
+
   <link rel="shortcut icon" href="{{ url('main/images/favicon.ico?crc=69713473') }}"/>
   <title>Formulario del cuidador</title>
   <!-- CSS -->
@@ -37,7 +37,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <script src="scripts/html5shiv.js?crc=4241844378" type="text/javascript"></script>
   <![endif]-->
     <!--HTML Widget code-->
-  
+
 	@yield('normalize_styles')
 
 	@yield('script_pace')
@@ -45,18 +45,18 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
  <body>
 
   <!--HTML Widget code-->
-  
+
 
   @yield('loader')
 
-  
+
   <div class="clearfix borderbox" id="page"><!-- group -->
    <div class="size_fixed grpelem" id="u2503"><!-- custom html -->
-    
+
 
    </div>
    <div class="size_fixed grpelem" id="u3507"><!-- custom html -->
-     
+
    </div>
    <div class="browser_width" id="u14400-bw">
     <div id="u14400"><!-- simple frame --></div>
@@ -132,14 +132,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       <div class="fld-grp clearfix grpelem" id="widgetu24693" data-required="true"><!-- none box -->
        <span class="fld-textarea actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24694-4"><!-- content --><textarea class="wrapped-input" id="widgetu24693_input" name="custom_U24693" tabindex="2"></textarea><label class="wrapped-input fld-prompt" id="widgetu24693_prompt" for="widgetu24693_input"><span class="actAsPara">Espacio para conocimientos, experiencia y características de tus servicios&nbsp; (mínimo 200 caracteres).</span></label></span>
       </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu24607" data-required="true" data-type="radiogroup"><!-- none box -->
-       <div class="fld-grp clearfix grpelem" id="widgetu24610" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24612"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu24610_input" name="custom_U24607" tabindex="7"/>
-         <label for="widgetu24610_input"></label>
-        </div>
-       </div>
-      </div>
+
       <div class="fld-grp clearfix grpelem" id="widgetu24580" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu24586" data-required="false" data-type="radio"><!-- none box -->
         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24588"><!-- simple frame -->
@@ -154,20 +147,30 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         </div>
        </div>
       </div>
+
       <div class="fld-grp clearfix grpelem" id="widgetu24697" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu24703" data-required="false" data-type="radio"><!-- none box -->
         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24705"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu24703_input" name="custom_U24697" tabindex="6"/>
+         <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu24703_input" name="vivienda" tabindex="6"/>
          <label for="widgetu24703_input"></label>
         </div>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu24698" data-required="false" data-type="radio"><!-- none box -->
         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24700"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu24698_input" name="custom_U24697" tabindex="6"/>
+         <input class="wrapped-input" type="radio" value="2" spellcheck="false" id="widgetu24698_input" name="vivienda" tabindex="6"/>
          <label for="widgetu24698_input"></label>
         </div>
        </div>
+       <!--<div class="fld-grp clearfix grpelem" id="widgetu24607" data-required="true" data-type="radiogroup"><!-- none box -->
+        <div class="fld-grp clearfix grpelem" id="widgetu24610" data-required="false" data-type="radio"><!-- none box -->
+         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24612"><!-- simple frame -->
+          <input class="wrapped-input" type="radio" value="3" spellcheck="false" id="widgetu24610_input" name="vivienda" tabindex="7"/>
+          <label for="widgetu24610_input"></label>
+         </div>
+        </div>
+       <!--</div>-->
       </div>
+
       <div class="fld-grp clearfix grpelem" id="widgetu24685" data-required="false" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24687"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="1" id="widgetu24685_input" name="custom_U24685" tabindex="9"/>
@@ -732,13 +735,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
    </div>
    <div class="size_fixed" id="u3502"><!-- custom html -->
-    
+
         <button class="hamburger hamburger--slider">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
         </button>
-        
+
    </div>
    @yield('menu')
    <div class="verticalspacer" data-offset-top="3256" data-content-above-spacer="3256" data-content-below-spacer="219"></div>
@@ -810,7 +813,7 @@ function initMap() {
 
   // bounds of the desired area
   var allowedBounds = new google.maps.LatLngBounds(
-       new google.maps.LatLng(70.33956792419954, 178.01171875), 
+       new google.maps.LatLng(70.33956792419954, 178.01171875),
        new google.maps.LatLng(83.86483689701898, -88.033203125)
   );
   var lastValidCenter = map.getCenter();
@@ -819,7 +822,7 @@ function initMap() {
       if (allowedBounds.contains(map.getCenter())) {
           // still within valid bounds, so save the last valid position
           lastValidCenter = map.getCenter();
-          return; 
+          return;
       }
 
       // not valid anymore => return to last valid position

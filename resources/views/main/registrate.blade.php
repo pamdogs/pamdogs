@@ -6,7 +6,7 @@
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2017.0.0.363"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
   <script type="text/javascript">
    // Update the 'nojs'/'js' class on the html node
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -14,7 +14,7 @@ document.documentElement.className = document.documentElement.className.replace(
 // Check that all required assets are uploaded and up-to-date
 if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "webpro.js", "jquery.musepolyfill.bgsize.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "registrate.css"], "outOfDate":[]};
 </script>
-  
+
   <link rel="shortcut icon" href="{{ url('main/images/favicon.ico?crc=69713473') }}"/>
   <title>Registrate</title>
   <!-- CSS -->
@@ -37,7 +37,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <script src="scripts/html5shiv.js?crc=4241844378" type="text/javascript"></script>
   <![endif]-->
     <!--HTML Widget code-->
-  
+
 	@yield('normalize_styles')
 
 	@yield('script_pace')
@@ -45,17 +45,17 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
  <body>
 
   <!--HTML Widget code-->
-  
+
   @yield('loader')
 
-  
+
   <div class="clearfix borderbox" id="page"><!-- group -->
    <div class="size_fixed grpelem" id="u2503"><!-- custom html -->
-    
+
 
    </div>
    <div class="size_fixed grpelem" id="u3507"><!-- custom html -->
-     
+
    </div>
    <div class="browser_width" id="u14400-bw">
     <div id="u14400"><!-- simple frame --></div>
@@ -133,13 +133,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    <div class="size_fixed grpelem" id="u7006"><!-- custom html -->
    </div>
    <div class="size_fixed" id="u3502"><!-- custom html -->
-    
+
         <button class="hamburger hamburger--slider">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
         </button>
-        
+
    </div>
    @yield('menu')
    <div class="verticalspacer" data-offset-top="584" data-content-above-spacer="750" data-content-below-spacer="1041"></div>
@@ -184,39 +184,39 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 	            $('#buttonu6759').click();//Trigger search button click event
 	        }
   		})
-  		
+
   		$('#buttonu6759').on('click',function(e){
-	        e.preventDefault()
+        e.preventDefault()
 
-	        swal({
-	        	  title: "Un momento",
-	        	  text: "Enviando datos...",
-	        	  showConfirmButton: false
-	        	});
-	        $.post("{{ route('registro.cliente') }}",$('#widgetu1260').serialize(),function(data){
-	        	
-	        }).done(function(data){
-	  			swal({
-	  			  title: "Recibido",
-	  			  text: "Exitoso",
-	  			  type: "success",
-	  			  showConfirmButton: false
-	  			});
+        swal({
+        	  title: "Un momento",
+        	  text: "Enviando datos...",
+        	  showConfirmButton: false
+        	});
+        $.post("{{ route('registro.cliente') }}",$('#widgetu1260').serialize(),function(data){
 
-	  			location.assign("{{ route('registro.cliente') }}")
-	                    
-	        }).fail(function(jqXHR, textStatus, errorThrown){
-	        	swal({
+        }).done(function(data){
+  			swal({
+  			  title: "Recibido",
+  			  text: "Exitoso",
+  			  type: "success",
+  			  showConfirmButton: false
+  			});
+
+  			setTimeout(function(){location.assign("{{ route('registro.cliente') }}")},1000)
+
+        }).fail(function(jqXHR, textStatus, errorThrown){
+        	swal({
 	  			  title: "Error",
 	  			  text: takeErrors(jqXHR),
 	  			  type: "error",
 	  			  showConfirmButton: true
 	  			});
-	        })
-      	})
+        })
+    	})
 
 
-      
+
   	})
   </script>
    </body>
