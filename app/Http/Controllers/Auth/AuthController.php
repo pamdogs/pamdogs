@@ -124,9 +124,9 @@ class AuthController extends Controller
         }*/
         Auth::login($authUser);
         if($request->header('referer') == route('login')){
-          return redirect('registro/cliente#');
-        } else {
           return redirect('/#');
+        } else {
+          return redirect('registro/cliente#');
         }
 
 
