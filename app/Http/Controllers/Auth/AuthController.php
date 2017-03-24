@@ -123,9 +123,13 @@ class AuthController extends Controller
             dd($e);
         }*/
 
-        if(preg_match('/[^\/]+$login/', $request->header('referer'))){
+        if($request->header('referer') == route('login')){
+          print_r($request->header('referer'));
+          print_r(route('login'));
           print "Yes";
         } else {
+          print_r($request->header('referer'));
+          print_r(route('login'));
           print "No";
         }
 
