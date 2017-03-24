@@ -122,14 +122,14 @@ class AuthController extends Controller
         } catch (Exception $e) {
             dd($e);
         }*/
+        print_r('<pre>');
         print_r($request->header());
-        print_r('\n');
+        print_r('</pre><br><br><br><pre>');
         print_r($request->segments());
-        print_r('\n');
+        print_r('</pre><br><br><br><pre>');
         print_r($request->server());
-        print_r('\n');
+        print_r('</pre>');
 
-        print_r('\n');
 
         /*Auth::login($authUser);
         return redirect('registro/cliente#');*/
