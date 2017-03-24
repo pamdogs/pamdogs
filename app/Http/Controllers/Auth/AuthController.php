@@ -122,13 +122,13 @@ class AuthController extends Controller
         } catch (Exception $e) {
             dd($e);
         }*/
-        print_r('<pre>');
-        print_r($request->header());
-        print_r('</pre><br><br><br><pre>');
-        print_r($request->segments());
-        print_r('</pre><br><br><br><pre>');
-        print_r($request->server());
-        print_r('</pre>');
+
+        if(preg_match('[^\/]+$login', $request->header('referer'))){
+          print "Yes";
+        } else {
+          print "No";
+        }
+
 
 
         /*Auth::login($authUser);
