@@ -100,13 +100,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u1519-4"><!-- content --><input class="wrapped-input" type="password" id="widgetu1518_input" name="password" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu1518_prompt" for="widgetu1518_input"><span class="actAsPara">Ingrese su contraseña.</span></label></span>
      </div>
     </form>
-    <div class="Button shadow museBGSize rounded-corners clearfix grpelem" id="buttonu1466"><!-- container box -->
+    <a href="{{ route('facebook') }}" class="Button shadow museBGSize rounded-corners clearfix grpelem" id="buttonu1466"><!-- container box -->
      <!-- m_editable region-id="editable-static-tag-U1467-BP_infinity" template="iniciar-sesion.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u1467-4" data-muse-uid="U1467" data-muse-type="txt_frame"><!-- content -->
       <p>Iniciar con Facebook</p>
      </div>
      <!-- /m_editable -->
-    </div>
+   </a>
     <div class="shadow rounded-corners grpelem" id="u1468"><!-- simple frame --></div>
     <div class="shadow rounded-corners grpelem" id="u1469"><!-- simple frame --></div>
     <!-- m_editable region-id="editable-static-tag-U1470-BP_infinity" template="iniciar-sesion.html" data-type="html" data-ice-options="disableImageResize,link" -->

@@ -73,9 +73,17 @@ class AuthController extends Controller
     protected function getLogin()
     {
         return view('main.iniciar-sesion');
-    }    
+    }
 
-    
+    public function postLogin(Request $request)
+    {
+        if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return response()->json(['error' => 'E-Mail o contraseña invalidos'],422);
+        }
+        return response()->json();
+    }
+
+
 
     /**
      * Redirect the user to the Facebook authentication page.
@@ -92,7 +100,7 @@ class AuthController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback(Request $request)
     {
         try {
             $user = Socialite::driver('facebook')->user();
@@ -114,8 +122,9 @@ class AuthController extends Controller
         } catch (Exception $e) {
             dd($e);
         }*/
-        Auth::login($authUser);
-        return redirect('registro/cliente#');
+        dd($request->path());
+        /*Auth::login($authUser);
+        return redirect('registro/cliente#');*/
     }
 
     /**
