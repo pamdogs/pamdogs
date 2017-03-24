@@ -122,7 +122,8 @@ class AuthController extends Controller
         } catch (Exception $e) {
             dd($e);
         }*/
-        dd($request->header->get('referer'));
+        $request->header->get('referer');
+        dd($request->header);
 
         /*Auth::login($authUser);
         return redirect('registro/cliente#');*/
