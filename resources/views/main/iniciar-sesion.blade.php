@@ -6,7 +6,7 @@
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2017.0.0.363"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
   <script type="text/javascript">
    // Update the 'nojs'/'js' class on the html node
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -14,7 +14,7 @@ document.documentElement.className = document.documentElement.className.replace(
 // Check that all required assets are uploaded and up-to-date
 if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "webpro.js", "jquery.musepolyfill.bgsize.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "iniciar-sesion.css"], "outOfDate":[]};
 </script>
-  
+
   <link rel="shortcut icon" href="{{ url('main/images/favicon.ico?crc=69713473') }}"/>
   <title>Iniciar sesion</title>
   <!-- CSS -->
@@ -37,7 +37,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <script src="scripts/html5shiv.js?crc=4241844378" type="text/javascript"></script>
   <![endif]-->
     <!--HTML Widget code-->
-  
+
 	@yield('normalize_styles')
 
 	@yield('script_pace')
@@ -45,18 +45,18 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
  <body>
 
   <!--HTML Widget code-->
-  
+
 
   @yield('loader')
 
-  
+
   <div class="clearfix borderbox" id="page"><!-- group -->
    <div class="size_fixed grpelem" id="u2503"><!-- custom html -->
-    
+
 
    </div>
    <div class="size_fixed grpelem" id="u3507"><!-- custom html -->
-     
+
    </div>
    <div class="browser_width" id="u14400-bw">
     <div id="u14400"><!-- simple frame --></div>
@@ -69,9 +69,10 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      <p>Iniciar sesión</p>
     </div>
     <!-- /m_editable -->
-    <form class="form-grp clearfix grpelem" id="widgetu1457" method="post" enctype="multipart/form-data" action="{{ url('main/scripts/form-u1457.php') }}"><!-- none box -->
+    <form class="form-grp clearfix grpelem" id="widgetu1457" method="post" enctype="multipart/form-data" action="{{ route('login') }}"><!-- none box -->
+      {{ csrf_field() }}
      <div class="fld-grp clearfix grpelem" id="widgetu1461" data-required="true" data-type="email"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u1464-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu1461_input" name="Email" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu1461_prompt" for="widgetu1461_input"><span class="actAsPara">Ingrese su usuario.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u1464-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu1461_input" name="email" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu1461_prompt" for="widgetu1461_input"><span class="actAsPara">Ingrese su usuario.</span></label></span>
      </div>
      <!-- m_editable region-id="editable-static-tag-U1458-BP_infinity" template="iniciar-sesion.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u1458-4" data-muse-uid="U1458" data-muse-type="txt_frame"><!-- content -->
@@ -89,14 +90,14 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      </div>
      <!-- /m_editable -->
      <!-- m_editable region-id="editable-static-tag-U1460-BP_infinity" template="iniciar-sesion.html" data-type="html" data-ice-options="disableImageResize,link" -->
-     <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u1460-4" data-muse-uid="U1460" data-muse-type="txt_frame" type="submit" value="Iniciar sesión" tabindex="3"><!-- content -->
+     <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u1460-4" data-muse-uid="U1460" data-muse-type="txt_frame" value="Iniciar sesión" tabindex="3"><!-- content -->
       <div style="margin-top:-13px;height:13px;">
        <p>Iniciar sesión</p>
       </div>
      </button>
      <!-- /m_editable -->
      <div class="fld-grp clearfix grpelem" id="widgetu1518" data-required="true"><!-- none box -->
-      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u1519-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu1518_input" name="custom_U1518" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu1518_prompt" for="widgetu1518_input"><span class="actAsPara">Ingrese su contraseña.</span></label></span>
+      <span class="fld-input NoWrap actAsDiv rounded-corners transition shadow clearfix grpelem" id="u1519-4"><!-- content --><input class="wrapped-input" type="password" id="widgetu1518_input" name="password" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu1518_prompt" for="widgetu1518_input"><span class="actAsPara">Ingrese su contraseña.</span></label></span>
      </div>
     </form>
     <div class="Button shadow museBGSize rounded-corners clearfix grpelem" id="buttonu1466"><!-- container box -->
@@ -127,28 +128,28 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    <div class="size_fixed grpelem" id="u7006"><!-- custom html -->
    </div>
    <div class="size_fixed" id="u3502"><!-- custom html -->
-    
+
         <button class="hamburger hamburger--slider">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
         </button>
-        
+
    </div>
    @yield('menu')
    <div class="verticalspacer" data-offset-top="497" data-content-above-spacer="750" data-content-below-spacer="1127"></div>
   </div>
   <div class="preload_images">
-   <img class="preload" src="images/f.png?crc=139556812" alt=""/>
+   <img class="preload" src="{{ url('main/images/f.png?crc=139556812') }}" alt=""/>
   </div>
 
-  @yield('scripts_bottom')
+
   <!-- JS includes -->
   <script type="text/javascript">
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
 </script>
   <script type="text/javascript">
-   window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js?crc=209076791" type="text/javascript">\x3C/script>');
+   window.jQuery || document.write('\x3Cscript src="{{ url('main/scripts/jquery-1.8.3.min.js?crc=209076791') }}" type="text/javascript">\x3C/script>');
 </script>
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -169,6 +170,47 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 }catch(b){if(b&&"function"==typeof b.notify?b.notify():Muse.Assert.fail("Error calling selector function: "+b),false)throw b;}})})};
 
 </script>
+  @yield('scripts_bottom')
+  <script type="text/javascript">
+    $(document).ready(function(){
 
+      $('form').on('keypress',function(e){
+        if(e.which == 13){//Enter key pressed
+          e.preventDefault()
+          $('#u1460-4').click();//Trigger search button click event
+        }
+      })
+
+      $('#u1460-4').on('click',function(e){
+        e.preventDefault()
+
+        swal({
+          title: "Un momento",
+          text: "Enviando datos...",
+          showConfirmButton: false
+        });
+        $.post("{{ route('login') }}",$('#widgetu1457').serialize(),function(data){
+
+        }).done(function(data){
+          swal({
+            title: "Recibido",
+            text: "Exitoso",
+            type: "success",
+            showConfirmButton: false
+          });
+
+          setTimeout(function(){location.assign("{{ route('home') }}")},1000)
+
+        }).fail(function(jqXHR, textStatus, errorThrown){
+          swal({
+            title: "Error",
+            text: takeErrors(jqXHR),
+            type: "error",
+            showConfirmButton: true
+          });
+        })
+      })
+    })
+  </script>
    </body>
 </html>
