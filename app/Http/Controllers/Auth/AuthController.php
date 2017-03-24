@@ -123,7 +123,7 @@ class AuthController extends Controller
             dd($e);
         }*/
 
-        if(preg_match('[^\/]+$', $request->header('referer'))){
+        if(preg_match('/[^\/]+$/', $request->header('referer'))){
           print "Yes";
         } else {
           print "No";
