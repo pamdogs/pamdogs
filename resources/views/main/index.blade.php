@@ -6,7 +6,7 @@
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2017.0.0.363"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
   <script type="text/javascript">
    // Update the 'nojs'/'js' class on the html node
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -14,7 +14,7 @@ document.documentElement.className = document.documentElement.className.replace(
 // Check that all required assets are uploaded and up-to-date
 if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "webpro.js", "musewpslideshow.js", "jquery.museoverlay.js", "touchswipe.js", "jquery.musepolyfill.bgsize.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "index.css"], "outOfDate":[]};
 </script>
-  
+
   <link rel="shortcut icon" href="{{ url('main/images/favicon.ico?crc=69713473') }}"/>
   <title>Inicio</title>
   <!-- CSS -->
@@ -37,25 +37,25 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <script src="scripts/html5shiv.js?crc=4241844378" type="text/javascript"></script>
   <![endif]-->
     <!--HTML Widget code-->
-  
+
 	@yield('normalize_styles')
 
 	@yield('script_pace')
-		
+
  </head>
 <body>
 
   <!--HTML Widget code-->
-  
+
   @yield('loader')
 
   <div class="clearfix borderbox" id="page"><!-- group -->
    <div class="size_fixed grpelem" id="u2503"><!-- custom html -->
-    
+
 
    </div>
    <div class="size_fixed grpelem" id="u3507"><!-- custom html -->
-     
+
    </div>
    <div class="SlideShowWidget clearfix HeroFillFrame grpelem" id="slideshowu624"><!-- none box -->
     <div class="popup_anchor" id="u643popup">
@@ -183,13 +183,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <!-- /m_editable -->
    </div>
    <div class="size_fixed" id="u3502"><!-- custom html -->
-    
+
         <button class="hamburger hamburger--slider">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
         </button>
-        
+
    </div>
 
    @yield('menu')
@@ -226,20 +226,22 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 }catch(b){/*if(b&&"function"==typeof b.notify?b.notify():Muse.Assert.fail("Error calling selector function: "+b),false)throw b;*/}})})};
 
 </script>
-	
+
 	@yield('scripts_bottom')
 
-  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDWBFZiDcF4U80G-iQRraEvhetVcTBlxYE&libraries=places"></script>
+  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDWBFZiDcF4U80G-iQRraEvhetVcTBlxYE&libraries=places&language=es"></script>
   <script type="text/javascript">
       google.maps.event.addDomListener(window, 'load', function () {
           var options = {
             types: ['(regions)'],
             componentRestrictions: {country: "co"}
           };
-          var places = new google.maps.places.Autocomplete(document.getElementById('widgetu969_input'),options);
-          google.maps.event.addListener(places, 'place_changed', function () {
 
-          });
+          var places = new google.maps.places.Autocomplete(document.getElementById('widgetu969_input'),options);
+
+          /*google.maps.event.addListener(places, 'place_changed', function () {
+
+          });*/
       });
   </script>
    </body>

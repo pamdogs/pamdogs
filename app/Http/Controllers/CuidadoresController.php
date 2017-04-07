@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use PamDogs\Http\Requests;
 use PamDogs\Http\Controllers\Controller;
+use PamDogs\Cuidador;
+use PamDogs\Servicio;
+use Auth;
 
 class CuidadoresController extends Controller
 {
@@ -38,6 +41,107 @@ class CuidadoresController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'titulo' => 'required|max:50',
+            'descripcion'  => 'required|min:200',
+            'experiencia' => 'required',
+            'tam' => 'required',
+            'vivienda' => 'required',
+              //Probar la validacion del espacio ->
+            'espacio' => 'required',
+            'auto' => 'required',
+              //Probar la validacion de las mascotas ->
+            'mascota_perro' => 'required_without_all:mascota_gato,mascota_ninguna',
+            'mascota_gato' => 'required_without_all:mascota_perro,mascota_ninguna',
+            'pais' => 'required',
+            'ciudad' => 'required',
+            'direccion' => 'required',
+            'rango' => 'required|numeric|min:100|max:2000',
+            'hospedaje_tar_24h' => 'required_with:hospedaje_tar_h_extra,hospedaje_mascota_extra,hospedaje_semana',
+            'hospedaje_tar_h_extra' => 'required_with:hospedaje_tar_24h,hospedaje_mascota_extra,hospedaje_semana',
+            'hospedaje_mascota_extra' => 'required_with:hospedaje_tar_24h,hospedaje_tar_h_extra,hospedaje_semana',
+            'hospedaje_semana' => 'required_with:hospedaje_tar_24h,hospedaje_tar_h_extra,hospedaje_mascota_extra',
+            'guarderia_tar_h' => 'required_with:guarderia_mascota_extra,guarderia_turno',
+            'guarderia_mascota_extra' => 'required_with:guarderia_tar_h,guarderia_turno',
+            'guarderia_turno' => 'required_with:guarderia_tar_h,guarderia_mascota_extra',
+            'paseo_tar_h' => 'required_with:paseo_mascota_extra,paseo_horario,paseo_semana',
+            'paseo_mascota_extra' => 'required_with:paseo_tar_h,paseo_horario,paseo_semana',
+            'paseo_horario' => 'required_with:paseo_tar_h,paseo_mascota_extra,paseo_semana',
+            'paseo_semana' => 'required_with:paseo_tar_h,paseo_mascota_extra,paseo_horario',
+            'domicilio' => 'required'
+        ]);
+
+        $cuidador = Cuidador::firstOrNew(['user_id' => Auth::user()->id]);
+
+        $cuidador->titulo = $request->titulo;
+        $cuidador->descripcion = $request->descripcion;
+        $cuidador->experiencia = $request->experiencia;
+
+        foreach ($request->tam as $tam => $value) {
+          $cuidador->$value = 1;
+        }
+
+        $cuidador->vivienda = $request->vivienda;
+
+        foreach ($request->espacio as $espacio => $value) {
+          $cuidador->$value = 1;
+        }
+
+        $cuidador->auto = $request->auto;
+
+        $cuidador->mascota_perro = isset($request->mascota_perro) ? $request->mascota_perro : 0;
+        $cuidador->mascota_gato = isset($request->mascota_gato) ? $request->mascota_gato : 0;
+
+        $cuidador->pais = $request->pais;
+        $cuidador->ciudad = $request->ciudad;
+        $cuidador->direccion = $request->direccion;
+        $cuidador->rango = $request->rango;
+        $cuidador->domicilio = $request->domicilio;
+        $cuidador->contratado = 0;
+        //dd($cuidador);
+        $cuidador->latitud = $request->latitud;
+        $cuidador->longitud = $request->longitud;
+        $cuidador->save();
+
+        if(isset($request->hospedaje_tar_24h))
+        {
+          $hospedaje = Servicio::firstOrNew(['nombre' => 'Hospedaje', 'cuidador_id' => $cuidador->id]);
+          $hospedaje->tar_24h = $request->hospedaje_tar_24h;
+          $hospedaje->tar_h_extra = $request->hospedaje_tar_h_extra;
+          $hospedaje->mascota_extra = $request->hospedaje_mascota_extra;
+          foreach ($request->hospedaje_semana as $semana => $value) {
+            $hospedaje->$value = 1;
+          }
+          $hospedaje->save();
+        }
+
+        if(isset($request->guarderia_tar_h))
+        {
+          $guarderia = Servicio::firstOrNew(['nombre' => 'Guarderia', 'cuidador_id' => $cuidador->id]);
+          $guarderia->tar_h = $request->guarderia_tar_h;
+          $guarderia->mascota_extra = $request->guarderia_mascota_extra;
+          foreach ($request->guarderia_turno as $turno => $value) {
+            $guarderia->$value = 1;
+          }
+          $guarderia->save();
+        }
+
+        if(isset($request->paseo_tar_h))
+        {
+          $paseo = Servicio::firstOrNew(['nombre' => 'Paseo', 'cuidador_id' => $cuidador->id]);
+          $paseo->tar_h = $request->paseo_tar_h;
+          $paseo->mascota_extra = $request->paseo_mascota_extra;
+          //Faltan horas
+          foreach ($request->paseo_semana as $semana => $value) {
+            $paseo->$value = 1;
+          }
+          $paseo->save();
+        }
+
+        return response()->json(['Cuidador' => $cuidador,
+                                'Hospedaje' => $hospedaje,
+                                'Guarderia' => $guarderia,
+                                'Paseo' => $paseo]);
     }
 
     /**

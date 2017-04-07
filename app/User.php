@@ -41,7 +41,7 @@ class User extends Model implements AuthenticatableContract,
     /**
         Accessors
     */
-        
+
     public function getNacimientoAttribute($value)
     {
         return Carbon::parse($value);
@@ -63,5 +63,10 @@ class User extends Model implements AuthenticatableContract,
     public function mascotas()
     {
         return $this->hasMany('App\Mascota');
+    }
+
+    public function cuidadores()
+    {
+        return $this->hasOne('App\Cuidador');
     }
 }

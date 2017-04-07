@@ -80,7 +80,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
     <!-- m_editable region-id="editable-static-tag-U24576-BP_infinity" template="formulario-del-cuidador.html" data-type="image" -->
     <div class="clip_frame colelem" id="u24576" data-muse-uid="U24576" data-muse-type="img_frame"><!-- image -->
-     <img class="block" id="u24576_img" src="{{ url('main/images/user-22.png?crc=4023152180') }}" alt="" data-muse-src="{{ url('main/images/user-22.png?crc=4023152180') }}" data-image-width="253" data-image-height="253"/>
+     <img class="block img-circle" id="u24576_img" src="{{ url('main/images/user-22.png?crc=4023152180') }}" alt="" data-muse-src="{{ url('main/images/user-22.png?crc=4023152180') }}" data-image-width="253" data-image-height="253"/>
     </div>
     <!-- /m_editable -->
     <div class="Button shadow rounded-corners clearfix colelem" id="buttonu24574"><!-- container box -->
@@ -100,9 +100,10 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
     <div class="clearfix colelem" id="pu24567"><!-- group -->
      <div class="rounded-corners grpelem" id="u24567"><!-- simple frame --></div>
-     <form class="form-grp clearfix grpelem" id="widgetu24578" method="post" enctype="multipart/form-data" action="{{ url('main/scripts/form-u24578.php') }}"><!-- none box -->
-      <div class="fld-grp clearfix grpelem" id="widgetu24624" data-required="true" data-type="email"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24625-4"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu24624_input" name="Email" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu24624_prompt" for="widgetu24624_input"><span class="actAsPara">Max 50 caracteres.</span></label></span>
+     <form class="form-grp clearfix grpelem" id="widgetu24578" method="post" enctype="multipart/form-data" action=""><!-- none box -->
+       {{ csrf_field() }}
+      <div class="fld-grp clearfix grpelem" id="widgetu24624" data-required="true" data-type="text"><!-- none box -->
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24625-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu24624_input" name="titulo" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu24624_prompt" for="widgetu24624_input"><span class="actAsPara">Max 50 caracteres.</span></label></span>
       </div>
       <!-- m_editable region-id="editable-static-tag-U24613-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
       <div class="clearfix grpelem" id="u24613-4" data-muse-uid="U24613" data-muse-type="txt_frame"><!-- content -->
@@ -120,96 +121,98 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
       <!-- /m_editable -->
       <!-- m_editable region-id="editable-static-tag-U24598-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
-      <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u24598-4" data-muse-uid="U24598" data-muse-type="txt_frame" type="submit" value="Guardar" tabindex="39"><!-- content -->
+      <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u24598-4" data-muse-uid="U24598" data-muse-type="txt_frame" type="button" value="Guardar" tabindex="39"><!-- content -->
        <div style="margin-top:-13px;height:13px;">
         <p>Guardar</p>
        </div>
       </button>
       <!-- /m_editable -->
-      <div class="fld-grp clearfix grpelem" id="widgetu24669" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24671-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu24669_input" name="custom_U24669" tabindex="3"/><label class="wrapped-input fld-prompt" id="widgetu24669_prompt" for="widgetu24669_input"><span class="actAsPara">Escriba sus años de experiencia.</span></label></span>
-      </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24693" data-required="true"><!-- none box -->
-       <span class="fld-textarea actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24694-4"><!-- content --><textarea class="wrapped-input" id="widgetu24693_input" name="custom_U24693" tabindex="2"></textarea><label class="wrapped-input fld-prompt" id="widgetu24693_prompt" for="widgetu24693_input"><span class="actAsPara">Espacio para conocimientos, experiencia y características de tus servicios&nbsp; (mínimo 200 caracteres).</span></label></span>
+       <span class="fld-textarea actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24694-4"><!-- content --><textarea class="wrapped-input" id="widgetu24693_input" name="descripcion" tabindex="0"></textarea><label class="wrapped-input fld-prompt" id="widgetu24693_prompt" for="widgetu24693_input"><span class="actAsPara">Espacio para conocimientos, experiencia y características de tus servicios&nbsp; (mínimo 200 caracteres).</span></label></span>
       </div>
-
-      <div class="fld-grp clearfix grpelem" id="widgetu24580" data-required="true" data-type="radiogroup"><!-- none box -->
-       <div class="fld-grp clearfix grpelem" id="widgetu24586" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24588"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu24586_input" name="custom_U24580" tabindex="5"/>
+      <div class="fld-grp clearfix grpelem" id="widgetu24669" data-required="true"><!-- none box -->
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24671-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu24669_input" name="experiencia" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu24669_prompt" for="widgetu24669_input"><span class="actAsPara">Escriba sus años de experiencia.</span></label></span>
+      </div>
+      <!--<div class="fld-grp clearfix grpelem" id="widgetu24615" data-required="false" data-type="radiogroup"><!-- none box -->
+       <div class="fld-grp clearfix grpelem" id="widgetu24621" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24623"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="tam_10" spellcheck="false" id="widgetu24621_input" name="tam[]" tabindex="4"/>
+         <label for="widgetu24621_input"></label>
+        </div>
+       </div>
+       <div class="fld-grp clearfix grpelem" id="widgetu24616" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24617"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="tam_11_20" spellcheck="false" id="widgetu24616_input" name="tam[]" tabindex="4"/>
+         <label for="widgetu24616_input"></label>
+        </div>
+       </div>
+      <!--</div>-->
+      <!--<div class="fld-grp clearfix grpelem" id="widgetu24580" data-required="true" data-type="radiogroup"><!-- none box -->
+       <div class="fld-grp clearfix grpelem" id="widgetu24586" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24588"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="tam_21_40" spellcheck="false" id="widgetu24586_input" name="tam[]" tabindex="5"/>
          <label for="widgetu24586_input"></label>
         </div>
        </div>
-       <div class="fld-grp clearfix grpelem" id="widgetu24582" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24583"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu24582_input" name="custom_U24580" tabindex="5"/>
+       <div class="fld-grp clearfix grpelem" id="widgetu24582" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24583"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="tam_40" spellcheck="false" id="widgetu24582_input" name="tam[]" tabindex="5"/>
          <label for="widgetu24582_input"></label>
         </div>
        </div>
-      </div>
+      <!--</div>-->
 
       <div class="fld-grp clearfix grpelem" id="widgetu24697" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu24703" data-required="false" data-type="radio"><!-- none box -->
         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24705"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu24703_input" name="vivienda" tabindex="6"/>
+         <input class="wrapped-input" type="radio" value="Apartamento" spellcheck="false" id="widgetu24703_input" name="vivienda" tabindex="6"/>
          <label for="widgetu24703_input"></label>
         </div>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu24698" data-required="false" data-type="radio"><!-- none box -->
         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24700"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="2" spellcheck="false" id="widgetu24698_input" name="vivienda" tabindex="6"/>
+         <input class="wrapped-input" type="radio" value="Casa" spellcheck="false" id="widgetu24698_input" name="vivienda" tabindex="6"/>
          <label for="widgetu24698_input"></label>
         </div>
        </div>
        <!--<div class="fld-grp clearfix grpelem" id="widgetu24607" data-required="true" data-type="radiogroup"><!-- none box -->
         <div class="fld-grp clearfix grpelem" id="widgetu24610" data-required="false" data-type="radio"><!-- none box -->
          <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24612"><!-- simple frame -->
-          <input class="wrapped-input" type="radio" value="3" spellcheck="false" id="widgetu24610_input" name="vivienda" tabindex="7"/>
+          <input class="wrapped-input" type="radio" value="Local" spellcheck="false" id="widgetu24610_input" name="vivienda" tabindex="7"/>
           <label for="widgetu24610_input"></label>
          </div>
         </div>
        <!--</div>-->
       </div>
 
-      <div class="fld-grp clearfix grpelem" id="widgetu24685" data-required="false" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24687"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24685_input" name="custom_U24685" tabindex="9"/>
-        <label for="widgetu24685_input"></label>
-       </div>
-      </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu24615" data-required="false" data-type="radiogroup"><!-- none box -->
-       <div class="fld-grp clearfix grpelem" id="widgetu24621" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24623"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="si" spellcheck="false" id="widgetu24621_input" name="custom_U24615" tabindex="4"/>
-         <label for="widgetu24621_input"></label>
-        </div>
-       </div>
-       <div class="fld-grp clearfix grpelem" id="widgetu24616" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24617"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="no" spellcheck="false" id="widgetu24616_input" name="custom_U24615" tabindex="4"/>
-         <label for="widgetu24616_input"></label>
-        </div>
-       </div>
-      </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu24628" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24630"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24628_input" name="custom_U24628" tabindex="10"/>
-        <label for="widgetu24628_input"></label>
-       </div>
-      </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24649" data-required="true" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24651"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24649_input" name="custom_U24649" tabindex="8"/>
+        <input class="wrapped-input" type="checkbox" value="jardin" id="widgetu24649_input" name="espacio[]" tabindex="8"/>
         <label for="widgetu24649_input"></label>
        </div>
       </div>
+
+      <div class="fld-grp clearfix grpelem" id="widgetu24685" data-required="false" data-type="checkbox"><!-- none box -->
+       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24687"><!-- simple frame -->
+        <input class="wrapped-input" type="checkbox" value="balcon" id="widgetu24685_input" name="espacio[]" tabindex="9"/>
+        <label for="widgetu24685_input"></label>
+       </div>
+      </div>
+
+      <div class="fld-grp clearfix grpelem" id="widgetu24628" data-required="true" data-type="checkbox"><!-- none box -->
+       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24630"><!-- simple frame -->
+        <input class="wrapped-input" type="checkbox" value="terraza" id="widgetu24628_input" name="espacio[]" tabindex="10"/>
+        <label for="widgetu24628_input"></label>
+       </div>
+      </div>
+
       <div class="fld-grp clearfix grpelem" id="widgetu24640" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu24646" data-required="false" data-type="radio"><!-- none box -->
         <!-- m_editable region-id="editable-static-tag-U24648-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
         <label class="fld-label actAsDiv clearfix grpelem" id="u24648-4" data-muse-uid="U24648" data-muse-type="txt_frame" for="widgetu24646_input"><!-- content --><span class="actAsPara">No</span></label>
         <!-- /m_editable -->
         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24647"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="No" spellcheck="false" id="widgetu24646_input" name="custom_U24640" tabindex="11"/>
+         <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu24646_input" name="auto" tabindex="11"/>
          <label for="widgetu24646_input"></label>
         </div>
        </div>
@@ -218,173 +221,174 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <label class="fld-label actAsDiv clearfix grpelem" id="u24645-4" data-muse-uid="U24645" data-muse-type="txt_frame" for="widgetu24643_input"><!-- content --><span class="actAsPara">Sí</span></label>
         <!-- /m_editable -->
         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24644"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Sí" spellcheck="false" id="widgetu24643_input" name="custom_U24640" tabindex="11"/>
+         <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu24643_input" name="auto" tabindex="11"/>
          <label for="widgetu24643_input"></label>
         </div>
        </div>
       </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu24589" data-required="true" data-type="radiogroup"><!-- none box -->
-       <div class="fld-grp clearfix grpelem" id="widgetu24595" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24596"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Etiqueta de botón de opción" spellcheck="false" id="widgetu24595_input" name="custom_U24589" tabindex="12"/>
+      <!--<div class="fld-grp clearfix grpelem" id="widgetu24589" data-required="true" data-type="radiogroup"><!-- none box -->
+       <div class="fld-grp clearfix grpelem" id="widgetu24595" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24596"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="1" spellcheck="false" id="widgetu24595_input" name="mascota_perro" tabindex="12"/>
          <label for="widgetu24595_input"></label>
         </div>
        </div>
-       <div class="fld-grp clearfix grpelem" id="widgetu24591" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24592"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Etiqueta de botón de opción" spellcheck="false" id="widgetu24591_input" name="custom_U24589" tabindex="12"/>
+       <div class="fld-grp clearfix grpelem" id="widgetu24591" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24592"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="1" spellcheck="false" id="widgetu24591_input" name="mascota_gato" tabindex="12"/>
          <label for="widgetu24591_input"></label>
         </div>
        </div>
-      </div>
+      <!--</div>-->
       <div class="fld-grp clearfix grpelem" id="widgetu24710" data-required="true" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24713"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24710_input" name="custom_U24710" tabindex="13"/>
+        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24710_input" name="mascota_ninguna" tabindex="13"/>
         <label for="widgetu24710_input"></label>
        </div>
       </div>
+
       <div class="fld-grp clearfix grpelem" id="widgetu24661" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24662-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu24661_input" name="custom_U24661" tabindex="14"/><label class="wrapped-input fld-prompt" id="widgetu24661_prompt" for="widgetu24661_input"><span class="actAsPara">Introducir texto</span></label></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24662-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu24661_input" name="pais" tabindex="14" readonly value="Colombia"/><label class="wrapped-input fld-prompt" id="widgetu24661_prompt" for="widgetu24661_input"><span class="actAsPara">Introducir texto</span></label></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24653" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24655-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu24653_input" name="custom_U24653" tabindex="16"/><label class="wrapped-input fld-prompt" id="widgetu24653_prompt" for="widgetu24653_input"><span class="actAsPara">Introducir texto</span></label></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24655-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu24653_input" name="direccion" tabindex="16" placeholder=""/><label class="wrapped-input fld-prompt" id="widgetu24653_prompt" for="widgetu24653_input"><span class="actAsPara">Introducir texto</span></label></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24632" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24634-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu24632_input" name="custom_U24632" tabindex="15"/><label class="wrapped-input fld-prompt" id="widgetu24632_prompt" for="widgetu24632_input"><span class="actAsPara">Introducir texto</span></label></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24634-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu24632_input" name="ciudad" tabindex="15" placeholder=""/><label class="wrapped-input fld-prompt" id="widgetu24632_prompt" for="widgetu24632_input"><span class="actAsPara">Introducir texto</span></label></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24677" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24679-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu24677_input" name="custom_U24677" tabindex="18"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24679-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu24677_input" name="hospedaje_tar_24h" tabindex="18"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24599" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24602-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu24599_input" name="custom_U24599" tabindex="19"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24602-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu24599_input" name="hospedaje_tar_h_extra" tabindex="19"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24689" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24692-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu24689_input" name="custom_U24689" tabindex="27"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24692-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu24689_input" name="hospedaje_mascota_extra" tabindex="27"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24603" data-required="true" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24606"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24603_input" name="custom_U24603" tabindex="20"/>
+        <input class="wrapped-input" type="checkbox" value="lun" id="widgetu24603_input" name="hospedaje_semana[]" tabindex="20"/>
         <label for="widgetu24603_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24681" data-required="true" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24684"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24681_input" name="custom_U24681" tabindex="21"/>
+        <input class="wrapped-input" type="checkbox" value="mar" id="widgetu24681_input" name="hospedaje_semana[]" tabindex="21"/>
         <label for="widgetu24681_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24706" data-required="true" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24707"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24706_input" name="custom_U24706" tabindex="22"/>
+        <input class="wrapped-input" type="checkbox" value="mie" id="widgetu24706_input" name="hospedaje_semana[]" tabindex="22"/>
         <label for="widgetu24706_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24673" data-required="true" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24675"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24673_input" name="custom_U24673" tabindex="23"/>
+        <input class="wrapped-input" type="checkbox" value="jue" id="widgetu24673_input" name="hospedaje_semana[]" tabindex="23"/>
         <label for="widgetu24673_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24657" data-required="true" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24659"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24657_input" name="custom_U24657" tabindex="24"/>
+        <input class="wrapped-input" type="checkbox" value="vie" id="widgetu24657_input" name="hospedaje_semana[]" tabindex="24"/>
         <label for="widgetu24657_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24665" data-required="true" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24666"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24665_input" name="custom_U24665" tabindex="25"/>
+        <input class="wrapped-input" type="checkbox" value="sab" id="widgetu24665_input" name="hospedaje_semana[]" tabindex="25"/>
         <label for="widgetu24665_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24636" data-required="true" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24637"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu24636_input" name="custom_U24636" tabindex="26"/>
+        <input class="wrapped-input" type="checkbox" value="dom" id="widgetu24636_input" name="hospedaje_semana[]" tabindex="26"/>
         <label for="widgetu24636_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu25191" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25193-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25191_input" name="custom_U25191" tabindex="28"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25193-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25191_input" name="guarderia_tar_h" tabindex="28"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu25203" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25205-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25203_input" name="custom_U25203" tabindex="30"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25205-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25203_input" name="guarderia_mascota_extra" tabindex="30"/></span>
       </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu25215" data-required="true" data-type="radiogroup"><!-- none box -->
-       <div class="fld-grp clearfix grpelem" id="widgetu25236" data-required="false" data-type="radio"><!-- none box -->
+      <div class="fld-grp clearfix grpelem" id="widgetu25215" data-required="true" data-type="checkbox"><!-- none box -->
+       <div class="fld-grp clearfix grpelem" id="widgetu25236" data-required="false" data-type="checkbox"><!-- none box -->
         <!-- m_editable region-id="editable-static-tag-U25238-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
         <label class="fld-label actAsDiv clearfix grpelem" id="u25238-4" data-muse-uid="U25238" data-muse-type="txt_frame" for="widgetu25236_input"><!-- content --><span class="actAsPara">Diurno</span></label>
         <!-- /m_editable -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u25237"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Diurno" spellcheck="false" id="widgetu25236_input" name="custom_U25215" tabindex="29"/>
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25237"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="diurno" spellcheck="false" id="widgetu25236_input" name="guarderia_turno[]" tabindex="29"/>
          <label for="widgetu25236_input"></label>
         </div>
        </div>
-       <div class="fld-grp clearfix grpelem" id="widgetu25245" data-required="false" data-type="radio"><!-- none box -->
+       <div class="fld-grp clearfix grpelem" id="widgetu25245" data-required="false" data-type="checkbox"><!-- none box -->
         <!-- m_editable region-id="editable-static-tag-U25246-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
         <label class="fld-label actAsDiv clearfix grpelem" id="u25246-4" data-muse-uid="U25246" data-muse-type="txt_frame" for="widgetu25245_input"><!-- content --><span class="actAsPara">Nocturno</span></label>
         <!-- /m_editable -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u25247"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Nocturno" spellcheck="false" id="widgetu25245_input" name="custom_U25215" tabindex="29"/>
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25247"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="nocturno" spellcheck="false" id="widgetu25245_input" name="guarderia_turno[]" tabindex="29"/>
          <label for="widgetu25245_input"></label>
         </div>
        </div>
       </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu25287" data-required="true" data-type="radiogroup"><!-- none box -->
-       <div class="fld-grp clearfix grpelem" id="widgetu25308" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u25310"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Etiqueta de botón de opción" spellcheck="false" id="widgetu25308_input" name="custom_U25287" tabindex="32"/>
+      <!--<div class="fld-grp clearfix grpelem" id="widgetu25287" data-required="true" data-type="radiogroup"><!-- none box -->
+       <div class="fld-grp clearfix grpelem" id="widgetu25308" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25310"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="lun" spellcheck="false" id="widgetu25308_input" name="paseo_semana[]" tabindex="32"/>
          <label for="widgetu25308_input"></label>
         </div>
        </div>
-       <div class="fld-grp clearfix grpelem" id="widgetu25317" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u25318"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Etiqueta de botón de opción" spellcheck="false" id="widgetu25317_input" name="custom_U25287" tabindex="32"/>
+       <div class="fld-grp clearfix grpelem" id="widgetu25317" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25318"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="mar" spellcheck="false" id="widgetu25317_input" name="paseo_semana[]" tabindex="32"/>
          <label for="widgetu25317_input"></label>
         </div>
        </div>
-      </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu25326" data-required="true" data-type="radiogroup"><!-- none box -->
-       <div class="fld-grp clearfix grpelem" id="widgetu25347" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u25348"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Etiqueta de botón de opción" spellcheck="false" id="widgetu25347_input" name="custom_U25326" tabindex="35"/>
+      <!--</div>-->
+      <!--<div class="fld-grp clearfix grpelem" id="widgetu25326" data-required="true" data-type="radiogroup"><!-- none box -->
+       <div class="fld-grp clearfix grpelem" id="widgetu25347" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25348"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="mie" spellcheck="false" id="widgetu25347_input" name="paseo_semana[]" tabindex="35"/>
          <label for="widgetu25347_input"></label>
         </div>
        </div>
-       <div class="fld-grp clearfix grpelem" id="widgetu25356" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u25357"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Etiqueta de botón de opción" spellcheck="false" id="widgetu25356_input" name="custom_U25326" tabindex="35"/>
+       <div class="fld-grp clearfix grpelem" id="widgetu25356" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25357"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="jue" spellcheck="false" id="widgetu25356_input" name="paseo_semana[]" tabindex="35"/>
          <label for="widgetu25356_input"></label>
         </div>
        </div>
-      </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu25365" data-required="true" data-type="radiogroup"><!-- none box -->
-       <div class="fld-grp clearfix grpelem" id="widgetu25386" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u25387"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Etiqueta de botón de opción" spellcheck="false" id="widgetu25386_input" name="custom_U25365" tabindex="33"/>
+      <!--</div>-->
+      <!--<div class="fld-grp clearfix grpelem" id="widgetu25365" data-required="true" data-type="radiogroup"><!-- none box -->
+       <div class="fld-grp clearfix grpelem" id="widgetu25386" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25387"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="vie" spellcheck="false" id="widgetu25386_input" name="paseo_semana[]" tabindex="33"/>
          <label for="widgetu25386_input"></label>
         </div>
        </div>
-       <div class="fld-grp clearfix grpelem" id="widgetu25395" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u25397"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Etiqueta de botón de opción" spellcheck="false" id="widgetu25395_input" name="custom_U25365" tabindex="33"/>
+       <div class="fld-grp clearfix grpelem" id="widgetu25395" data-required="false" data-type="checkbox"><!-- none box -->
+        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25397"><!-- simple frame -->
+         <input class="wrapped-input" type="checkbox" value="sab" spellcheck="false" id="widgetu25395_input" name="paseo_semana[]" tabindex="33"/>
          <label for="widgetu25395_input"></label>
         </div>
        </div>
-      </div>
-      <div class="fld-grp clearfix grpelem" id="widgetu25404" data-required="true" data-type="checkbox"><!-- none box -->
+      <!--</div>-->
+      <div class="fld-grp clearfix grpelem" id="widgetu25404" data-required="false" data-type="checkbox"><!-- none box -->
        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25406"><!-- simple frame -->
-        <input class="wrapped-input" type="checkbox" value="1" id="widgetu25404_input" name="custom_U25404" tabindex="34"/>
+        <input class="wrapped-input" type="checkbox" value="dom" id="widgetu25404_input" name="paseo_semana[]" tabindex="34"/>
         <label for="widgetu25404_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu25420" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25421-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25420_input" name="custom_U25420" tabindex="31"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25421-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25420_input" name="paseo_tar_h" tabindex="31"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu25432" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25434-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25432_input" name="custom_U25432" tabindex="36"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25434-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25432_input" name="paseo_mascota_extra" tabindex="36"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu25450" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25453-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25450_input" name="custom_U25450" tabindex="37"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25453-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25450_input" name="paseo_horario" tabindex="37"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu28812" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu28843" data-required="false" data-type="radio"><!-- none box -->
@@ -392,7 +396,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <label class="fld-label actAsDiv clearfix grpelem" id="u28844-4" data-muse-uid="U28844" data-muse-type="txt_frame" for="widgetu28843_input"><!-- content --><span class="actAsPara">Sí</span></label>
         <!-- /m_editable -->
         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u28845"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="Sí" spellcheck="false" id="widgetu28843_input" name="custom_U28812" tabindex="38"/>
+         <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu28843_input" name="domicilio" tabindex="38"/>
          <label for="widgetu28843_input"></label>
         </div>
        </div>
@@ -401,13 +405,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <label class="fld-label actAsDiv clearfix grpelem" id="u28857-4" data-muse-uid="U28857" data-muse-type="txt_frame" for="widgetu28855_input"><!-- content --><span class="actAsPara">No</span></label>
         <!-- /m_editable -->
         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u28856"><!-- simple frame -->
-         <input class="wrapped-input" type="radio" value="No" spellcheck="false" id="widgetu28855_input" name="custom_U28812" tabindex="38"/>
+         <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu28855_input" name="domicilio" tabindex="38"/>
          <label for="widgetu28855_input"></label>
         </div>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu29113" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u29116-3"><!-- content --><input class="wrapped-input" type="number" id="widgetu29113_input" name="numeros" tabindex="17"  min="100" max="1000" step="100" autocomplete="off"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u29116-3"><!-- content --><input class="wrapped-input" type="number" id="widgetu29113_input" name="rango" tabindex="17"  min="100" max="2000" step="200" autocomplete="off"/></span>
       </div>
      </form>
      <!-- m_editable region-id="editable-static-tag-U24714-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
@@ -517,12 +521,12 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      <!-- /m_editable -->
      <!-- m_editable region-id="editable-static-tag-U24736-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u24736-5" data-muse-uid="U24736" data-muse-type="txt_frame"><!-- content -->
-      <p><span id="u24736">Localidad:</span></p>
+      <p><span id="u24736">País:</span></p>
      </div>
      <!-- /m_editable -->
      <!-- m_editable region-id="editable-static-tag-U24737-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u24737-4" data-muse-uid="U24737" data-muse-type="txt_frame"><!-- content -->
-      <p>Barrio:</p>
+      <p>Ciudad:</p>
      </div>
      <!-- /m_editable -->
      <!-- m_editable region-id="editable-static-tag-U24738-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
@@ -784,7 +788,11 @@ var citymap = {
   }
 }
 
+var geocoder
+
 function initMap() {
+  //Geocoder
+  geocoder = new google.maps.Geocoder();
   // Create the map.
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
@@ -808,39 +816,152 @@ function initMap() {
       center: citymap[city].center,
       radius: 100
     });
-    console.log(cityCircle.getRadius())
+    //console.log(cityCircle.getRadius())
   }
 
-  // bounds of the desired area
-  var allowedBounds = new google.maps.LatLngBounds(
-       new google.maps.LatLng(70.33956792419954, 178.01171875),
-       new google.maps.LatLng(83.86483689701898, -88.033203125)
-  );
-  var lastValidCenter = map.getCenter();
+  google.maps.event.addListener(cityCircle, 'dragend', function() { reverseCodeAddress() } );
 
-  google.maps.event.addListener(map, 'center_changed', function() {
-      if (allowedBounds.contains(map.getCenter())) {
-          // still within valid bounds, so save the last valid position
-          lastValidCenter = map.getCenter();
-          return;
-      }
 
-      // not valid anymore => return to last valid position
-      map.panTo(lastValidCenter);
+  var ciudad = document.getElementById('widgetu24632_input')
+  var places = new google.maps.places.Autocomplete(ciudad,{
+    types: ['(cities)'],
+    componentRestrictions: {country: "co"}
   });
-}
+
+  var localidad = document.getElementById('widgetu24653_input')
+  places2 = new google.maps.places.Autocomplete(localidad,{
+    types: ['address'],
+    componentRestrictions: {country: "co"}
+  });
+
+  google.maps.event.addListener(places, 'place_changed', function () {
+    ciudad.value = places.getPlace().name
+    var boundsByCity = places.getPlace().geometry.viewport;
+
+    codeAddress()
+    console.log(boundsByCity)
+    places2.setBounds(boundsByCity)
+  });
+
+  google.maps.event.addListener(places2, 'place_changed', function () {
+    console.log(places2.getPlace().name)
+    localidad.value = places2.getPlace().name
+    codeAddress()
+  });
+} // initMap()
+
+
+  function codeAddress() {
+    var address = document.getElementById("widgetu24653_input").value +' '+ document.getElementById("widgetu24632_input").value +' '+ document.getElementById("widgetu24661_input").value ;
+    console.log(address)
+    geocoder.geocode( {
+                        'address': address,
+                        'componentRestrictions': {country:'CO'}
+                      },
+                      function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        cityCircle.setCenter(results[0].geometry.location);
+        /*var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });*/
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+    places2.setBounds(cityCircle.getBounds())
+  }
+
+  function reverseCodeAddress() {
+    //console.log(cityCircle.center)
+    geocoder.geocode({'location':cityCircle.center}, function(results, status) {
+      console.log(results[0].address_components)
+      for (var result in results[0].address_components) {
+        if (result.types == 'locality'){
+          console.log('YEAH!')
+        }
+      }
+        alert(results[0].types)
+
+        //console.log(results)
+    })
+    places2.setBounds(cityCircle.getBounds())
+  }
+
+
+
 
 
 
     </script>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWBFZiDcF4U80G-iQRraEvhetVcTBlxYE&callback=initMap"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWBFZiDcF4U80G-iQRraEvhetVcTBlxYE&callback=initMap&libraries=places"></script>
 
     <script type="text/javascript">
-      $('#widgetu29113_input').on('change',function(){
-        cityCircle.setRadius(parseInt($(this).val()))
-      }).on('keydown',function(e){
-        e.preventDefault()
+      $(function(){
+        $('#widgetu29113_input').on('change',function(){
+          cityCircle.setRadius(parseInt($(this).val()))
+        }).on('keydown',function(e){
+          e.preventDefault()
+        })
+
+        $('#widgetu24653_input,#widgetu24632_input,#widgetu24661_input').on('keyup',function(){
+          //codeAddress()
+        })
+
+        $('#widgetu24710_input').on('click',function(){
+          if(!$('#widgetu24710').hasClass('non-empty-st') && $('#widgetu24595').hasClass('non-empty-st')){
+            $('#widgetu24595_input').click()
+          }
+
+          if(!$('#widgetu24710').hasClass('non-empty-st') && $('#widgetu24591').hasClass('non-empty-st')){
+            $('#widgetu24591_input').click()
+          }
+        })
+
+        $('#widgetu24595_input,#widgetu24591_input').on('click',function(){
+          if(!$(this).parent().parent().hasClass('non-empty-st') && $('#widgetu24710').hasClass('non-empty-st')){
+            $('#widgetu24710_input').click()
+          }
+        })
+
+        $('#u24598-4').on('click',function(e){
+          e.preventDefault()
+
+          swal({
+          	  title: "Un momento",
+          	  text: "Enviando datos...",
+          	  showConfirmButton: false
+          	});
+
+          var send = $('#widgetu24578').serializeArray()
+          send.push({name: 'latitud', value: cityCircle.getCenter().lat})
+          send.push({name: 'longitud', value: cityCircle.getCenter().lng})
+
+          console.log(send)
+          $.post("{{ route('registro.cuidador') }}",send,function(data){
+
+          }).done(function(data){
+      			swal({
+      			  title: "Recibido",
+      			  text: "Exitoso",
+      			  type: "success",
+      			  showConfirmButton: true
+      			});
+
+    			//setTimeout(function(){location.assign("{{ route('home') }}")},1000)
+
+          }).fail(function(jqXHR, textStatus, errorThrown){
+          	swal({
+  	  			  title: "Error",
+  	  			  text: takeErrors(jqXHR),
+  	  			  type: "error",
+  	  			  showConfirmButton: true
+  	  			});
+          })
+
+      	})
       })
     </script>
    </body>

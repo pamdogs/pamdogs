@@ -69,6 +69,8 @@ Route::group(['prefix' => 'registro', 'as' => 'registro.'], function()
 		Route::get('cuidador', ['as' => 'cuidador', function(){
 		  return view('main.formulario-del-cuidador');
 		}]);
+
+		Route::post('cuidador', ['as' => 'cuidador', 'uses' => 'CuidadoresController@store']);
 	});
 });
 

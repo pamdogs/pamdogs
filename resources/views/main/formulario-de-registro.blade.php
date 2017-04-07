@@ -6,7 +6,7 @@
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2017.0.0.363"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
   <script type="text/javascript">
    // Update the 'nojs'/'js' class on the html node
     document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -14,7 +14,7 @@
     // Check that all required assets are uploaded and up-to-date
     if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "webpro.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "formulario-de-registro.css"], "outOfDate":[]};
   </script>
-  
+
   <link rel="shortcut icon" href="{{ url('main/images/favicon.ico?crc=69713473') }}"/>
   <title>Formulario de registro</title>
   <!-- CSS -->
@@ -37,26 +37,26 @@
   <script src="scripts/html5shiv.js?crc=4241844378" type="text/javascript"></script>
   <![endif]-->
     <!--HTML Widget code-->
-  <link rel="stylesheet" type="text/css" href="{{ url('main/scripts/jquery-ui/jquery-ui.css') }}"/>    
+  <link rel="stylesheet" type="text/css" href="{{ url('main/scripts/jquery-ui/jquery-ui.css') }}"/>
 	@yield('normalize_styles')
 
-	@yield('script_pace')  
+	@yield('script_pace')
  </head>
  <body>
 
   <!--HTML Widget code-->
-  
+
 
 	@yield('loader')
 
-  
+
   <div class="clearfix borderbox" id="page"><!-- group -->
    <div class="size_fixed grpelem" id="u2503"><!-- custom html -->
-    
+
 
    </div>
    <div class="size_fixed grpelem" id="u3507"><!-- custom html -->
-     
+
    </div>
    <div class="browser_width" id="u14400-bw">
     <div id="u14400"><!-- simple frame --></div>
@@ -66,8 +66,8 @@
     <div class="grpelem" id="u1563"><!-- simple frame --></div>
     <div class="rounded-corners clearfix grpelem" id="u1554"><!-- column -->
      <!-- m_editable region-id="editable-static-tag-U1658-BP_infinity" template="formulario-de-registro.html" data-type="image" -->
-     <div class="clip_frame colelem" id="u1658" data-muse-uid="U1658" data-muse-type="img_frame"><!-- image -->
-      <img class="block" id="u1658_img" src="{{ url('main/images/user.png?crc=4023152180') }}" alt="" data-muse-src="{{ url('main/images/user.png?crc=4023152180') }}" data-image-width="253" data-image-height="253"/>
+     <div class="clip_frame colelem div-circle" id="u1658" data-muse-uid="U1658" data-muse-type="img_frame"><!-- image -->
+      <img class="block img-circle" id="u1658_img" src="{{ url('main/images/user.png?crc=4023152180') }}" alt="" data-muse-src="{{ url('main/images/user.png?crc=4023152180') }}" data-image-width="253" data-image-height="253"/>
      </div>
      <!-- /m_editable -->
      <div class="Button shadow rounded-corners clearfix colelem" id="buttonu1651"><!-- container box -->
@@ -75,6 +75,7 @@
       <div class="clearfix grpelem" id="u1652-4" data-muse-uid="U1652" data-muse-type="txt_frame"><!-- content -->
        <p>Subir nueva imagen</p>
       </div>
+      <input id="avatar" type="file" name="avatar" value="" accept="image/*" hidden>
       <!-- /m_editable -->
      </div>
     </div>
@@ -111,7 +112,7 @@
     <!-- /m_editable -->
     <form class="form-grp clearfix colelem" id="widgetu2350" method="post" enctype="multipart/form-data" action="{{ route('registro.cliente.datos') }}"><!-- none box -->
       {{ csrf_field() }}
-     
+
      <!-- m_editable region-id="editable-static-tag-U2358-BP_infinity" template="formulario-de-registro.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u2358-3" data-muse-uid="U2358" data-muse-type="txt_frame"><!-- content -->
       <p>&nbsp;</p>
@@ -149,7 +150,7 @@
      <div class="fld-grp clearfix grpelem" id="widgetu2413" data-required="true"><!-- none box -->
       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2416-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu2413_input" name="telefono" tabindex="0" value="{{ Auth::user()->telefono }}"/><label class="wrapped-input fld-prompt" id="widgetu2413_prompt" for="widgetu2413_input"><span class="actAsPara">Número telefónico.</span></label></span>
      </div>
-     
+
      <div class="fld-grp clearfix grpelem" id="widgetu2470" data-required="true"><!-- none box -->
       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2471-4"><!-- content --><!--<input class="wrapped-input" type="text" id="widgetu2470_input" name="dni_tipo" tabindex="6"/>-->
       <select class="wrapped-input" id="widgetu2470_input" name="dni_tipo" tabindex="0">
@@ -161,7 +162,7 @@
      <div class="fld-grp clearfix grpelem" id="widgetu2485" data-required="true"><!-- none box -->
       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2486-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2485_input" name="dni_nro" tabindex="0" value="{{ Auth::user()->telefono }}"/><label class="wrapped-input fld-prompt" id="widgetu2485_prompt" for="widgetu2485_input"><span class="actAsPara">Número de documento.</span></label></span>
      </div>
-     
+
     </form>
     <!-- m_editable region-id="editable-static-tag-U2440-BP_infinity" template="formulario-de-registro.html" data-type="html" data-ice-options="disableImageResize,link" -->
     <div class="clearfix colelem" id="u2440-4" data-muse-uid="U2440" data-muse-type="txt_frame"><!-- content -->
@@ -195,13 +196,13 @@
    <button class="nonblock nontext Button shadow rounded-corners clearfix grpelem" id="buttonu2320" data-redir="{{ route('registro.cuidador') }}" data-href="page:U24562" data-muse-uid="U2320"><!-- container box --><!-- m_editable region-id="editable-static-tag-U2321-BP_infinity" template="formulario-de-registro.html" data-type="html" data-ice-options="disableImageResize,link" --><div class="clearfix grpelem" id="u2321-4" data-muse-uid="U2321" data-muse-type="txt_frame"><!-- content --><p>Quiero ser cuidador</p></div><!-- /m_editable --></button>
    <!-- /m_editable -->
    <div class="size_fixed" id="u3502"><!-- custom html -->
-    
+
         <button class="hamburger hamburger--slider">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
         </button>
-        
+
    </div>
    @yield('menu')
    <div class="verticalspacer" data-offset-top="1744" data-content-above-spacer="1743" data-content-below-spacer="219"></div>
@@ -260,12 +261,108 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
           }
         })
 
+        //Subir avatar
+        $('#u1652-4').on('click',function(){
+          $('#avatar').click()
+        })
+
+        $('#avatar').on('change',function(){
+          var avatar = $(this)[0].files
+          previewImage(avatar[0])
+        })
+
+        function previewImage(image)
+        {
+          var reader = new FileReader();
+          reader.onload = function(event) {
+            var file = new Image;
+            file.onload = function()
+            {
+              //alert(file.width + " " + file.height);
+              /*var resized = calculateAspectRatioFit(file.width, file.height, 100000000, 254)
+              console.log(resized.width)
+              file.width = resized.widht
+              file.heigh = resized.height
+              console.log(file)*/
+              console.log('IN 0')
+              console.log(file.width +' '+file.height)
+              var containerImage = $('#u1658')
+              var showImage = $('#u1658_img')
+              if(file.width < file.height)
+              {
+                console.log('IN 1')
+                if(file.height > containerImage.height())
+                {
+                  var diff = (containerImage.height() - file.height) / 2
+                  showImage.css({width:'100%',heigth:'auto','margin-left':0})
+                  console.log('IN 2')
+                }
+                else if (containerImage.width() < file.width())
+                {
+
+                }
+              }
+            }
+            file.src = reader.result
+
+            $('#u1658_img').attr("src", file.src);
+            var containerImage = $('#u1658')
+            var showImage = $('#u1658_img')
+
+            /*if(containerImage.width() < showImage.width())
+            {
+
+              var diff = (containerImage.width() - showImage.width()) / 2
+              console.log(diff)
+              showImage.css({'margin-left':diff , 'width':'auto' , 'margin-top':0})
+            }*/
+            if(showImage.css('width') == '100%')
+            {
+              var diff = (containerImage.height() - showImage.height()) / 2
+              console.log(diff)
+              showImage.css('margin-top',diff)
+            }
+          };
+          reader.onerror = function(event) {
+              alert("ERROR EN IMAGEN: " + event.target.error.code);
+          };
+          reader.readAsDataURL(image);
+        }
+
+
+        /**
+        * Conserve aspect ratio of the orignal region. Useful when shrinking/enlarging
+        * images to fit into a certain area.
+        *
+        * @param {Number} srcWidth Source area width
+        * @param {Number} srcHeight Source area height
+        * @param {Number} maxWidth Fittable area maximum available width
+        * @param {Number} maxHeight Fittable area maximum available height
+        * @return {Object} { width, heigth }
+        */
+        function calculateAspectRatioFit(srcWidth, srcHeight, maxWidth, maxHeight) {
+
+            var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+
+            return { width: srcWidth*ratio, height: srcHeight*ratio };
+         }
+
+
+        /*function previewResize()
+        {*/
+        //Preview Resize
+          var width = $('#u1658').width()
+          $('#u1658').height(width)
+        /*}*/
+
+        //Enviar formulario si quiere ser Cliente
         $('#buttonu6752').on('click',function(e){
           e.preventDefault()
           var redir = $(this).data('redir')
           send(redir)
         })
 
+        //Enviar formulario si quiere ser Cuidador
         $('#buttonu2320').on('click',function(e){
           e.preventDefault()
           var redir = $(this).data('redir')
@@ -289,7 +386,7 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             text: "Exitoso",
             type: "success",
             timer: 4000,
-            showConfirmButton: true
+            showConfirmButton: false
           });
           location.assign(url)
         }).fail(function(jqXHR, textStatus, errorThrown){
@@ -302,11 +399,11 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
         })
       }
 
-      
-        
-      
+
+
+
     </script>
-  	
+
 
    </body>
 </html>

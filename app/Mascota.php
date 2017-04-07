@@ -9,7 +9,7 @@ class Mascota extends Model
 {
     protected $table = "mascotas";
 
-    protected $fillable = ['nombre','nacimiento','genero','raza','personalidad','duerme','con_perros','con_chicos','salta','celo','vaccuna','esterilizado','vet_nombre','vet_phone','vet_address','seguro','compania_seguro'];
+    protected $fillable = ['nombre','nacimiento','genero','raza','personalidad','duerme','con_perros','con_chicos','salta','celo','vacuna','esterilizado','vet_nombre','vet_phone','vet_address','seguro','compania_seguro'];
 
     /**
         Accessors
