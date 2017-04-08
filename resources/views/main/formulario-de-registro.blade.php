@@ -62,12 +62,15 @@
     <div id="u14400"><!-- simple frame --></div>
    </div>
    <a class="nonblock nontext" id="u187" href="{{ url('/') }}" data-href="page:U93"><!-- simple frame --></a>
+   <form id="widgetu2350_form" method="post" enctype="multipart/form-data" action="{{ route('registro.cliente.datos') }}">
+     {{ csrf_field() }}
+
    <div class="clearfix grpelem" id="pu1563"><!-- group -->
     <div class="grpelem" id="u1563"><!-- simple frame --></div>
     <div class="rounded-corners clearfix grpelem" id="u1554"><!-- column -->
      <!-- m_editable region-id="editable-static-tag-U1658-BP_infinity" template="formulario-de-registro.html" data-type="image" -->
      <div class="clip_frame colelem div-circle" id="u1658" data-muse-uid="U1658" data-muse-type="img_frame"><!-- image -->
-      <img class="block img-circle" id="u1658_img" src="{{ url('main/images/user.png?crc=4023152180') }}" alt="" data-muse-src="{{ url('main/images/user.png?crc=4023152180') }}" data-image-width="253" data-image-height="253"/>
+      <img class="block img-circle" id="u1658_img" src="{{ isset(Auth::user()->avatar) ? url('images/avatars/'.Auth::user()->avatar) : url('main/images/user.png?crc=4023152180') }}" alt="" data-muse-src="{{ isset(Auth::user()->avatar) ? url('images/avatars/'.Auth::user()->avatar) : url('main/images/user.png?crc=4023152180') }}" data-image-width="253" data-image-height="253"/>
      </div>
      <!-- /m_editable -->
      <div class="Button shadow rounded-corners clearfix colelem" id="buttonu1651"><!-- container box -->
@@ -75,7 +78,7 @@
       <div class="clearfix grpelem" id="u1652-4" data-muse-uid="U1652" data-muse-type="txt_frame"><!-- content -->
        <p>Subir nueva imagen</p>
       </div>
-      <input id="avatar" type="file" name="avatar" value="" accept="image/*" hidden>
+      <input id="avatar" type="file" name="avatar" accept="image/*" hidden>
       <!-- /m_editable -->
      </div>
     </div>
@@ -110,8 +113,8 @@
      <p>Nombre:</p>
     </div>
     <!-- /m_editable -->
-    <form class="form-grp clearfix colelem" id="widgetu2350" method="post" enctype="multipart/form-data" action="{{ route('registro.cliente.datos') }}"><!-- none box -->
-      {{ csrf_field() }}
+    <div class="form-grp clearfix colelem" id="widgetu2350"><!-- none box -->
+
 
      <!-- m_editable region-id="editable-static-tag-U2358-BP_infinity" template="formulario-de-registro.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u2358-3" data-muse-uid="U2358" data-muse-type="txt_frame"><!-- content -->
@@ -163,7 +166,7 @@
       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2486-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu2485_input" name="dni_nro" tabindex="0" value="{{ Auth::user()->telefono }}"/><label class="wrapped-input fld-prompt" id="widgetu2485_prompt" for="widgetu2485_input"><span class="actAsPara">Número de documento.</span></label></span>
      </div>
 
-    </form>
+   </div>
     <!-- m_editable region-id="editable-static-tag-U2440-BP_infinity" template="formulario-de-registro.html" data-type="html" data-ice-options="disableImageResize,link" -->
     <div class="clearfix colelem" id="u2440-4" data-muse-uid="U2440" data-muse-type="txt_frame"><!-- content -->
      <p>Apellidos:</p>
@@ -190,6 +193,7 @@
     </div>
     <!-- /m_editable -->
    </div>
+   </form>
    <div class="size_fixed grpelem" id="u7006"><!-- custom html -->
    </div>
    <!-- m_editable region-id="editable-static-tag-U2320" template="formulario-de-registro.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
@@ -238,6 +242,14 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 
     <script type="text/javascript">
       $(function(){
+        var ancho = $('#u1658').width()
+        $('#u1658').height(ancho)
+
+        $(window).resize(function(){
+          var ancho = $('#u1658').width()
+          $('#u1658').height(ancho)
+        })
+
         $('input[name="nacimiento"]').datepicker({
           dateFormat: "dd/mm/yy",
           changeMonth: true,
@@ -278,29 +290,23 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             var file = new Image;
             file.onload = function()
             {
-              //alert(file.width + " " + file.height);
-              /*var resized = calculateAspectRatioFit(file.width, file.height, 100000000, 254)
-              console.log(resized.width)
-              file.width = resized.widht
-              file.heigh = resized.height
-              console.log(file)*/
-              console.log('IN 0')
-              console.log(file.width +' '+file.height)
               var containerImage = $('#u1658')
               var showImage = $('#u1658_img')
               if(file.width < file.height)
               {
-                console.log('IN 1')
-                if(file.height > containerImage.height())
-                {
-                  var diff = (containerImage.height() - file.height) / 2
-                  showImage.css({width:'100%',heigth:'auto','margin-left':0})
-                  console.log('IN 2')
-                }
-                else if (containerImage.width() < file.width())
-                {
-
-                }
+                showImage.css({width:'100%',height:'auto','margin-left':0})
+                var diff = (containerImage.height() - showImage.height()) / 2
+                showImage.css('margin-top',diff)
+              }
+              else if(file.width >= file.height)
+              {
+                showImage.css({width:'auto',height:'100%','margin-top':0})
+                var diff = (containerImage.width() - showImage.width()) / 2
+                showImage.css('margin-left',diff)
+              }
+              else
+              {
+                alert('error')
               }
             }
             file.src = reader.result
@@ -309,51 +315,12 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             var containerImage = $('#u1658')
             var showImage = $('#u1658_img')
 
-            /*if(containerImage.width() < showImage.width())
-            {
-
-              var diff = (containerImage.width() - showImage.width()) / 2
-              console.log(diff)
-              showImage.css({'margin-left':diff , 'width':'auto' , 'margin-top':0})
-            }*/
-            if(showImage.css('width') == '100%')
-            {
-              var diff = (containerImage.height() - showImage.height()) / 2
-              console.log(diff)
-              showImage.css('margin-top',diff)
-            }
           };
           reader.onerror = function(event) {
               alert("ERROR EN IMAGEN: " + event.target.error.code);
           };
           reader.readAsDataURL(image);
         }
-
-
-        /**
-        * Conserve aspect ratio of the orignal region. Useful when shrinking/enlarging
-        * images to fit into a certain area.
-        *
-        * @param {Number} srcWidth Source area width
-        * @param {Number} srcHeight Source area height
-        * @param {Number} maxWidth Fittable area maximum available width
-        * @param {Number} maxHeight Fittable area maximum available height
-        * @return {Object} { width, heigth }
-        */
-        function calculateAspectRatioFit(srcWidth, srcHeight, maxWidth, maxHeight) {
-
-            var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
-
-            return { width: srcWidth*ratio, height: srcHeight*ratio };
-         }
-
-
-        /*function previewResize()
-        {*/
-        //Preview Resize
-          var width = $('#u1658').width()
-          $('#u1658').height(width)
-        /*}*/
 
         //Enviar formulario si quiere ser Cliente
         $('#buttonu6752').on('click',function(e){
@@ -377,8 +344,18 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
           text: "Enviando datos...",
           showConfirmButton: false
         });
-        var formulario = $('#widgetu2350')
-        $.post(formulario.attr('action'),formulario.serialize(),function(){
+
+        var formulario = $('#widgetu2350_form')
+
+        $.ajax( {
+          url: formulario.attr('action'),
+          type: 'POST',
+          data: new FormData( formulario[0] ),
+          processData: false,
+          contentType: false
+        } );
+
+        /*$.post(formulario.attr('action'),send,function(){
 
         }).done(function(data){
           swal({
@@ -386,9 +363,9 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             text: "Exitoso",
             type: "success",
             timer: 4000,
-            showConfirmButton: false
+            showConfirmButton: true
           });
-          location.assign(url)
+          //location.assign(url)
         }).fail(function(jqXHR, textStatus, errorThrown){
           swal({
             title: "Error",
@@ -396,7 +373,7 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             type: "error",
             showConfirmButton: true
           });
-        })
+        })*/
       }
 
 

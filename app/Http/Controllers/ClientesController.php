@@ -73,7 +73,6 @@ class ClientesController extends Controller
     public function storeCliente(Request $request)
     {
         //  (2do paso de registro)
-
         $user = Auth::user();
 
         $this->validate($request, [
@@ -85,6 +84,14 @@ class ClientesController extends Controller
             'dni_tipo' => 'required|max:255',
             'dni_nro' => 'required|digits_between:6,20|unique:users,dni_numero,'.$user->id,
         ]);
+
+        if($request->file('avatar'))
+        {
+          $file = $request->file('avatar');
+          $name = 'PamDogsAvatar_'.time().'.'.$file->getClientOriginalExtension();
+          $path = public_path() . '/images/avatars';
+          $file->move($path, $name);
+        }
 
         //$request->nacimiento = Carbon::createFromFormat('d/m/Y',$request->nacimiento)->toDateString();
         try
@@ -98,6 +105,7 @@ class ClientesController extends Controller
                         'telefono' => $request->telefono,
                         'dni_tipo' => $request->dni_tipo,
                         'dni_numero' => $request->dni_nro,
+                        'avatar' => $name,
                         ]);
         }
         catch(\Illuminate\Database\QueryException $e)
@@ -106,7 +114,7 @@ class ClientesController extends Controller
         }
 
 
-        
+
         //Auth::loginUsingId($user->id);
         //return view('main.formulario-mascota');
 

@@ -80,7 +80,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
     <!-- m_editable region-id="editable-static-tag-U24576-BP_infinity" template="formulario-del-cuidador.html" data-type="image" -->
     <div class="clip_frame colelem" id="u24576" data-muse-uid="U24576" data-muse-type="img_frame"><!-- image -->
-     <img class="block img-circle" id="u24576_img" src="{{ url('main/images/user-22.png?crc=4023152180') }}" alt="" data-muse-src="{{ url('main/images/user-22.png?crc=4023152180') }}" data-image-width="253" data-image-height="253"/>
+     <img class="block img-circle" id="u24576_img" src="{{ isset(Auth::user()->avatar) ? url('images/avatars/'.Auth::user()->avatar) : url('main/images/user.png?crc=4023152180') }}" alt="" data-muse-src="{{ isset(Auth::user()->avatar) ? url('images/avatars/'.Auth::user()->avatar) : url('main/images/user.png?crc=4023152180') }}" data-image-width="253" data-image-height="253"/>
     </div>
     <!-- /m_editable -->
     <div class="Button shadow rounded-corners clearfix colelem" id="buttonu24574"><!-- container box -->
