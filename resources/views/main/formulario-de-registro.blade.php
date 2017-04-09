@@ -70,7 +70,7 @@
     <div class="rounded-corners clearfix grpelem" id="u1554"><!-- column -->
      <!-- m_editable region-id="editable-static-tag-U1658-BP_infinity" template="formulario-de-registro.html" data-type="image" -->
      <div class="clip_frame colelem div-circle" id="u1658" data-muse-uid="U1658" data-muse-type="img_frame"><!-- image -->
-      <img class="block img-circle" id="u1658_img" src="{{ isset(Auth::user()->avatar) ? url('images/avatars/'.Auth::user()->avatar) : url('main/images/user.png?crc=4023152180') }}" alt="" data-muse-src="{{ isset(Auth::user()->avatar) ? url('images/avatars/'.Auth::user()->avatar) : url('main/images/user.png?crc=4023152180') }}" data-image-width="253" data-image-height="253"/>
+      <img class="block img-circle" id="u1658_img" src="{{ isset(Auth::user()->avatar) ? (starts_with(Auth::user()->avatar,'https') ? Auth::user()->avatar : url('images/avatars/'.Auth::user()->avatar)) : url('main/images/user.png?crc=4023152180') }}" alt=""  data-image-width="253" data-image-height="253"/>
      </div>
      <!-- /m_editable -->
      <div class="Button shadow rounded-corners clearfix colelem" id="buttonu1651"><!-- container box -->
@@ -242,8 +242,30 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 
     <script type="text/javascript">
       $(function(){
-        var ancho = $('#u1658').width()
-        $('#u1658').height(ancho)
+
+        var containerImage = $('#u1658')
+
+        var ancho = containerImage.width()
+        containerImage.height(ancho)
+
+        var showImage = $('#u1658_img')
+
+        if(showImage.width() < showImage.height())
+        {
+          showImage.css({width:'100%',height:'auto','margin-left':0})
+          var diff = (containerImage.height() - showImage.height()) / 2
+          showImage.css('margin-top',diff)
+        }
+        else if(showImage.width() >= showImage.height())
+        {
+          showImage.css({width:'auto',height:'100%','margin-top':0})
+          var diff = (containerImage.width() - showImage.width()) / 2
+          showImage.css('margin-left',diff)
+        }
+        else
+        {
+          alert('error')
+        }
 
         $(window).resize(function(){
           var ancho = $('#u1658').width()
@@ -251,9 +273,22 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
         })
 
         $('input[name="nacimiento"]').datepicker({
+          closeText: 'Cerrar',
+          prevText: '< Ant',
+          nextText: 'Sig >',
+          currentText: 'Hoy',
+          monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+          monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+          dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+          dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+          dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+          weekHeader: 'Sm',
+
           dateFormat: "dd/mm/yy",
           changeMonth: true,
           changeYear: true,
+          currentText: 'Hoy',
+          yearRange:'1900:2010',
           beforeShow: function(input, inst) {
             setTimeout(function () {
               //var offsets = $('input[name="nacimiento"]').offset();
@@ -353,19 +388,15 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
           data: new FormData( formulario[0] ),
           processData: false,
           contentType: false
-        } );
-
-        /*$.post(formulario.attr('action'),send,function(){
-
-        }).done(function(data){
+        } ).done(function(data){
           swal({
             title: "Recibido",
             text: "Exitoso",
             type: "success",
             timer: 4000,
-            showConfirmButton: true
+            showConfirmButton: false
           });
-          //location.assign(url)
+          location.assign(url)
         }).fail(function(jqXHR, textStatus, errorThrown){
           swal({
             title: "Error",
@@ -373,6 +404,10 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             type: "error",
             showConfirmButton: true
           });
+        })
+
+        /*$.post(formulario.attr('action'),send,function(){
+
         })*/
       }
 

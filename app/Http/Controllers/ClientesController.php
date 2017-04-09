@@ -92,6 +92,9 @@ class ClientesController extends Controller
           $path = public_path() . '/images/avatars';
           $file->move($path, $name);
         }
+        else {
+          $name = Auth::user()->avatar;
+        }
 
         //$request->nacimiento = Carbon::createFromFormat('d/m/Y',$request->nacimiento)->toDateString();
         try
