@@ -74,12 +74,12 @@ class ClientesController extends Controller
     {
         //  (2do paso de registro)
         $user = Auth::user();
-
         $this->validate($request, [
             'nombre' => 'required|max:255',
             'apellido' => 'required|max:255',
             'email' => 'required|email|max:150|unique:users,email,'.$user->id,
             'nacimiento' => 'required|max:255',
+            'genero' => 'required',
             'telefono' => 'required|digits_between:8,15|unique:users,telefono,'.$user->id,
             'dni_tipo' => 'required|max:255',
             'dni_nro' => 'required|digits_between:6,20|unique:users,dni_numero,'.$user->id,
@@ -93,7 +93,14 @@ class ClientesController extends Controller
           $file->move($path, $name);
         }
         else {
-          $name = Auth::user()->avatar;
+          if(isset(Auth::user()->avatar))
+          {
+            $name = Auth::user()->avatar;
+          }
+          else {
+            return response()->json(['error' => 'Debe seleccionar una foto de perfil.'], 422);
+          }
+
         }
 
         //$request->nacimiento = Carbon::createFromFormat('d/m/Y',$request->nacimiento)->toDateString();
@@ -105,6 +112,7 @@ class ClientesController extends Controller
                         'apellido' => $request->apellido,
                         'email' => $request->email,
                         'nacimiento' => $request->nacimiento,
+                        'genero' => $request->genero,
                         'telefono' => $request->telefono,
                         'dni_tipo' => $request->dni_tipo,
                         'dni_numero' => $request->dni_nro,

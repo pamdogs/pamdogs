@@ -20,10 +20,10 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{ url('main/css/site_global.css?crc=323482740') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ url('main/css/master_a-p_g_-maestra.css?crc=3939395310') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ url('main/css/formulario-de-registro.css?crc=512566022') }}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('main/css/formulario-de-registro.css?crc=4044779997') }}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
-  <link rel="stylesheet" type="text/css" href="css/iefonts_formulario-de-registro.css?crc=4059343298"/>
+  <link rel="stylesheet" type="text/css" href="css/iefonts_formulario-de-registro.css?crc=485949051"/>
   <![endif]-->
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -78,9 +78,10 @@
       <div class="clearfix grpelem" id="u1652-4" data-muse-uid="U1652" data-muse-type="txt_frame"><!-- content -->
        <p>Subir nueva imagen</p>
       </div>
-      <input id="avatar" type="file" name="avatar" accept="image/*" hidden>
+
       <!-- /m_editable -->
      </div>
+     <input id="avatar" type="file" name="avatar" accept="image/*" hidden>
     </div>
    </div>
    <div class="rounded-corners grpelem" id="u1560"><!-- simple frame --></div>
@@ -150,6 +151,15 @@
      <div class="fld-grp clearfix grpelem" id="widgetu2425" data-required="true"><!-- none box -->
       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2426-4"><!-- content --><input class="wrapped-input justTab" type="text" id="widgetu2425_input" name="nacimiento" tabindex="0" value="{{ Auth::user()->nacimiento->format('d/m/Y') != '30/11/-0001' ? Auth::user()->nacimiento->format('d/m/Y') : '' }}"/><label class="wrapped-input fld-prompt" id="widgetu2425_prompt" for="widgetu2425_input"><span class="actAsPara">DD/MM/AA</span></label></span>
      </div>
+     <div class="fld-grp clearfix grpelem empty" id="widgetu30516" data-required="true"><!-- none box -->
+      <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u30518-4"><!-- content --><!--<input class="wrapped-input" id="widgetu30516_input" name="custom_U30516" tabindex="5" type="text">-->
+        <select class="wrapped-input" id="widgetu30516_input" name="genero" tabindex="0">
+          <option value="">Seleccione</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Masculino">Masculino</option>
+        </select>
+        <!--<label class="wrapped-input fld-prompt" id="widgetu30516_prompt" for="widgetu30516_input"><span class="actAsPara">Introducir texto</span></label></span>-->
+     </div>
      <div class="fld-grp clearfix grpelem" id="widgetu2413" data-required="true"><!-- none box -->
       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u2416-4"><!-- content --><input class="wrapped-input" type="tel" spellcheck="false" id="widgetu2413_input" name="telefono" tabindex="0" value="{{ Auth::user()->telefono }}"/><label class="wrapped-input fld-prompt" id="widgetu2413_prompt" for="widgetu2413_input"><span class="actAsPara">Número telefónico.</span></label></span>
      </div>
@@ -182,6 +192,11 @@
      <p>Fecha de nacimiento:</p>
     </div>
     <!-- /m_editable -->
+
+    <div class="clearfix colelem" id="u30532-4" data-muse-uid="U30532" data-muse-type="txt_frame"><!-- content -->
+     <p>Género:</p>
+    </div>
+
     <!-- m_editable region-id="editable-static-tag-U2446-BP_infinity" template="formulario-de-registro.html" data-type="html" data-ice-options="disableImageResize,link" -->
     <div class="clearfix colelem" id="u2446-4" data-muse-uid="U2446" data-muse-type="txt_frame"><!-- content -->
      <p>Teléfono:</p>
@@ -209,7 +224,7 @@
 
    </div>
    @yield('menu')
-   <div class="verticalspacer" data-offset-top="1744" data-content-above-spacer="1743" data-content-below-spacer="219"></div>
+   <div class="verticalspacer" data-offset-top="1924" data-content-above-spacer="1924" data-content-below-spacer="220"></div>
   </div>
   <!-- JS includes -->
   <script type="text/javascript">
@@ -238,34 +253,16 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 
 </script>
   @yield('scripts_bottom')
-  <script type="text/javascript" src="{{ url('main/scripts/jquery-ui/jquery-ui.js') }}"></script>
 
     <script type="text/javascript">
       $(function(){
 
-        var containerImage = $('#u1658')
+        loadAvatar($('#u1658'),$('#u1658_img'))
 
-        var ancho = containerImage.width()
-        containerImage.height(ancho)
+        selectedOption('#widgetu30516_input','{{ Auth::user()->genero }}')
+        selectedOption('#widgetu2470_input','{{ Auth::user()->dni_tipo }}')
 
-        var showImage = $('#u1658_img')
-
-        if(showImage.width() < showImage.height())
-        {
-          showImage.css({width:'100%',height:'auto','margin-left':0})
-          var diff = (containerImage.height() - showImage.height()) / 2
-          showImage.css('margin-top',diff)
-        }
-        else if(showImage.width() >= showImage.height())
-        {
-          showImage.css({width:'auto',height:'100%','margin-top':0})
-          var diff = (containerImage.width() - showImage.width()) / 2
-          showImage.css('margin-left',diff)
-        }
-        else
-        {
-          alert('error')
-        }
+        uploadAvatar($('#buttonu1651'),$('#avatar'),$('#u1658'),$('#u1658_img'))
 
         $(window).resize(function(){
           var ancho = $('#u1658').width()
@@ -273,31 +270,15 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
         })
 
         $('input[name="nacimiento"]').datepicker({
-          closeText: 'Cerrar',
-          prevText: '< Ant',
-          nextText: 'Sig >',
-          currentText: 'Hoy',
-          monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-          monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-          dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-          dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-          dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-          weekHeader: 'Sm',
 
-          dateFormat: "dd/mm/yy",
           changeMonth: true,
           changeYear: true,
-          currentText: 'Hoy',
           yearRange:'1900:2010',
           beforeShow: function(input, inst) {
             setTimeout(function () {
-              //var offsets = $('input[name="nacimiento"]').offset();
-              //var top = offsets.top + 25;
               var offsets = $('#widgetu2425').offset().top
-              //alert(widgetu2425.offsetTop + widgetu2350.offsetTop)
               inst.dpDiv.css({
                   top: widgetu2425.offsetTop + widgetu2425.offsetHeight + widgetu2350.offsetTop,
-                  //left: offsets.left,
                   'z-index': 1000
               });
             });
@@ -307,55 +288,6 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             $("#widgetu2425").addClass('fld-grp clearfix grpelem non-empty-st valid')
           }
         })
-
-        //Subir avatar
-        $('#u1652-4').on('click',function(){
-          $('#avatar').click()
-        })
-
-        $('#avatar').on('change',function(){
-          var avatar = $(this)[0].files
-          previewImage(avatar[0])
-        })
-
-        function previewImage(image)
-        {
-          var reader = new FileReader();
-          reader.onload = function(event) {
-            var file = new Image;
-            file.onload = function()
-            {
-              var containerImage = $('#u1658')
-              var showImage = $('#u1658_img')
-              if(file.width < file.height)
-              {
-                showImage.css({width:'100%',height:'auto','margin-left':0})
-                var diff = (containerImage.height() - showImage.height()) / 2
-                showImage.css('margin-top',diff)
-              }
-              else if(file.width >= file.height)
-              {
-                showImage.css({width:'auto',height:'100%','margin-top':0})
-                var diff = (containerImage.width() - showImage.width()) / 2
-                showImage.css('margin-left',diff)
-              }
-              else
-              {
-                alert('error')
-              }
-            }
-            file.src = reader.result
-
-            $('#u1658_img').attr("src", file.src);
-            var containerImage = $('#u1658')
-            var showImage = $('#u1658_img')
-
-          };
-          reader.onerror = function(event) {
-              alert("ERROR EN IMAGEN: " + event.target.error.code);
-          };
-          reader.readAsDataURL(image);
-        }
 
         //Enviar formulario si quiere ser Cliente
         $('#buttonu6752').on('click',function(e){

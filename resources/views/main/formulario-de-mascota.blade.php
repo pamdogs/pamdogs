@@ -12,7 +12,7 @@
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
 
 // Check that all required assets are uploaded and up-to-date
-if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "webpro.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "formulario-de-mascota.css"], "outOfDate":[]};
+if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "jquery.musepolyfill.bgsize.js", "webpro.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "formulario-de-mascota.css"], "outOfDate":[]};
 </script>
 
   <link rel="shortcut icon" href="{{ url('main/images/favicon.ico?crc=69713473') }}"/>
@@ -20,7 +20,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{ url('main/css/site_global.css?crc=323482740') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ url('main/css/master_a-p_g_-maestra.css?crc=3939395310') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ url('main/css/formulario-de-mascota.css?crc=4086899383') }}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('main/css/formulario-de-mascota.css') }}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
   <link rel="stylesheet" type="text/css" href="css/iefonts_formulario-de-mascota.css?crc=47511128"/>
@@ -59,9 +59,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 
    </div>
    <div class="browser_width" id="u14400-bw">
-    <div id="u14400"><!-- simple frame --></div>
+    <div class="shadow" id="u14400"><!-- simple frame --></div>
    </div>
-   <a class="nonblock nontext" id="u187" href="{{ url('/') }}" data-href="page:U93"><!-- simple frame --></a>
+   <a class="nonblock nontext museBGSize" id="u187" href="{{ url('/') }}" data-href="page:U93"><!-- simple frame --></a>
    <div class="clearfix grpelem" id="pu18672"><!-- group -->
     <div class="grpelem" id="u18672"><!-- simple frame --></div>
     <div class="rounded-corners clearfix grpelem" id="u18673"><!-- group -->
@@ -80,8 +80,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
     <div class="rounded-corners clearfix grpelem" id="u18675"><!-- column -->
      <!-- m_editable region-id="editable-static-tag-U29593-BP_infinity" template="formulario-de-mascota.html" data-type="image" -->
-     <div class="clip_frame colelem" id="u29593" data-muse-uid="U29593" data-muse-type="img_frame"><!-- image -->
-      <img class="block" id="u29593_img" src="{{ url('main/images/mascota.png?crc=3880994741') }}" alt="" data-muse-src="{{ url('main/images/mascota.png?crc=3880994741') }}" data-image-width="257" data-image-height="257"/>
+     <div class="clip_frame colelem div-circle" id="u29593" data-muse-uid="U29593" data-muse-type="img_frame"><!-- image -->
+      <img class="block img-circle" id="u29593_img" src="{{ url('main/images/mascota.png?crc=3880994741') }}" alt="" data-muse-src="{{ url('main/images/mascota.png?crc=3880994741') }}" data-image-width="257" data-image-height="257"/>
      </div>
      <!-- /m_editable -->
      <div class="Button shadow rounded-corners clearfix colelem" id="buttonu18683"><!-- container box -->
@@ -91,6 +91,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
       <!-- /m_editable -->
      </div>
+     <input id="avatar" type="file" name="avatar" accept="image/*" hidden>
     </div>
     <div class="rounded-corners clearfix grpelem" id="u18676"><!-- group -->
      <!-- m_editable region-id="editable-static-tag-U18806-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
@@ -152,7 +153,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18734-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18734-4" data-muse-uid="U18734" data-muse-type="txt_frame" for="widgetu18732_input"><!-- content --><span class="actAsPara">Masculino</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18733"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18733"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="Masculino" spellcheck="false" id="widgetu18732_input" name="genero" tabindex="0"/>
         <label for="widgetu18732_input"></label>
        </div>
@@ -161,7 +162,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18737-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18737-4" data-muse-uid="U18737" data-muse-type="txt_frame" for="widgetu18736_input"><!-- content --><span class="actAsPara">Femenino</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18738"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18738"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="Femenino" spellcheck="false" id="widgetu18736_input" name="genero" tabindex="0"/>
         <label for="widgetu18736_input"></label>
        </div>
@@ -175,7 +176,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18720-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18720-4" data-muse-uid="U18720" data-muse-type="txt_frame" for="widgetu18719_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18721"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18721"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu18719_input" name="salta" tabindex="13"/>
         <label for="widgetu18719_input"></label>
        </div>
@@ -184,7 +185,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18725-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18725-4" data-muse-uid="U18725" data-muse-type="txt_frame" for="widgetu18724_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18726"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18726"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu18724_input" name="salta" tabindex="13"/>
         <label for="widgetu18724_input"></label>
        </div>
@@ -195,7 +196,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18752-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18752-4" data-muse-uid="U18752" data-muse-type="txt_frame" for="widgetu18750_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18751"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18751"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu18750_input" name="celo" tabindex="14"/>
         <label for="widgetu18750_input"></label>
        </div>
@@ -204,7 +205,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18746-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18746-4" data-muse-uid="U18746" data-muse-type="txt_frame" for="widgetu18745_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18747"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18747"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu18745_input" name="celo" tabindex="14"/>
         <label for="widgetu18745_input"></label>
        </div>
@@ -215,7 +216,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18775-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18775-4" data-muse-uid="U18775" data-muse-type="txt_frame" for="widgetu18774_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18776"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18776"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="Sí" spellcheck="false" id="widgetu18774_input" name="con_perros" tabindex="11"/>
         <label for="widgetu18774_input"></label>
        </div>
@@ -224,7 +225,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18772-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18772-4" data-muse-uid="U18772" data-muse-type="txt_frame" for="widgetu18770_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18771"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18771"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="No" spellcheck="false" id="widgetu18770_input" name="con_perros" tabindex="11"/>
         <label for="widgetu18770_input"></label>
        </div>
@@ -235,7 +236,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18712-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18712-4" data-muse-uid="U18712" data-muse-type="txt_frame" for="widgetu18710_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18711"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18711"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="Sí" spellcheck="false" id="widgetu18710_input" name="con_chicos" tabindex="12"/>
         <label for="widgetu18710_input"></label>
        </div>
@@ -244,7 +245,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18707-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18707-4" data-muse-uid="U18707" data-muse-type="txt_frame" for="widgetu18706_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18708"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18708"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="No" spellcheck="false" id="widgetu18706_input" name="con_chicos" tabindex="12"/>
         <label for="widgetu18706_input"></label>
        </div>
@@ -264,7 +265,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18701-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18701-4" data-muse-uid="U18701" data-muse-type="txt_frame" for="widgetu18700_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18702"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18702"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu18700_input" name="seguro" tabindex="20"/>
         <label for="widgetu18700_input"></label>
        </div>
@@ -273,7 +274,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U18698-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u18698-4" data-muse-uid="U18698" data-muse-type="txt_frame" for="widgetu18697_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u18699"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u18699"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu18697_input" name="seguro" tabindex="20"/>
         <label for="widgetu18697_input"></label>
        </div>
@@ -293,7 +294,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U29514-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u29514-4" data-muse-uid="U29514" data-muse-type="txt_frame" for="widgetu29512_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u29513"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u29513"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu29512_input" name="esterlizado" tabindex="16"/>
         <label for="widgetu29512_input"></label>
        </div>
@@ -302,7 +303,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U29522-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u29522-4" data-muse-uid="U29522" data-muse-type="txt_frame" for="widgetu29521_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u29523"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u29523"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu29521_input" name="esterlizado" tabindex="16"/>
         <label for="widgetu29521_input"></label>
        </div>
@@ -313,7 +314,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U29552-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u29552-4" data-muse-uid="U29552" data-muse-type="txt_frame" for="widgetu29551_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u29553"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u29553"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu29551_input" name="vacuna" tabindex="15"/>
         <label for="widgetu29551_input"></label>
        </div>
@@ -322,7 +323,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <!-- m_editable region-id="editable-static-tag-U29561-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
        <label class="fld-label actAsDiv clearfix grpelem" id="u29561-4" data-muse-uid="U29561" data-muse-type="txt_frame" for="widgetu29560_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
-       <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u29562"><!-- simple frame -->
+       <div class="fld-radiobutton museBGSize grpelem" id="u29562"><!-- simple frame -->
         <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu29560_input" name="vacuna" tabindex="15"/>
         <label for="widgetu29560_input"></label>
        </div>
@@ -431,16 +432,21 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="size_fixed" id="u3502"><!-- custom html -->
 
-        <button class="hamburger hamburger--slider">
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-        </button>
+    <button class="hamburger hamburger--slider">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
 
    </div>
    @yield('section')
    <div class="verticalspacer" data-offset-top="3107" data-content-above-spacer="3107" data-content-below-spacer="219"></div>
   </div>
+  <div class="preload_images">
+    <img class="preload" src="{{ url('main/images/1.png?crc=4023579162') }}" alt=""/>
+    <img class="preload" src="{{ url('main/images/2.png?crc=325419043') }}" alt=""/>
+  </div>
+
   <!-- JS includes -->
   <script type="text/javascript">
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
@@ -454,7 +460,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 16);return 0},g=function(g){for(var f=document.getElementsByTagName("link"),h=0;h<f.length;h++)if("text/css"==f[h].type){var i=(f[h].href||"").match(/\/?css\/([\w\-]+\.css)\?crc=(\d+)/);if(!i||!i[1]||!i[2])break;b[i[1]]=i[2]}f=document.createElement("div");f.className="version";f.style.cssText="display:none; width:1px; height:1px;";document.getElementsByTagName("body")[0].appendChild(f);for(h=0;h<Muse.assets.required.length;){var i=Muse.assets.required[h],l=i.match(/([\w\-\.]+)\.(\w+)$/),k=l&&l[1]?
 l[1]:null,l=l&&l[2]?l[2]:null;switch(l.toLowerCase()){case "css":k=k.replace(/\W/gi,"_").replace(/^([^a-z])/gi,"_$1");f.className+=" "+k;k=a(c(f,"color"));l=a(c(f,"backgroundColor"));k!=0||l!=0?(Muse.assets.required.splice(h,1),"undefined"!=typeof b[i]&&(k!=b[i]>>>24||l!=(b[i]&16777215))&&Muse.assets.outOfDate.push(i)):h++;f.className="version";break;case "js":h++;break;default:throw Error("Unsupported file type: "+l);}}d?d().jquery!="1.8.3"&&Muse.assets.outOfDate.push("jquery-1.8.3.min.js"):Muse.assets.required.push("jquery-1.8.3.min.js");
 f.parentNode.removeChild(f);if(Muse.assets.outOfDate.length||Muse.assets.required.length)f="Puede que determinados archivos falten en el servidor o sean incorrectos. Limpie la cache del navegador e inténtelo de nuevo. Si el problema persiste, póngase en contacto con el administrador del sitio web.",g&&Muse.assets.outOfDate.length&&(f+="\nOut of date: "+Muse.assets.outOfDate.join(",")),g&&Muse.assets.required.length&&(f+="\nMissing: "+Muse.assets.required.join(",")),alert(f)};location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi)?setTimeout(function(){g(!0)},5E3):g()}};
-var muse_init=function(){require.config({baseUrl:"../main/"});require(["jquery","museutils","whatinput","webpro","jquery.musemenu","musewpdisclosure","jquery.watch"],function(d){var $ = d;$(document).ready(function(){try{
+var muse_init=function(){require.config({baseUrl:"../main/"});require(["jquery","museutils","whatinput","jquery.musepolyfill.bgsize","webpro","jquery.musemenu","musewpdisclosure","jquery.watch"],function(d){var $ = d;$(document).ready(function(){try{
 window.Muse.assets.check($);/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
@@ -468,12 +474,15 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 
 </script>
   @yield('scripts_bottom')
-  <script type="text/javascript" src="{{ url('main/scripts/jquery-ui/jquery-ui.js') }}"></script>
+
   <script type="text/javascript">
     $(function(){
 
+      loadAvatar($('#u29593'),$('#u29593_img'))
+
+      uploadAvatar($('#buttonu18683'),$('#avatar'),$('#u29593'),$('#u29593_img'))
+
       $('input[name="nacimiento"]').datepicker({
-        dateFormat: "dd/mm/yy",
         changeMonth: true,
         changeYear: true,
         beforeShow: function(input, inst) {
