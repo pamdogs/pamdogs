@@ -37,7 +37,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <script src="scripts/html5shiv.js?crc=4241844378" type="text/javascript"></script>
   <![endif]-->
     <!--HTML Widget code-->
-  <link rel="stylesheet" type="text/css" href="{{ url('main/scripts/jquery-ui/jquery-ui.css') }}"/>
+  
 	@yield('normalize_styles')
 
 	@yield('script_pace')
@@ -62,6 +62,9 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div class="shadow" id="u14400"><!-- simple frame --></div>
    </div>
    <a class="nonblock nontext museBGSize" id="u187" href="{{ url('/') }}" data-href="page:U93"><!-- simple frame --></a>
+   <form id="widgetu18687_form" method="post" enctype="multipart/form-data" action="#"><!-- none box -->
+     {{ csrf_field() }}
+
    <div class="clearfix grpelem" id="pu18672"><!-- group -->
     <div class="grpelem" id="u18672"><!-- simple frame --></div>
     <div class="rounded-corners clearfix grpelem" id="u18673"><!-- group -->
@@ -106,8 +109,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
     <!-- /m_editable -->
     <div class="shadow rounded-corners grpelem" id="u18678"><!-- simple frame --></div>
-    <form class="form-grp clearfix grpelem" id="widgetu18687" method="post" enctype="multipart/form-data" action="#"><!-- none box -->
-      {{ csrf_field() }}
+    <div class="form-grp clearfix grpelem" id="widgetu18687"><!-- none box -->
+
      <div class="fld-grp clearfix grpelem" id="widgetu18802" data-required="true"><!-- none box -->
       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u18805-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu18802_input" name="nombre" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu18802_prompt" for="widgetu18802_input"><span class="actAsPara">Nombre de la mascota.</span></label></span>
      </div>
@@ -217,7 +220,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <label class="fld-label actAsDiv clearfix grpelem" id="u18775-4" data-muse-uid="U18775" data-muse-type="txt_frame" for="widgetu18774_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
        <div class="fld-radiobutton museBGSize grpelem" id="u18776"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="Sí" spellcheck="false" id="widgetu18774_input" name="con_perros" tabindex="11"/>
+        <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu18774_input" name="con_perros" tabindex="11"/>
         <label for="widgetu18774_input"></label>
        </div>
       </div>
@@ -226,7 +229,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <label class="fld-label actAsDiv clearfix grpelem" id="u18772-4" data-muse-uid="U18772" data-muse-type="txt_frame" for="widgetu18770_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
        <div class="fld-radiobutton museBGSize grpelem" id="u18771"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="No" spellcheck="false" id="widgetu18770_input" name="con_perros" tabindex="11"/>
+        <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu18770_input" name="con_perros" tabindex="11"/>
         <label for="widgetu18770_input"></label>
        </div>
       </div>
@@ -237,7 +240,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <label class="fld-label actAsDiv clearfix grpelem" id="u18712-4" data-muse-uid="U18712" data-muse-type="txt_frame" for="widgetu18710_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
        <div class="fld-radiobutton museBGSize grpelem" id="u18711"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="Sí" spellcheck="false" id="widgetu18710_input" name="con_chicos" tabindex="12"/>
+        <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu18710_input" name="con_chicos" tabindex="12"/>
         <label for="widgetu18710_input"></label>
        </div>
       </div>
@@ -246,7 +249,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <label class="fld-label actAsDiv clearfix grpelem" id="u18707-4" data-muse-uid="U18707" data-muse-type="txt_frame" for="widgetu18706_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
        <div class="fld-radiobutton museBGSize grpelem" id="u18708"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="No" spellcheck="false" id="widgetu18706_input" name="con_chicos" tabindex="12"/>
+        <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu18706_input" name="con_chicos" tabindex="12"/>
         <label for="widgetu18706_input"></label>
        </div>
       </div>
@@ -295,7 +298,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <label class="fld-label actAsDiv clearfix grpelem" id="u29514-4" data-muse-uid="U29514" data-muse-type="txt_frame" for="widgetu29512_input"><!-- content --><span class="actAsPara">Sí</span></label>
        <!-- /m_editable -->
        <div class="fld-radiobutton museBGSize grpelem" id="u29513"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu29512_input" name="esterlizado" tabindex="16"/>
+        <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu29512_input" name="esterilizado" tabindex="16"/>
         <label for="widgetu29512_input"></label>
        </div>
       </div>
@@ -304,7 +307,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <label class="fld-label actAsDiv clearfix grpelem" id="u29522-4" data-muse-uid="U29522" data-muse-type="txt_frame" for="widgetu29521_input"><!-- content --><span class="actAsPara">No</span></label>
        <!-- /m_editable -->
        <div class="fld-radiobutton museBGSize grpelem" id="u29523"><!-- simple frame -->
-        <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu29521_input" name="esterlizado" tabindex="16"/>
+        <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu29521_input" name="esterilizado" tabindex="16"/>
         <label for="widgetu29521_input"></label>
        </div>
       </div>
@@ -329,7 +332,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        </div>
       </div>
      </div>
-    </form>
+   </div>
     <!-- m_editable region-id="editable-static-tag-U18807-BP_infinity" template="formulario-de-mascota.html" data-type="html" data-ice-options="disableImageResize,link" -->
     <div class="clearfix grpelem" id="u18807-4" data-muse-uid="U18807" data-muse-type="txt_frame"><!-- content -->
      <p>Fecha de nacimiento:</p>
@@ -416,6 +419,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
     <!-- /m_editable -->
    </div>
+   </form>
    <div class="size_fixed grpelem" id="u7006"><!-- custom html -->
    </div>
    <div class="clearfix grpelem" id="pu18823-4"><!-- column -->
@@ -507,17 +511,27 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
         	  text: "Enviando datos...",
         	  showConfirmButton: false
         	});
-        $.post("{{ route('registro.mascota') }}",$('#widgetu18687').serialize(),function(data){
+        /*$.post("{{ route('registro.mascota') }}",$('#widgetu18687').serialize(),function(data){
 
-        }).done(function(data){
-  			swal({
-  			  title: "Recibido",
-  			  text: "Exitoso",
-  			  type: "success",
-  			  showConfirmButton: false
-  			});
+        })*/
 
-  			setTimeout(function(){location.assign("{{ route('home') }}")},1000)
+        var formulario = $('#widgetu18687_form')
+
+        $.ajax( {
+          url: "{{ route('registro.mascota') }}",
+          type: 'POST',
+          data: new FormData( formulario[0] ),
+          processData: false,
+          contentType: false
+        } ).done(function(data){
+    			swal({
+    			  title: "Recibido",
+    			  text: "Exitoso",
+    			  type: "success",
+    			  showConfirmButton: false
+    			});
+
+  			     setTimeout(function(){location.assign("{{ route('home') }}")},1000)
 
         }).fail(function(jqXHR, textStatus, errorThrown){
         	swal({

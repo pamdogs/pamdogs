@@ -12,7 +12,7 @@
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
 
 // Check that all required assets are uploaded and up-to-date
-if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "webpro.js", "jquery.musepolyfill.bgsize.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "formulario-del-cuidador.css"], "outOfDate":[]};
+if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "jquery.musepolyfill.bgsize.js", "webpro.js", "jquery.musemenu.js", "musewpdisclosure.js", "jquery.watch.js", "require.js", "formulario-del-cuidador.css"], "outOfDate":[]};
 </script>
 
   <link rel="shortcut icon" href="{{ url('main/images/favicon.ico?crc=69713473') }}"/>
@@ -20,10 +20,10 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{ url('main/css/site_global.css?crc=323482740') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ url('main/css/master_a-p_g_-maestra.css?crc=3939395310') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ url('main/css/formulario-del-cuidador.css?crc=440542466') }}" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('main/css/formulario-del-cuidador.css?crc=4119045706') }}" id="pagesheet"/>
   <!-- IE-only CSS -->
   <!--[if lt IE 9]>
-  <link rel="stylesheet" type="text/css" href="css/iefonts_formulario-del-cuidador.css?crc=4115101265"/>
+  <link rel="stylesheet" type="text/css" href="css/iefonts_formulario-del-cuidador.css?crc=4106639057"/>
   <![endif]-->
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -121,7 +121,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
       <!-- /m_editable -->
       <!-- m_editable region-id="editable-static-tag-U24598-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
-      <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u24598-4" data-muse-uid="U24598" data-muse-type="txt_frame" type="button" value="Guardar" tabindex="39"><!-- content -->
+      <button class="submit-btn NoWrap shadow rounded-corners clearfix grpelem" id="u24598-4" data-muse-uid="U24598" data-muse-type="txt_frame" type="button" value="Guardar"><!-- content -->
        <div style="margin-top:-13px;height:13px;">
         <p>Guardar</p>
        </div>
@@ -135,13 +135,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
       <!--<div class="fld-grp clearfix grpelem" id="widgetu24615" data-required="false" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu24621" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24623"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u24623"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="tam_10" spellcheck="false" id="widgetu24621_input" name="tam[]" tabindex="4"/>
          <label for="widgetu24621_input"></label>
         </div>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu24616" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24617"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u24617"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="tam_11_20" spellcheck="false" id="widgetu24616_input" name="tam[]" tabindex="4"/>
          <label for="widgetu24616_input"></label>
         </div>
@@ -149,13 +149,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       <!--</div>-->
       <!--<div class="fld-grp clearfix grpelem" id="widgetu24580" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu24586" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24588"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u24588"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="tam_21_40" spellcheck="false" id="widgetu24586_input" name="tam[]" tabindex="5"/>
          <label for="widgetu24586_input"></label>
         </div>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu24582" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24583"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u24583"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="tam_40" spellcheck="false" id="widgetu24582_input" name="tam[]" tabindex="5"/>
          <label for="widgetu24582_input"></label>
         </div>
@@ -164,20 +164,20 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 
       <div class="fld-grp clearfix grpelem" id="widgetu24697" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu24703" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24705"><!-- simple frame -->
+        <div class="fld-radiobutton museBGSize grpelem" id="u24705"><!-- simple frame -->
          <input class="wrapped-input" type="radio" value="Apartamento" spellcheck="false" id="widgetu24703_input" name="vivienda" tabindex="6"/>
          <label for="widgetu24703_input"></label>
         </div>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu24698" data-required="false" data-type="radio"><!-- none box -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24700"><!-- simple frame -->
+        <div class="fld-radiobutton museBGSize grpelem" id="u24700"><!-- simple frame -->
          <input class="wrapped-input" type="radio" value="Casa" spellcheck="false" id="widgetu24698_input" name="vivienda" tabindex="6"/>
          <label for="widgetu24698_input"></label>
         </div>
        </div>
        <!--<div class="fld-grp clearfix grpelem" id="widgetu24607" data-required="true" data-type="radiogroup"><!-- none box -->
         <div class="fld-grp clearfix grpelem" id="widgetu24610" data-required="false" data-type="radio"><!-- none box -->
-         <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24612"><!-- simple frame -->
+         <div class="fld-radiobutton museBGSize grpelem" id="u24612"><!-- simple frame -->
           <input class="wrapped-input" type="radio" value="Local" spellcheck="false" id="widgetu24610_input" name="vivienda" tabindex="7"/>
           <label for="widgetu24610_input"></label>
          </div>
@@ -186,21 +186,21 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
 
       <div class="fld-grp clearfix grpelem" id="widgetu24649" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24651"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24651"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="jardin" id="widgetu24649_input" name="espacio[]" tabindex="8"/>
         <label for="widgetu24649_input"></label>
        </div>
       </div>
 
       <div class="fld-grp clearfix grpelem" id="widgetu24685" data-required="false" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24687"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24687"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="balcon" id="widgetu24685_input" name="espacio[]" tabindex="9"/>
         <label for="widgetu24685_input"></label>
        </div>
       </div>
 
       <div class="fld-grp clearfix grpelem" id="widgetu24628" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24630"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24630"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="terraza" id="widgetu24628_input" name="espacio[]" tabindex="10"/>
         <label for="widgetu24628_input"></label>
        </div>
@@ -211,7 +211,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <!-- m_editable region-id="editable-static-tag-U24648-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
         <label class="fld-label actAsDiv clearfix grpelem" id="u24648-4" data-muse-uid="U24648" data-muse-type="txt_frame" for="widgetu24646_input"><!-- content --><span class="actAsPara">No</span></label>
         <!-- /m_editable -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24647"><!-- simple frame -->
+        <div class="fld-radiobutton museBGSize grpelem" id="u24647"><!-- simple frame -->
          <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu24646_input" name="auto" tabindex="11"/>
          <label for="widgetu24646_input"></label>
         </div>
@@ -220,7 +220,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <!-- m_editable region-id="editable-static-tag-U24645-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
         <label class="fld-label actAsDiv clearfix grpelem" id="u24645-4" data-muse-uid="U24645" data-muse-type="txt_frame" for="widgetu24643_input"><!-- content --><span class="actAsPara">Sí</span></label>
         <!-- /m_editable -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u24644"><!-- simple frame -->
+        <div class="fld-radiobutton museBGSize grpelem" id="u24644"><!-- simple frame -->
          <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu24643_input" name="auto" tabindex="11"/>
          <label for="widgetu24643_input"></label>
         </div>
@@ -228,20 +228,20 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
       <!--<div class="fld-grp clearfix grpelem" id="widgetu24589" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu24595" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24596"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u24596"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="1" spellcheck="false" id="widgetu24595_input" name="mascota_perro" tabindex="12"/>
          <label for="widgetu24595_input"></label>
         </div>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu24591" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24592"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u24592"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="1" spellcheck="false" id="widgetu24591_input" name="mascota_gato" tabindex="12"/>
          <label for="widgetu24591_input"></label>
         </div>
        </div>
       <!--</div>-->
       <div class="fld-grp clearfix grpelem" id="widgetu24710" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24713"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24713"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="1" id="widgetu24710_input" name="mascota_ninguna" tabindex="13"/>
         <label for="widgetu24710_input"></label>
        </div>
@@ -266,43 +266,43 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u24692-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu24689_input" name="hospedaje_mascota_extra" tabindex="27"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24603" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24606"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24606"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="lun" id="widgetu24603_input" name="hospedaje_semana[]" tabindex="20"/>
         <label for="widgetu24603_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24681" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24684"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24684"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="mar" id="widgetu24681_input" name="hospedaje_semana[]" tabindex="21"/>
         <label for="widgetu24681_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24706" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24707"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24707"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="mie" id="widgetu24706_input" name="hospedaje_semana[]" tabindex="22"/>
         <label for="widgetu24706_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24673" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24675"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24675"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="jue" id="widgetu24673_input" name="hospedaje_semana[]" tabindex="23"/>
         <label for="widgetu24673_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24657" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24659"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24659"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="vie" id="widgetu24657_input" name="hospedaje_semana[]" tabindex="24"/>
         <label for="widgetu24657_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24665" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24666"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24666"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="sab" id="widgetu24665_input" name="hospedaje_semana[]" tabindex="25"/>
         <label for="widgetu24665_input"></label>
        </div>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu24636" data-required="true" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u24637"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u24637"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="dom" id="widgetu24636_input" name="hospedaje_semana[]" tabindex="26"/>
         <label for="widgetu24636_input"></label>
        </div>
@@ -318,7 +318,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <!-- m_editable region-id="editable-static-tag-U25238-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
         <label class="fld-label actAsDiv clearfix grpelem" id="u25238-4" data-muse-uid="U25238" data-muse-type="txt_frame" for="widgetu25236_input"><!-- content --><span class="actAsPara">Diurno</span></label>
         <!-- /m_editable -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25237"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u25237"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="diurno" spellcheck="false" id="widgetu25236_input" name="guarderia_turno[]" tabindex="29"/>
          <label for="widgetu25236_input"></label>
         </div>
@@ -327,7 +327,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <!-- m_editable region-id="editable-static-tag-U25246-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
         <label class="fld-label actAsDiv clearfix grpelem" id="u25246-4" data-muse-uid="U25246" data-muse-type="txt_frame" for="widgetu25245_input"><!-- content --><span class="actAsPara">Nocturno</span></label>
         <!-- /m_editable -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25247"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u25247"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="nocturno" spellcheck="false" id="widgetu25245_input" name="guarderia_turno[]" tabindex="29"/>
          <label for="widgetu25245_input"></label>
         </div>
@@ -335,13 +335,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
       <!--<div class="fld-grp clearfix grpelem" id="widgetu25287" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu25308" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25310"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u25310"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="lun" spellcheck="false" id="widgetu25308_input" name="paseo_semana[]" tabindex="32"/>
          <label for="widgetu25308_input"></label>
         </div>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu25317" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25318"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u25318"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="mar" spellcheck="false" id="widgetu25317_input" name="paseo_semana[]" tabindex="32"/>
          <label for="widgetu25317_input"></label>
         </div>
@@ -349,13 +349,13 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       <!--</div>-->
       <!--<div class="fld-grp clearfix grpelem" id="widgetu25326" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu25347" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25348"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u25348"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="mie" spellcheck="false" id="widgetu25347_input" name="paseo_semana[]" tabindex="35"/>
          <label for="widgetu25347_input"></label>
         </div>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu25356" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25357"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u25357"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="jue" spellcheck="false" id="widgetu25356_input" name="paseo_semana[]" tabindex="35"/>
          <label for="widgetu25356_input"></label>
         </div>
@@ -363,20 +363,20 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       <!--</div>-->
       <!--<div class="fld-grp clearfix grpelem" id="widgetu25365" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu25386" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25387"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u25387"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="vie" spellcheck="false" id="widgetu25386_input" name="paseo_semana[]" tabindex="33"/>
          <label for="widgetu25386_input"></label>
         </div>
        </div>
        <div class="fld-grp clearfix grpelem" id="widgetu25395" data-required="false" data-type="checkbox"><!-- none box -->
-        <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25397"><!-- simple frame -->
+        <div class="fld-checkbox museBGSize grpelem" id="u25397"><!-- simple frame -->
          <input class="wrapped-input" type="checkbox" value="sab" spellcheck="false" id="widgetu25395_input" name="paseo_semana[]" tabindex="33"/>
          <label for="widgetu25395_input"></label>
         </div>
        </div>
       <!--</div>-->
       <div class="fld-grp clearfix grpelem" id="widgetu25404" data-required="false" data-type="checkbox"><!-- none box -->
-       <div class="fld-checkbox rgba-background rounded-corners grpelem" id="u25406"><!-- simple frame -->
+       <div class="fld-checkbox museBGSize grpelem" id="u25406"><!-- simple frame -->
         <input class="wrapped-input" type="checkbox" value="dom" id="widgetu25404_input" name="paseo_semana[]" tabindex="34"/>
         <label for="widgetu25404_input"></label>
        </div>
@@ -388,14 +388,14 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25434-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25432_input" name="paseo_mascota_extra" tabindex="36"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu25450" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25453-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25450_input" name="paseo_horario" tabindex="37"/></span>
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u25453-3"><!-- content --><input class="wrapped-input" type="text" id="widgetu25450_input" name="paseo_hora_desde" tabindex="37"/></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu28812" data-required="true" data-type="radiogroup"><!-- none box -->
        <div class="fld-grp clearfix grpelem" id="widgetu28843" data-required="false" data-type="radio"><!-- none box -->
         <!-- m_editable region-id="editable-static-tag-U28844-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
         <label class="fld-label actAsDiv clearfix grpelem" id="u28844-4" data-muse-uid="U28844" data-muse-type="txt_frame" for="widgetu28843_input"><!-- content --><span class="actAsPara">Sí</span></label>
         <!-- /m_editable -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u28845"><!-- simple frame -->
+        <div class="fld-radiobutton museBGSize grpelem" id="u28845"><!-- simple frame -->
          <input class="wrapped-input" type="radio" value="1" spellcheck="false" id="widgetu28843_input" name="domicilio" tabindex="38"/>
          <label for="widgetu28843_input"></label>
         </div>
@@ -404,7 +404,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
         <!-- m_editable region-id="editable-static-tag-U28857-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
         <label class="fld-label actAsDiv clearfix grpelem" id="u28857-4" data-muse-uid="U28857" data-muse-type="txt_frame" for="widgetu28855_input"><!-- content --><span class="actAsPara">No</span></label>
         <!-- /m_editable -->
-        <div class="fld-radiobutton rgba-background rounded-corners grpelem" id="u28856"><!-- simple frame -->
+        <div class="fld-radiobutton museBGSize grpelem" id="u28856"><!-- simple frame -->
          <input class="wrapped-input" type="radio" value="0" spellcheck="false" id="widgetu28855_input" name="domicilio" tabindex="38"/>
          <label for="widgetu28855_input"></label>
         </div>
@@ -413,6 +413,10 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       <div class="fld-grp clearfix grpelem" id="widgetu29113" data-required="true"><!-- none box -->
        <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u29116-3"><!-- content --><input class="wrapped-input" type="number" id="widgetu29113_input" name="rango" tabindex="17"  min="100" max="2000" step="200" autocomplete="off"/></span>
       </div>
+      <div class="fld-grp clearfix grpelem" id="widgetu30536" data-required="true"><!-- none box -->
+       <span class="fld-input NoWrap actAsDiv rgba-background rounded-corners transition shadow clearfix grpelem" id="u30538-3"><!-- content --><input class="wrapped-input timepicker" type="text" id="widgetu30536_input" name="paseo_hora_hasta" tabindex="38"/></span>
+      </div>
+
      </form>
      <!-- m_editable region-id="editable-static-tag-U24714-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
      <div class="clearfix grpelem" id="u24714-4" data-muse-uid="U24714" data-muse-type="txt_frame"><!-- content -->
@@ -737,6 +741,12 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      </div>
      <!-- /m_editable -->
     </div>
+    <!-- m_editable region-id="editable-static-tag-U30557-BP_infinity" template="formulario-del-cuidador.html" data-type="html" data-ice-options="disableImageResize,link" -->
+    <div class="clearfix colelem" id="u30557-4" data-muse-uid="U30557" data-muse-type="txt_frame"><!-- content -->
+     <p>Hasta:</p>
+    </div>
+    <!-- /m_editable -->
+
    </div>
    <div class="size_fixed" id="u3502"><!-- custom html -->
 
@@ -750,6 +760,11 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    @yield('menu')
    <div class="verticalspacer" data-offset-top="3256" data-content-above-spacer="3256" data-content-below-spacer="219"></div>
   </div>
+  <div class="preload_images">
+   <img class="preload" src="{{ url('main/images/1.png?crc=4023579162') }}" alt=""/>
+   <img class="preload" src="{{ url('main/images/2.png?crc=325419043') }}" alt=""/>
+  </div>
+
   <!-- JS includes -->
   <script type="text/javascript">
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
@@ -763,7 +778,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 16);return 0},g=function(g){for(var f=document.getElementsByTagName("link"),h=0;h<f.length;h++)if("text/css"==f[h].type){var i=(f[h].href||"").match(/\/?css\/([\w\-]+\.css)\?crc=(\d+)/);if(!i||!i[1]||!i[2])break;b[i[1]]=i[2]}f=document.createElement("div");f.className="version";f.style.cssText="display:none; width:1px; height:1px;";document.getElementsByTagName("body")[0].appendChild(f);for(h=0;h<Muse.assets.required.length;){var i=Muse.assets.required[h],l=i.match(/([\w\-\.]+)\.(\w+)$/),k=l&&l[1]?
 l[1]:null,l=l&&l[2]?l[2]:null;switch(l.toLowerCase()){case "css":k=k.replace(/\W/gi,"_").replace(/^([^a-z])/gi,"_$1");f.className+=" "+k;k=a(c(f,"color"));l=a(c(f,"backgroundColor"));k!=0||l!=0?(Muse.assets.required.splice(h,1),"undefined"!=typeof b[i]&&(k!=b[i]>>>24||l!=(b[i]&16777215))&&Muse.assets.outOfDate.push(i)):h++;f.className="version";break;case "js":h++;break;default:throw Error("Unsupported file type: "+l);}}d?d().jquery!="1.8.3"&&Muse.assets.outOfDate.push("jquery-1.8.3.min.js"):Muse.assets.required.push("jquery-1.8.3.min.js");
 f.parentNode.removeChild(f);if(Muse.assets.outOfDate.length||Muse.assets.required.length)f="Puede que determinados archivos falten en el servidor o sean incorrectos. Limpie la cache del navegador e inténtelo de nuevo. Si el problema persiste, póngase en contacto con el administrador del sitio web.",g&&Muse.assets.outOfDate.length&&(f+="\nOut of date: "+Muse.assets.outOfDate.join(",")),g&&Muse.assets.required.length&&(f+="\nMissing: "+Muse.assets.required.join(",")),alert(f)};location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi)?setTimeout(function(){g(!0)},5E3):g()}};
-var muse_init=function(){require.config({baseUrl:"../main/"});require(["jquery","museutils","whatinput","webpro","jquery.musepolyfill.bgsize","jquery.musemenu","musewpdisclosure","jquery.watch"],function(d){var $ = d;$(document).ready(function(){try{
+var muse_init=function(){require.config({baseUrl:"../main/"});require(["jquery","museutils","whatinput","jquery.musepolyfill.bgsize","webpro","jquery.musemenu","musewpdisclosure","jquery.watch"],function(d){var $ = d;$(document).ready(function(){try{
 window.Muse.assets.check($);/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
@@ -960,8 +975,22 @@ function initMap() {
   	  			  showConfirmButton: true
   	  			});
           })
-
       	})
+
+        $('.timepicker').timepicker({
+            timeFormat: 'h:mm p',
+            interval: 60,
+            minTime: '0',
+            maxTime: '23',
+            defaultTime: '8',
+            startTime: '1',
+            dynamic: true,
+            dropdown: true,
+            scrollbar: true
+        });
+
+        
+
       })
     </script>
    </body>

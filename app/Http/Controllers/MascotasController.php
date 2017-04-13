@@ -40,9 +40,10 @@ class MascotasController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'avatar' => 'required|image',
             'nombre' => 'required|max:255',
             'nacimiento' => 'required|max:255',
-            'genero' => 'required|max:255',
+            'genero' => 'required',
             'raza' => 'required|max:255',
             'personalidad' => 'required|max:255',
             'comida_tipo' => 'required|max:255',
@@ -50,19 +51,28 @@ class MascotasController extends Controller
             'hora_paseo' => 'required|max:255',
             'rutina' => 'required|max:255',
             'duerme' => 'required|max:255',
-            'con_perros' => 'required|max:255',
-            'con_chicos' => 'required|max:255',
-            'salta' => 'required|max:255',
-            'celo' => 'required|max:255',
+            'con_perros' => 'required',
+            'con_chicos' => 'required',
+            'salta' => 'required',
+            'celo' => 'required',
+            'vacuna' => 'required',
+            'esterilizado' => 'required',
             'vet_nombre' => 'required|max:255',
             'vet_telefono' => 'required|max:255',
             'vet_direccion' => 'required|max:255',
-            'seguro' => 'required|max:255',
+            'seguro' => 'required',
+            'compania_seguro' => 'required_if:seguro,1'
         ]);
+
+        $file = $request->file('avatar');
+        $name = 'PamDogs_PetAvatar_'.time().'.'.$file->getClientOriginalExtension();
+        $path = public_path() . '/images/avatars/pets';
+        $file->move($path, $name);
 
         $mascota = new Mascota();
 
         $mascota->nombre = $request->nombre;
+        $mascota->avatar = $name;
         $mascota->nacimiento = $request->nacimiento;
         $mascota->genero = $request->genero;
         $mascota->raza = $request->raza;
@@ -85,7 +95,6 @@ class MascotasController extends Controller
         $mascota->compania_seguro = $request->compania_seguro;
         $mascota->user_id = Auth::user()->id;
         $mascota->save();
-        
 
         //return view('main.index');
         return redirect('/');

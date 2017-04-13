@@ -37,7 +37,6 @@
   <script src="scripts/html5shiv.js?crc=4241844378" type="text/javascript"></script>
   <![endif]-->
     <!--HTML Widget code-->
-  <link rel="stylesheet" type="text/css" href="{{ url('main/scripts/jquery-ui/jquery-ui.css') }}"/>
 	@yield('normalize_styles')
 
 	@yield('script_pace')
@@ -133,7 +132,7 @@
      </div>
      <!-- /m_editable -->
      <!-- m_editable region-id="editable-static-tag-U2351-BP_infinity" template="formulario-de-registro.html" data-type="html" data-ice-options="disableImageResize,link" -->
-     <button class="submit-btn NoWrap rounded-corners clearfix grpelem" id="u2351-3" data-muse-uid="U2351" data-muse-type="txt_frame" type="submit" value="&nbsp;" tabindex="8"><!-- content -->
+     <button class="submit-btn NoWrap rounded-corners clearfix grpelem" id="u2351-3" data-muse-uid="U2351" data-muse-type="txt_frame" type="submit" value="&nbsp;" ><!-- content -->
       <div style="margin-top:-7px;height:7px;">
        <p>&nbsp;</p>
       </div>
