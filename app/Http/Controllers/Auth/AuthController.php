@@ -106,9 +106,10 @@ class AuthController extends Controller
         try {
             $user = Socialite::driver('facebook')->user();
         } catch (Exception $e) {
+          dd($e);
             return redirect('dev/facebook');
         }
-        dd($user);
+
         $authUser = $this->findOrCreateUser($user);
 
         /*try {
