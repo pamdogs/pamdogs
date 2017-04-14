@@ -104,7 +104,7 @@ class AuthController extends Controller
     {
 
         try {
-          dd(Socialite::driver('facebook')->user());
+          dd(Socialite::driver('facebook'));
             $user = Socialite::driver('facebook')->user();
         } catch (Exception $e) {
 
