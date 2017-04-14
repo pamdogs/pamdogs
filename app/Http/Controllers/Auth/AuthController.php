@@ -112,7 +112,7 @@ class AuthController extends Controller
                       'gender',
                       'verified'
                   ])->user();
-                  dd($user);
+                  dd($user->user);
         } catch (Exception $e) {
 
             return redirect('dev/facebook');
