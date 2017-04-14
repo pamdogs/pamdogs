@@ -209,7 +209,7 @@
 						</a>
 					</div>
 					<div class="MenuItemContainer borderbox clearfix colelem" id="u5964"><!-- horizontal box -->
-						<a class="nonblock nontext MenuItem MenuItemWithSubMenu {{ (Request::is('registro/*') ? 'MuseMenuActive' : '') }} borderbox clearfix grpelem" id="u5967" href="{{ route('registro.index') }}" data-href="page:U1194"><!-- horizontal box -->
+						<a class="nonblock nontext MenuItem MenuItemWithSubMenu {{ (Request::is('registro') ? 'MuseMenuActive' : '') }} borderbox clearfix grpelem" id="u5967" href="{{ route('registro.index') }}" data-href="page:U1194"><!-- horizontal box -->
 							<div class="MenuItemLabel borderbox clearfix grpelem" id="u5969-4"><!-- content -->
 								<p>Regístrate</p>
 							</div>
