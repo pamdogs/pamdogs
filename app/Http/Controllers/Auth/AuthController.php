@@ -75,13 +75,13 @@ class AuthController extends Controller
         return view('main.iniciar-sesion');
     }
 
-    /*public function postLogin(Request $request)
+    public function postLogin(Request $request)
     {
         if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return response()->json(['error' => 'E-Mail o contraseña invalidos'],422);
         }
         return response()->json();
-    }*/
+    }
 
 
 
@@ -104,9 +104,10 @@ class AuthController extends Controller
     {
 
         try {
+          dd(Socialite::driver('facebook')->user());
             $user = Socialite::driver('facebook')->user();
         } catch (Exception $e) {
-          dd($e);
+
             return redirect('dev/facebook');
         }
 

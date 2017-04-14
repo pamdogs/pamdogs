@@ -48,6 +48,6 @@ return [
         'client_secret' => '15f2affd348a2a4cef7f4f339afef95e',
         'redirect' => 'http://localhost/prev-pamdogs/public/dev/facebook/sesion',
     ],*/
-    
+
 
 ];
