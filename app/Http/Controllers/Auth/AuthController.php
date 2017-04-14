@@ -112,7 +112,6 @@ class AuthController extends Controller
                       'gender',
                       'verified'
                   ])->user();
-                  dd($user->user['first_name']);
         } catch (Exception $e) {
 
             return redirect('dev/facebook');
@@ -160,8 +159,8 @@ class AuthController extends Controller
         }
 
         return User::create([
-            'nombre' => $facebookUser->first_name,
-            'apellido' => $facebookUser->last_name,
+            'nombre' => $facebookUser->user['first_name'],
+            'apellido' => $facebookUser->user['first_name'],
             'email' => $facebookUser->email,
             'facebook_id' => $facebookUser->id,
             'avatar' => $facebookUser->avatar
