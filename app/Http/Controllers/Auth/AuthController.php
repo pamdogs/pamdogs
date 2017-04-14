@@ -104,15 +104,14 @@ class AuthController extends Controller
     {
 
         try {
-          dd(Socialite::driver('facebook')->fields([
-                    'name',
-                    'first_name',
-                    'last_name',
-                    'email',
-                    'gender',
-                    'verified'
-                ])->user());
-            $user = Socialite::driver('facebook')->user();
+            $user = Socialite::driver('facebook')->fields([
+                      'name',
+                      'first_name',
+                      'last_name',
+                      'email',
+                      'gender',
+                      'verified'
+                  ])->user();
         } catch (Exception $e) {
 
             return redirect('dev/facebook');
