@@ -62,11 +62,16 @@ class User extends Model implements AuthenticatableContract,
 
     public function mascotas()
     {
-        return $this->hasMany('App\Mascota');
+        return $this->hasMany('PamDogs\Mascota');
     }
 
-    public function cuidadores()
+    public function cuidador()
     {
-        return $this->hasOne('App\Cuidador');
+        return $this->hasOne('PamDogs\Cuidador');
+    }
+
+    public function servicios()
+    {
+      return $this->hasManyThrough('PamDogs\Servicio', 'PamDogs\Cuidador');
     }
 }

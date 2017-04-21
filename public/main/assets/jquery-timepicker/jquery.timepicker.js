@@ -443,9 +443,18 @@
                     zindex = i.options.zindex ? i.options.zindex : i.element.offsetParent().css( 'z-index' ),
                     elementOffset = i.element.offset();
 
+                    // ======> Nuevas lineas, para que tome el offset del campo de pamdogs.
+
+                    var parentField = window[i.element.parent().parent().attr('id')];
+                    var formContainer = window[$(document).find('form').attr('id')];
+                    var newOffset = parentField.offsetTop + parentField.offsetHeight + formContainer.offsetTop;
+
+                    // <====== //
+
                 // position the container right below the element, or as close to as possible.
                 widget.container.css( {
-                    top: elementOffset.top + i.element.outerHeight(),
+                    //top: elementOffset.top + i.element.outerHeight(),
+                    top: newOffset+'px',
                     left: elementOffset.left
                 } );
 
@@ -461,7 +470,8 @@
                     left: i.element.offset().left,
                     height: widget.ui.outerHeight() + containerDecorationHeight,
                     width: i.element.outerWidth(),
-                    zIndex: zindex,
+                    //zIndex: zindex,
+                    zIndex: 1000000,
                     cursor: 'default'
                 } );
 

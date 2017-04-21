@@ -8,7 +8,9 @@ use PamDogs\Http\Requests;
 use PamDogs\Http\Controllers\Controller;
 use PamDogs\Cuidador;
 use PamDogs\Servicio;
+use PamDogs\User;
 use Auth;
+use Carbon\Carbon;
 
 class CuidadoresController extends Controller
 {
@@ -65,11 +67,30 @@ class CuidadoresController extends Controller
             'guarderia_mascota_extra' => 'required_with:guarderia_tar_h,guarderia_turno',
             'guarderia_turno' => 'required_with:guarderia_tar_h,guarderia_mascota_extra',
             'paseo_tar_h' => 'required_with:paseo_mascota_extra,paseo_horario,paseo_semana',
-            'paseo_mascota_extra' => 'required_with:paseo_tar_h,paseo_horario,paseo_semana',
-            'paseo_horario' => 'required_with:paseo_tar_h,paseo_mascota_extra,paseo_semana',
-            'paseo_semana' => 'required_with:paseo_tar_h,paseo_mascota_extra,paseo_horario',
+            'paseo_mascota_extra' => 'required_with:paseo_tar_h,paseo_hora_desde,paseo_hora_hasta,paseo_semana',
+            'paseo_hora_desde' => 'required_with:paseo_tar_h,paseo_mascota_extra,paseo_hora_hasta,paseo_semana',
+            'paseo_hora_hasta' => 'required_with:paseo_tar_h,paseo_mascota_extra,paseo_hora_desde,paseo_semana',
+            'paseo_semana' => 'required_with:paseo_tar_h,paseo_mascota_extra,paseo_hora_desde,paseo_hora_hasta',
             'domicilio' => 'required'
         ]);
+
+        if($request->file('avatar'))
+        {
+          $file = $request->file('avatar');
+          $name = 'PamDogsAvatar_'.time().'.'.$file->getClientOriginalExtension();
+          $path = public_path() . '/images/avatars/users';
+          $file->move($path, $name);
+          User::where('id', Auth::user()->id)->update(['avatar' => $name]);
+        }
+        else {
+          if(isset(Auth::user()->avatar))
+          {
+            $name = Auth::user()->avatar;
+          }
+          else {
+            return response()->json(['error' => 'Debe seleccionar una foto de perfil.'], 422);
+          }
+        }
 
         $cuidador = Cuidador::firstOrNew(['user_id' => Auth::user()->id]);
 
@@ -131,17 +152,21 @@ class CuidadoresController extends Controller
           $paseo = Servicio::firstOrNew(['nombre' => 'Paseo', 'cuidador_id' => $cuidador->id]);
           $paseo->tar_h = $request->paseo_tar_h;
           $paseo->mascota_extra = $request->paseo_mascota_extra;
-          //Faltan horas
+
+          $paseo->hora_desde = Carbon::parse($request->paseo_hora_desde)->toTimeString();
+          $paseo->hora_hasta = Carbon::parse($request->paseo_hora_hasta)->toTimeString();
+
+          //return response()->json(['horas_desde' => $paseo->hora_desde, 'horas_hasta' => $paseo->hora_hasta]);
           foreach ($request->paseo_semana as $semana => $value) {
             $paseo->$value = 1;
           }
           $paseo->save();
         }
 
-        return response()->json(['Cuidador' => $cuidador,
+        /*return response()->json(['Cuidador' => $cuidador,
                                 'Hospedaje' => $hospedaje,
                                 'Guarderia' => $guarderia,
-                                'Paseo' => $paseo]);
+                                'Paseo' => $paseo]);*/
     }
 
     /**

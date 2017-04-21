@@ -22,8 +22,7 @@ function loadAvatar(cont,show)
 
   var ancho = containerImage.width()
   containerImage.height(ancho)
-
-  var showImage = show
+  showImage = show
 
   if(showImage.width() < showImage.height())
   {
@@ -33,7 +32,7 @@ function loadAvatar(cont,show)
   }
   else if(showImage.width() >= showImage.height())
   {
-    showImage.css({width:'auto',height:'100%','margin-top':0})
+    showImage.css({height:'100%','margin-top':0})
     var diff = (containerImage.width() - showImage.width()) / 2
     showImage.css('margin-left',diff)
   }
@@ -93,3 +92,15 @@ function selectedOption(input,auth)
     }
   })
 }
+
+/*function checkClicked(checkboxes)
+{
+  $.each(checkboxes,function(index,value)
+  {
+    var checkbox = $(value)
+    if(checkbox.parent().parent())
+    console.log(value)
+    console.log($(value))
+    $(value).click()
+  })
+}*/

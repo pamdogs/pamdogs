@@ -69,7 +69,7 @@
     <div class="rounded-corners clearfix grpelem" id="u1554"><!-- column -->
      <!-- m_editable region-id="editable-static-tag-U1658-BP_infinity" template="formulario-de-registro.html" data-type="image" -->
      <div class="clip_frame colelem div-circle" id="u1658" data-muse-uid="U1658" data-muse-type="img_frame"><!-- image -->
-      <img class="block img-circle" id="u1658_img" src="{{ isset(Auth::user()->avatar) ? (starts_with(Auth::user()->avatar,'https') ? Auth::user()->avatar : url('images/avatars/'.Auth::user()->avatar)) : url('main/images/user.png?crc=4023152180') }}" alt=""  data-image-width="253" data-image-height="253"/>
+      <img class="block img-circle" id="u1658_img" src="{{ isset(Auth::user()->avatar) ? (starts_with(Auth::user()->avatar,'https') ? Auth::user()->avatar : url('images/avatars/users/'.Auth::user()->avatar)) : url('main/images/user.png?crc=4023152180') }}" alt=""  data-image-width="253" data-image-height="253"/>
      </div>
      <!-- /m_editable -->
      <div class="Button shadow rounded-corners clearfix colelem" id="buttonu1651"><!-- container box -->

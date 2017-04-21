@@ -89,7 +89,7 @@ class ClientesController extends Controller
         {
           $file = $request->file('avatar');
           $name = 'PamDogsAvatar_'.time().'.'.$file->getClientOriginalExtension();
-          $path = public_path() . '/images/avatars';
+          $path = public_path() . '/images/avatars/users';
           $file->move($path, $name);
         }
         else {
