@@ -31,7 +31,7 @@ class Mascota extends Model
 
     public function cliente()
     {
-    	return $this->belongsTo('App\User');
+    	return $this->belongsTo('PamDogs\User');
     }
 
 }

@@ -19,6 +19,7 @@ Route::get('gmaps', function(){
 	return view('gmapsTest');
 });
 
+Route::post('buscar', 'BuscadorController@create');
 /* PRODUCTION ROUTES */
 
 // Web Previa
@@ -81,6 +82,12 @@ Route::get('contacto', ['as' => 'contacto', function(){
 Route::get('perfil', ['as' => 'perfil', function(){
 	return view('main.perfil');
 }]);
+
+Route::get('busqueda', ['as' => 'busqueda', function(){
+	return view('main.busqueda-cuidadores');
+}]);
+
+Route::post('busqueda', ['as' => 'busqueda', 'uses' => 'BuscadorController@create']);
 
 /* OTHERS */
 

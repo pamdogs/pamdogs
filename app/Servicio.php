@@ -12,6 +12,6 @@ class Servicio extends Model
 
   public function cuidador()
   {
-    return $this->belongsTo('App\Cuidador');
+    return $this->belongsTo('PamDogs\Cuidador');
   }
 }

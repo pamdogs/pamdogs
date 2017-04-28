@@ -30,11 +30,11 @@ class Cuidador extends Model
 
   public function cliente()
   {
-    return $this->belongsTo('App\User');
+    return $this->belongsTo('PamDogs\User');
   }
 
   public function servicios()
   {
-      return $this->hasMany('App\Servicio');
+      return $this->hasMany('PamDogs\Servicio');
   }
 }

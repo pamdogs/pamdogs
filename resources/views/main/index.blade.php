@@ -86,7 +86,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
    </div>
    <div class="clearfix grpelem" id="ppwidgetu893"><!-- column -->
     <div class="clearfix colelem" id="pwidgetu893"><!-- group -->
-     <form class="form-grp clearfix grpelem" id="widgetu893" method="post" enctype="multipart/form-data" action="{{ url('scripts/form-u893.php') }}"><!-- none box -->
+     <form class="form-grp clearfix grpelem" id="widgetu893" method="post" enctype="multipart/form-data" action="{{ route('busqueda') }}"><!-- none box -->
+       {{csrf_field()}}
       <!-- m_editable region-id="editable-static-tag-U899-BP_infinity" template="index.html" data-type="html" data-ice-options="disableImageResize,link" -->
       <div class="clearfix grpelem" id="u899-4" data-muse-uid="U899" data-muse-type="txt_frame"><!-- content -->
        <p>Enviando formulario...</p>
@@ -110,13 +111,14 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </button>
       <!-- /m_editable -->
       <div class="fld-grp clearfix grpelem" id="widgetu969" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv museBGSize rounded-corners clearfix grpelem" id="u971-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu969_input" name="custom_U969" tabindex="1" placeholder=""/><label class="wrapped-input fld-prompt" id="widgetu969_prompt" for="widgetu969_input"><span class="actAsPara">&nbsp;Dirección</span></label></span>
+       <span class="fld-input NoWrap actAsDiv museBGSize rounded-corners clearfix grpelem" id="u971-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu969_input" name="custom_U969" tabindex="0" placeholder=""/><label class="wrapped-input fld-prompt" id="widgetu969_prompt" for="widgetu969_input"><span class="actAsPara">Dirección</span></label></span>
       </div>
+      <input type="text" name="placeSearch" hidden>
       <div class="fld-grp clearfix grpelem" id="widgetu1017" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv museBGSize clearfix grpelem" id="u1020-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu1017_input" name="custom_U1017" tabindex="2"/><label class="wrapped-input fld-prompt" id="widgetu1017_prompt" for="widgetu1017_input"><span class="actAsPara">DD/MM/AA</span></label></span>
+       <span class="fld-input NoWrap actAsDiv museBGSize clearfix grpelem" id="u1020-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu1017_input" name="buscar_desde" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu1017_prompt" for="widgetu1017_input"><span class="actAsPara">DD/MM/AA</span></label></span>
       </div>
       <div class="fld-grp clearfix grpelem" id="widgetu1051" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv museBGSize clearfix grpelem" id="u1054-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu1051_input" name="custom_U1051" tabindex="3"/><label class="wrapped-input fld-prompt" id="widgetu1051_prompt" for="widgetu1051_input"><span class="actAsPara">DD/MM/AA</span></label></span>
+       <span class="fld-input NoWrap actAsDiv museBGSize clearfix grpelem" id="u1054-4"><!-- content --><input class="wrapped-input" type="text" id="widgetu1051_input" name="buscar_hasta" tabindex="0"/><label class="wrapped-input fld-prompt" id="widgetu1051_prompt" for="widgetu1051_input"><span class="actAsPara">DD/MM/AA</span></label></span>
       </div>
      </form>
      <!-- m_editable region-id="editable-static-tag-U1879-BP_infinity" template="index.html" data-type="html" data-ice-options="disableImageResize,link" -->
@@ -239,10 +241,83 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 
           var places = new google.maps.places.Autocomplete(document.getElementById('widgetu969_input'),options);
 
-          /*google.maps.event.addListener(places, 'place_changed', function () {
-
-          });*/
+          google.maps.event.addListener(places, 'place_changed', function () {
+            placeObject = places.getPlace();
+            console.log(placeObject)
+          });
       });
+
+      $(function(){
+        var dateFormat = "dd/mm/yy"
+        desde = $('#widgetu1017_input').datepicker({
+          changeMonth: true,
+          changeYear: true,
+          //yearRange:'1900:2010',
+          minDate: 0,
+          //numberOfMonths: 2,
+          beforeShow: function(input, inst) {
+            setTimeout(function () {
+
+              inst.dpDiv.css({
+                  top: widgetu893.offsetTop + widgetu1017_input.offsetHeight,
+                  'z-index': 1000
+              });
+            });
+          }
+        })
+        .on( "change", function() {
+          console.log(hasta)
+          hasta.datepicker( "option", "minDate", getDate( this ) );
+          $("#widgetu1017").removeClass()
+          $("#widgetu1017").addClass('fld-grp clearfix grpelem non-empty-st valid')
+        })
+
+        hasta = $( "#widgetu1051_input" ).datepicker({
+          changeMonth: true,
+          changeYear: true,
+          //numberOfMonths: 2,
+          beforeShow: function(input, inst) {
+            setTimeout(function () {
+
+              inst.dpDiv.css({
+                  top: widgetu893.offsetTop + widgetu1051_input.offsetHeight,
+                  'z-index': 1000
+              });
+            });
+          },
+        })
+        .on( "change", function() {
+          console.log(desde)
+          desde.datepicker( "option", "maxDate", getDate( this ) );
+          $("#widgetu1051").removeClass()
+          $("#widgetu1051").addClass('fld-grp clearfix grpelem non-empty-st valid')
+        })
+
+        function getDate( element ) {
+          var date;
+          try {
+            date = $.datepicker.parseDate( dateFormat, element.value );
+          } catch( error ) {
+            date = null;
+          }
+
+          return date;
+        }
+
+        $('#u900-4').on('click',function(e){
+          e.preventDefault()
+          var dataSend = $('#widgetu893').serializeArray()
+          dataSend.push({'name': 'gMapObject', 'value': placeObject})
+          $('#widgetu893').submit()
+          /*$.post("{{ route('busqueda') }}",dataSend,function(){
+
+          }).done(function(data){
+            console.log(data)
+          }).fail(function(jqXHR, textStatus, errorThrown){
+
+          })*/
+        })
+      })
   </script>
    </body>
 </html>
