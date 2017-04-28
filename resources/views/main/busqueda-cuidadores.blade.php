@@ -57,7 +57,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
 
    </div>
    <div class="clearfix grpelem" id="u31814" style=" max-height:600px;overflow:auto;"><!-- column -->
-  {{$i = 0}}
+  <span style="display:none">{{$i = 0}}</span>
   @foreach ($users as $user)
     <div class="clearfix colelem c{{$i++}}" id="u31815"><!-- group -->
      <div class="clearfix grpelem" id="ppu31819"><!-- column -->
@@ -335,7 +335,7 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
             //if (google.maps.geometry.spherical.computeDistanceBetween(latlng1,map.getCenter()) < 30000) {
             if (google.maps.geometry.spherical.computeDistanceBetween(latlng1,map.getCenter()) > 0) {
               //console.log(google.maps.geometry.spherical.computeDistanceBetween(latlng1,map.getCenter()))
-              drivermarker=new google.maps.Marker({position:latlng1});
+              drivermarker=new google.maps.Marker({position:latlng1,icon:'http://vistas.pamdogs.com/images/placeholder.png'});
               drivermarker.setMap(map);
               var infowindow = new google.maps.InfoWindow();
 
@@ -343,7 +343,7 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
                 return function() {
                   console.log('2) '+i)
 
-                  $('.c'+i).css('background-color','rgba(255,255,0,0.5)')
+                  $('.c'+i).css('background-color','rgba(255,255,255,0.5)')
 
                 }
               })(drivermarker, i));
