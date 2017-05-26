@@ -1,0 +1,17 @@
+1) clone repo
+2) composer install
+3) create .env and create database
+4) php artisan key:generate
+5) php artisan migrate
+6) right permissions https://stackoverflow.com/questions/30639174/file-permissions-for-laravel-5-and-others
+7) add .htacces from laravel on pamdogs/public
+8) configure /etc/apache2/sites-available/000-default.conf
+    Example:
+
+      <Directory "/var/www/html">
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+
+9) check config/app.php -> 'url'

@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost/prev-pamdogs',
+    'url' => 'http://localhost/pamdogs',
 
     /*
     |--------------------------------------------------------------------------
