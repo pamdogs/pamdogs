@@ -40,14 +40,14 @@ Route::get('dev/facebook', ['as' => 'facebook', 'uses' => 'Auth\AuthController@r
 Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
 
 Route::get('/', ['as' => 'home', function(){
-  return view('main.index');
+  return view('main.home');
 }]);
 
 Route::group(['prefix' => 'registro', 'as' => 'registro.'], function()
 {
 	Route::get('/', ['as' => 'index', function()
 	{
-		return view('main.registrate');
+		return view('main.form_register');
 	}]);
 
 	Route::post('cliente', ['as' => 'cliente', 'uses' => 'ClientesController@store']);
