@@ -19,8 +19,6 @@ body, html{
 }
 
 h1.title { 
-    z-index: 4;
-    min-height: 20px;
     text-shadow: 7px 1px 7px rgba(0,0,0,0.11);
     box-shadow: none;
     background-color: transparent;
@@ -87,7 +85,9 @@ hr{
 
 
 .form-group{
-    margin-bottom: auto;
+    margin-bottom: 6px;
+    border-radius: 60px;
+    vertical-align: center;
 }
 
 label{
@@ -99,6 +99,7 @@ input::-webkit-input-placeholder {
     font-size: 15px;
     padding-top: 3px;
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
 }
 
 .main-login{
@@ -114,7 +115,7 @@ input::-webkit-input-placeholder {
 }
 
 .main-center{
-    margin-top: 30px;
+    margin-top: 10px;
     margin: 0 auto;
     max-width: 330px;
     padding: 40px 40px;
