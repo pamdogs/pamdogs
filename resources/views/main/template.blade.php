@@ -15,7 +15,7 @@
     <link href="{{ url('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
     <link href="{{ url('css/business-frontpage.css') }}" rel="stylesheet">
     <link href="{{ url('css/custom.css') }}" rel="stylesheet">
 
@@ -45,34 +45,14 @@
       <!-- Navigation -->
       <nav id="nav-top" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <!--<div class="navbar-header">
-                  <img src="img/img5.png" width="136" height="36"></a>
-              </div>-->
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
-
                   <ul class="nav navbar-nav">
                     <img id="logo" src="img/img5.png"></a>
-                      <!--<li>
-                          <a href="#">Inicio</a>
-                      </li>
-                      <li>
-                          <a href="{{ route('registro.index') }}">Registrate</a>
-                      </li>
-                      <li>
-                          <a href="#">Iniciar Sesion</a>
-                      </li>
-                      <li>
-                          <a href="#">Contacto</a>
-                      </li>-->
                   </ul>
 
                   <ul class="nav navbar-nav navbar-right">
                     <li class="user-info"><span><b>José Requena</b> <img class="avatar-menu" src="{{ url('img/user-39x39.png') }}" alt="user-avatar"></span></li>
                     <li><span id="button-menu" class="glyphicon glyphicon-menu-hamburger" onclick="openNav()"></span></li>
                   </ul>
-              <!--</div>-->
               <!-- /.navbar-collapse -->
           </div>
           <!-- /.container -->

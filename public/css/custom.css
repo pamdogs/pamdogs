@@ -6,7 +6,7 @@
    z-index: 1; /* Stay on top */
    top: 0;
    left: 0;
-   background-color: #111; /* Black*/
+   background-color: rgb(51, 51, 51); /* Black*/
    overflow-x: hidden; /* Disable horizontal scroll */
    padding-top: 60px; /* Place content 60px from the top */
    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -14,12 +14,17 @@
 
 /* The navigation menu links */
 .sidenav a {
-   padding: 8px 8px 8px 32px;
+   padding: 12px 8px;
    text-decoration: none;
-   font-size: 25px;
+   font-size: 24px;
    color: #818181;
    display: block;
-   transition: 0.3s
+   transition: 0.3s;
+   text-align: center;
+   margin: 30px 0;
+   color: #FFFFFF;
+   font-weight: 600;
+   font-family: "Source Sans Pro";
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -99,4 +104,22 @@ li.user-info {
 
 .avatar-menu {
   margin: 4px 7px;
+}
+
+/* Home o Inicio */
+.input-buscador {
+  border-radius: 0px;
+  border: 0px none;
+  padding: 10px;
+  float: left;
+}
+
+#buscador button {
+  background-color: #DB4752;
+  border: none;
+  padding: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #FFF;
+  font-weight: 700;
 }

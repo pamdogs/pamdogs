@@ -15,8 +15,16 @@
                   </div>
               </div>
           </div>
+          <div id="buscador" class="row">
+              <div class="col-lg-12">
+                <input type="text" name="ubicacion" value="" placeholder="Direccion" class="input-buscador">
+                <input type="date" name="desde" value="" placeholder="Desde" class="input-buscador">
+                <input type="date" name="hasta" value="" placeholder="Hasta" class="input-buscador">
+                <button type="button" name="button">Encuentra un cuidador</button>
+              </div>
+          </div>
       </div>
-      <input name="" value="" placeholder="Direccion">
+
   </header>
 
   <!-- Page Content -->
