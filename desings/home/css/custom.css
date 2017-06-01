@@ -1,0 +1,125 @@
+/* The side navigation menu */
+.sidenav {
+   height: 100%; /* 100% Full-height */
+   width: 0; /* 0 width - change this with JavaScript */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Stay on top */
+   top: 0;
+   left: 0;
+   background-color: rgb(51, 51, 51); /* Black*/
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-top: 60px; /* Place content 60px from the top */
+   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+   padding: 12px 8px;
+   text-decoration: none;
+   font-size: 24px;
+   color: #818181;
+   display: block;
+   transition: 0.3s;
+   text-align: center;
+   margin: 30px 0;
+   color: #FFFFFF;
+   font-weight: 600;
+   font-family: "Source Sans Pro";
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+   color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+   position: absolute;
+   top: 0;
+   right: 25px;
+   font-size: 36px;
+   margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main, #nav-top {
+   transition: margin-left .5s;
+   /*padding: 20px;*/
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+   .sidenav {padding-top: 15px;}
+   .sidenav a {font-size: 18px;}
+}
+
+
+/* Deshabilitar el responsive en el menu de bootstrap. */
+.navbar-collapse.collapse {
+display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+float: left !important;
+}
+
+
+.navbar-nav.navbar-right:last-child {
+margin-right: -15px !important;
+}
+
+.navbar-right {
+float: right!important;
+}
+
+
+/* Barra de menu superior */
+#nav-top {
+  min-height: 46px;
+  border:0;
+  box-shadow: 0px 3px 7px rgba(0,0,0,0.11);
+}
+
+#logo {
+  margin-top: 4px;
+}
+
+#button-menu {
+  background-color: #DB4752;
+  font-size: 30px;
+  padding: 8px 12px;
+  color: wheat;
+  cursor: pointer;
+}
+
+#button-menu.glyphicon {
+  top:0;
+}
+
+li.user-info {
+  background-color: #F2F2F2;
+  padding: 0 15px;
+  color:#6B6B6B;
+}
+
+.avatar-menu {
+  margin: 4px 7px;
+}
+
+/* Home o Inicio */
+.input-buscador {
+  border-radius: 0px;
+  border: 0px none;
+  padding: 10px;
+  float: left;
+}
+
+#buscador button {
+  background-color: #DB4752;
+  border: none;
+  padding: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #FFF;
+  font-weight: 700;
+}

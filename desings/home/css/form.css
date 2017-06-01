@@ -130,3 +130,12 @@ input::-webkit-input-placeholder {
     font-size: 20px;
     text-align: center;
 }
+
+.cuadrado {
+    height: 400px;
+    width: 400px;
+    background-color: #e0e0e9;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+}
