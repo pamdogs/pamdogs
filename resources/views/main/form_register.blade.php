@@ -2,8 +2,8 @@
 
 @section('title', 'Registrate')
 
-@section('styles')
-	<link rel="stylesheet" type="text/css" href="../home/css/form.css">
+@section('css')
+  <link href="{{ url('css/form.css') }}" rel="stylesheet">
 
 	<!-- Website Font style -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">

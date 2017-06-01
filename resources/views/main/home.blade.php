@@ -2,16 +2,20 @@
 
 @section('title', 'Inicio')
 
+@section('css')
+  <link href="{{ url('css/business-frontpage.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
   <!-- Image Background Page Header -->
   <!-- Note: The background image is set within the business-casual.css file. -->
   <header class="business-header">
       <div class="container">
-          <div class="row">
+          <div class="banner-text row">
               <div class="col-lg-12">
-                  </br></br><h1 style="color:black; font-size: 55px;"><strong>Un cuidador con un click.</strong></h1>
+              <h1 class="paytone banner-title">Un cuidador con un click.</h1>
                   <div>
-                      <h3 style="color:black; font-size: 30px; text-indent: 1em"><strong>Los mejores cuidadores de tu localidad</strong></h3>
+                      <h3 style="color:black; font-size: 30px;text-shadow:4px 0px 8px rgba(0,0,0,0.11);font-weight:bold;">Los mejores cuidadores de tu localidad</h3>
                   </div>
               </div>
           </div>
@@ -33,22 +37,37 @@
 
       <div class="row">
           <div class="col-sm-4">
-              <h2 align="center"><strong>Busca</strong></h2><br>
-              <img class="img-circle img-responsive img-center" src="img/img2.png" alt=""><br>
-              <h3 style="font-family: comic sans" align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec</h3>
+              <img class="img-circle img-responsive img-center" src="img/img2.png" alt="">
+              <h2 align="center" style="font-weight:bold;">Busca el servicio que necesitas</h2>
+              <h3 align="center">Revisa los perfiles y las calificaciones de cuidadores cerca de ti.</h3>
           </div>
           <div class="col-sm-4">
-              <h2 align="center"><strong>Reserva y Paga</strong></h2><br>
-              <img class="img-circle img-responsive img-center" src="img/img3.png" alt=""><br>
-              <h3 style="font-family: comic sans" align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec</h3>
+              <img class="img-circle img-responsive img-center" src="img/img3.png" alt="">
+              <h2 align="center" style="font-weight:bold;">Reserva y paga un cuidador</h2>
+              <h3 align="center">Llama y conoce al cuidador de tu preferencia.</h3>
           </div>
           <div class="col-sm-4">
-              <h2 align="center"><strong>Dueño y Mascota Felices</strong></h2><br>
-              <img class="img-circle img-responsive img-center" src="img/img4.png" alt=""><br>
-              <h3 style="font-family: comic sans" align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in efficitur nunc. Nullam feugiat malesuada ipsum, ac semper nibh placerat nec</h3>
+              
+              <img class="img-circle img-responsive img-center" src="img/img4.png" alt="">
+              <h2 align="center" style="font-weight:bold;">Despreocúpate</h2>
+              <h3 align="center">Recibirás fotos de tu mascota, póliza de seguro y atención al cliente 24/7.</h3>
+
           </div>
       </div>
       <!-- /.row -->
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="paytone" style="font-weight: bold">PamDogs garantiza tu tranquilidad mientras tu mascota esta fuera de casa.</h2>
+        </div>
+        <div class="col-xs-6">
+          <img src="{{ url('img/shield-big.png') }}" class="img-responsive">
+        </div>
+        <div class="col-xs-6">
+
+          
+        </div>
+      </div>
 
       <hr>
 
