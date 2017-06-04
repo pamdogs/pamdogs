@@ -1,1 +1,145 @@
-l
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Formulario de Registro</title>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="stylesheet" type="text/css" href="../home/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../home/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../home/css/custom.css">
+		<link rel="stylesheet" type="text/css" href="../home/css/form.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	</head>
+	<body style="background-color:#f1f1f1">
+		<div id="mySidenav" class="sidenav">
+	    	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	    	<a href="#">Inicio</a>
+	    	<a href="#">Regístrate</a>
+	    	<a href="#">Iniciar Sesión</a>
+	    	<a href="#">Contacto</a>
+	    </div>
+		<div id="main">
+	    	<nav id="nav-top" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	        	<div class="container-fluid">
+	            	<ul class="nav navbar-nav">
+	                	<img id="logo" src="../home/img/img5.png"></a>
+	                </ul>
+					<ul class="nav navbar-nav navbar-right">
+	                	<li class="user-info">
+	                		<span><b>José Requena</b><img class="avatar-menu" src="https://www.pamdogs.com/img/user-39x39.png" alt="user-avatar"></span>
+	                	</li>
+	                    <li>
+	                    	<span id="button-menu" class="glyphicon glyphicon-menu-hamburger" onclick="openNav()"></span>
+	                    </li>
+	                </ul>
+	          	</div>
+	       </nav>
+	    </div>
+	    <br>
+	    <div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               	</div>
+	            </div> 
+				<div class="main-login contact-center">
+					<h1 class="title" style="font-size: 37px">Crea tu Cuenta</h1>
+					<hr style="width: 45%; height:5px; background-color: #F6515E; border-width:1px; border-radius: 200px;" />
+					<br>
+					<div class="etiqueta">
+						<h4 align="center"><font color="white">Foto de Perfil *</font></h4>
+					</div>
+					<div class="contact-color contact-margen">
+						<center>
+							<img src="http://vistas.pamdogs.com/images/user.png" alt="user-avatar" width="240" height="240">
+							<br><br><br>
+							<button type="button" class="btn boton btn-lg btn-block login-button"><strong>Subir una imagen</strong></button>
+						</center>
+					</div>
+					<br><br><br>
+					<div class="etiqueta">
+						<h4 align="center"><font color="white">Datos personales *</font></h4>
+					</div>
+					<div class="contact-color contact-margen">
+						<form class="form-horizontal" method="post" action="#">
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Nombre:</strong></h4>
+									<div class="input-group">
+										<input align="center" type="text" class="textbox" name="nombre" id="nombre"  placeholder="Ingresa tu nombre"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Apellido:</strong></h4>
+									<div class="input-group">
+										<input type="email" class="textbox" name="email" id="email"  placeholder="Apellido"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Correo:</strong></h4>
+									<div class="input-group">
+										<input type="email" class="textbox" name="email" id="email"  placeholder="Email"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Fecha de nacimiento:</strong></h4>
+									<div class="input-group">
+										<input type="email" class="textbox" name="email" id="email"  placeholder="Email"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Genero:</strong></h4>
+									<div class="input-group">
+										<input type="email" class="textbox" name="email" id="email"  placeholder="Email"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Telefono:</strong></h4>
+									<div class="input-group">
+										<input type="email" class="textbox" name="email" id="email"  placeholder="Email"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Documento:</strong></h4>
+									<div class="input-group">
+										<input type="email" class="textbox" name="email" id="email"  placeholder="Nacional / Extranjero"/>&nbsp; &nbsp; <input type="email" class="textbox" name="email" id="email"  placeholder="Numero de Documento" float=left/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group ">
+								<button type="button" class="btn boton" style="float: left" ><strong>Quiero encontrar cuidadores</strong></button><button type="button" class="btn boton" style="float: right;" ><strong> Quiero ser cuidador</strong></button>
+							</div>
+						</form>	
+					</div>
+				</div>
+			</div>
+		</div>
+
+	    <script src="../home/js/jquery.js"></script>
+    	<script src="../home/js/bootstrap.min.js"></script>
+    	<script src="../home/js/custom.js"></script>
+	</body>
+</html>
