@@ -1,0 +1,263 @@
+l>
+<html lang="es">
+	<head>
+		<title>Formulario de Mascota</title>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="stylesheet" type="text/css" href="../home/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../home/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../home/css/custom.css">
+		<link rel="stylesheet" type="text/css" href="../home/css/form.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	</head>
+	<body style="background-color:#f1f1f1">
+		<div id="mySidenav" class="sidenav">
+	    	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	    	<a href="#">Inicio</a>
+	    	<a href="#">Regístrate</a>
+	    	<a href="#">Iniciar Sesión</a>
+	    	<a href="#">Contacto</a>
+	    </div>
+		<div id="main">
+	    	<nav id="nav-top" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	        	<div class="container-fluid">
+	            	<ul class="nav navbar-nav">
+	                	<img id="logo" src="../home/img/img5.png"></a>
+	                </ul>
+					<ul class="nav navbar-nav navbar-right">
+	                	<li class="user-info">
+	                		<span><b>José Requena</b><img class="avatar-menu" src="https://www.pamdogs.com/img/user-39x39.png" alt="user-avatar"></span>
+	                	</li>
+	                    <li>
+	                    	<span id="button-menu" class="glyphicon glyphicon-menu-hamburger" onclick="openNav()"></span>
+	                    </li>
+	                </ul>
+	          	</div>
+	       </nav>
+	    </div>
+	    <br>
+	    <div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               	</div>
+	            </div> 
+				<div class="main-login contact-center">
+					<h1 class="title" style="font-size: 37px">Crea tu Cuenta</h1>
+					<hr style="width: 45%; height:5px; background-color: #F6515E; border-width:1px; border-radius: 200px;" />
+					<br>
+					<div class="etiqueta">
+						<h4 align="center"><font color="white">Foto de Perfil *</font></h4>
+					</div>
+					<div class="contact-color contact-margen">
+						<center>
+							<img src="http://vistas.pamdogs.com/images/mascota.png" alt="user-avatar" width="240" height="240">
+							<br><br><br>
+							<button type="button" class="btn boton btn-lg btn-block login-button"><strong>Subir una imagen</strong></button>
+						</center>
+					</div>
+					<br><br><br>
+					<div class="etiqueta">
+						<h4 align="center"><font color="white">Datos personales *</font></h4>
+					</div>
+					<div class="contact-color contact-margen">
+						<form class="form-horizontal" method="post" action="#">
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Nombre:</strong></h4>
+									<div class="input-group">
+										<input align="center" type="text" class="textbox" name="nombre" id="nombre"  placeholder="Nombre de la mascota"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-8" style="float: left">
+								<h4><strong>Fecha de Nacimiento:</strong></h4>
+									<div class="input-group">
+										<input type="text" class="textbox" name="fechanacimiento" id="fnacimiento"  placeholder="Fecha de nacimiento"/>
+									</div>
+								</div>
+								<div style="float: left">
+									<div style="input-group">
+										<h4><strong>Sexo</strong></h4>
+										<div>
+											<input type="radio" name="r" id="r1" for="r1" value='1'>Masculino&nbsp; &nbsp;<input type="radio" name="r" id="r2" for="r2" value='2'>Femenino 	
+										</div>
+									</div>									
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Raza de la Mascota:</strong></h4>
+									<div class="input-group">
+										<input type="text" class="textbox" name="raza" id="raza"  placeholder="Raza Mascota"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Descripcion de la mascota:</strong></h4>
+									<div class="input-group">
+										<div class="input-group">
+											<textarea class="textareas form-control" placeholder="Introduce el texto aqui" rows="4" cols="80"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Tipo de comida y su horario:</strong></h4>
+									<div class="input-group">
+										<input type="text" class="textbox" name="comida" id="comida"  placeholder="Tipo de comida"/>&nbsp; &nbsp; <input type="text" class="textbox" name="horario" id="horario"  placeholder="Horario" float=left/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Horario de paseo:</strong></h4>
+									<div class="input-group">
+										<input type="text" class="textbox" name="horapaseo" id="horapaseo"  placeholder="Horario de paseo"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Rutina para hacer sus necesidades:</strong></h4>
+									<div class="input-group">
+										<textarea class="textareas form-control" placeholder="Describe la rutina de la mascota" rows="4" cols="80"></textarea>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>¿Donde suele dormir?:</strong></h4>
+									<div class="input-group">
+										<textarea class="textareas form-control" placeholder="Describe la rutina de la mascota" rows="4" cols="50"></textarea>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div>
+								<div style="input-group">
+									<h4><strong>¿Se lleva bien con otros perros?</strong></h4>
+									<div>
+										<input type="radio" name="r" id="r1" for="r1" value='1'>Si&nbsp; &nbsp;<input type="radio" name="r" id="r2" for="r2" value='2'>No 
+									</div>
+								</div>									
+							</div>
+							<br>
+							<div>
+								<div style="input-group">
+									<h4><strong>¿Se lleva bien con niños?</strong></h4>
+									<div>
+										<input type="radio" name="r" id="r1" for="r1" value='1'>Si&nbsp; &nbsp;<input type="radio" name="r" id="r2" for="r2" value='2'>No 
+									</div>
+								</div>									
+							</div>
+							<br>
+							<div>
+								<div style="input-group">
+									<h4><strong>¿Salta sobre las personas?</strong></h4>
+									<div>
+										<input type="radio" name="r" id="r1" for="r1" value='1'>Si&nbsp; &nbsp;<input type="radio" name="r" id="r2" for="r2" value='2'>No 
+									</div>
+								</div>									
+							</div>
+							<br>
+							<div>
+								<div style="input-group">
+									<h4><strong>¿Esta en celo?</strong></h4>
+									<div>
+										<input type="radio" name="r" id="r1" for="r1" value='1'>Si&nbsp; &nbsp;<input type="radio" name="r" id="r2" for="r2" value='2'>No 
+									</div>
+								</div>									
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-8" style="float: left">
+								<h4><strong>Vacunas Actualizadas:</strong></h4>
+									<div class="input-group">
+										<input type="radio" name="r" id="r1" for="r1" value='1'>Si&nbsp; &nbsp;<input type="radio" name="r" id="r2" for="r2" value='2'>No 
+									</div>
+								</div>
+								<div style="float: left">
+									<div style="input-group">
+										<h4><strong>Esterilizado</strong></h4>
+										<div>
+											<input type="radio" name="r" id="r1" for="r1" value='1'>Si&nbsp; &nbsp;<input type="radio" name="r" id="r2" for="r2" value='2'>No 	
+										</div>
+									</div>									
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Nombre del Veterinario:</strong></h4>
+									<div class="input-group">
+										<input type="text" class="textbox" name="raza" id="raza"  placeholder="Nombre veterinario"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Numero Telefonico del Veterinario:</strong></h4>
+									<div class="input-group">
+										<input type="text" class="textbox" name="raza" id="raza"  placeholder="Telefono Veterinario"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>Direccion del Veterinario:</strong></h4>
+									<div class="input-group">
+										<input type="text" class="textbox" name="raza" id="raza"  placeholder="Direccion Veterinario"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div>
+								<div style="input-group">
+									<h4><strong>¿Posee seguro de salud?</strong></h4>
+									<div>
+										<input type="radio" name="r" id="r1" for="r1" value='1'>Si&nbsp; &nbsp;<input type="radio" name="r" id="r2" for="r2" value='2'>No 
+									</div>
+								</div>									
+							</div>
+							<br>
+							<div class="form-group">
+								<div class="col-lg-10">
+								<h4><strong>¿Qué empresa?</strong></h4>
+									<div class="input-group">
+										<input type="text" class="textbox" name="raza" id="raza"  placeholder="Empresa de Seguros"/>
+									</div>
+								</div>
+							</div>
+							<br>
+							<br><br>
+							<div class="form-group" align="center">
+								<button type="button" class="btn boton" ><strong>Encontrar cuidadores</strong></button>
+							</div>
+						</form>	
+					</div>
+				</div>
+			</div>
+		</div>
+
+	    <script src="../home/js/jquery.js"></script>
+    	<script src="../home/js/bootstrap.min.js"></script>
+    	<script src="../home/js/custom.js"></script>
+	</body>
+</html>
