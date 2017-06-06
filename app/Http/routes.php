@@ -40,7 +40,7 @@ Route::get('dev/facebook', ['as' => 'facebook', 'uses' => 'Auth\AuthController@r
 Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
 
 Route::get('/', ['as' => 'home', function(){
-  return view('main.home');
+  return view('index');
 }]);
 
 Route::group(['prefix' => 'registro', 'as' => 'registro.'], function()
