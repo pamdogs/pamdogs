@@ -1,13 +1,14 @@
 'use strict';
 
-angular.module('Pamdogs',['ngResource','ngRoute'])
+angular.module('Pamdogs',['ngResource','ngRoute','ngMessages'])
   .config(['$routeProvider','$locationProvider', function($routeProvider,$locationProvider){
     $routeProvider
     .when('/',{
       templateUrl: 'app/views/home.html'
     })
     .when('/registro',{
-      templateUrl: 'app/views/register.html'
+      templateUrl: 'app/views/register.html',
+      controller: 'LoginUserController'
     })
     .otherwise({
       redirectTo: '/'

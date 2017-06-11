@@ -6,42 +6,44 @@
     </div>
     <div class="main-login main-center">
       <h1 class="title">Regístrate</h1>
-      <hr class="hr"/>
-      <button class="btn boton-facebook btn-lg btn-block login-button" type="submit">Resgistrate con Facebook</button>
+      <hr class="color"/>
+      <button class="btn boton-facebook btn-lg btn-block login-button" type="button">Resgistrate con Facebook</button>
       <h6 align="center">Tomaremos algunos datos de tu perfil de Facebook para realizar tu registro.</h6>
-      <hr class="hr hr1" align="center" />
-      <center>
-        <form class="form-horizontal" method="post" action="#">
-          <div class="form-group">
-            <div class="col-lg-10">
-              <div class="input-group">
-                <input align="center" type="text" class="form-control" name="email" id="email"  placeholder="Direccion de Email"/>
-              </div>
+      <hr class="hr1" align="center" />
+
+        <form name="register" ng-submit="loginUser()" novalidate>
+          <div class="form-group" ng-class="{ 'has-error': register.email.$touched && register.email.$invalid }">
+            <input class="form-control" type="email" class="form-control" name="email" ng-model="User.email" placeholder="Direccion de Email" required>
+
+            <div class="help-block" ng-messages="register.email.$error" ng-show="register.email.$touched && register.email.$invalid">
+                <div ng-messages-include="app/views/messages.html"></div>
             </div>
           </div>
-          <div class="form-group">
-            <div class="col-lg-10">
-              <div class="input-group">
-                <input type="password" class="form-control" name="password" id="password"  placeholder="Constraseña"/>
-              </div>
+          <div class="form-group" ng-class="{ 'has-error': register.password.$touched && register.password.$invalid }">
+
+            <input type="password" class="form-control" name="password" id="password" ng-model="User.password" placeholder="Constraseña" required>
+
+            <div class="help-block" ng-messages="register.password.$error" ng-show="register.password.$touched && register.password.$invalid">
+                <div ng-messages-include="app/views/messages.html"></div>
             </div>
           </div>
-          <div class="form-group">
-            <div class="col-lg-10">
-              <div class="input-group">
-                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirmar contraseña"/>
-              </div>
+          <div class="form-group" ng-class="{ 'has-error': register.confirm.$touched && register.confirm.$invalid }">
+
+            <input type="password" class="form-control" name="confirm" id="confirm" ng-model="User.confirm" placeholder="Confirmar contraseña" required>
+
+            <div class="help-block" ng-messages="register.confirm.$error" ng-show="register.confirm.$touched && register.confirm.$invalid">
+                <div ng-messages-include="app/views/messages.html"></div>
             </div>
           </div>
           <br>
-          <div class="form-group ">
-            <button type="button" class="btn boton btn-lg btn-block login-button"><strong>Registrar</strong></button>
+          <div class="form-group">
+            <button type="submit" class="btn boton btn-lg btn-block login-button" ng-disabled="register.$invalid"><strong>Registrar</strong></button>
             <h6 align="center">¿Ya eres miembro? <a href="#">Accede aqui</a></h6>
             <br>
             <h6 align="center">Al registrarte estás aceptando nuestros <a href="#">Términos y Condiciones</a> al igual que nuestras <a href="#">Política de Privacidad</a>.</h6>
           </div>
         </form>
-      </center>
+
     </div>
   </div>
 </div>

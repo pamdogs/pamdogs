@@ -50,7 +50,7 @@
       <nav id="nav-top" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container-fluid">
                   <ul class="nav navbar-nav">
-                    <img id="logo" src="img/img5.png"></a>
+                    <a href="/"><img id="logo" src="img/img5.png"></a>
                   </ul>
 
                   <ul class="nav navbar-nav navbar-right">
@@ -93,8 +93,14 @@
     <script src="app/components/angular-route.min.js"></script>
     <script src="app/components/angular-resource.min.js"></script>
     <script src="app/components/angular-animate.min.js"></script>
+    <script src="app/components/angular-messages.min.js"></script>
+
     <script src="app/app.js"></script>
     <script src="app/router.js"></script>
+
+    <script src="app/controllers/main.js"></script>
+    <script src="app/services/MainService.js"></script>
+
 
 </body>
 

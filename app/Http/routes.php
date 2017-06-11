@@ -11,15 +11,6 @@
 |
 */
 
-/* TEST ROUTES */
-
-Route::get('carbon', 'CarbonController@index');
-
-Route::get('gmaps', function(){
-	return view('gmapsTest');
-});
-
-Route::post('buscar', 'BuscadorController@create');
 /* PRODUCTION ROUTES */
 
 // Web Previa
@@ -39,71 +30,13 @@ Route::post('register', 'Auth\AuthController@postRegister');
 Route::get('dev/facebook', ['as' => 'facebook', 'uses' => 'Auth\AuthController@redirectToProvider']);
 Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
 
-Route::get('/', ['as' => 'home', function(){
-  return view('index');
-}]);
-
-Route::group(['prefix' => 'registro', 'as' => 'registro.'], function()
+//Probar solo con Route::get()
+Route::any('{path?}', function()
 {
-	Route::get('/', ['as' => 'index', function()
-	{
-		return view('main.form_register');
-	}]);
+	return view("index");
+})->where("path", ".+");
 
-	Route::post('cliente', ['as' => 'cliente', 'uses' => 'ClientesController@store']);
-
-	Route::group(['middleware' => 'auth'], function()
-	{
-		Route::get('cliente', ['as' => 'cliente', function()
-		{
-		  	return view('main.formulario-de-registro');
-		}]);
-
-		Route::post('cliente/datos',  ['as' => 'cliente.datos', 'uses' => 'ClientesController@storeCliente']);
-
-		Route::get('mascota', ['as' => 'mascota', function(){
-		  return view('main.formulario-de-mascota');
-		}]);
-
-		Route::post('mascota', ['as' => 'mascota', 'uses' => 'MascotasController@store']);
-
-		Route::get('cuidador', ['as' => 'cuidador', function(){
-		  return view('main.formulario-del-cuidador');
-		}]);
-
-		Route::post('cuidador', ['as' => 'cuidador', 'uses' => 'CuidadoresController@store']);
-	});
+Route::group(['prefix' => '/api', 'as' => 'api.'], function()
+{
+	Route::resource('user','UserController');
 });
-
-Route::get('contacto', ['as' => 'contacto', function(){
-  return view('main.contacto');
-}]);
-
-Route::get('perfil', ['as' => 'perfil', function(){
-	return view('main.perfil');
-}]);
-
-Route::get('busqueda', ['as' => 'busqueda', function(){
-	return view('main.busqueda-cuidadores');
-}]);
-
-Route::post('busqueda', ['as' => 'busqueda', 'uses' => 'BuscadorController@create']);
-
-/* OTHERS */
-
-
-	/*Route::get('registro/cuidador',function(){
-	  return view('main.cuidador');
-	});
-
-	Route::get('registro/cuidador2',function(){
-	  return view('main.cuidador2');
-	});
-
-	Route::post('registro/cuidador2',function(){
-	  return view('main.cuidador2');
-	});
-
-	Route::get('perfil',function(){
-	  return view('main.perfil-del-cuidador');
-	});*/
