@@ -30,13 +30,26 @@ Route::post('register', 'Auth\AuthController@postRegister');
 Route::get('dev/facebook', ['as' => 'facebook', 'uses' => 'Auth\AuthController@redirectToProvider']);
 Route::get('dev/facebook/sesion','Auth\AuthController@handleProviderCallback');
 
+
+
+/*Route::group(['prefix' => '/api', 'as' => 'api.'], function()
+{
+	Route::resource('user','UserController');
+});*/
+
+Route::group(['prefix' => 'api'], function()
+{
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+
+		Route::resource('user','UserController');
+});
+
+
+
+//Siempre al final
 //Probar solo con Route::get()
-Route::any('{path?}', function()
+Route::get('{path?}', function()
 {
 	return view("index");
 })->where("path", ".+");
-
-Route::group(['prefix' => '/api', 'as' => 'api.'], function()
-{
-	Route::resource('user','UserController');
-});

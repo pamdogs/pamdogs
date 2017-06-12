@@ -148,6 +148,8 @@ return [
         // Other service providers...
 
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class
+
 
     ],
 
@@ -200,6 +202,9 @@ return [
         // Adds
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'JWTAuth'   => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class
+
 
     ],
 

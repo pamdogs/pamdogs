@@ -6,6 +6,9 @@
   font-family: "Paytone One";
 }
 
+.bold {
+  font-weight: 700;
+}
 
 /* The side navigation menu */
 .sidenav {
@@ -143,4 +146,47 @@ li.user-info {
   border-bottom-right-radius: 5px;
   color: #FFF;
   font-weight: 700;
+}
+
+.home-list {
+  display:table;
+}
+
+.home-list-element {
+  display:table-cell;
+  vertical-align: middle;
+  font-weight: 700;
+}
+
+.home-list .home-list-element:last-child {
+  padding: 0 10px
+}
+
+.star {
+  width: 12px;
+}
+
+
+/* FOOTER */
+
+footer {
+  margin-top:20px;
+  background-color: #626262;
+  padding: 30px 0;
+  color: white;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer ul a,
+footer ul a:link,
+footer ul a:visited,
+footer ul a:hover,
+footer ul a:focus,
+footer ul a:active {
+  color: white;
+  text-decoration: none;
 }

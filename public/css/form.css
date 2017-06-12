@@ -130,3 +130,92 @@ input::-webkit-input-placeholder {
     font-size: 20px;
     text-align: center;
 }
+.contact-center{
+    margin-top: 10px;
+    margin: 0 auto;
+    max-width: 835px;
+    padding: 40px 40px;
+}
+
+.contact-color{
+    background-color: #FFFFFF;
+    /* shadows and rounded borders */
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contact-margen{
+    margin-top: 10px;
+    margin: 0 auto;
+    max-width: 663px;
+    padding: 40px 40px;
+}
+
+.textbox{
+  border: 1px solid #DBE1EB;
+  font-size: 13px;
+  font-family: Arial, Verdana;
+  padding-left: 17px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  background: #FFFFFF;
+  background: linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+  color: #2E3133;
+  }
+
+.textareas{
+  border: 1px solid #DBE1EB;
+  font-size: 14px;
+  border-radius: 9px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  background: #FFFFFF;
+  background: linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+  color: #2E3133;
+}
+
+.etiqueta{
+     width: 250px;
+     height: 40px;
+     border: 1px solid #555;
+     background: #F6515E;
+     margin-left: 50px;
+     border-radius: 6px;
+}
+
+.cambio-input[type=radio],
+.cambio-input[type=checkbox]{
+  /* Hide original inputs */
+  visibility: hidden;
+  position: absolute;
+}
+.cambio-input[type=radio] + label:before,
+.cambio-input[type=checkbox] + label:before{
+  height:12px;
+  width:12px;
+  margin-right: 2px;
+  content: " ";
+  display:inline-block;
+  vertical-align: baseline;
+  border:1px solid #777;
+}
+.cambio-input[type=radio]:checked + label:before,
+.cambio-input[type=checkbox]:checked + label:before{
+  background:gold;
+}

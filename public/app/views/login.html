@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row main">
+    <div class="panel-heading">
+             <div class="panel-title text-center">
+              </div>
+          </div>
+    <div class="main-login main-center">
+      <h1 class="title">Iniciar Sesion</h1>
+      <hr class="hr"/>
+      <button class="btn boton-facebook btn-lg btn-block login-button" type="submit">Ingresa con Facebook</button>
+      <h6 align="center">(solo si te has registrado de esta forma)</h6>
+      <hr class="hr hr1" align="center" />
+      <center>
+        <form class="form-horizontal" method="post" action="#">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <div class="input-group">
+                <input align="center" type="email" class="form-control"  ng-model="auth.email"  placeholder="Ingrese su Email"/>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-10">
+              <div class="input-group">
+                <input type="password" class="form-control" ng-model="auth.password"  placeholder="Constraseña"/>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="form-group ">
+            <button type="button" class="btn boton btn-lg btn-block login-button" ng-click="auth.login()"><strong>Iniciar Sesion</strong></button>
+            <h6 align="center">¿Olvidaste tu contraseña?</h6>
+            <h6> <a href="#">Click aqui</a></h6>
+            <br>
+            <h6 align="center">¿No estas registrado?</h6>
+            <h6> <a href="#">Click aqui</a></h6>
+          </div>
+        </form>
+      </center>
+    </div>
+  </div>
+</div>

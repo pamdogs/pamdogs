@@ -11,7 +11,7 @@ use Auth;
 use Carbon\Carbon;
 use Hash;
 
-class ClientesController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,9 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        //
+      // Retrieve all the users in the database and return them
+      $users = User::all();
+      return $users;
     }
 
     /**
@@ -139,7 +141,7 @@ class ClientesController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
