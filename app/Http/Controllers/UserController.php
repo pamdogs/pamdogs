@@ -43,14 +43,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // Guarda E-Mail (1er paso de registro)
-        $this->validate($request, [
-            'email' => 'required|email|max:150',
-            'pass'  => 'required|max:200',
-            'pass_confirm' => 'required|same:pass|max:200'
-        ]);
 
-        $user = User::firstOrNew(['email' => $request->email]);
+        $exist = User::where('email',$request->email);
+
+        if($exist) {
+          return response()->json(['error' => 'El email ya está registrado.']);
+        }
+
+        $user = $request->all();
+        $user->save();
+
+        // Guarda E-Mail (1er paso de registro)
+        /*$this->validate($request, [
+            'email' => 'required|email|max:150',
+            'pass'  => 'required|max:200'
+        ]);*/
+
+        /*$user = User::firstOrNew(['email' => $request->email]);
         if(!empty($user->facebook_id))
         {
             return response()->json(['error' => 'Debe iniciar sesión con Facebook.'], 422);
@@ -66,9 +75,11 @@ class UserController extends Controller
             {
                 return response()->json(['error' => 'Usuario registrado previamente, pero la contraseña es incorrecta.'], 422);
             }
-        }
+        }*/
 
-        Auth::loginUsingId($user->id);
+        return response()->json(['mensaje' => 'Registrado exitosamente.']);
+
+        //Auth::loginUsingId($user->id);
         //return redirect()->route('registro.cliente');
     }
 

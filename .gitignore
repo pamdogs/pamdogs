@@ -2,6 +2,5 @@
 Homestead.yaml
 Homestead.json
 .env
-/public/images
 /vendor
 *.sqlite3

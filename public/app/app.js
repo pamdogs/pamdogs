@@ -19,7 +19,8 @@
                 })
                 .state('registro', {
                   url: '/registro',
-                  templateUrl: 'app/views/register/register.html'
+                  templateUrl: 'app/views/register/register.html',
+                  controller: 'UserController'
                 })
                 .state('registro/usuario', {
                   url: '/registro/usuario',
