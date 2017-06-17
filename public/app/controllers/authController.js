@@ -8,9 +8,9 @@
 
             $scope.$storage = $localStorage;
 
-            if(!$auth.isAuthenticated()){
+            /*if(!$auth.isAuthenticated()){
               $localStorage.$reset();
-            }
+            }*/
 
 
 
@@ -35,7 +35,7 @@
                 }, function(error) {
                     vm.loginError = true;
                     vm.loginErrorText = error.data.error;
-
+                    console.log(vm.loginErrorText);
                   // Because we returned the $http.get request in the $auth.login
                   // promise, we can chain the next promise to the end here
                   }).then(function(response) {

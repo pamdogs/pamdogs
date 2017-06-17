@@ -4,3 +4,4 @@ Homestead.json
 .env
 /vendor
 *.sqlite3
+.htaccess
