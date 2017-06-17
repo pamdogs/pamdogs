@@ -19,7 +19,7 @@ Route::get('previa/lista', ['middleware' => 'auth.basic','uses' => 'PrevUsersCon
 
 // Authentication routes...
 //Route::get('login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
-Route::post('login', 'Auth\AuthController@postLogin');
+//Route::post('login', 'Auth\AuthController@postLogin');
 //Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
 
 // Registration routes...
