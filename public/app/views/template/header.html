@@ -1,0 +1,23 @@
+<div id="mySidenav" class="sidenav">
+ <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ <a ui-sref="root.home">Inicio</a>
+ <a ui-sref="root.registro" ng-if="!auth.authenticated">Regístrate</a>
+ <a ui-sref="root.login" ng-if="!auth.authenticated">Iniciar Sesión</a>
+ <a ng-click="auth.logout()" ng-if="auth.authenticated">Cerrar Sesión</a>
+ <a href="#">Contacto</a>
+</div>
+<!-- Navigation -->
+<nav id="nav-top" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <a href="/"><img id="logo" src="img/img5.png"></a>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="user-info"><span><b>{{ $storage.user ? $storage.user.nombre + " " + $storage.user.apellido : "Iniciar Sesión" }}</b><img class="avatar-menu img-circle" src="img/avatar/user/{{ $storage.user.avatar ? $storage.user.avatar : 'user-default-39x39.png' }}" alt="user-avatar" style="width:38px;weight38px;"></span></li>
+              <li><span id="button-menu" class="glyphicon glyphicon-menu-hamburger" onclick="openNav()"></span></li>
+            </ul>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>

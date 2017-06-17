@@ -18,12 +18,12 @@ Route::resource('previa','PrevUsersController', ['only' => ['index','store']]);
 Route::get('previa/lista', ['middleware' => 'auth.basic','uses' => 'PrevUsersController@listar']);
 
 // Authentication routes...
-Route::get('login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
+//Route::get('login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('login', 'Auth\AuthController@postLogin');
-Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
+//Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
 
 // Registration routes...
-Route::get('register', 'Auth\AuthController@getRegister');
+//Route::get('register', 'Auth\AuthController@getRegister');
 Route::post('register', 'Auth\AuthController@postRegister');
 
 // Facebook Authentication
@@ -41,6 +41,7 @@ Route::group(['prefix' => 'api'], function()
 {
     Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
     Route::post('authenticate', 'AuthenticateController@authenticate');
+    Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
 
 		Route::resource('user','UserController');
 });
@@ -49,7 +50,7 @@ Route::group(['prefix' => 'api'], function()
 
 //Siempre al final
 //Probar solo con Route::get()
-Route::get('{path?}', function()
+Route::any('{path?}', function()
 {
 	return view("index");
 })->where("path", ".+");

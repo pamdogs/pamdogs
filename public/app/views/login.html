@@ -11,7 +11,7 @@
       <h6 align="center">(solo si te has registrado de esta forma)</h6>
       <hr class="hr hr1" align="center" />
       <center>
-        <form class="form-horizontal" method="post" action="#">
+        <form class="form-horizontal" ng-submit="auth.login()">
           <div class="form-group">
             <div class="col-lg-10">
               <div class="input-group">
@@ -28,7 +28,7 @@
           </div>
           <br>
           <div class="form-group ">
-            <button type="button" class="btn boton btn-lg btn-block login-button" ng-click="auth.login()"><strong>Iniciar Sesion</strong></button>
+            <button type="submit" class="btn boton btn-lg btn-block login-button" ><strong>Iniciar Sesion</strong></button>
             <h6 align="center">¿Olvidaste tu contraseña?</h6>
             <h6> <a href="#">Click aqui</a></h6>
             <br>

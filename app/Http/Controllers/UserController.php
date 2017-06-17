@@ -44,13 +44,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
-        $exist = User::where('email',$request->email);
+        $exist = User::where('email',$request->email)->exists();
 
         if($exist) {
-          return response()->json(['error' => 'El email ya está registrado.']);
+          return response()->json(['error' => 'El email ya está registrado.', 'user' => $exist],422);
         }
 
-        $user = $request->all();
+        $user = new User();
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
         $user->save();
 
         // Guarda E-Mail (1er paso de registro)
