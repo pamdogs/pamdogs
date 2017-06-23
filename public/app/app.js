@@ -86,10 +86,10 @@
 
             })
             .state('root.registro.usuario', {
-              url: '/registro/usuario',
-              resolve: {
+              url: '/usuario',
+              /*resolve: {
                 loginRequired: loginRequired
-              },
+              },*/
               views: {
                 'content@': {
                   templateUrl: 'app/views/register/register_2.html'
