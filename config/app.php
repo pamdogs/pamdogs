@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/pamdogs'),
+    'url' => env('APP_URL', 'http://localhost:8000/'),
 
     /*
     |--------------------------------------------------------------------------
