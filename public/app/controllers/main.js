@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Pamdogs')
-  .controller('UserController',function($scope, UserResource, $location, $timeout, SweetAlert, $auth, $state){
+  .controller('UserController',function($scope, $location, $timeout, SweetAlert, $auth, $state){
     //$scope.User = UserResource.query();
 
     /*$scope.loginUser = function(email,pass){
@@ -12,16 +12,40 @@ angular.module('Pamdogs')
       },2000);
     };*/
 
+    var vm = this;
 
-    $scope.registerUser = function(){
+    vm.pruebaScope = "Dos Strings";
+
+    $scope.testScp = " - Test - ";
+
+
+
+    vm.registerUser = function () {
 
       var credentials = {
           email: $scope.email,
           password: $scope.password
       }
 
+      $auth.signup(credentials)
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(response) {
+          console.log(response);
+        });
+
+    }
+/*
+    $scope.registerUser = function(){
+      console.log('Entre en register');
+      var credentials = {
+          email: $scope.email,
+          password: $scope.password
+      }
+*/
       //Probar con $auth.signup()
-      UserResource.save(credentials)
+      /*UserResource.save(credentials)
       .$promise.then(function onSuccess(response){
 
         SweetAlert.swal("¡Gracias por confiar en nosotros!", response.mensaje, "success");
@@ -38,7 +62,7 @@ angular.module('Pamdogs')
 
       },function onFail(response){
         SweetAlert.swal("¡Hubo un error!", response.mensaje, "error");
-      });
+      });*/
 
-    };
+  /*  };*/
   });

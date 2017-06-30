@@ -12,7 +12,7 @@
               $localStorage.$reset();
             }*/
 
-
+            $scope.testScp = " - None - ";
 
             var vm = this;
 
