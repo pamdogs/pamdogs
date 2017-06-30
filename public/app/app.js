@@ -110,7 +110,19 @@
                     //controller: 'AuthController as auth'
                   }
                 }
+            })
+            .state('root.registro.cuidador', {
+                url: '/cuidador',
+
+                views: {
+                  'content@': {
+                    templateUrl: 'app/views/cuidador/register.html'
+
+                  }
+                }
             });
+
+
 
             /*.state('users', {
                 url: '/users',

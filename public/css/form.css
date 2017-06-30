@@ -49,11 +49,19 @@ hr.color{
     margin-left: -13px;
 }
 
+.hr-xs {
+    max-width: 40%;
+    height: 5px;
+    background-color: #F6515E;
+    border: none;
+    border-radius: 200px;
+}
+
 .boton{
     background: #F6515E;
     padding: 10px;
     color: #FFFFFF;
-    font-size: 2vh;
+    font-size: 3vh;
 }
 
 .boton:hover {
@@ -112,6 +120,20 @@ input::-webkit-input-placeholder {
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 
+}
+.main-register{
+    background-color: #e0e0e9;
+    /* shadows and rounded borders */
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    margin: auto;
+    float: none;
+    padding: 40px 40px;
 }
 
 .main-center{
@@ -190,6 +212,10 @@ input::-webkit-input-placeholder {
   color: #2E3133;
 }
 
+textarea{
+  resize: none;
+}
+
 .etiqueta{
      width: 250px;
      height: 40px;
@@ -218,4 +244,162 @@ input::-webkit-input-placeholder {
 .cambio-input[type=radio]:checked + label:before,
 .cambio-input[type=checkbox]:checked + label:before{
   background:gold;
+}
+
+
+input[type=checkbox] , input[type=radio] {
+  visibility: hidden;
+      left: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+div[class*=checkbox]  label, div[class*=radio]  label, 
+.form-group span, .form-group label.single, h4.single{
+ color:#6B6B6B
+
+}
+
+h4.single {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.checkbox-inline.check label, .radio-inline.radio label {
+    min-height: 20px;
+    padding-left: 2px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.check, .radio {
+    margin: 25px auto;
+    position: relative;
+    text-align: center;
+    left: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
+    min-width: 25px
+}
+
+.check label.lcheck, .radio label.lradio {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url(/img/1.png) no-repeat 1px;
+    left: 40%;
+}
+
+.check label.lcheck:after, .radio label.lradio:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url(/img/2.png) no-repeat 1px;
+    top: 0;
+}
+
+.check label.lcheck:hover::after, .radio label.lradio:hover::after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: 0.5;
+    top: 0;
+    left: 0px;
+}
+
+.check input[type=checkbox]:checked + label.lcheck:after , .radio input[type=radio]:checked + label.lradio:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    top: 0;
+    left: 0px;
+}
+
+
+
+
+.form-content{
+  margin: 35px auto !important;
+}
+.form-content .form-group{
+   padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+.section-title{
+  background: #F6515E;
+  border-radius: 13px 13px 0 0;
+  padding: 7px 19px;
+  margin-left: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.section-content{
+      background: #FFFFFF;
+    border-radius: 13px;
+    padding: 35px 20px;
+    margin-top: 6px;
+}
+
+.section-content img.avatar{
+      max-width: 240px;
+      margin-bottom: 50px;
+}
+.section-content .size .check{
+  width: 57px;
+}
+
+.section-content .form-control{
+  display: block;
+    width: 100%;
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: rgba(214, 220, 234, 0.92);
+    background-image: none;
+    border: none;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: none;
+}
+
+.section-content textarea.form-control {
+    height: auto;
+}
+.mb-35{
+ margin-bottom: 35px !important;
+}
+.mt-35{
+ margin-top: 35px !important;
+}
+.pb-35{
+ padding-bottom: 35px !important;
+}
+
+.pl-14{
+  padding-left: 14px !important;
+}
+
+.rcenter{
+  margin: auto;
+  float: none;
+}
+
+.tcenter{
+  text-align: center;
 }
