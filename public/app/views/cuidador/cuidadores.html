@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="">
+    
+    <div class=" cuidador search col-md-7 col-lg-7 col-sm-12 col-xs-12">
+    <div class="row">
+        <form class="form-inline text-center pb-35 pt-35" ng-submit="auth.search()">
+            <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon"><img src="/img/locacion.jpg"></div>
+                  <input type="text" class="form-control" align="center" id="address" ng-model="auth.address" placeholder="Dirección">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon"><img src="/img/casilla-calendario.jpg"></div>
+                  <input type="text" class="form-control date" id="" placeholder="DD/MM/AA">
+                  <div class="input-group-addon"><img src="/img/casilla-calendario.jpg"></div>
+                  <input type="text" class="form-control date" id="" placeholder="DD/MM/AA">
+                </div>
+            </div>
+            <button type="submit" class="btn boton btn-sm text-center" ><strong>Encuentra un cuidador</strong></button>
+
+            <div class="selection pb-35">
+              <div class="col-md-4 col-sm-4 col-xs-4"><div class="check checkbox-inline hospedaje col-md-3 col-lg-3 mb-35">
+                  <label class="" for="chekHospedaje">
+                    <input type="checkbox" value="1" id="chekHospedaje">
+                    <label class="lcheck" for="chekHospedaje"></label>
+                    <span>Hospedaje</span>
+
+                  </label>
+              </div> </div>
+              <div class="col-md-4 col-sm-4 col-xs-4"><div class="check checkbox-inline guarderia col-md-3 col-lg-3 mb-35">
+                  <label class="" for="chekGuarderia">
+                    <input type="checkbox" value="1" id="chekGuarderia">
+                    <label class="lcheck" for="chekGuarderia"></label>
+                    <span>Guardería</span>
+                  </label>
+              </div> </div>
+              <div class="col-md-4 col-sm-4 col-xs-4"><div class="check checkbox-inline paseos col-md-3 col-lg-3 mb-35">
+                  <label class="" for="checkPaseos">
+                    <input type="checkbox" value="1" id="checkPaseos">
+                    <label class="lcheck" for="checkPaseos"></label>
+                    <span>Paseos</span>
+                  </label>
+              </div> </div>
+
+            </div>
+
+        </form>
+        </div>
+
+        <div class=" list-result ">
+            <div class="row result">
+                <div class="col-md-3 text-center country">
+                    <img src="/img/user-292x92.png" class="img-responsive avatar img-circle">
+                    <img src="/img/locacion.jpg">Ciudad de Bogotá
+                </div>
+                <div class="col-md-6 col-sm-8 col-xs-8">
+                    <a  href="" class="title">Lorem ipsum</a>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu congue justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu congue justo
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-4 cost">
+                    <span class="title">10$/Paseo</span>
+                    Lorem ipsum dolor sit am
+                </div>
+
+                <div class="col-md-12 col-xs-12 col-sm-12 calificacion">
+                    Lorem ipsum dolor sit am
+                </div>
+            </div>
+            <div class="row result">
+                <div class="col-md-3 text-center country">
+                    <img src="/img/user-292x92.png" class="img-responsive avatar img-circle">
+                    <img src="/img/locacion.jpg">Ciudad de Bogotá
+                </div>
+                <div class="col-md-6 col-sm-8 col-xs-8">
+                    <a  href="" class="title">Lorem ipsum</a>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu congue justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu congue justo
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-4 cost">
+                    <span class="title">10$/Paseo</span>
+                    Lorem ipsum dolor sit am
+                </div>
+
+                <div class="col-md-12 col-xs-12 col-sm-12 calificacion">
+                    Lorem ipsum dolor sit am
+                </div>
+            </div>
+            
+            
+        </div>
+          
+          
+
+          
+      
+        
+    </div>
+    <div class=" cuidador map col-md-5 col-lg-5 col-sm-12 col-xs-12" ></div>
+  </div>
+</div>

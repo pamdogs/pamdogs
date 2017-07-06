@@ -120,6 +120,15 @@
 
                   }
                 }
+            }).state('root.cuidadores', {
+                url: '/cuidadores',
+
+                views: {
+                  'content@': {
+                    templateUrl: 'app/views/cuidador/cuidadores.html'
+
+                  }
+                }
             });
 
 
