@@ -129,6 +129,15 @@
 
                   }
                 }
+            }).state('root.perfil', {
+                url: '/perfil',
+
+                views: {
+                  'content@': {
+                    templateUrl: 'app/views/cuidador/perfil.html'
+
+                  }
+                }
             });
 
 

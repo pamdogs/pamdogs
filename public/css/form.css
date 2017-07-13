@@ -477,7 +477,7 @@ h4.single {
 
 .list-result .result{
   background: #ffffff;
-  padding: 18px 10px;
+  padding: 18px 0px;
   border-bottom: 2px dashed #9e9e9e;
   
 }
@@ -487,7 +487,7 @@ h4.single {
 }
 
 .cuidador.map{
-      height: 500px;
+      height: 513px;
     background: #8B878C;
     opacity: 0.21;
 }
