@@ -138,6 +138,15 @@
 
                   }
                 }
+            }).state('root.hazte-cuidador', {
+                url: '/hazte-cuidador',
+
+                views: {
+                  'content@': {
+                    templateUrl: 'app/views/cuidador/hazte-cuidador.html'
+
+                  }
+                }
             });
 
 
