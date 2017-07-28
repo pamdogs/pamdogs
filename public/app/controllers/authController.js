@@ -4,21 +4,43 @@
         .module('Pamdogs')
         .controller('AuthController', AuthController);
 
-        function AuthController($auth, $state, $http, $scope, $localStorage, $sessionStorage) {
-
-            $scope.$storage = $localStorage;
-
-            /*if(!$auth.isAuthenticated()){
-              $localStorage.$reset();
-            }*/
-
-            $scope.testScp = " - None - ";
+        function AuthController($auth, $state, $http, $scope, $localStorage, $sessionStorage, Account,SweetAlert) {
 
             var vm = this;
+            vm.$storage = $localStorage;
 
-            vm.authenticated = $auth.isAuthenticated();
+            if(!$auth.isAuthenticated()){
+              $localStorage.$reset();
+            } else {
+              vm.authenticated = $auth.isAuthenticated();
+            }
 
             vm.login = function() {
+              var credentials = {
+                  email: vm.email,
+                  password: vm.password
+              }
+
+              $auth.login(credentials)
+                .then(function() {
+                  Account.getProfile()
+                    .then(function(response) {
+                      console.log(response);
+                      $localStorage.user = response.data.user;
+                      vm.authenticated = $auth.isAuthenticated();
+                      $state.go('root.home',{});
+                    })
+                    .catch(function(response){
+                      console.log(response);
+                    });
+                })
+                .catch(function(error) {
+                  console.log(error);
+                });
+
+
+            }
+            /*vm.login = function() {
 
                 var credentials = {
                     email: vm.email,
@@ -38,7 +60,7 @@
                     console.log(vm.loginErrorText);
                   // Because we returned the $http.get request in the $auth.login
                   // promise, we can chain the next promise to the end here
-                  }).then(function(response) {
+                }).then(function(response) {
 
                     // Stringify the returned data to prepare it
                     // to go into local storage
@@ -68,7 +90,7 @@
                     //location.href = "/";
 
                   });
-            }
+            }*/
 
             // We would normally put the logout method in the same
             // spot as the login method, ideally extracted out into
@@ -87,6 +109,48 @@
 
 
               });
+            }
+
+            vm.registerUser = function () {
+
+              var credentials = {
+                  email: vm.email,
+                  password: vm.password
+              }
+
+              $auth.signup(credentials)
+                .then(function(response) {
+                  console.log(response);
+                  SweetAlert.swal("¡Gracias por confiar en nosotros!", response.mensaje, "success");
+
+                  $auth.login(credentials)
+                  .then(function(data){
+                    console.log("Login");
+                    console.log(data);
+                    Account.getProfile()
+                      .then(function(response) {
+                        console.log(response);
+                        $localStorage.user = response.data.user;
+                        vm.authenticated = $auth.isAuthenticated();
+                        $state.go('root.registro.usuario',{},{reload: "root.registro.usuario"});
+                      })
+                      .catch(function(response){
+                        console.log(response);
+                      });
+                  })
+                  .catch(function(error){
+
+                  })
+
+
+                })
+                .catch(function(response) {
+                  console.log(response);
+                  SweetAlert.swal("¡Hubo un error!", response.mensaje, "error");
+                });
+
+
+
             }
 
         }

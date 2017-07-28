@@ -11,7 +11,7 @@
       <h6 align="center">Tomaremos algunos datos de tu perfil de Facebook para realizar tu registro.</h6>
       <hr class="hr1" align="center" />
 
-        <form name="register" ng-submit="userCtrl.registerUser()" novalidate>
+        <form name="register" ng-submit="auth.registerUser()" novalidate>
           <div class="form-group" ng-class="{ 'has-error': register.email.$touched && register.email.$invalid }">
             <input type="email" class="form-control" name="email" ng-model="email" placeholder="Direccion de Email" required>
 

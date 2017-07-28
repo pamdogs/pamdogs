@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Pamdogs')
-  .controller('UserController',function($scope, $location, $timeout, SweetAlert, $auth, $state){
+  .controller('UserController',function($scope, $location, $timeout, SweetAlert, $auth, $state,$localStorage,Account){
     //$scope.User = UserResource.query();
 
     /*$scope.loginUser = function(email,pass){
@@ -12,14 +12,9 @@ angular.module('Pamdogs')
       },2000);
     };*/
 
+
     var vm = this;
-
-    vm.pruebaScope = "Dos Strings";
-
-    $scope.testScp = " - Test - ";
-
-
-
+    vm.$storage = $localStorage;
     vm.registerUser = function () {
 
       var credentials = {
@@ -30,10 +25,35 @@ angular.module('Pamdogs')
       $auth.signup(credentials)
         .then(function(response) {
           console.log(response);
+          SweetAlert.swal("¡Gracias por confiar en nosotros!", response.mensaje, "success");
+
+          $auth.login(credentials)
+          .then(function(data){
+            console.log("Login");
+            console.log(data);
+            Account.getProfile()
+              .then(function(response) {
+                console.log(response);
+                $localStorage.user = response.data.user;
+                vm.authenticated = $auth.isAuthenticated();
+                $state.go('root.registro.usuario',{},{reload: "root.registro.usuario"});
+              })
+              .catch(function(response){
+                console.log(response);
+              });
+          })
+          .catch(function(error){
+
+          })
+
+
         })
         .catch(function(response) {
           console.log(response);
+          SweetAlert.swal("¡Hubo un error!", response.mensaje, "error");
         });
+
+
 
     }
 /*

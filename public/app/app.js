@@ -76,9 +76,7 @@
             })
             .state('root.registro', {
               url: '/registro',
-              resolve: {
-                skipIfLoggedIn: skipIfLoggedIn
-              },
+
               views: {
                 'content@': {
                   templateUrl: 'app/views/register/register.html',
