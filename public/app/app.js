@@ -118,6 +118,33 @@
 
                   }
                 }
+            }).state('root.cuidadores', {
+                url: '/cuidadores',
+
+                views: {
+                  'content@': {
+                    templateUrl: 'app/views/cuidador/cuidadores.html'
+
+                  }
+                }
+            }).state('root.perfil', {
+                url: '/perfil',
+
+                views: {
+                  'content@': {
+                    templateUrl: 'app/views/cuidador/perfil.html'
+
+                  }
+                }
+            }).state('root.hazte-cuidador', {
+                url: '/hazte-cuidador',
+
+                views: {
+                  'content@': {
+                    templateUrl: 'app/views/cuidador/hazte-cuidador.html'
+
+                  }
+                }
             });
 
 

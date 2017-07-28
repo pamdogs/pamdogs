@@ -322,8 +322,32 @@ h4.single {
     left: 0px;
 }
 
+.check.hospedaje label.lcheck{
+    background: url(/img/moon1.png) no-repeat 1px;
+}
 
+.check.hospedaje label.lcheck:after{
+    background: url(/img/moon1-hover.png) no-repeat 1px;
+}
+.check.guarderia label.lcheck{
+    background: url(/img/house1.png) no-repeat 1px;
+}
 
+.check.guarderia label.lcheck:after{
+    background: url(/img/house1-hover.png) no-repeat 1px;
+}
+.check.paseos label.lcheck{
+    background: url(/img/paseo1.png) no-repeat 1px;
+}
+
+.check.paseos label.lcheck:after{
+    background: url(/img/paseo1-hover.png) no-repeat 1px;
+}
+
+.check.checkbox-inline span {
+    position: absolute;
+    margin-left: 22px;
+}
 
 .form-content{
   margin: 35px auto !important;
@@ -391,6 +415,9 @@ h4.single {
  padding-bottom: 35px !important;
 }
 
+.pt-35{
+ padding-top: 35px !important;
+}
 .pl-14{
   padding-left: 14px !important;
 }
@@ -402,4 +429,152 @@ h4.single {
 
 .tcenter{
   text-align: center;
+}
+.cuidador.search form .form-group{
+    height: 38px;
+    border-radius: 0px;
+    margin-right: -3px;
+}
+.cuidador.search form .form-control{
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    
+
+}
+.cuidador.search form input{
+    border: none;
+    height: 38px;
+    border-radius: 0px !important;
+
+}
+
+.cuidador.search form input.date{
+      max-width: 100px;
+}
+
+.cuidador.search form button{
+      max-height: 38px;
+      font-size: 12px;
+      border-radius: 0px 3px 3px 0px;
+}
+
+
+.cuidador.search form .input-group-addon {
+    padding: 0px 0px 0px 5px;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0;
+    max-height: 38px;
+}
+
+.list-result .result{
+  background: #ffffff;
+  padding: 18px 0px;
+  border-bottom: 2px dashed #9e9e9e;
+  
+}
+
+.list-result .result:last-child{
+    border:none;
+}
+
+.cuidador.map{
+      height: 513px;
+    background: #8B878C;
+    opacity: 0.21;
+}
+
+.list-result .title{
+  display: block;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.list-result .cost, .list-result .calificacion{
+  text-align: right;
+  font-size:12px;
+}
+.list-result .country{
+  text-align: center;
+  font-size:11.5px;
+  margin-left: -10px;
+  line-height: 4px;
+}
+.list-result .country .avatar{
+  text-align: center;
+  margin: auto;
+}
+
+.check.hospedaje, .check.guarderia,
+    .check.paseos{
+      position: absolute;
+          left: 20%;
+          display: block;
+    }
+
+@media ( max-width: 1024px ){
+    
+}
+
+@media ( min-width: 992px) and (max-width: 1199px ){
+ 
+  .cuidador.search form .form-group{
+      height: 38px;
+      border-radius: 0px;
+      margin-right: -3px;
+      margin-bottom: 10px;
+  }
+  .cuidador.search form button {
+      border-radius: 3px;
+  }
+}
+
+@media ( max-width: 767px ){
+    .cuidador.search form input.date {
+      max-width: 100%; 
+    }
+}
+
+
+
+@media ( max-width: 425px ){
+  .check.hospedaje, .check.guarderia, .check.paseos {
+      left: 13%;
+  }
+  .cuidador.search form .form-group{
+      height: 38px;
+      border-radius: 0px;
+      margin-right: -3px;
+      margin-bottom: 10px;
+  }
+  .cuidador.search form button {
+      border-radius: 3px;
+  }
+}
+
+@media ( max-width: 375px ){
+  .check.hospedaje, .check.guarderia, .check.paseos {
+      left: 8%;
+  }
+}
+
+@media ( max-width: 320px ){
+    .check.hospedaje, .check.guarderia, .check.paseos {
+        left: 0%;
+    }
+    li.user-info{
+          padding: 13px 15px;
+    }
+    .avatar-menu{
+      display: none;
+    }
 }
