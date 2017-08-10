@@ -11,12 +11,49 @@ angular.module('Pamdogs')
       }
     };
   })
+  .factory('AuthenticateResource', function($resource) {
+    return $resource("http://localhost:8000/api/authenticate/user");
+  })
   .factory('UserResource',function($resource){
     return $resource("http://localhost:8000/api/user/:id",{
       id:"@id"
     }, {
       update: {
-        method: "PUT"
+        method: "PUT",
+        transformRequest: function(data) {
+          if (data === undefined)
+            return data;
+
+          var fd = new FormData();
+          angular.forEach(data, function(value, key) {
+            console.log(value +" : "+ key)
+            if (value instanceof FileList) {
+              if (value.length == 1) {
+                fd.append(key, value[0]);
+              } else {
+                angular.forEach(value, function(file, index) {
+                  fd.append(key + '_' + index, file);
+                  console.log(fd)
+                });
+              }
+            } else {
+              fd.append(key, value);
+              console.log(fd)
+            }
+          });
+
+          return fd;
+        },
+        headers:{'Content-Type':undefined}
+        //processData: false
+      },
+      post: {
+        method: "POST",
+        headers: {
+          'Content-Type': undefined
+        },
+        transformRequest: angular.identity,
+        processData: false
       }
     });
   })

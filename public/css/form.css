@@ -61,7 +61,7 @@ hr.color{
     background: #F6515E;
     padding: 10px;
     color: #FFFFFF;
-    font-size: 3vh;
+    /*font-size: 3vh;*/
 }
 
 .boton:hover {
@@ -80,7 +80,7 @@ hr.color{
     background: #3B5998 url(../img/f.png) no-repeat left center;
     background-size: contain;
     color: white;
-    font-size: 2vh;
+    /*font-size: 2vh;*/
 }
 .boton-facebook:hover{
     opacity: 1;
@@ -254,7 +254,7 @@ input[type=checkbox] , input[type=radio] {
     padding-left: 0px;
 }
 
-div[class*=checkbox]  label, div[class*=radio]  label, 
+div[class*=checkbox]  label, div[class*=radio]  label,
 .form-group span, .form-group label.single, h4.single{
  color:#6B6B6B
 
@@ -443,7 +443,7 @@ h4.single {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
-    
+
 
 }
 .cuidador.search form input{
@@ -479,7 +479,7 @@ h4.single {
   background: #ffffff;
   padding: 18px 0px;
   border-bottom: 2px dashed #9e9e9e;
-  
+
 }
 
 .list-result .result:last-child{
@@ -522,11 +522,11 @@ h4.single {
     }
 
 @media ( max-width: 1024px ){
-    
+
 }
 
 @media ( min-width: 992px) and (max-width: 1199px ){
- 
+
   .cuidador.search form .form-group{
       height: 38px;
       border-radius: 0px;
@@ -540,7 +540,7 @@ h4.single {
 
 @media ( max-width: 767px ){
     .cuidador.search form input.date {
-      max-width: 100%; 
+      max-width: 100%;
     }
 }
 

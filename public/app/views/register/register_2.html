@@ -5,6 +5,7 @@
               </div>
           </div>
     <div class="main-login contact-center">
+      <form name="auth.registerData" novalidate>
       <h1 class="title" style="font-size: 37px">Crea tu Cuenta</h1>
       <hr style="width: 45%; height:5px; background-color: #F6515E; border-width:1px; border-radius: 200px;" />
       <br>
@@ -13,9 +14,14 @@
       </div>
       <div class="contact-color contact-margen">
         <center>
-          <img src="http://vistas.pamdogs.com/images/user.png" alt="user-avatar" width="240" height="240">
-          <br><br><br>
-          <button type="button" class="btn boton btn-lg btn-block login-button"><strong>Subir una imagen</strong></button>
+
+
+          <img ng-src="{{ filepreview ? filepreview : (auth.$storage.user.avatar ? 'storage/images/avatars/users/'+auth.$storage.user.avatar : 'http://vistas.pamdogs.com/images/user.png') }}"  alt="user-avatar" width="240" height="240">
+          <br>
+          <!--<input type="file" name="foto" file-model="auth.foto" file-preview="filepreview"/>-->
+          <!--btn boton btn-lg btn-block-->
+          <input type="file" class=" inputfile" name="foto" file-model="auth.foto" file-preview="filepreview" id="avatar">
+          <label for="avatar" class="btn boton btn-lg btn-block">{{ auth.foto.name || "Subir una imagen" }}</label>
         </center>
       </div>
       <br><br><br>
@@ -23,12 +29,12 @@
         <h4 align="center"><font color="white">Datos personales *</font></h4>
       </div>
       <div class="contact-color contact-margen">
-        <form class="form-horizontal" method="post" action="#">
+
           <div class="form-group">
             <div class="col-lg-10">
             <h4><strong>Nombre:</strong></h4>
               <div class="input-group">
-                <input align="center" type="text" class="textbox" name="nombre" id="nombre"  placeholder="Ingresa tu nombre"/>
+                <input align="center" type="text" class="textbox" name="name" ng-model="auth.name" placeholder="Ingresa tu nombre" ng-value="auth.$storage.user.nombre"/>
               </div>
             </div>
           </div>
@@ -37,7 +43,7 @@
             <div class="col-lg-10">
             <h4><strong>Apellido:</strong></h4>
               <div class="input-group">
-                <input type="email" class="textbox" name="email" id="email"  placeholder="Apellido"/>
+                <input type="text" class="textbox" name="lastname" ng-model="auth.lastname" placeholder="Apellido"/>
               </div>
             </div>
           </div>
@@ -46,7 +52,7 @@
             <div class="col-lg-10">
             <h4><strong>Correo:</strong></h4>
               <div class="input-group">
-                <input type="email" class="textbox" name="email" id="email"  placeholder="Email"/>
+                <input type="email" class="textbox" name="email" ng-model="auth.email" placeholder="Email" reandonly/>
               </div>
             </div>
           </div>
@@ -55,7 +61,7 @@
             <div class="col-lg-10">
             <h4><strong>Fecha de nacimiento:</strong></h4>
               <div class="input-group">
-                <input type="email" class="textbox" name="email" id="email"  placeholder="Email"/>
+                <input type="text" class="textbox" name="birthdate" ng-model="auth.birthdate" placeholder="Email"/>
               </div>
             </div>
           </div>
@@ -64,7 +70,7 @@
             <div class="col-lg-10">
             <h4><strong>Genero:</strong></h4>
               <div class="input-group">
-                <input type="email" class="textbox" name="email" id="email"  placeholder="Email"/>
+                <input type="text" class="textbox" name="gender" ng-model="auth.gender" placeholder="Email"/>
               </div>
             </div>
           </div>
@@ -73,7 +79,7 @@
             <div class="col-lg-10">
             <h4><strong>Telefono:</strong></h4>
               <div class="input-group">
-                <input type="email" class="textbox" name="email" id="email"  placeholder="Email"/>
+                <input type="text" class="textbox" name="phone" ng-model="auth.phone" placeholder="Email"/>
               </div>
             </div>
           </div>
@@ -82,16 +88,18 @@
             <div class="col-lg-10">
             <h4><strong>Documento:</strong></h4>
               <div class="input-group">
-                <input type="email" class="textbox" name="email" id="email"  placeholder="Nacional / Extranjero"/>&nbsp; &nbsp; <input type="email" class="textbox" name="email" id="email"  placeholder="Numero de Documento" float=left/>
+                <input type="text" class="textbox" name="doc_type" ng-model="auth.doc_type" placeholder="Nacional / Extranjero"/>&nbsp; &nbsp; <input type="text" class="textbox" name="doc" ng-model="auth.doc" placeholder="Numero de Documento"/>
               </div>
             </div>
           </div>
           <br>
           <div class="form-group ">
-            <button type="button" class="btn boton" style="float: left" ><strong>Quiero encontrar cuidadores</strong></button><button type="button" class="btn boton" style="float: right;" ><strong> Quiero ser cuidador</strong></button>
+            <button type="button" class="btn boton" style="float: left" ng-click="auth.registerUserData_Cliente()"><strong>Quiero encontrar cuidadores</strong></button>
+            <button type="button" class="btn boton" style="float: right;" ng-click="auth.registerUserData_Cuidador()"><strong> Quiero ser cuidador</strong></button>
           </div>
-        </form>
+
       </div>
+      </form>
     </div>
   </div>
 </div>

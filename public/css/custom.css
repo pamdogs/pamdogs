@@ -1,22 +1,58 @@
-* {
-  font-family: "Source Sans Pro";
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../fonts/Source_Sans_Pro/SourceSansPro-SemiBoldItalic.ttf') format('truetype');
+	font-weight: 600;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../fonts/Source_Sans_Pro/SourceSansPro-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
 }
 
 @font-face {
-    font-family: 'Paytone One';
-    src: url('fonts/PaytoneOne.ttf');
-    src: url('fonts/PaytoneOne.ttf') format('truetype');
+    font-family: 'PaytoneOne';
+    src: url('../fonts/Paytone_One/PaytoneOne-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
+* {
+  font-family: "Source Sans Pro";
+}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     color: #000;
-    font-family: 'Paytone One', sans-serif;
+    /*font-family: 'PaytoneOne', sans-serif;*/
 }
 
 .paytone {
-  font-family: "Paytone One";
+  font-family: "PaytoneOne";
 }
 
 .bold {
@@ -224,7 +260,7 @@ footer ul a:active {
 
 .profile-header .banner-text {
       margin-top: 143px;
-    
+
 }
 
 .profile-header h1  {
@@ -287,7 +323,7 @@ span.check{
     padding: 0px 15px;
 }
 
-.panel .panel-body .h1, .panel .panel-body .h2, .panel .panel-body .h3, 
+.panel .panel-body .h1, .panel .panel-body .h2, .panel .panel-body .h3,
 .panel .panel-body h1, .panel .panel-body h2, .panel .panel-body h3 {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -345,12 +381,12 @@ span.check{
     margin: 50% auto;
 }
 
-.service-container a.btn:before, .service-container a.btn:after, 
+.service-container a.btn:before, .service-container a.btn:after,
 .functioning:before, .functioning:after,
 .sep-ver.double:before, .sep-ver.double:after,
 .sep-ver.one-top:before, .sep-ver.one-bottom:after
 {
-  content: ''; 
+  content: '';
   height: 18px;
     background-color: #6B6B6B;
     border-radius: 50%;
@@ -442,7 +478,7 @@ h3.line:before{
   position: absolute;
     bottom: -24px;
     left: -1px;
-       
+
 }
 
 .why .sep-ver {
@@ -463,7 +499,7 @@ h3.line:before{
     border: transparent;
     position: absolute;
     right: 49%;
-    
+
 }
 
 .functioning .panel{
@@ -506,7 +542,7 @@ h3.line:before{
 img.animation:hover{
 -webkit-animation:gira 0.5s alternate infinite;
 }
-@-webkit-keyframes gira 
+@-webkit-keyframes gira
 {
   0% {top: 0px;
      -webkit-transform: rotate(0deg);
@@ -514,19 +550,19 @@ img.animation:hover{
      -moz-transform: rotate(0deg);
      -o-transform: rotate(0deg);
   }
-  40% {top: 20px; 
+  40% {top: 20px;
      -webkit-transform: rotate(30deg);
      transform: rotate(30deg);
      -moz-transform: rotate(30deg);
      -o-transform: rotate(30deg);
   }
-  80% {top: 20px; 
+  80% {top: 20px;
      -webkit-transform: rotate(-30deg);
      transform: rotate(-30deg);
      -moz-transform: rotate(-30deg);
      -o-transform: rotate(-30deg);
   }
-  100% {top: 0px;  
+  100% {top: 0px;
      -webkit-transform: rotate(0deg);
      transform: rotate(0deg);
      -moz-transform: rotate(0deg);
@@ -574,13 +610,20 @@ img.animation:hover{
     .functioning {
         padding: 19px 13px;
     }
-    
+
     .functioning:after {
         right: 47.5%;
     }
     .functioning:before {
         top: -31px;
     }
-  
+}
 
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }

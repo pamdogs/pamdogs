@@ -14,7 +14,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-              <li class="user-info"><span><b>{{ (auth.$storage.user) ? ((auth.$storage.user.nombre) ? (auth.$storage.user.nombre + " " + auth.$storage.user.apellido) : (auth.$storage.user.email)) : ("Iniciar Sesión") }}</b><img class="avatar-menu img-circle" src="img/avatar/user/{{ auth.$storage.user.avatar ? auth.$storage.user.avatar : 'user-default-39x39.png' }}" alt="user-avatar" style="width:38px;weight38px;"></span></li>
+              <li class="user-info"><span><b>{{ (auth.$storage.user) ? ((auth.$storage.user.nombre) ? (auth.$storage.user.nombre + " " + auth.$storage.user.apellido) : (auth.$storage.user.email)) : ("Iniciar Sesión") }}</b><img class="avatar-menu img-circle" ng-src="{{ auth.$storage.user.avatar ? 'storage/images/avatars/users/'+auth.$storage.user.avatar : 'img/user-39x39.png' }}" alt="user-avatar" style="width:38px;weight38px;"></span></li>
               <li><span id="button-menu" class="glyphicon glyphicon-menu-hamburger" onclick="openNav()"></span></li>
             </ul>
         <!-- /.navbar-collapse -->

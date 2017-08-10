@@ -10,6 +10,7 @@ use PamDogs\User;
 use Auth;
 use Carbon\Carbon;
 use Hash;
+use Storage;
 
 class UserController extends Controller
 {
@@ -177,7 +178,31 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->fill($request->all());
+        //return response()->json(['Resp' => $request->all(), 'User Fill' => $user]);
+        if($request->file('avatar'))
+        {
+          $file = $request->file('avatar');
+          $avatar = 'PamDogsAvatar_'.time().'.'.$file->getClientOriginalExtension();
+          $path = 'storage/images/avatars/users/';
+          //Storage::put($path.$avatar, $file);
+          $file->move($path, $avatar);
+          $user->avatar = $avatar;
+          //return response()->json(['Resp' => $request->all(), 'User fill' => $user]);
+
+        }
+        else
+        {
+          if(!isset($user->avatar))
+          {
+            return response()->json(['error' => 'Debe seleccionar una foto de perfil.'], 422);
+          }
+        }
+
+        $user->save();
+
+        return response()->json(['Datos' => $request->all(), 'ID' => $id, 'user' => $user]);
     }
 
     /**

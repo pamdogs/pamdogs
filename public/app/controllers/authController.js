@@ -4,7 +4,7 @@
         .module('Pamdogs')
         .controller('AuthController', AuthController);
 
-        function AuthController($auth, $state, $http, $scope, $localStorage, $sessionStorage, Account,SweetAlert) {
+        function AuthController($auth, $state, $http, $scope, $localStorage, $sessionStorage, Account,SweetAlert,AuthenticateResource,UserResource) {
 
             var vm = this;
             vm.$storage = $localStorage;
@@ -127,16 +127,16 @@
                   .then(function(data){
                     console.log("Login");
                     console.log(data);
-                    Account.getProfile()
-                      .then(function(response) {
-                        console.log(response);
-                        $localStorage.user = response.data.user;
-                        vm.authenticated = $auth.isAuthenticated();
-                        $state.go('root.registro.usuario',{},{reload: "root.registro.usuario"});
-                      })
-                      .catch(function(response){
-                        console.log(response);
-                      });
+                    AuthenticateResource.get(function(data){
+                      console.log(data)
+                      console.log(data.user)
+                      $localStorage.user = data.user;
+                      vm.authenticated = $auth.isAuthenticated();
+                      $state.go('root.registro.usuario',{},{reload: "root.registro.usuario"});
+                    },function(error){
+                      console.log(error);
+                    })
+
                   })
                   .catch(function(error){
 
@@ -146,10 +146,115 @@
                 })
                 .catch(function(response) {
                   console.log(response);
-                  SweetAlert.swal("¡Hubo un error!", response.mensaje, "error");
+                  SweetAlert.swal("¡Hubo un error!", response.data.error, "error");
                 });
 
 
+
+            }
+
+            vm.registerUserData_Cliente = function() {
+              /*console.log(vm.foto);
+              var fd = new FormData();
+              angular.forEach(vm.foto,function(file){
+                fd.append('avatar',file);
+              });*/
+              var data = {
+                avatar: vm.foto,
+                nombre: vm.name,
+                apellido: vm.lastname,
+                nacimiento: vm.birthdate,
+                genero: vm.gender,
+                telefono: vm.phone,
+                dni_tipo: vm.doc_type,
+                dni_numero: vm.doc,
+                _method: 'PUT'
+              }
+              /*fd.append("data", JSON.stringify(information));*/
+              var fd = new FormData();
+              angular.forEach(data, function(value, key) {
+                if (value instanceof FileList) {
+                  if (value.length == 1) {
+                    fd.append(key, value[0]);
+                  } else {
+                    angular.forEach(value, function(file, index) {
+                      fd.append(key + '_' + index, file);
+                    });
+                  }
+                } else if (value != undefined) {
+                  fd.append(key, value);
+                }
+              });
+
+              UserResource.post({id:vm.$storage.user.id},fd, function(response){
+                console.log(response.user);
+                $localStorage.user = response.user;
+              },function(error){
+                console.log(error);
+              });
+
+              /*var formData = new FormData();
+              formData.append('file', vm.foto);
+              formData.append('_method', 'PUT');
+              $http.post('/api/user/'+vm.$storage.user.id, formData, {
+                headers: {
+                  'Content-Type': undefined
+                },
+                transformRequest: angular.identity
+              }).then(function (data) {
+                console.log(data);
+              });*/
+
+
+    	      	/*$http({
+        			  method  : 'PUT',
+        			  url     : '/api/user/'+vm.$storage.user.id,
+        			  processData: false,
+        			  transformRequest: function (data) {
+        			      var formData = new FormData();
+        			      formData.append("avatar", vm.foto);
+        			      return formData;
+        			  },
+        			  //data : vm.registerData,
+        			  headers: {
+        			         'Content-Type': false
+        			  }
+              }).then(function(data){
+        		        console.log(data);
+        		   });*/
+
+
+
+
+
+              /*UserResource.update({id:vm.$storage.user.id},information, function(response){
+                console.log(response);
+              },function(error){
+                console.log(error);
+              });*/
+
+            }
+
+            vm.registerUserData_Cuidador = function() {
+
+              var information = {
+                nombre: vm.name,
+                apellido: vm.lastname,
+                nacimiento: vm.birthdate,
+                genero: vm.gender,
+                telefono: vm.phone,
+                dni_tipo: vm.doc_type,
+                dni_numero: vm.doc
+              }
+
+              UserResource.update({id:vm.$storage.user.id},information, function(response){
+
+                console.log(response);
+
+              },function(error){
+
+                console.log(error);
+              });
 
             }
 
