@@ -33,6 +33,7 @@
         <div ui-view="header"></div>
         <div ui-view="content"></div>
         <div ui-view="footer"></div>
+        <div id="alerts-container"></div>
       </div>
 
       <!-- jQuery -->
@@ -53,10 +54,16 @@
       <script src="app/components/SweetAlert.min.js"></script>
       <script src="app/components/ngStorage.min.js"></script>
 
+      <script src="https://code.angularjs.org/1.6.4/i18n/angular-locale_es-co.js"></script>
+
+      <script src="app/components/angular-strap/angular-strap.min.js"></script>
+      <script src="app/components/angular-strap/angular-strap.tpl.min.js"></script>
+
       <script src="app/app.js"></script>
 
       <script src="app/controllers/main.js"></script>
       <script src="app/controllers/authController.js"></script>
+      <script src="app/controllers/cuidadorController.js"></script>
       <script src="app/services/MainService.js"></script>
 
   </body>

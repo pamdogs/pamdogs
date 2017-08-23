@@ -11,11 +11,11 @@
       <h6 align="center">Tomaremos algunos datos de tu perfil de Facebook para realizar tu registro.</h6>
       <hr class="hr1" align="center" />
 
-        <form name="register" ng-submit="auth.registerUser()" novalidate>
-          <div class="form-group" ng-class="{ 'has-error': register.email.$touched && register.email.$invalid }">
-            <input type="email" class="form-control" name="email" ng-model="auth.email" placeholder="Direccion de Email" required>
+        <form name="register" novalidate>
+          <div class="form-group" ng-class="{ 'has-error': register.emailRegister.$touched && register.emailRegister.$invalid }">
+            <input type="email" class="form-control" name="emailRegister" ng-model="auth.emailRegister" placeholder="Direccion de Email" required>
 
-            <div class="help-block" ng-messages="register.email.$error" ng-show="register.email.$touched && register.email.$invalid">
+            <div class="help-block" ng-messages="register.emailRegister.$error" ng-show="register.emailRegister.$touched && register.emailRegister.$invalid">
                 <div ng-messages-include="app/views/messages.html"></div>
             </div>
           </div>
@@ -37,7 +37,7 @@
           </div>
           <br>
           <div class="form-group">
-            <button type="submit" class="btn boton btn-lg btn-block login-button" ng-disabled="register.$invalid"><strong>Registrar</strong></button>
+            <button type="submit" class="btn boton btn-lg btn-block login-button" ng-disabled="register.$invalid" ng-click="auth.registerUser()"><strong>Registrar</strong></button>
             <h6 align="center">¿Ya eres miembro? <a href="#">Accede aqui</a></h6>
             <br>
             <h6 align="center">Al registrarte estás aceptando nuestros <a href="#">Términos y Condiciones</a> al igual que nuestras <a href="#">Política de Privacidad</a>.</h6>

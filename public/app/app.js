@@ -1,7 +1,7 @@
 'use strict';
 
     angular
-        .module('Pamdogs', ['ui.router', 'satellizer','ngMessages','ngResource','oitozero.ngSweetAlert','ngStorage'])
+        .module('Pamdogs', ['ui.router', 'satellizer','ngMessages','ngResource','oitozero.ngSweetAlert','ngStorage', 'mgcrea.ngStrap'])
         .run(function($rootScope){
 
          $rootScope.$on('$stateChangeError',
@@ -10,7 +10,7 @@
               $log.debug(error);
 
           })})
-        .config(function($stateProvider, $urlRouterProvider, $authProvider, $locationProvider, $qProvider) {
+        .config(function($stateProvider, $urlRouterProvider, $authProvider, $locationProvider, $qProvider, $datepickerProvider) {
 
             // Satellizer configuration that specifies which API
             // route the JWT should be retrieved from
@@ -87,9 +87,9 @@
             })
             .state('root.registro.usuario', {
               url: '/usuario',
-              /*resolve: {
+              resolve: {
                 loginRequired: loginRequired
-              },*/
+              },
               views: {
                 'content@': {
                   templateUrl: 'app/views/register/register_2.html'
@@ -111,11 +111,13 @@
             })
             .state('root.registro.cuidador', {
                 url: '/cuidador',
-
+                resolve: {
+                  loginRequired: loginRequired
+                },
                 views: {
                   'content@': {
-                    templateUrl: 'app/views/cuidador/register.html'
-
+                    templateUrl: 'app/views/cuidador/register.html',
+                    controller: 'CuidadorController as cuidador'
                   }
                 }
             }).state('root.cuidadores', {
@@ -156,6 +158,12 @@
             });*/
 
           $locationProvider.html5Mode(true);
+
+          angular.extend($datepickerProvider.defaults, {
+            dateFormat: 'dd/MM/yyyy',
+            dateType: 'string',
+            autoclose: true
+          });
         })
         .directive("compareTo",function() {
           return {

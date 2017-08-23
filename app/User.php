@@ -42,10 +42,10 @@ class User extends Model implements AuthenticatableContract,
         Accessors
     */
 
-    public function getNacimientoAttribute($value)
+  /*  public function getNacimientoAttribute($value)
     {
         return Carbon::parse($value);
-    }
+    }*/
 
     /**
         Mutators

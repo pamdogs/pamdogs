@@ -35,9 +35,9 @@ class CreateCuidadoresTable extends Migration
             $table->boolean('mascota_perro');
             $table->boolean('mascota_gato');
             $table->boolean('domicilio');
+            $table->boolean('contratado');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->boolean('contratado');
             $table->softDeletes();
             $table->timestamps();
         });

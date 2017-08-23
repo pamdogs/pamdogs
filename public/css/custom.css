@@ -627,3 +627,9 @@ img.animation:hover{
 	position: absolute;
 	z-index: -1;
 }
+
+#alerts-container {
+	position: fixed;
+	top: 80px;
+	right: 10px;
+}

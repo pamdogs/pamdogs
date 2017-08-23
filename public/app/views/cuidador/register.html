@@ -8,165 +8,165 @@
       <h1 class="title">Crea tu cuenta</h1>
       <hr class="hr hr-xs" align="center" />
 
-      <form class="form-horizontal" ng-submit="auth.register()">
+      <form class="form-horizontal" id="registerCuidador" ng-submit="cuidador.register()" novalidate>
           <div class="rcenter col-md-9 form-content">
             <div class="row">
                 <span class="section-title">
                     Foto de Perfil *
                 </span>
                 <div class="section-content">
-                  <img src="img/user-22.png"  class="img-responsive img-circle rcenter avatar">
+                  <img ng-src="{{ filepreview ? filepreview : (cuidador.$storage.user.avatar ? 'storage/images/avatars/users/'+cuidador.$storage.user.avatar : 'img/user-22.png') }}" class="img-responsive img-circle rcenter avatar">
 
-                  <input type="file" class="btn boton btn-lg rcenter" value="Subir nueva imagen"></input>
+                  <!--<input type="file" class="btn boton btn-lg rcenter" value="Subir nueva imagen"></input>-->
+                  <input type="file" class="inputfile" name="foto" file-model="cuidador.foto" file-preview="filepreview" id="avatar">
+                  <label for="avatar" class="btn boton btn-lg btn-block">{{ cuidador.foto.name || "Subir una imagen" }}</label>
                 </div>
             </div>
-            
           </div>
 
           <div class="rcenter col-md-9 form-content">
             <div class="row">
                 <span class="section-title">
-                    Datos del cudiador *
+                    Datos del cuidador *
                 </span>
                 <div class="section-content">
                     <div class="form-group">
                         <label for="title">Título:</label>
-                        <input type="text" class="form-control" align="center" id="title" ng-model="auth.title" placeholder="Max 50 caracteres">
+                        <input type="text" class="form-control" align="center" id="title" ng-model="cuidador.title" placeholder="Max 50 caracteres">
                     </div>
 
                     <div class="form-group">
                         <label for="description">Descripción personal:</label>
-                        <textarea class="form-control" align="center" id="description" ng-model="auth.edscription" rows="5" placeholder="Espacio para conocimientos, experiencias y características de tus servicios (mínimo 200 caracteres)"></textarea> 
+                        <textarea class="form-control" align="center" id="description" ng-model="cuidador.description" rows="5" placeholder="Espacio para conocimientos, experiencias y características de tus servicios (mínimo 200 caracteres)"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-6">    
+                        <div class="col-md-6">
                             <label for="year">Años de experiencia:</label>
-                            <input type="text" class="form-control" align="center" id="year" ng-model="auth.year" placeholder="Escriba sus años de experiencia">
+                            <input type="text" class="form-control" align="center" id="year" ng-model="cuidador.year" placeholder="Escriba sus años de experiencia">
                         </div>
-                        <div class="col-md-6 size">    
+                        <div class="col-md-6 size">
                             <label for="title">Tamaños aceptados:</label>
                             <br>
                               <div class="check checkbox-inline col-md-3 col-lg-3 mb-35">
                                   <label class="" for="checkSize1">
                                     <img src="/img/mascotas/1.png" width="50" class="img-responsive">
                                     &#60;10kg<br>
-                                    <input type="checkbox" value="1" id="checkSize1">
+                                    <input type="checkbox" value="1" id="checkSize1" ng-model="cuidador.size1">
                                     <label class="lcheck" for="checkSize1"></label>
                                     </label>
                               </div>
-                              
+
                               <div class="check checkbox-inline col-md-3 col-lg-3 mb-35">
                                   <label class="" for="checkSize2">
                                     <img src="/img/mascotas/2.png" width="50" class="img-responsive">
                                     11 a 20kg <br>
-                                    <input type="checkbox" value="2" id="checkSize2">
+                                    <input type="checkbox" value="2" id="checkSize2" ng-model="cuidador.size2">
                                     <label class="lcheck" for="checkSize2"></label>
                                   </label>
-
                               </div>
+
                               <div class="check checkbox-inline col-md-3 col-lg-3 mb-35">
                                   <label class="" for="checkSize3" >
                                     <img src="/img/mascotas/3.png" width="50" class="img-responsive">
                                     21 a 40kg <br>
-                                    <input type="checkbox" value="3" id="checkSize3">
+                                    <input type="checkbox" value="3" id="checkSize3" ng-model="cuidador.size3">
                                     <label class="lcheck" for="checkSize3"></label>
                                   </label>
-
                               </div>
+
                               <div class="check checkbox-inline col-md-3 col-lg-3 mb-35">
                                   <label class="" for="checkSize4" >
                                     <img src="/img/mascotas/4.png" width="50" class="img-responsive">
                                     &#62;40kg <br>
-                                    <input type="checkbox" value="4" id="checkSize4">
+                                    <input type="checkbox" value="4" id="checkSize4" ng-model="cuidador.size4">
                                     <label class="lcheck" for="checkSize4"></label>
                                   </label>
                               </div>
-
                         </div>
                     </div>
 
                     <div class="form-group ">
-                        <div class="col-md-6 ">    
+                        <div class="col-md-6 ">
                             <label for="">Tipo de Vivienda</label>
                             <br>
                               <div class="radio radio-inline mb-35">
                                   <label class="" for="radioLiving1">Apartamento
-                                    <input type="radio" value="1"  name="living" id="radioLiving1">
+                                    <input type="radio" value="1"  name="living" id="radioLiving1" ng-model="cuidador.living1">
                                     <label class="lradio" for="radioLiving1"></label>
                                   </label>
                               </div>
                               <div class="radio radio-inline mb-35">
-                                  <label class="" for="radioLiving2">/ Casa 
-                                    <input type="radio" value="2" name="living"  id="radioLiving2">
+                                  <label class="" for="radioLiving2">/ Casa
+                                    <input type="radio" value="2" name="living"  id="radioLiving2" ng-model="cuidador.living2">
                                     <label class="lradio" for="radioLiving2"></label>
                                     </label>
                               </div>
                               <div class="radio radio-inline mb-35">
                                   <label class="" for="radioLiving3">/ Local
-                                    <input type="radio" value="3"  name="living" id="radioLiving3">
+                                    <input type="radio" value="3"  name="living" id="radioLiving3" ng-model="cuidador.living3">
                                     <label class="lradio" for="radioLiving3"></label>
                                     </label>
                               </div>
                         </div>
-                        <div class="col-md-6 ">    
+                        <div class="col-md-6 ">
                             <label for="space">Espacio Libre:</label>
                             <br>
                               <div class="check checkbox-inline  mb-35">
                                   <label class="" for="checkSpace1">Jardín
-                                    <input type="checkbox" value="1" id="checkSpace1">
+                                    <input type="checkbox" value="1" id="checkSpace1" ng-model="cuidador.space1">
                                     <label class="lcheck" for="checkSpace1"></label>
                                   </label>
                               </div>
                               <div class="check checkbox-inline mb-35">
                                   <label class="" for="checkSpace2">/ Balcón
-                                    <input type="checkbox" value="2" id="checkSpace2">
+                                    <input type="checkbox" value="2" id="checkSpace2" ng-model="cuidador.space2">
                                     <label class="lcheck" for="checkSpace2"></label>
                                   </label>
                               </div>
                               <div class="check checkbox-inline mb-35">
                                   <label class="" for="checkSpace3">/ Terraza
-                                    <input type="checkbox" value="3" id="checkSpace3">
+                                    <input type="checkbox" value="3" id="checkSpace3" ng-model="cuidador.space3">
                                     <label class="lcheck" for="checkSpace3"></label>
                                   </label>
                               </div>
                           </div>
                     </div>
                     <div class="form-group ">
-                        <div class="col-md-6">    
+                        <div class="col-md-6">
                             <label for="car">Auto para emergencias:</label>
                             <br>
                               <div class="radio radio-inline mb-35  col-md-4">
                                   <label class="" for="radioCar1">Si
-                                    <input type="radio" value="si"  name="living" id="radioCar1">
+                                    <input type="radio" value="si"  name="living" id="radioCar1" ng-model="cuidador.car1">
                                     <label class="lradio " for="radioCar1">
                                   </label>
                               </div>
                               <div class="radio radio-inline mb-35  col-md-4">
                                   <label class="" for="radioCar2">No
-                                    <input type="radio" value="no" name="living"  id="radioCar2">
+                                    <input type="radio" value="no" name="living"  id="radioCar2" ng-model="cuidador.car2">
                                     <label class="lradio " for="radioCar2">
                                   </label>
                               </div>
                         </div>
-                        <div class="col-md-6 ">    
+                        <div class="col-md-6 ">
                             <label for="pets">Mascotas propias:</label>
                             <br>
                               <div class="check checkbox-inline  mb-35">
                                   <label class="" for="checkPets1">Perro
-                                    <input type="checkbox" value="1" id="checkPets1">
+                                    <input type="checkbox" value="1" id="checkPets1" ng-model="cuidador.pets1">
                                     <label class="lcheck" for="checkPets1"></label>
                                   </label>
                               </div>
                               <div class="check checkbox-inline mb-35">
                                   <label class="" for="checkPets2">/ Gato
-                                    <input type="checkbox" value="2" id="checkPets2">
+                                    <input type="checkbox" value="2" id="checkPets2" ng-model="cuidador.pets2">
                                     <label class="lcheck" for="checkPets2"></label>
                                   </label>
                               </div>
                               <div class="check checkbox-inline mb-35">
                                   <label class="" for="checkPets3">/ No
-                                    <input type="checkbox" value="3" id="checkPets3">
+                                    <input type="checkbox" value="3" id="checkPets3" ng-model="cuidador.pets3">
                                     <label class="lcheck" for="checkPets3"></label>
                                   </label>
                               </div>
@@ -183,19 +183,19 @@
                     <div class="form-group">
                         <div class="col-md-2"><label for="location" class="single">Localidad:</label></div>
                         <div class="col-md-10">
-                          <input type="text" class="form-control col-md-9" align="center" id="location" ng-model="auth.location" placeholder="Introducir texto">
+                          <input type="text" class="form-control col-md-9" align="center" id="location" ng-model="cuidador.location" placeholder="Introducir texto">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-2"><label for="barrio" class="single">Barrio:</label></div>
                         <div class="col-md-10">
-                          <input type="text" class="form-control col-md-9" align="center" id="barrio" ng-model="auth.barrio" placeholder="Introducir texto">
+                          <input type="text" class="form-control col-md-9" align="center" id="barrio" ng-model="cuidador.barrio" placeholder="Introducir texto">
                         </div>
                     </div>
                     <div class="form-group mb-35">
                         <div class="col-md-2"><label for="address" class="single">Dirección:</label></div>
                         <div class="col-md-10">
-                          <input type="text" class="form-control col-md-9" align="center" id="address" ng-model="auth.address" placeholder="Introducir texto">
+                          <input type="text" class="form-control col-md-9" align="center" id="address" ng-model="cuidador.address" placeholder="Introducir texto">
                         </div>
                     </div>
 
@@ -207,7 +207,7 @@
                     <div class="form-inline tcenter mt-35">
                       <div class="form-group ">
                           <label for="range">Rango:</label>
-                            <input type="text" class="form-control " align="center" id="range" ng-model="auth.range" placeholder="">
+                            <input type="text" class="form-control " align="center" id="range" ng-model="cuidador.range" placeholder="">
                           <label for="range" class="single">metros</label>
                       </div>
                     </div>
@@ -223,15 +223,15 @@
                         <div class="col-md-6">
                           <div class=" form-group">
                               <div class="col-md-8"><label for="estancia" class="single">Tarifa por estancia 24 horas:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="estancia" ng-model="auth.estancia" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="estancia" ng-model="cuidador.estancia" placeholder=""></div>
                           </div>
                           <div class=" form-group">
                               <div class="col-md-8"><label for="extras" class="single">Tarifa por horas extras:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="extras" ng-model="auth.extras" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="extras" ng-model="cuidador.extras" placeholder=""></div>
                           </div>
                           <div class=" form-group">
                               <div class="col-md-8"><label for="mextra" class="single">Tarifa por mascota extra:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="mextra" ng-model="auth.mextra" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="mextra" ng-model="cuidador.mextra" placeholder=""></div>
                           </div>
                         </div>
                         <div class="col-md-6 ">
@@ -240,49 +240,49 @@
                                 <br>
                                   <div class="check checkbox-inline  mb-35 pl-14">
                                       <label class="" for="checkDay1">L
-                                        <input type="checkbox" value="1" id="checkDay1">
+                                        <input type="checkbox" value="1" id="checkDay1" ng-model="cuidador.day1">
                                         <label class="lcheck" for="checkDay1"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkDay2">M
-                                        <input type="checkbox" value="2" id="checkDay2">
+                                        <input type="checkbox" value="2" id="checkDay2" ng-model="cuidador.day2">
                                         <label class="lcheck" for="checkDay2"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkDay3">M
-                                        <input type="checkbox" value="3" id="checkDay3">
+                                        <input type="checkbox" value="3" id="checkDay3" ng-model="cuidador.day3">
                                         <label class="lcheck" for="checkDay3"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkDay4">J
-                                        <input type="checkbox" value="4" id="checkDay4">
+                                        <input type="checkbox" value="4" id="checkDay4" ng-model="cuidador.day4">
                                         <label class="lcheck" for="checkDay4"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkDay5">V
-                                        <input type="checkbox" value="5" id="checkDay5">
+                                        <input type="checkbox" value="5" id="checkDay5" ng-model="cuidador.day5">
                                         <label class="lcheck" for="checkDay5"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkDay6">S
-                                        <input type="checkbox" value="6" id="checkDay6">
+                                        <input type="checkbox" value="6" id="checkDay6" ng-model="cuidador.day6">
                                         <label class="lcheck" for="checkDay6"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkDay7">D
-                                        <input type="checkbox" value="7" id="checkDay7">
+                                        <input type="checkbox" value="7" id="checkDay7" ng-model="cuidador.day7">
                                         <label class="lcheck" for="checkDay7"></label>
                                       </label>
                                   </div>
                             </div>
                         </div>
-                  </div> 
+                  </div>
 
                   <div class="form-group">
                         <label >Guardería:</label><br>
@@ -292,11 +292,11 @@
                         <div class="col-md-6">
                           <div class=" form-group">
                               <div class="col-md-8"><label for="guarderia" class="single">Tarifa por hora:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="giarderia" ng-model="auth.giarderia" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="guarderia" ng-model="cuidador.guarderia" placeholder=""></div>
                           </div>
                           <div class=" form-group">
                               <div class="col-md-8"><label for="gpets" class="single">Tarifa por mascota:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="gpets" ng-model="auth.gpets" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="gpets" ng-model="cuidador.gpets" placeholder=""></div>
                           </div>
                         </div>
                         <div class="col-md-6 ">
@@ -305,13 +305,13 @@
                                 <br>
                                   <div class="check checkbox-inline  mb-35 col-md-4">
                                       <label class="" for="checkGuarderia1">Diurno
-                                        <input type="checkbox" value="1" id="checkGuarderia1">
+                                        <input type="checkbox" value="1" id="checkGuarderia1" ng-model="cuidador.gdisponibilidad1">
                                         <label class="lcheck" for="checkGuarderia1"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 col-md-4">
                                       <label class="" for="checkGuarderia2">Nocturno
-                                        <input type="checkbox" value="2" id="checkGuarderia2">
+                                        <input type="checkbox" value="2" id="checkGuarderia2" ng-model="cuidador.gdisponibilidad2">
                                         <label class="lcheck" for="checkGuarderia2"></label>
                                       </label>
                                   </div>
@@ -328,11 +328,11 @@
                           </div>
                           <div class=" form-group">
                               <div class="col-md-8"><label for="paseo" class="single">Tarifa por hora:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="paseo" ng-model="auth.paseo" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="paseo" ng-model="cuidador.paseo" placeholder=""></div>
                           </div>
                           <div class=" form-group">
                               <div class="col-md-8"><label for="pmextra" class="single">Tarifa por mascota extra:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="pmextra" ng-model="auth.pmextra" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="pmextra" ng-model="cuidador.pmextra" placeholder=""></div>
                           </div>
                         </div>
                         <div class="col-md-6 ">
@@ -341,61 +341,61 @@
                                 <br>
                                   <div class="check checkbox-inline  mb-35 pl-14">
                                       <label class="" for="checkPDay1">L
-                                        <input type="checkbox" value="1" id="checkPDay1">
+                                        <input type="checkbox" value="1" id="checkPDay1" ng-model="cuidador.pday1">
                                         <label class="lcheck" for="checkPDay1"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkPDay2">M
-                                        <input type="checkbox" value="2" id="checkPDay2">
+                                        <input type="checkbox" value="2" id="checkPDay2" ng-model="cuidador.pday2">
                                         <label class="lcheck" for="checkPDay2"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkPDay3">M
-                                        <input type="checkbox" value="3" id="checkPDay3">
+                                        <input type="checkbox" value="3" id="checkPDay3" ng-model="cuidador.pday3">
                                         <label class="lcheck" for="checkPDay3"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkPDay4">J
-                                        <input type="checkbox" value="4" id="checkPDay4">
+                                        <input type="checkbox" value="4" id="checkPDay4" ng-model="cuidador.pday4">
                                         <label class="lcheck" for="checkPDay4"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkPDay5">V
-                                        <input type="checkbox" value="5" id="checkPDay5">
+                                        <input type="checkbox" value="5" id="checkPDay5" ng-model="cuidador.pday5">
                                         <label class="lcheck" for="checkPDay5"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkPDay6">S
-                                        <input type="checkbox" value="6" id="checkPDay6">
+                                        <input type="checkbox" value="6" id="checkPDay6" ng-model="cuidador.pday6">
                                         <label class="lcheck" for="checkPDay6"></label>
                                       </label>
                                   </div>
                                   <div class="check checkbox-inline mb-35 pl-14">
                                       <label class="" for="checkPDay7">D
-                                        <input type="checkbox" value="7" id="checkPDay7">
+                                        <input type="checkbox" value="7" id="checkPDay7" ng-model="cuidador.pday7">
                                         <label class="lcheck" for="checkPDay7"></label>
                                       </label>
                                   </div>
                             </div>
                         </div>
-                  </div> 
+                  </div>
                   <div class="row">
                   <div class="col-md-6 ">
                     <div class=" form-group">
                         <div class="col-md-8"><div class=""><label for="hinit" class="single">Horario disponible:</label></div></div>
-                        <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="hinit" ng-model="auth.hinit" placeholder=""></div>
-                        
+                        <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="hinit" ng-model="cuidador.hinit" placeholder=""></div>
+
                     </div>
                   </div>
                   <div class="col-md-6 ">
                       <div class="form-group">
                           <div class="col-md-2"><label for="hfinit" class="single">Hasta:</label></div>
-                          <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="hfinit" ng-model="auth.hfinit" placeholder=""></div>
+                          <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="hfinit" ng-model="cuidador.hfinit" placeholder=""></div>
                       </div>
                   </div>
                   </div>
@@ -406,28 +406,28 @@
                       <div class="text-center">
                         <div class="radio radio-inline  mb-35 pl-14">
                             <label class="" for="radioAdomicilio1">Si
-                              <input type="radio" value="si" name="adomicilio" id="radioAdomicilio1">
+                              <input type="radio" value="si" name="adomicilio" id="radioAdomicilio1" ng-model="cuidador.adomicilio1">
                               <label class="lradio" for="radioAdomicilio1"></label>
                             </label>
                         </div>
                         <div class="radio radio-inline mb-35 pl-14">
                             <label class="" for="radioAdomicilio2">No
-                              <input type="radio" value="no" name="adomicilio" id="radioAdomicilio2">
+                              <input type="radio" value="no" name="adomicilio" id="radioAdomicilio2" ng-model="cuidador.adomicilio2">
                               <label class="lradio" for="radioAdomicilio2"></label>
                             </label>
                         </div>
                       </div>
-                    
-                  
+
+
                 </div>
 
             </div>
-            
+
           </div>
           <div class="col-md-4 rcenter mb-25">
             <button type="submit" class="btn boton btn-lg  btn-block " ><strong>Guardar</strong></button>
           </div>
-      
+
         </form>
     </div>
   </div>

@@ -4,7 +4,7 @@
         .module('Pamdogs')
         .controller('AuthController', AuthController);
 
-        function AuthController($auth, $state, $http, $scope, $localStorage, $sessionStorage, Account,SweetAlert,AuthenticateResource,UserResource) {
+        function AuthController($auth, $state, $http, $scope, $localStorage, $sessionStorage, Account,SweetAlert,AuthenticateResource,UserResource, $alert, $filter) {
 
             var vm = this;
             vm.$storage = $localStorage;
@@ -17,8 +17,8 @@
 
             vm.login = function() {
               var credentials = {
-                  email: vm.email,
-                  password: vm.password
+                  email: vm.emailLogin,
+                  password: vm.passwordLogin
               }
 
               $auth.login(credentials)
@@ -37,60 +37,7 @@
                 .catch(function(error) {
                   console.log(error);
                 });
-
-
             }
-            /*vm.login = function() {
-
-                var credentials = {
-                    email: vm.email,
-                    password: vm.password
-                }
-
-                // Use Satellizer's $auth service to login
-                $auth.login(credentials).then(function(data) {
-
-                    return $http.get('api/authenticate/user');
-                    // If login is successful, redirect to the users state
-                    //$state.go('home', {});
-
-                }, function(error) {
-                    vm.loginError = true;
-                    vm.loginErrorText = error.data.error;
-                    console.log(vm.loginErrorText);
-                  // Because we returned the $http.get request in the $auth.login
-                  // promise, we can chain the next promise to the end here
-                }).then(function(response) {
-
-                    // Stringify the returned data to prepare it
-                    // to go into local storage
-                    var user = response.data.user;
-
-                    // Set the stringified user data into local storage
-                    $localStorage.user = user;
-
-                    // The user's authenticated state gets flipped to
-                    // true so we can now show parts of the UI that rely
-                    // on the user being logged in
-                    //$rootScope.authenticated = true;
-
-                    // Putting the user's data on $rootScope allows
-                    // us to access it anywhere across the app
-                    //$rootScope.currentUser = response.data.user;
-
-                    // Everything worked out so we can now redirect to
-                    // the users state to view the data
-
-                    vm.authenticated = $auth.isAuthenticated();
-
-
-
-
-                    $state.go('root.home',{},{reload: "root.home"});
-                    //location.href = "/";
-
-                  });
-            }*/
 
             // We would normally put the logout method in the same
             // spot as the login method, ideally extracted out into
@@ -103,21 +50,18 @@
                 delete $localStorage.user;
 
                 vm.authenticated = $auth.isAuthenticated();
-
+                modelInput('erase');
                 $state.go('root.home',{},{reload: "root.home"});
-
-
-
               });
             }
 
             vm.registerUser = function () {
-
+              console.log('register method');
               var credentials = {
-                  email: vm.email,
+                  email: vm.emailRegister,
                   password: vm.password
               }
-
+              console.log(credentials);
               $auth.signup(credentials)
                 .then(function(response) {
                   console.log(response);
@@ -132,33 +76,35 @@
                       console.log(data.user)
                       $localStorage.user = data.user;
                       vm.authenticated = $auth.isAuthenticated();
+                      modelInput('fill');
                       $state.go('root.registro.usuario',{},{reload: "root.registro.usuario"});
                     },function(error){
                       console.log(error);
                     })
-
                   })
                   .catch(function(error){
-
+                    console.log('ERROR', error);
                   })
-
-
                 })
                 .catch(function(response) {
                   console.log(response);
                   SweetAlert.swal("¡Hubo un error!", response.data.error, "error");
                 });
-
-
-
             }
 
             vm.registerUserData_Cliente = function() {
-              /*console.log(vm.foto);
-              var fd = new FormData();
-              angular.forEach(vm.foto,function(file){
-                fd.append('avatar',file);
-              });*/
+              var redir = "root.registro.cuidador";
+              registroCliente(redir);
+            }
+
+            vm.registerUserData_Cuidador = function() {
+              var redir = "root.registro.cuidador";
+              registroCliente(redir);
+            }
+
+
+
+            function registroCliente (route) {
               var data = {
                 avatar: vm.foto,
                 nombre: vm.name,
@@ -166,11 +112,10 @@
                 nacimiento: vm.birthdate,
                 genero: vm.gender,
                 telefono: vm.phone,
-                dni_tipo: vm.doc_type,
-                dni_numero: vm.doc,
+                dni_tipo: vm.dni_type,
+                dni_numero: vm.dni,
                 _method: 'PUT'
               }
-              /*fd.append("data", JSON.stringify(information));*/
               var fd = new FormData();
               angular.forEach(data, function(value, key) {
                 if (value instanceof FileList) {
@@ -187,77 +132,52 @@
               });
 
               UserResource.post({id:vm.$storage.user.id},fd, function(response){
-                console.log(response.user);
                 $localStorage.user = response.user;
+                let alertSuccess = $alert({title: '¡Listo!', content: response.msg, placement: 'top', type: 'success', show: true, container: '#alerts-container', dismissable: false, duration: 6});
+                console.log(route);
+                //alertSuccess.$show();
+                SweetAlert.swal("¡Listo!", response.msg, "success");
+                console.log(route);
+                modelInput('fill');
+                console.log(route);
+                $state.go(route,{});
               },function(error){
-                console.log(error);
+                let alertError = $alert({title: '¡Error!', content: error.data.msg, placement: 'top', type: 'danger', show: true, container: '#alerts-container', dismissable: false, duration: 6});
+                alertError.$show();
               });
-
-              /*var formData = new FormData();
-              formData.append('file', vm.foto);
-              formData.append('_method', 'PUT');
-              $http.post('/api/user/'+vm.$storage.user.id, formData, {
-                headers: {
-                  'Content-Type': undefined
-                },
-                transformRequest: angular.identity
-              }).then(function (data) {
-                console.log(data);
-              });*/
-
-
-    	      	/*$http({
-        			  method  : 'PUT',
-        			  url     : '/api/user/'+vm.$storage.user.id,
-        			  processData: false,
-        			  transformRequest: function (data) {
-        			      var formData = new FormData();
-        			      formData.append("avatar", vm.foto);
-        			      return formData;
-        			  },
-        			  //data : vm.registerData,
-        			  headers: {
-        			         'Content-Type': false
-        			  }
-              }).then(function(data){
-        		        console.log(data);
-        		   });*/
-
-
-
-
-
-              /*UserResource.update({id:vm.$storage.user.id},information, function(response){
-                console.log(response);
-              },function(error){
-                console.log(error);
-              });*/
-
             }
 
-            vm.registerUserData_Cuidador = function() {
+            var modelInput = function(action, localStorage=$localStorage) {
+              console.log('modelInput()', '1');
+              if (action == 'fill') {
+                console.log('modelInput("Fill")', '2');
+                if(localStorage.user != undefined) {
+                  console.log('modelInput("Fill-IF")', '3');
+                  let userSession = localStorage.user;
+                  vm.email = userSession.email;
+                  vm.name = userSession.nombre;
+                  vm.lastname = userSession.apellido;
+                  vm.birthdate = (userSession.nacimiento != '0000-00-00') ? $filter('date')(userSession.nacimiento, 'dd/MM/yyyy') : '';
+                  vm.gender = userSession.genero;
+                  vm.phone = userSession.telefono;
+                  vm.dni_type = userSession.dni_tipo;
+                  vm.dni = userSession.dni_numero;
+                }
 
-              var information = {
-                nombre: vm.name,
-                apellido: vm.lastname,
-                nacimiento: vm.birthdate,
-                genero: vm.gender,
-                telefono: vm.phone,
-                dni_tipo: vm.doc_type,
-                dni_numero: vm.doc
+              } else if (action == 'erase') {
+                console.log('modelInput("Erase")', '1-2');
+                vm.email = null;
+                vm.name = null;
+                vm.lastname = null;
+                vm.birthdate = null;
+                vm.gender = null;
+                vm.phone = null;
+                vm.dni_type = null;
+                vm.dni = null;
               }
-
-              UserResource.update({id:vm.$storage.user.id},information, function(response){
-
-                console.log(response);
-
-              },function(error){
-
-                console.log(error);
-              });
-
             }
 
+            modelInput('fill');
         }
 
 

@@ -196,13 +196,15 @@ class UserController extends Controller
         {
           if(!isset($user->avatar))
           {
-            return response()->json(['error' => 'Debe seleccionar una foto de perfil.'], 422);
+            return response()->json(['msg' => 'Debe seleccionar una foto de perfil.'], 422);
           }
         }
 
-        $user->save();
-
-        return response()->json(['Datos' => $request->all(), 'ID' => $id, 'user' => $user]);
+        if ($user->save()){
+          return response()->json(['msg' => 'Datos guardados exitosamente.', 'user' => $user]);
+        } else {
+          return response()->json(['msg' => 'Datos guardados exitosamente.'], 422);
+        }
     }
 
     /**
