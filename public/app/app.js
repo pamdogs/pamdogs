@@ -87,9 +87,9 @@
             })
             .state('root.registro.usuario', {
               url: '/usuario',
-              resolve: {
+              /*resolve: {
                 loginRequired: loginRequired
-              },
+              },*/
               views: {
                 'content@': {
                   templateUrl: 'app/views/register/register_2.html'
@@ -111,9 +111,9 @@
             })
             .state('root.registro.cuidador', {
                 url: '/cuidador',
-                resolve: {
+                /*resolve: {
                   loginRequired: loginRequired
-                },
+                },*/
                 views: {
                   'content@': {
                     templateUrl: 'app/views/cuidador/register.html',
