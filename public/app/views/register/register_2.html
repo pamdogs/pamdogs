@@ -1,106 +1,127 @@
 <div class="container">
   <div class="row main">
     <div class="panel-heading">
-             <div class="panel-title text-center">
+       <div class="panel-title text-center">
+        </div>
+    </div>
+    <div class="main-register usuario col-md-10 col-lg-10 col-sm-12 col-xs-12">
+      <h1 class="title">Crea tu cuenta</h1>
+      <hr class="hr hr-xs" align="center" />
+
+      <form class="form-horizontal" id="registerUsuario" ng-submit="usuario.register()" name="registerData" novalidate>
+          <div class="rcenter col-md-9 form-content">
+            <div class="row">
+                <span class="section-title">
+                    Foto de Perfil *
+                </span>
+                <div class="section-content">
+                  <img ng-src="{{ filepreview ? filepreview : (auth.$storage.user.avatar ? 'storage/images/avatars/users/'+auth.$storage.user.avatar : 'img/user-22.png') }}" class="img-responsive img-circle rcenter avatar">
+
+                  <!--<input type="file" class="btn boton btn-lg rcenter" value="Subir nueva imagen"></input>-->
+                  <input type="file" class="inputfile" name="foto" file-model="auth.foto" file-preview="filepreview" id="avatar">
+                  <label for="avatar" class="btn boton btn-lg btn-block">{{ auth.foto.name || "Subir una imagen" }}</label>
+                </div>
+            </div>
+          </div>
+
+          <div class="rcenter col-md-9 form-content">
+            <div class="row">
+                <span class="section-title">
+                    Datos Presonales *
+                </span>
+                <div class="section-content">
+                    <div class="form-group" ng-class="{ 'has-error': registerData.name.$touched && registerData.name.$invalid }">
+                        <label for="name">Nombre:</label>
+                        <input type="text" class="form-control" align="center" id="name" ng-model="auth.name" placeholder="Ingresa tu nombre" required>
+                        <div class="help-block" ng-messages="registerData.name.$error" ng-show="registerData.name.$touched && registerData.name.$invalid">
+                          <div ng-messages-include="app/views/messages.html"></div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group" ng-class="{ 'has-error': registerData.lastname.$touched && registerData.lastname.$invalid }">
+                        <label for="lastname">Apellido:</label>
+                        <input type="text" class="form-control" align="center" id="lastname" ng-model="auth.lastname" placeholder="Ingresa tu apellido" required>
+                        <div class="help-block" ng-messages="registerData.lastname.$error" ng-show="registerData.lastname.$touched && registerData.lastname.$invalid">
+                            <div ng-messages-include="app/views/messages.html"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo:</label>
+                        <input type="text" class="form-control" align="center" id="email" ng-model="auth.email" placeholder="Ingresa tu apellido" readonly>
+                    </div>
+
+
+                    <div class="form-group" ng-class="{ 'has-error': registerData.birthdate.$touched && registerData.birthdate.$invalid }">
+                        <label for="birthdate">Fecha de nacimiento:</label>
+                        <input type="text" class="form-control" align="center" name="birthdate" ng-model="auth.birthdate" placeholder="Fecha de nacimiento" bs-datepicker data-start-view="2" data-max-date="today" required>
+                        <div class="help-block" ng-messages="registerData.birthdate.$error" ng-show="registerData.birthdate.$touched && registerData.birthdate.$invalid">
+                            <div ng-messages-include="app/views/messages.html"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group" ng-class="{ 'has-error': registerData.gender.$touched && registerData.gender.$invalid }">
+                        <label for="gender">Genero:</label>
+                        <input type="text" class="form-control" align="center" name="gender" ng-model="auth.gender" placeholder="Genero" required>
+                        <div class="help-block" ng-messages="registerData.gender.$error" ng-show="registerData.gender.$touched && registerData.gender.$invalid">
+                          <div ng-messages-include="app/views/messages.html"></div>
+                      </div>
+                    </div>
+
+
+                    <!--<select class="" name="gender" ng-model="auth.gender">
+                      <option value=""></option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Masculino">Masculino</option>
+                    </select>-->
+
+                    <div class="form-group" ng-class="{ 'has-error': registerData.phone.$touched && registerData.phone.$invalid }">
+                        <label for="phone">Teléfono:</label>
+                        <input type="text" class="form-control" align="center" name="phone" ng-model="auth.phone" placeholder="Teléfono" required>
+                        <div class="help-block" ng-messages="registerData.phone.$error" ng-show="registerData.phone.$touched && registerData.phone.$invalid">
+                            <div ng-messages-include="app/views/messages.html"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group" ng-class="{ 'has-error': registerData.dni.$touched && registerData.dni.$invalid }">
+                       
+                        <!--<select class="" name="gender" ng-model="auth.doc_type">
+                          <option value=""></option>
+                          <option value="Nacional">Nacional</option>
+                          <option value="Extranjero">Extranjero</option>
+                        </select>-->
+
+                        <div class="col-md-6 col-sm-6">
+                            <label for="dni_type">Documento:</label>
+                            <input type="text" class="form-control" align="center" name="dni_type" ng-model="auth.dni_type" placeholder="Nacional / Extranjero"  required>
+                        </div>
+                        <div class="col-md-6 sexo col-sm-6">
+                             <label for=""> &nbsp;</label>
+                            <input type="text" class="form-control" align="center" name="dni" ng-model="auth.dni" placeholder="Número de Documento"  required/>
+                        </div>
+                        <div class="help-block" ng-messages="registerData.dni.$error" ng-show="registerData.dni.$touched && registerData.dni.$invalid">
+                          <div ng-messages-include="app/views/messages.html"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+            
+        
+
+          <div class=" col-md-9 rcenter user-button">
+              <div class="row">
+                  <div class=" col-md-6 col-sm-12 ">
+                      <button type="button" class="btn boton btn-lg  mb-35"  ng-click="auth.registerUserData_Cliente()" ng-disabled="registerData.$invalid"><strong>Quiero encontrar cuidadores</strong></button>
+                  </div>
+                  <div class=" col-md-6 col-sm-12 ">
+                      <button type="button" class="btn boton btn-lg pull-right"  ng-click="auth.registerUserData_Cuidador()" ng-disabled="registerData.$invalid"><strong> Quiero ser cuidador</strong></button>
+                  </div>
               </div>
           </div>
-    <div class="main-login contact-center">
-      <form name="registerData" novalidate>
-      <h1 class="title" style="font-size: 37px">Crea tu Cuenta</h1>
-      <hr style="width: 45%; height:5px; background-color: #F6515E; border-width:1px; border-radius: 200px;" />
-      <br>
-      <div class="etiqueta">
-        <h4 align="center"><font color="white">Foto de Perfil *</font></h4>
-      </div>
-      <div class="contact-color contact-margen">
-        <center>
-
-
-          <img ng-src="{{ filepreview ? filepreview : (auth.$storage.user.avatar ? 'storage/images/avatars/users/'+auth.$storage.user.avatar : 'img/user-22.png') }}"  alt="user-avatar" width="240" height="240">
-          <br>
-          <!--<input type="file" name="foto" file-model="auth.foto" file-preview="filepreview"/>-->
-          <!--btn boton btn-lg btn-block-->
-          <input type="file" class=" inputfile" name="foto" file-model="auth.foto" file-preview="filepreview" id="avatar">
-          <label for="avatar" class="btn boton btn-lg btn-block">{{ auth.foto.name || "Subir una imagen" }}</label>
-        </center>
-      </div>
-      <br><br><br>
-      <div class="etiqueta">
-        <h4 align="center"><font color="white">Datos personales *</font></h4>
-      </div>
-      <div class="contact-color contact-margen">
-
-          <div class="form-group" ng-class="{ 'has-error': registerData.name.$touched && registerData.name.$invalid }">
-              <label for="">Nombre:</label>
-              <input type="text" class="form-control" name="name" ng-model="auth.name" placeholder="Ingresa tu nombre" required/>
-              <div class="help-block" ng-messages="registerData.name.$error" ng-show="registerData.name.$touched && registerData.name.$invalid">
-                  <div ng-messages-include="app/views/messages.html"></div>
-              </div>
-          </div>
-
-          <div class="form-group" ng-class="{ 'has-error': registerData.lastname.$touched && registerData.lastname.$invalid }">
-            <label for="">Apellido:</label>
-            <input type="text" class="form-control" name="lastname" ng-model="auth.lastname" placeholder="Apellido" required/>
-            <div class="help-block" ng-messages="registerData.lastname.$error" ng-show="registerData.lastname.$touched && registerData.lastname.$invalid">
-                <div ng-messages-include="app/views/messages.html"></div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="">Correo:</label>
-            <input type="email" class="form-control" name="email" ng-model="auth.email" placeholder="Email" readonly
-          </div>
-
-          <div class="form-group" ng-class="{ 'has-error': registerData.birthdate.$touched && registerData.birthdate.$invalid }">
-            <label for="">Fecha de nacimiento:</label>
-            <input type="text" class="form-control" name="birthdate" ng-model="auth.birthdate" placeholder="Fecha de nacimiento" bs-datepicker data-start-view="2" data-max-date="today" required/>
-            <div class="help-block" ng-messages="registerData.birthdate.$error" ng-show="registerData.birthdate.$touched && registerData.birthdate.$invalid">
-                <div ng-messages-include="app/views/messages.html"></div>
-            </div>
-          </div>
-
-          <div class="form-group" ng-class="{ 'has-error': registerData.gender.$touched && registerData.gender.$invalid }">
-            <label for="">Genero:</label>
-            <input type="text" class="form-control" name="gender" ng-model="auth.gender" placeholder="Genero" required/>
-            <div class="help-block" ng-messages="registerData.gender.$error" ng-show="registerData.gender.$touched && registerData.gender.$invalid">
-                <div ng-messages-include="app/views/messages.html"></div>
-            </div>
-            <!--<select class="" name="gender" ng-model="auth.gender">
-              <option value=""></option>
-              <option value="Femenino">Femenino</option>
-              <option value="Masculino">Masculino</option>
-            </select>-->
-
-          </div>
-
-          <div class="form-group" ng-class="{ 'has-error': registerData.phone.$touched && registerData.phone.$invalid }">
-            <label for="">Teléfono:</label>
-            <input type="text" class="form-control" name="phone" ng-model="auth.phone" placeholder="Teléfono" required/>
-            <div class="help-block" ng-messages="registerData.phone.$error" ng-show="registerData.phone.$touched && registerData.phone.$invalid">
-                <div ng-messages-include="app/views/messages.html"></div>
-            </div>
-          </div>
-
-          <div class="form-group" ng-class="{ 'has-error': registerData.dni.$touched && registerData.dni.$invalid }">
-            <label for="">Documento:</label>
-            <!--<select class="" name="gender" ng-model="auth.doc_type">
-              <option value=""></option>
-              <option value="Nacional">Nacional</option>
-              <option value="Extranjero">Extranjero</option>
-            </select>-->
-            <input type="text" class="form-control" name="dni_type" ng-model="auth.dni_type" placeholder="Nacional / Extranjero"  required/>
-            <input type="text" class="form-control" name="dni" ng-model="auth.dni" placeholder="Numero de Documento"  required/>
-            <div class="help-block" ng-messages="registerData.dni.$error" ng-show="registerData.dni.$touched && registerData.dni.$invalid">
-                <div ng-messages-include="app/views/messages.html"></div>
-            </div>
-          </div>
-
-          <div class="form-group ">
-            <button type="button" class="btn boton" style="float: left" ng-click="auth.registerUserData_Cliente()" ng-disabled="registerData.$invalid"><strong>Quiero encontrar cuidadores</strong></button>
-            <button type="button" class="btn boton" style="float: right;" ng-click="auth.registerUserData_Cuidador()" ng-disabled="registerData.$invalid"><strong> Quiero ser cuidador</strong></button>
-          </div>
-
-      </div>
       </form>
     </div>
   </div>

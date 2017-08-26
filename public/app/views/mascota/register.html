@@ -1,0 +1,266 @@
+<div class="container">
+  <div class="row main">
+    <div class="panel-heading">
+       <div class="panel-title text-center">
+        </div>
+    </div>
+    <div class="main-register mascota col-md-10 col-lg-10 col-sm-12 col-xs-12">
+      <h1 class="title">Crea tu cuenta</h1>
+      <hr class="hr hr-xs" align="center" />
+
+      <form class="form-horizontal" id="registerMascota" ng-submit="mascota.register()" novalidate>
+          <div class="rcenter col-md-9 form-content">
+            <div class="row">
+                <span class="section-title">
+                    Foto de Perfil *
+                </span>
+                <div class="section-content">
+                  <img ng-src="{{ filepreview ? filepreview : (mascota.$storage.user.avatar ? 'storage/images/avatars/users/'+mascota.$storage.user.avatar : 'img/mascota.png') }}" class="img-responsive img-circle rcenter avatar">
+
+                  <!--<input type="file" class="btn boton btn-lg rcenter" value="Subir nueva imagen"></input>-->
+                  <input type="file" class="inputfile" name="foto" file-model="mascota.foto" file-preview="filepreview" id="avatar">
+                  <label for="avatar" class="btn boton btn-lg btn-block">{{ mascota.foto.name || "Subir una imagen" }}</label>
+                </div>
+            </div>
+          </div>
+
+          <div class="rcenter col-md-9 form-content">
+            <div class="row">
+                <span class="section-title">
+                    Datos Personales *
+                </span>
+                <div class="section-content">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" class="form-control" align="center" id="name" ng-model="mascota.name" placeholder="Nombre de la mascota">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <label for="description">Fecha de nacimiento:</label>
+                            <input  type="text" class="form-control" align="center" id="nacimiento" ng-model="mascota.nacimiento"  placeholder="DD/MM/AA">
+                        </div>
+                        <div class="col-md-6 sexo col-sm-6">
+                            <label for="sexo">Sexo</label>
+                            <br>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioSexo1">Masculino
+                                    <input type="radio" value="m"  name="sexo" id="radioSexo1" ng-model="mascota.sexo1">
+                                    <label class="lradio " for="radioSexo1"></label>
+                                  </label>
+                              </div>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioSexo2">Femenino
+                                    <input type="radio" value="f" name="sexo"  id="radioSexo2" ng-model="mascota.sexo2">
+                                    <label class="lradio " for="radioSexo2"></label>
+                                  </label>
+                              </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="raza">Raza de la Mascota:</label>
+                        <input type="text" class="form-control" align="center" id="raza" ng-model="mascota.raza" placeholder="Raza de la mascota">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Descripción de la Mascota:</label>
+                        <textarea class="form-control" align="center" id="description" ng-model="mascota.description" rows="5" placeholder="Describa la personalidad de su mascota"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6">
+                             <label for="type">Tipo y horario de comida:</label>
+                            <input  type="text" class="form-control" align="center" id="type" ng-model="mascota.type"  placeholder="Tipo de comida">
+                        </div>
+                        <div class="col-md-6 sexo col-sm-6">
+                             <label for=""> &nbsp;</label>
+                            <input  type="text" class="form-control" align="center" id="horario" ng-model="mascota.horario"  placeholder="Horario de comida">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paseo">Horario de paseo:</label>
+                        <input type="text" class="form-control" align="center" id="paseo" ng-model="mascota.paseo" placeholder="Horario de paseo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rutina">Rutina para hacer sus necesidades:</label>
+                        <textarea class="form-control" align="center" id="rutina" ng-model="mascota.rutina" rows="5" placeholder="Describa la rutina para las necesidades de su mascota"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dormir">¿Donde suele dormir?:</label>
+                        <input type="text" class="form-control" align="center" id="dormir" ng-model="mascota.dormir" placeholder="Decriba donde suele dormir su mascota">
+                    </div>
+
+
+                    <div class="form-group ">
+                        <div class="col-md-6 col-sm-6">
+                            <label for="car">¿Se lleva bien con otros perros?:</label>
+                            <br>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioPerro1">Si
+                                    <input type="radio" value="si"  name="perro" id="radioPerro1" ng-model="mascota.perro1">
+                                    <label class="lradio " for="radioPerro1"></label>
+                                  </label>
+                              </div>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioPerro2">No
+                                    <input type="radio" value="no" name="perro"  id="radioPerro2" ng-model="mascota.perro2">
+                                    <label class="lradio " for="radioPerro2"></label>
+                                  </label>
+                              </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="car">¿Se lleva bien con niños?:</label>
+                            <br>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioNino1">Si
+                                    <input type="radio" value="si"  name="nino" id="radioNino1" ng-model="cuidador.nino1">
+                                    <label class="lradio " for="radioNino1"></label>
+                                  </label>
+                              </div>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioNino2">No
+                                    <input type="radio" value="no" name="nino"  id="radioNino2" ng-model="cuidador.nino2">
+                                    <label class="lradio " for="radioNino2"></label>
+                                  </label>
+                              </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <div class="col-md-6 col-sm-6">
+                            <label for="car">¿Salta sobre las personas?:</label>
+                            <br>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioSalta1">Si
+                                    <input type="radio" value="si"  name="salta" id="radioSalta1" ng-model="mascota.salta1">
+                                    <label class="lradio " for="radioSalta1"></label>
+                                  </label>
+                              </div>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioSalta2">No
+                                    <input type="radio" value="no" name="salta"  id="radioSalta2" ng-model="mascota.salta2">
+                                    <label class="lradio " for="radioSalta2"></label>
+                                  </label>
+                              </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="car">¿Está en celo?:</label>
+                            <br>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioCelo1">Si
+                                    <input type="radio" value="si"  name="celo" id="radioCelo1" ng-model="cuidador.celo1">
+                                    <label class="lradio " for="radioCelo1"></label>
+                                  </label>
+                              </div>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioCelo2">No
+                                    <input type="radio" value="no" name="celo"  id="radioCelo2" ng-model="cuidador.celo2">
+                                    <label class="lradio " for="radioCelo2"></label>
+                                  </label>
+                              </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <div class="col-md-6 col-sm-6">
+                            <label for="car">Vacunas actualizadas:</label>
+                            <br>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioVacuna1">Si
+                                    <input type="radio" value="si"  name="vacuna" id="radioVacuna1" ng-model="mascota.vacuna1">
+                                    <label class="lradio " for="radioVacuna1"></label>
+                                  </label>
+                              </div>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioVacuna2">No
+                                    <input type="radio" value="no" name="vacuna"  id="radioVacuna2" ng-model="mascota.vacuna2">
+                                    <label class="lradio " for="radioVacuna2"></label>
+                                  </label>
+                              </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="car">Esterilizado:</label>
+                            <br>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioEsterilizado1">Si
+                                    <input type="radio" value="si"  name="esterilizado" id="radioEsterilizado1" ng-model="cuidador.esterilizado1">
+                                    <label class="lradio " for="radioEsterilizado1"></label>
+                                  </label>
+                              </div>
+                              <div class="radio radio-inline mb-35  col-md-4">
+                                  <label class="" for="radioEsterilizado2">No
+                                    <input type="radio" value="no" name="esterilizado"  id="radioEsterilizado2" ng-model="cuidador.esterilizado2">
+                                    <label class="lradio " for="radioEsterilizado2"></label>
+                                  </label>
+                              </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="veterinario">Nombre del veterinario:</label>
+                        <input type="text" class="form-control" align="center" id="veterinario" ng-model="mascota.veterinario" placeholder="Nombre del veterinario de su mascota">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono del veterinario:</label>
+                        <input type="phone" class="form-control" align="center" id="telefono" ng-model="mascota.telefono" placeholder="Número telefónico del veterinario de su mascota">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dirección">Dirección del veterinario:</label>
+                        <input type="text" class="form-control" align="center" id="dirección" ng-model="mascota.dirección" placeholder="Direción del veterinario de su mascota">
+                    </div>
+
+                    <div class="form-group" id="Seguro">
+                      <label class="seguro">¿Posee seguro de salud?:</label>
+                    
+                      <div class="text-center">
+                        <div class="radio radio-inline  mb-35 pl-14">
+                            <label class="" for="radioSeguro1">Si
+                              <input type="radio" value="si" name="seguro" id="radioSeguro1" ng-model="cuidador.seguro1">
+                              <label class="lradio" for="radioSeguro1"></label>
+                            </label>
+                        </div>
+                        <div class="radio radio-inline mb-35 pl-14">
+                            <label class="" for="radioSeguro2">No
+                              <input type="radio" value="no" name="seguro" id="radioSeguro2" ng-model="cuidador.seguro2">
+                              <label class="lradio" for="radioSeguro2"></label>
+                            </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group hidden" id="empresaA">
+                        <label for="empresa">¿Que empresa?:</label>
+                        <input type="text" class="form-control" align="center" id="empresa" ng-model="mascota.empresa" placeholder="Nombre de la empresa aseguradora de su mascota">
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4 rcenter ">
+            <button type="submit" class="btn boton btn-lg  btn-block " ><strong>Guardar</strong></button>
+          </div>
+
+        </form>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $( "#Seguro input#radioSeguro1[type=radio]" ).on( "click", function() {
+          $('#empresaA').removeClass('hidden');
+      });
+      $( "#Seguro input#radioSeguro2[type=radio]" ).on( "click", function() {
+          $('#empresaA').addClass('hidden');
+      });
+    });
+</script>

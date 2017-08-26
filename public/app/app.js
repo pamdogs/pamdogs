@@ -147,6 +147,17 @@
 
                   }
                 }
+            }).state('root.registro.mascota', {
+                url: '/mascota',
+                /*resolve: {
+                  loginRequired: loginRequired
+                },*/
+                views: {
+                  'content@': {
+                    templateUrl: 'app/views/mascota/register.html',
+                    controller: 'CuidadorController as mascota'
+                  }
+                }
             });
 
 

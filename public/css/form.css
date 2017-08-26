@@ -134,6 +134,7 @@ input::-webkit-input-placeholder {
     margin: auto;
     float: none;
     padding: 40px 40px;
+        margin-bottom: 30px;
 }
 
 .main-center{
@@ -542,6 +543,12 @@ h4.single {
     .cuidador.search form input.date {
       max-width: 100%;
     }
+    .user-button button{
+     margin-left: auto !important;
+     margin-right: auto !important;
+      float: none !important;
+      text-align: center;
+  }
 }
 
 
@@ -559,6 +566,7 @@ h4.single {
   .cuidador.search form button {
       border-radius: 3px;
   }
+
 }
 
 @media ( max-width: 375px ){
