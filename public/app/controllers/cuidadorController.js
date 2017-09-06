@@ -4,10 +4,10 @@
         .module('Pamdogs')
         .controller('CuidadorController', CuidadorController);
 
-        function CuidadorController($auth, $state, $localStorage) {
+        function CuidadorController($auth, $state, $localStorage, NgMap) {
 
-          /*var vm = this;
-          vm.$storage = $localStorage;
+          var vm = this;
+          /*vm.$storage = $localStorage;
 
           vm.register = function(){
             let data = {
@@ -63,4 +63,5 @@
             });
           }*/
 
+          vm.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHT9_AJU6MOB0-_E_a6ZauqvWsGzZE1AA";
         }

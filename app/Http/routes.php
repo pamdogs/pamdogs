@@ -44,6 +44,8 @@ Route::group(['prefix' => 'api'], function()
     Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
 
 		Route::resource('user','UserController');
+
+    Route::resource('buscador','BuscadorController');
 });
 
 

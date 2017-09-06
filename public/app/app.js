@@ -1,7 +1,7 @@
 'use strict';
 
     angular
-        .module('Pamdogs', ['ui.router', 'satellizer','ngMessages','ngResource','oitozero.ngSweetAlert','ngStorage', 'mgcrea.ngStrap'])
+        .module('Pamdogs', ['ui.router', 'satellizer','ngMessages','ngResource','oitozero.ngSweetAlert','ngStorage', 'mgcrea.ngStrap', 'ngMap'])
         .run(function($rootScope){
 
          $rootScope.$on('$stateChangeError',
@@ -125,8 +125,8 @@
 
                 views: {
                   'content@': {
-                    templateUrl: 'app/views/cuidador/cuidadores.html'
-
+                    templateUrl: 'app/views/cuidador/cuidadores.html',
+                    controller: 'CuidadorController as cuidador'
                   }
                 }
             }).state('root.perfil', {

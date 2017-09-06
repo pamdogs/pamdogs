@@ -62,4 +62,11 @@ angular.module('Pamdogs')
       email:'@email',
       password:'@password'
     });
+  })
+  .factory('BuscadorResource',function($resource){
+    return $resource("api/buscador/:dir:desde:hasta",{
+      direccion:'@dir',
+      desde: '@desde',
+      hasta: '@hasta'
+    });
   });

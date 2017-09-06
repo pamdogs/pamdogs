@@ -8,7 +8,7 @@
       <h1 class="title">Crea tu cuenta</h1>
       <hr class="hr hr-xs" align="center" />
 
-      <form class="form-horizontal" id="registerCuidador" ng-submit="cuidador.register()" novalidate>
+      <form class="form-horizontal" id="registerCuidador" name="registerCuidador" ng-submit="cuidador.register()" novalidate>
           <div class="rcenter col-md-9 form-content">
             <div class="row">
                 <span class="section-title">
@@ -30,20 +30,27 @@
                     Datos del cuidador *
                 </span>
                 <div class="section-content">
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': registerCuidador.title.$touched && registerCuidador.title.$invalid }">
                         <label for="title">Título:</label>
-                        <input type="text" class="form-control" align="center" id="title" ng-model="cuidador.title" placeholder="Max 50 caracteres">
+                        <input type="text" class="form-control" align="center" id="title" name="title" ng-model="cuidador.title" placeholder="Max 50 caracteres" required maxlength="50">
+                        <div class="help-block" ng-messages="registerCuidador.title.$error" ng-show="registerCuidador.title.$touched && registerCuidador.title.$invalid">
+                          <div ng-messages-include="app/views/messages.html"></div>
+                        </div>
                     </div>
 
                     <div class="form-group">
+                      <div class="form-group" ng-class="{ 'has-error': registerCuidador.description.$touched && registerCuidador.description.$invalid }">
                         <label for="description">Descripción personal:</label>
-                        <textarea class="form-control" align="center" id="description" ng-model="cuidador.description" rows="5" placeholder="Espacio para conocimientos, experiencias y características de tus servicios (mínimo 200 caracteres)"></textarea>
+                        <textarea class="form-control" align="center" id="description" name="description" ng-model="cuidador.description" rows="5" placeholder="Espacio para conocimientos, experiencias y características de tus servicios (mínimo 200 caracteres)" required minlength="200"></textarea>
+                        <div class="help-block" ng-messages="registerCuidador.description.$error" ng-show="registerCuidador.description.$touched && registerCuidador.description.$invalid">
+                          <div ng-messages-include="app/views/messages.html"></div>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-6">
                             <label for="year">Años de experiencia:</label>
-                            <input type="text" class="form-control" align="center" id="year" ng-model="cuidador.year" placeholder="Escriba sus años de experiencia">
+                            <input type="text" class="form-control" align="center" id="year" name="year" ng-model="cuidador.year" placeholder="Escriba sus años de experiencia" required>
                         </div>
                         <div class="col-md-6 size">
                             <label for="title">Tamaños aceptados:</label>
@@ -180,23 +187,35 @@
                     <div class="form-group">
                       <label>Ubicación:</label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': registerCuidador.location.$touched && registerCuidador.location.$invalid }">
                         <div class="col-md-2"><label for="location" class="single">Localidad:</label></div>
                         <div class="col-md-10">
-                          <input type="text" class="form-control col-md-9" align="center" id="location" ng-model="cuidador.location" placeholder="Introducir texto">
+                          <input type="text" class="form-control col-md-9" align="center" id="location" name="location" ng-model="cuidador.location" placeholder="Introducir texto" required>
+                          <div class="help-block" ng-messages="registerCuidador.location.$error" ng-show="registerCuidador.location.$touched && registerCuidador.location.$invalid">
+                            <div ng-messages-include="app/views/messages.html"></div>
+                          </div> 
                         </div>
+
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': registerCuidador.barrio.$touched && registerCuidador.barrio.$invalid }">
                         <div class="col-md-2"><label for="barrio" class="single">Barrio:</label></div>
                         <div class="col-md-10">
-                          <input type="text" class="form-control col-md-9" align="center" id="barrio" ng-model="cuidador.barrio" placeholder="Introducir texto">
+                          <input type="text" class="form-control col-md-9" align="center" id="barrio" name="barrio" ng-model="cuidador.barrio" placeholder="Introducir texto" required>
+                          <div class="help-block" ng-messages="registerCuidador.barrio.$error" ng-show="registerCuidador.barrio.$touched && registerCuidador.barrio.$invalid">
+                            <div ng-messages-include="app/views/messages.html"></div>
+                          </div> 
                         </div>
+
                     </div>
-                    <div class="form-group mb-35">
+                  <div class="form-group mb-35" ng-class="{ 'has-error': registerCuidador.address.$touched && registerCuidador.address.$invalid }">
                         <div class="col-md-2"><label for="address" class="single">Dirección:</label></div>
                         <div class="col-md-10">
-                          <input type="text" class="form-control col-md-9" align="center" id="address" ng-model="cuidador.address" placeholder="Introducir texto">
+                          <input type="text" class="form-control col-md-9" align="center" id="address" name="address" ng-model="cuidador.address" placeholder="Introducir texto" required>
+                          <div class="help-block" ng-messages="registerCuidador.address.$error" ng-show="registerCuidador.address.$touched && registerCuidador.address.$invalid">
+                            <div ng-messages-include="app/views/messages.html"></div>
+                          </div> 
                         </div>
+
                     </div>
 
                     <div class="map">
@@ -205,10 +224,13 @@
                     </div>
 
                     <div class="form-inline tcenter mt-35">
-                      <div class="form-group ">
+                      <div class="form-group " ng-class="{ 'has-error': registerCuidador.range.$touched && registerCuidador.range.$invalid }">
                           <label for="range">Rango:</label>
-                            <input type="text" class="form-control " align="center" id="range" ng-model="cuidador.range" placeholder="">
+                            <input type="text" class="form-control " align="center" id="range" name="range" ng-model="cuidador.range" placeholder="" required>
                           <label for="range" class="single">metros</label>
+                          <div class="help-block" ng-messages="registerCuidador.range.$error" ng-show="registerCuidador.range.$touched && registerCuidador.range.$invalid">
+                            <div ng-messages-include="app/views/messages.html"></div>
+                          </div>
                       </div>
                     </div>
                     <div class="form-group">
@@ -221,17 +243,26 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                          <div class=" form-group">
+                          <div class=" form-group" ng-class="{ 'has-error': registerCuidador.estancia.$touched && registerCuidador.estancia.$invalid }">
                               <div class="col-md-8"><label for="estancia" class="single">Tarifa por estancia 24 horas:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="estancia" ng-model="cuidador.estancia" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="estancia" name="estancia" ng-model="cuidador.estancia" placeholder="" required></div>
+                                <div class="help-block" ng-messages="registerCuidador.estancia.$error" ng-show="registerCuidador.estancia.$touched && registerCuidador.estancia.$invalid">
+                                  <div ng-messages-include="app/views/messages.html"></div>
+                                </div>
                           </div>
-                          <div class=" form-group">
+                          <div class=" form-group" ng-class="{ 'has-error': registerCuidador.extras.$touched && registerCuidador.extras.$invalid }">
                               <div class="col-md-8"><label for="extras" class="single">Tarifa por horas extras:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="extras" ng-model="cuidador.extras" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="extras" name="extras" ng-model="cuidador.extras" placeholder="" required></div>
+                                <div class="help-block" ng-messages="registerCuidador.extras.$error" ng-show="registerCuidador.extras.$touched && registerCuidador.extras.$invalid">
+                                  <div ng-messages-include="app/views/messages.html"></div>
+                                </div>
                           </div>
-                          <div class=" form-group">
+                          <div class=" form-group" ng-class="{ 'has-error': registerCuidador.mextra.$touched && registerCuidador.mextra.$invalid }">
                               <div class="col-md-8"><label for="mextra" class="single">Tarifa por mascota extra:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="mextra" ng-model="cuidador.mextra" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="mextra" name="mextra" ng-model="cuidador.mextra" placeholder="" required></div>
+                                <div class="help-block" ng-messages="registerCuidador.mextra.$error" ng-show="registerCuidador.mextra.$touched && registerCuidador.mextra.$invalid">
+                                  <div ng-messages-include="app/views/messages.html"></div>
+                                </div>
                           </div>
                         </div>
                         <div class="col-md-6 ">
@@ -290,13 +321,19 @@
                   </div>
                   <div class="row">
                         <div class="col-md-6">
-                          <div class=" form-group">
+                          <div class=" form-group" ng-class="{ 'has-error': registerCuidador.guarderia.$touched && registerCuidador.guarderia.$invalid }">
                               <div class="col-md-8"><label for="guarderia" class="single">Tarifa por hora:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="guarderia" ng-model="cuidador.guarderia" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="guarderia" name="guarderia" ng-model="cuidador.guarderia" placeholder="" required></div>
+                                <div class="help-block" ng-messages="registerCuidador.guarderia.$error" ng-show="registerCuidador.guarderia.$touched && registerCuidador.guarderia.$invalid">
+                                  <div ng-messages-include="app/views/messages.html"></div>
+                                </div>
                           </div>
-                          <div class=" form-group">
+                          <div class=" form-group" ng-class="{ 'has-error': registerCuidador.gpets.$touched && registerCuidador.gpets.$invalid }">
                               <div class="col-md-8"><label for="gpets" class="single">Tarifa por mascota:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="gpets" ng-model="cuidador.gpets" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="gpets" name="gpets" ng-model="cuidador.gpets" placeholder="" required></div>
+                                <div class="help-block" ng-messages="registerCuidador.gpets.$error" ng-show="registerCuidador.gpets.$touched && registerCuidador.gpets.$invalid">
+                                  <div ng-messages-include="app/views/messages.html"></div>
+                                </div>
                           </div>
                         </div>
                         <div class="col-md-6 ">
@@ -326,13 +363,19 @@
                           <div class="form-group">
                               <span >El servicio es hasta por 1 hora de paseo.</span>
                           </div>
-                          <div class=" form-group">
+                          <div class=" form-group" ng-class="{ 'has-error': registerCuidador.paseo.$touched && registerCuidador.paseo.$invalid }">
                               <div class="col-md-8"><label for="paseo" class="single">Tarifa por hora:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="paseo" ng-model="cuidador.paseo" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="paseo" name="paseo" ng-model="cuidador.paseo" placeholder="" required required></div>
+                                <div class="help-block" ng-messages="registerCuidador.paseo.$error" ng-show="registerCuidador.paseo.$touched && registerCuidador.paseo.$invalid">
+                                  <div ng-messages-include="app/views/messages.html"></div>
+                                </div>
                           </div>
-                          <div class=" form-group">
+                          <div class=" form-group" ng-class="{ 'has-error': registerCuidador.pmextra.$touched && registerCuidador.pmextra.$invalid }">
                               <div class="col-md-8"><label for="pmextra" class="single">Tarifa por mascota extra:</label></div>
-                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="pmextra" ng-model="cuidador.pmextra" placeholder=""></div>
+                                <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="pmextra" name="pmextra" ng-model="cuidador.pmextra" placeholder="" required required></div>
+                                <div class="help-block" ng-messages="registerCuidador.pmextra.$error" ng-show="registerCuidador.pmextra.$touched && registerCuidador.pmextra.$invalid">
+                                  <div ng-messages-include="app/views/messages.html"></div>
+                                </div>
                           </div>
                         </div>
                         <div class="col-md-6 ">
@@ -386,16 +429,21 @@
                   </div>
                   <div class="row">
                   <div class="col-md-6 ">
-                    <div class=" form-group">
+                    <div class=" form-group" ng-class="{ 'has-error': registerCuidador.hinit.$touched && registerCuidador.hinit.$invalid }">
                         <div class="col-md-8"><div class=""><label for="hinit" class="single">Horario disponible:</label></div></div>
-                        <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="hinit" ng-model="cuidador.hinit" placeholder=""></div>
-
+                        <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="hinit" name="hinit" ng-model="cuidador.hinit" placeholder="" required></div>
+                        <div class="help-block" ng-messages="registerCuidador.hinit.$error" ng-show="registerCuidador.hinit.$touched && registerCuidador.hinit.$invalid">
+                          <div ng-messages-include="app/views/messages.html"></div>
+                        </div>
                     </div>
                   </div>
                   <div class="col-md-6 ">
-                      <div class="form-group">
+                      <div class="form-group" ng-class="{ 'has-error': registerCuidador.hfinit.$touched && registerCuidador.hfinit.$invalid }">
                           <div class="col-md-2"><label for="hfinit" class="single">Hasta:</label></div>
-                          <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="hfinit" ng-model="cuidador.hfinit" placeholder=""></div>
+                          <div class="col-md-4"><input type="text" class="form-control col-md-2" align="center" id="hfinit" name="hfinit" ng-model="cuidador.hfinit" placeholder="" required></div>
+                          <div class="help-block" ng-messages="registerCuidador.hfinit.$error" ng-show="registerCuidador.hfinit.$touched && registerCuidador.hfinit.$invalid">
+                            <div ng-messages-include="app/views/messages.html"></div>
+                          </div>
                       </div>
                   </div>
                   </div>

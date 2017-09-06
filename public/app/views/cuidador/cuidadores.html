@@ -1,6 +1,6 @@
 <div class="container">
   <div class="">
-    
+
     <div class=" cuidador search col-md-7 col-lg-7 col-sm-12 col-xs-12">
     <div class="row">
         <form class="form-inline text-center pb-35 pt-35" ng-submit="auth.search()">
@@ -96,16 +96,20 @@
 
                 </div>
             </div>
-            
-           </div> 
-        </div>
-          
-          
 
-          
-      
-        
+           </div>
+        </div>
+
+
+
+
+
+
     </div>
-    <div class=" cuidador map col-md-5 col-lg-5 col-sm-12 col-xs-12" ></div>
+    <div class=" cuidador map col-md-5 col-lg-5 col-sm-12 col-xs-12" >
+      <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{ cuidador.googleMapsUrl }}">
+        <ng-map center="41,-87" zoom="3"></ng-map>
+      </div>
+    </div>
   </div>
 </div>

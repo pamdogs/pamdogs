@@ -55,6 +55,7 @@
       <script src="app/components/ngStorage.min.js"></script>
 
       <script src="https://code.angularjs.org/1.6.4/i18n/angular-locale_es-co.js"></script>
+      <script src="app/components/ng-map.min.js"></script>
 
       <script src="app/components/angular-strap/angular-strap.min.js"></script>
       <script src="app/components/angular-strap/angular-strap.tpl.min.js"></script>
